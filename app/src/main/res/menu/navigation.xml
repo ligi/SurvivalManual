@@ -1,0 +1,170 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+    >
+        <item
+                android:id="@+id/menu_intro"
+                android:icon="@drawable/ic_action_info_outline"
+                android:title="@string/introduction"/>
+
+        <item
+                android:id="@+id/menu_psycho"
+                android:icon="@drawable/ic_image_portrait"
+                android:title="@string/psychology"/>
+
+
+        <item
+                android:id="@+id/menu_panning"
+                android:icon="@drawable/ic_editor_format_list_numbered"
+                android:title="@string/planning_and_kits"/>
+
+        <item
+                android:id="@+id/menu_meds"
+                android:icon="@drawable/ic_image_healing"
+                android:title="@string/basic_medicine"/>
+
+        <item
+                android:id="@+id/menu_shelter"
+                android:icon="@drawable/ic_action_store"
+                android:title="@string/shelter"/>
+
+        <item
+                android:id="@+id/menu_water"
+                android:icon="@drawable/ic_maps_local_drink"
+                android:title="@string/water"/>
+
+        <item
+                android:id="@+id/menu_fire"
+                android:icon="@drawable/ic_social_whatshot"
+                android:title="@string/fire"/>
+
+
+        <item
+                android:id="@+id/menu_food"
+                android:icon="@drawable/ic_maps_restaurant_menu"
+                android:title="@string/food"/>
+
+        <item
+                android:id="@+id/menu_plants"
+                android:icon="@drawable/ic_maps_local_florist"
+                android:title="@string/plants"/>
+
+        <item
+                android:id="@+id/menu_poisonplants"
+                android:icon="@drawable/ic_social_sentiment_very_dissatisfied"
+                android:title="@string/poisonous_plants"/>
+
+        <item
+                android:id="@+id/menu_animals"
+                android:icon="@drawable/ic_action_pets"
+                android:title="@string/animals"/>
+
+        <item
+                android:id="@+id/menu_tools"
+                android:icon="@drawable/ic_action_gavel"
+                android:title="@string/tools"/>
+
+
+        <item
+                android:id="@+id/menu_desert"
+                android:icon="@drawable/ic_image_wb_sunny"
+                android:title="@string/desert"/>
+
+        <item
+                android:id="@+id/menu_tropical"
+                android:icon="@drawable/ic_places_beach_access"
+                android:title="@string/tropical"/>
+
+        <item
+                android:id="@+id/menu_cold"
+                android:icon="@drawable/ic_places_ac_unit"
+                android:title="@string/cold"/>
+
+        <item
+                android:id="@+id/menu_sea"
+                android:icon="@drawable/ic_maps_directions_boat"
+                android:title="@string/sea"/>
+
+
+        <item
+                android:id="@+id/menu_watercrossing"
+                android:icon="@drawable/ic_action_rowing"
+                android:title="@string/water_crossing"/>
+
+        <item
+                android:id="@+id/menu_directionfinding"
+                android:icon="@drawable/ic_action_explore"
+                android:title="@string/directionfinding"/>
+
+        <item
+                android:id="@+id/menu_signaling"
+                android:icon="@drawable/ic_content_flag"
+                android:title="@string/signaling"/>
+
+
+        <item
+                android:id="@+id/menu_hostile"
+                android:icon="@drawable/ic_image_flash_on"
+                android:title="@string/hostile_areas"/>
+
+        <item
+                android:id="@+id/menu_camouflage"
+                android:icon="@drawable/ic_image_color_lens"
+                android:title="@string/camouflage"/>
+
+        <item
+                android:id="@+id/menu_people"
+                android:icon="@drawable/ic_social_people"
+                android:title="@string/people"/>
+
+        <item
+                android:id="@+id/menu_man_made_hazards"
+                android:icon="@drawable/ic_editor_attach_money"
+                android:title="@string/man_made_hazards"/>
+    </group>
+    <item android:title="@string/appendix">
+        <menu>
+            <item
+                    android:id="@+id/menu_appendix_kits"
+                    android:title="@string/kits"/>
+
+            <item
+                    android:id="@+id/menu_appendix_medicin_plants"
+                    android:title="@string/edible_medicin_plants"/>
+
+            <item
+                    android:id="@+id/menu_appendix_poisonplants"
+                    android:title="@string/poisonous_plants"/>
+
+            <item
+                    android:id="@+id/menu_appendix_insects"
+                    android:title="@string/insects_and_arachnids"/>
+
+
+            <item
+                    android:id="@+id/menu_appendix_snakes"
+                    android:title="@string/snakes_and_lizards"/>
+
+
+            <item
+                    android:id="@+id/menu_appendix_fish"
+                    android:title="@string/fish_and_mollusks"/>
+
+
+            <item
+                    android:id="@+id/menu_appendix_ropes"
+                    android:title="@string/ropes_and_knots"/>
+
+
+            <item
+                    android:id="@+id/menu_appendix_clouds"
+                    android:title="@string/clouds"/>
+
+            <item
+                    android:id="@+id/menu_appendix_evasion_plan"
+                    android:title="@string/evasion_plan"/>
+
+
+        </menu>
+    </item>
+</menu>

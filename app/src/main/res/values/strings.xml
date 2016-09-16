@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Survival Manual</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+    <string name="introduction">Introduction</string>
+    <string name="psychology">Psychology</string>
+    <string name="planning_and_kits">Planning and Kits</string>
+    <string name="basic_medicine">Basic Medicine</string>
+    <string name="shelter">Shelter</string>
+    <string name="water">Water</string>
+    <string name="fire">Fire</string>
+    <string name="food">Food</string>
+    <string name="plants">Plants</string>
+    <string name="poisonous_plants">Poisonous Plants</string>
+    <string name="animals">Animals</string>
+    <string name="tools">Tools</string>
+    <string name="desert">Desert</string>
+    <string name="tropical">Tropical</string>
+    <string name="cold">Cold</string>
+    <string name="sea">Sea</string>
+    <string name="water_crossing">Water Crossing</string>
+    <string name="directionfinding">Find Direction</string>
+    <string name="signaling">Signaling</string>
+    <string name="camouflage">Camouflage</string>
+    <string name="people">People</string>
+    <string name="man_made_hazards">Man-Made Hazards</string>
+    <string name="evasion_plan">Evasion Plan</string>
+    <string name="clouds">Clouds</string>
+    <string name="ropes_and_knots">Ropes and Knots</string>
+    <string name="fish_and_mollusks">Fish and Mollusks</string>
+    <string name="insects_and_arachnids">Insects and Arachnids</string>
+    <string name="snakes_and_lizards">Snakes and Lizards</string>
+    <string name="edible_medicin_plants">Edible/Medicin Plants</string>
+    <string name="kits">Kits</string>
+    <string name="appendix">Appendix</string>
+</resources>
