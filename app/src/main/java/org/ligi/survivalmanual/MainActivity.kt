@@ -4,10 +4,15 @@ import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.text.Html
+import android.text.method.LinkMovementMethod
+import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,7 +45,25 @@ class MainActivity : AppCompatActivity() {
         processMenuId(R.id.menu_intro)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_help) {
+            val textView = TextView(this)
+            textView.text = Html.fromHtml(getString(R.string.help_text))
+            textView.movementMethod = LinkMovementMethod.getInstance()
+            val padding = resources.getDimensionPixelSize(R.dimen.help_padding)
+            textView.setPadding(padding, padding, padding, padding)
+            AlertDialog.Builder(this)
+                    .setTitle(R.string.help_title)
+                    .setView(textView)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show()
+            return true
+        }
         return drawerToggle.onOptionsItemSelected(item)
     }
 
