@@ -1,0 +1,25 @@
+Android Material Icon Generator License
+================================
+
+Icons generated with the Android Material Icon Generator come with the Creative Common
+Attribution 4.0 International License (CC-BY 4.0). You are free to change,
+combine and sell any of the icons as you please. Attribution would be great,
+but is not strictly required.
+
+This text only applies to the icons (.zip file) you download from the icon
+generator. The software behind the generator has its own license
+(https://www.apache.org/licenses/LICENSE-2.0). See the GitHub repository for
+details (https://github.com/Maddoc42/Android-Material-Icon-Generator).
+
+
+
+Google Material Icons License
+=============================
+
+(Copied from https://github.com/google/material-design-icons)
+We have made these icons available for you to incorporate them into your
+products under the Creative Common Attribution 4.0 International License (CC-BY
+4.0, https://creativecommons.org/licenses/by/4.0/). Feel free to remix and
+re-share these icons and documentation in your products.  We'd love attribution
+in your app's *about* screen, but it's not required.  The only thing we ask is
+that you not re-sell the icons themselves.

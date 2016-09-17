@@ -62,7 +62,7 @@
         <item
                 android:id="@+id/menu_tools"
                 android:icon="@drawable/ic_action_gavel"
-                android:title="@string/tools"/>
+                android:title="@string/tools"/>gener
 
 
         <item
