@@ -13,6 +13,8 @@ import android.view.MenuItem
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.TextView
+import org.ligi.snackengage.SnackEngage
+import org.ligi.snackengage.snacks.DefaultRateSnack
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,6 +45,8 @@ class MainActivity : AppCompatActivity() {
         navigationView.setNavigationItemSelectedListener { item -> processMenuId(item.itemId) }
 
         processMenuId(R.id.menu_intro)
+
+        SnackEngage.from(this).withSnack(DefaultRateSnack()).build().engageWhenAppropriate()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
