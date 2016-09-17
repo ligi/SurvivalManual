@@ -8,5 +8,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <string name="hostile_areas">Hostile Areas</string>
 </resources>

@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group
-    >
+    <group>
+
         <item
                 android:id="@+id/menu_intro"
                 android:icon="@drawable/ic_action_info_outline"
@@ -62,8 +62,7 @@
         <item
                 android:id="@+id/menu_tools"
                 android:icon="@drawable/ic_action_gavel"
-                android:title="@string/tools"/>gener
-
+                android:title="@string/tools"/>
 
         <item
                 android:id="@+id/menu_desert"

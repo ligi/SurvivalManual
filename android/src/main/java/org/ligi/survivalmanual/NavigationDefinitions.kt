@@ -68,6 +68,7 @@ object NavigationDefinitions {
             R.id.menu_watercrossing -> return R.string.water_crossing
             R.id.menu_directionfinding -> return R.string.directionfinding
             R.id.menu_signaling -> return R.string.signaling
+            R.id.menu_hostile -> return R.string.hostile_areas
             R.id.menu_people -> return R.string.people
             R.id.menu_man_made_hazards -> return R.string.man_made_hazards
             R.id.menu_appendix_kits -> return R.string.kits
@@ -81,7 +82,7 @@ object NavigationDefinitions {
             R.id.menu_appendix_evasion_plan -> return R.string.evasion_plan
         }
 
-        throw IllegalArgumentException("no String for menuId " + menuId)
+        throw IllegalArgumentException("no String for menuId " + menuId +" " +  menu2htmlMap[menuId])
     }
 
 }

@@ -1,0 +1,103 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+apply plugin: 'android-sdk-manager'
+apply plugin: 'com.android.application'
+apply plugin: 'spoon'
+apply plugin: 'kotlin-android'
+apply plugin: 'de.mobilej.unmock'
+apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'com.getkeepsafe.dexcount'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        applicationId "org.ligi.survivalmanual"
+        minSdkVersion 10
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "build"
+
+    productFlavors {
+        dev {
+            dimension "build"
+            minSdkVersion 21
+        }
+
+        prod {
+            dimension "build"
+        }
+    }
+
+    packagingOptions {
+        // needed for assertJ
+        exclude 'asm-license.txt'
+        exclude 'LICENSE'
+        exclude 'NOTICE'
+
+        // hack for instrumentation testing :-(
+        exclude 'LICENSE.txt'
+
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+    }
+
+    // ugly but the best workaround I found for getting the permission for spoon screenshot writing to SD-Card
+    // http://stackoverflow.com/questions/25276537/how-do-i-change-android-permission-settings-when-running-tests
+    sourceSets {
+        debug {
+            manifest.srcFile 'src/androidTest/AndroidManifest.xml'
+        }
+    }
+
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-runtime:$kotlin_version"
+    compile 'io.michaelrocks:bimap:1.0.2'
+    compile 'org.ligi:snackengage:0.5'
+    compile "com.android.support:appcompat-v7:$support_version"
+    compile "com.android.support:design:$support_version"
+
+    androidTestCompile "com.android.support:support-annotations:$support_version"
+    androidTestCompile "com.android.support:appcompat-v7:$support_version"
+    androidTestCompile "com.android.support:design:$support_version"
+
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.2') {
+        // http://stackoverflow.com/questions/30578243/why-would-adding-espresso-contrib-cause-an-inflateexception
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+    }
+
+    androidTestCompile('com.android.support.test.espresso:espresso-web:2.2.2')
+    androidTestCompile 'com.squareup.spoon:spoon-client:1.6.4'
+    androidTestCompile 'com.squareup.assertj:assertj-android:1.1.1'
+    androidTestCompile 'org.mockito:mockito-core:1.9.5'
+    androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
+    androidTestCompile 'com.jraska:falcon-spoon-compat:1.0.3'
+
+}

@@ -34,6 +34,7 @@
     <string name="kits">Kits</string>
     <string name="appendix">Appendix</string>
     <string name="help_title">Help</string>
+    <string name="hostile_areas">Hostile Areas</string>
     <string name="help_text">
         <![CDATA[
         This is one offline usable survival field manual based on FM 3-05.70 (FM 21-76). This app is libre software - you can find the sourcecode on

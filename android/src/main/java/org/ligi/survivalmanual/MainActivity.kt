@@ -1,6 +1,8 @@
 package org.ligi.survivalmanual
 
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.support.annotation.VisibleForTesting
 import android.support.design.widget.NavigationView
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
@@ -18,7 +20,8 @@ import org.ligi.snackengage.snacks.DefaultRateSnack
 
 class MainActivity : AppCompatActivity() {
 
-    private val webView by lazy { findViewById(R.id.webView) as WebView }
+    @VisibleForTesting
+    val webView by lazy { findViewById(R.id.webView) as WebView }
     private val drawerLayout by lazy { findViewById(R.id.drawer_layout) as DrawerLayout }
     private val drawerToggle by lazy { ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close) }
 
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         drawerLayout.addDrawerListener(drawerToggle)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         webView.setWebViewClient(object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
@@ -39,10 +43,20 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+            }
+
+            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                super.onPageStarted(view, url, favicon)
+            }
         })
         val navigationView = findViewById(R.id.navigationView) as NavigationView
 
-        navigationView.setNavigationItemSelectedListener { item -> processMenuId(item.itemId) }
+        navigationView.setNavigationItemSelectedListener { item ->
+            drawerLayout.closeDrawers()
+            processMenuId(item.itemId)
+        }
 
         processMenuId(R.id.menu_intro)
 
@@ -75,7 +89,6 @@ class MainActivity : AppCompatActivity() {
         val urlByMenuId = getURLByMenuId(menuId)
         if (urlByMenuId != null) {
             webView.loadUrl(urlByMenuId)
-            drawerLayout.closeDrawers()
             supportActionBar?.setSubtitle(NavigationDefinitions.getTitleResById(menuId))
             return true
         }
