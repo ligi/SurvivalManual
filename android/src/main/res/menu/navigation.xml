@@ -159,11 +159,6 @@
                     android:id="@+id/menu_appendix_clouds"
                     android:title="@string/clouds"/>
 
-            <item
-                    android:id="@+id/menu_appendix_evasion_plan"
-                    android:title="@string/evasion_plan"/>
-
-
         </menu>
     </item>
 </menu>

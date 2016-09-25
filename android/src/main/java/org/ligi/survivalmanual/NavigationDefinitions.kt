@@ -35,8 +35,7 @@ object NavigationDefinitions {
             R.id.menu_appendix_snakes to "e",
             R.id.menu_appendix_fish to "f",
             R.id.menu_appendix_clouds to "h",
-            R.id.menu_appendix_ropes to "g",
-            R.id.menu_appendix_evasion_plan to "i"
+            R.id.menu_appendix_ropes to "g"
     )
 
     val html2menu = HashBiMap.create(menu2htmlMap)
@@ -79,7 +78,6 @@ object NavigationDefinitions {
             R.id.menu_appendix_fish -> return R.string.fish_and_mollusks
             R.id.menu_appendix_clouds -> return R.string.clouds
             R.id.menu_appendix_ropes -> return R.string.ropes_and_knots
-            R.id.menu_appendix_evasion_plan -> return R.string.evasion_plan
         }
 
         throw IllegalArgumentException("no String for menuId " + menuId +" " +  menu2htmlMap[menuId])
