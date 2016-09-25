@@ -71,7 +71,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_help) {
             val textView = TextView(this)
-            textView.text = Html.fromHtml(getString(R.string.help_text))
+            val helpText = getString(R.string.help_text).replace("\$VERSION", BuildConfig.VERSION_NAME)
+            textView.text = Html.fromHtml(helpText)
             textView.movementMethod = LinkMovementMethod.getInstance()
             val padding = resources.getDimensionPixelSize(R.dimen.help_padding)
             textView.setPadding(padding, padding, padding, padding)

@@ -37,6 +37,14 @@ public class TheSurvivalActivity {
         onView(withId(R.id.menu_help)).perform(click());
 
         onView(withText(R.string.help_title)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testThatHelpContainsVersion() {
+        thatThatHelpOpens();
+
+        onView(withText(containsString(BuildConfig.VERSION_NAME))).check(matches(isDisplayed()));
+
         takeScreenShot(activityTestRule.getActivity(), "help");
     }
 

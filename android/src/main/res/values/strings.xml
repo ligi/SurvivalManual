@@ -37,7 +37,7 @@
     <string name="hostile_areas">Hostile Areas</string>
     <string name="help_text">
         <![CDATA[
-        This is one offline usable survival field manual based on FM 3-05.70 (FM 21-76). This app is libre software - you can find the sourcecode on
+        This is the offline usable survival field manual v$VERSION based on FM 3-05.70 (FM 21-76). This app is libre software - you can find the sourcecode on
         <a href="https://github.com/ligi/SurvivalManual">GitHub</a>. Pull-Requests are welcome!<br/>
         This app uses the android-support-libraries, <a href="http://kotlinlang.org">Kotlin</a> and <a href="https://github.com/MichaelRocks/bimap/">BiMap</a>
         ]]>
