@@ -177,8 +177,6 @@ Appendix G: Ropes and Knots
 
 Appendix H: Clouds Foretellers of Weather
 
-Appendix I: Evasion of Action Format
-
 This app is libre software ( GPLv3 )
 Pull requests are welcome
 Happy surviving!
