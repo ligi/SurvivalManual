@@ -1,14 +1,14 @@
 package org.ligi.survivalmanual
 
-import org.junit.Assert.assertEquals
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
 class TheNavigationDefinitions {
 
     @Test
     fun getMenuResFromURLWorks() {
-        assertEquals(NavigationDefinitions.getMenuResFromURL("01.htm"), R.id.menu_intro)
-        assertEquals(NavigationDefinitions.getMenuResFromURL("a.htm"), R.id.menu_appendix_kits)
-        assertEquals(NavigationDefinitions.getMenuResFromURL("a.htm#foo"), R.id.menu_appendix_kits)
+        assertThat(NavigationDefinitions.getMenuResFromURL("01")).isEqualTo(R.id.menu_intro)
+        assertThat(NavigationDefinitions.getMenuResFromURL("a")).isEqualTo(R.id.menu_appendix_kits)
+        assertThat(NavigationDefinitions.getMenuResFromURL("a#foo")).isEqualTo(R.id.menu_appendix_kits)
     }
 }

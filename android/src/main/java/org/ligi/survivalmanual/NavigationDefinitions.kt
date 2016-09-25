@@ -40,8 +40,8 @@ object NavigationDefinitions {
 
     val html2menu = HashBiMap.create(menu2htmlMap)
 
-    fun getMenuResFromURL(url: String): Int {
-        return html2menu.inverse[url.split("/").last().split(".htm").first()]!!
+    fun getMenuResFromURL(url: String): Int?{
+        return html2menu.inverse[url.split("#").first()]
     }
 
     fun getTitleResById(menuId: Int): Int {

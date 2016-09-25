@@ -12,11 +12,15 @@
             android:layout_height="match_parent">
 
 
-        <WebView
-                android:id="@+id/webView"
-                android:layout_width="match_parent" android:layout_height="match_parent">
-
-        </WebView>
+        <ScrollView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/content"
+                    android:layout_margin="16dp">
+            <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </ScrollView>
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
