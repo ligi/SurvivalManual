@@ -4,8 +4,8 @@
 
 ![](image163.jpg)
 
-**Abal**  
-_Calligonum comosum_  
+**Abal**
+_Calligonum comosum_
 
 **Description:** The abal is one of the few shrubby plants that exist in the shady deserts. This plant grows to about 1.2 meters (4 feet), and its branches look like wisps from a broom. The stiff, green branches produce an abundance of flowers in March and April.
 
@@ -17,8 +17,8 @@ _Calligonum comosum_
 
 ![](image164.jpg)
 
-**Acacia**  
-_Acacia farnesiana_  
+**Acacia** 
+_Acacia farnesiana_
 
 **Description:** Acacia is a spreading, usually short tree with spines and alternate compound leaves. Its individual leaflets are small. Its flowers are ball-shaped, bright yellow, and very fragrant. Its bark is a whitish-gray color. Its fruits are dark brown and podlike.
 
@@ -34,8 +34,8 @@ _Acacia farnesiana_
 
 ![](image166.jpg)
 
-**Agave**  
-_Agave_ species  
+**Agave**
+_Agave_ species
 
 **Description:** These plants have large clusters of thick, fleshy leaves borne close to the ground and surrounding a central stalk. The plants flower only once, then die. They produce a massive flower stalk.
 
@@ -53,8 +53,8 @@ _Agave_ species
 
 ![](image1.jpg)
 
-**Almond**  
-_Prunus amygdalus_  
+**Almond**
+_Prunus amygdalus_
 
 **Description:** The almond tree, which sometimes grows to 12.2 meters (40 feet), looks like a peach tree. The fresh almond fruit resembles a gnarled, unripe peach and grows in clusters. The stone (the almond itself) is covered with a thick, dry, woolly skin.
 
@@ -67,7 +67,7 @@ _Prunus amygdalus_
 ![](image2.jpg)
 
 **Amaranth**
-_Amaranthus_ species  
+_Amaranthus_ species
 
 **Description:** These plants, which grow 90 to 150 centimeters (35 to 60 inches) tall, are abundant weeds in many parts of the world. All amaranth have alternate simple leaves. They may have some red color present on the stems. They bear minute, greenish flowers in dense clusters at the top of the plants. Their seeds may be brown or black in weedy species and light-colored in domestic species.
 
@@ -79,8 +79,8 @@ _Amaranthus_ species
 
 ![](image167.jpg)
 
-**Arctic willow**  
-_Salix arctica_  
+**Arctic willow**
+_Salix arctica_
 
 **Description:** The arctic willow is a shrub that never exceeds more than 60 centimeters (24 inches) in height and grows in clumps that form dense mats on the tundra.
 
@@ -92,8 +92,8 @@ _Salix arctica_
 
 ![](image3.jpg)
 
-**Arrowroot**_  
-Maranta and Sagittaria_ species  
+**Arrowroot**_
+Maranta and Sagittaria_ species
 
 **Description:** The arrowroot is an aquatic plant with arrow-shaped leaves and potatolike tubers in the mud.
 
@@ -107,8 +107,8 @@ Maranta and Sagittaria_ species
 
 ![](image4.jpg)
 
-**Asparagus**  
-_Asparagus officinalis_  
+**Asparagus**
+_Asparagus officinalis_
 
 **Description:** The spring growth of this plant resembles a cluster of green fingers. The mature plant has fernlike, wispy foliage and red berries. Its flowers are small and greenish in color. Several species have sharp, thornlike structures.
 
@@ -124,8 +124,8 @@ _Asparagus officinalis_
 
 ![](image169.jpg)
 
-**Bael fruit**  
-_Aegle marmelos_  
+**Bael fruit**
+_Aegle marmelos_
 
 **Description:** This is a tree that grows from 2.4 to 4.6 meters (8 to 15 feet) tall, with a dense spiny growth. The fruit is 5 to 10 centimeters (2 to 4 inches) in diameter, gray or yellowish, and full of seeds.
 
@@ -139,8 +139,8 @@ _Aegle marmelos_
 
 ![](image5.jpg)
 
-**Bamboo**  
-Various species including _Bambusa, Dendrocalamus, Phyllostachys_  
+**Bamboo**
+Various species including _Bambusa, Dendrocalamus, Phyllostachys_
 
 **Description:** Bamboos are woody grasses that grow up to 15 meters (50 feet) tall. The leaves are grasslike and the stems are the familiar bamboos used in furniture and fishing poles.
 
@@ -158,8 +158,8 @@ Various species including _Bambusa, Dendrocalamus, Phyllostachys_
 
 ![](image6.jpg)
 
-**Banana and plantain**  
-_Musa_ species  
+**Banana and plantain**
+_Musa_ species
 
 **Description:** These are treelike plants with several large leaves at the top. Their flowers are borne in dense hanging clusters.
 
@@ -175,8 +175,8 @@ _Musa_ species
 
 ![](image7.jpg)
 
-**Baobab**  
-_Adansonia digitata_  
+**Baobab**
+_Adansonia digitata_
 
 **Description:** The baobab tree may grow as high as 18 meters (60 feet) and may have a trunk 9 meters (30 feet) in diameter. The tree has short, stubby branches and a gray, thick bark. Its leaves are compound and their segments are arranged like the palm of a hand. Its flowers, which are white and several centimeters across, hang from the higher branches. Its fruit is shaped like a football, measures up to 45 centimeters (18 inches) long, and is covered with short dense hair.
 
@@ -190,8 +190,8 @@ _Adansonia digitata_
 
 ![](image8.jpg)
 
-**Batoko plum**  
-_Flacourtia inermis_  
+**Batoko plum**
+_Flacourtia inermis_
 
 **Description:** This shrub or small tree has dark green, alternate, simple leaves. Its fruits are bright red and contain six or more seeds.
 
@@ -204,8 +204,8 @@ _Flacourtia inermis_
 
 ![](image173.jpg)
 
-**Bearberry or kinnikinnick**  
-_Arctostaphylos uvaursi_  
+**Bearberry or kinnikinnick**
+_Arctostaphylos uvaursi_
 
 **Description:** This plant is a common evergreen shrub with reddish, scaly bark and thick, leathery leaves 4 centimeters (1 1/2 inches) long and 1 centimeter (1/2 inch) wide. It has white flowers and bright red fruits.
 
@@ -217,8 +217,8 @@ _Arctostaphylos uvaursi_
 
 ![](image9.jpg)
 
-**Beech**  
-_Fagus_ species  
+**Beech**
+_Fagus_ species
 
 **Description:** Beech trees are large (9 to 24 meters [30 to 80 feet]), symmetrical forest trees that have smooth, light-gray bark and dark green foliage. The character of its bark, plus its clusters of prickly seedpods, clearly distinguish the beech tree in the field.
 
@@ -230,8 +230,8 @@ _Fagus_ species
 
 ![](image10.jpg)
 
-**Bignay**  
-_Antidesma bunius_  
+**Bignay**
+_Antidesma bunius_
 
 **Description:** Bignay is a shrub or small tree, 3 to 12 meters (10 to 40 feet) tall, with shiny, pointed leaves about 15 centimeters (6 inches) long. Its flowers are small, clustered, and green. It has fleshy, dark red or black fruit and a single seed. The fruit is about 1 centimeter (1/2 inch) in diameter.
 
@@ -247,8 +247,8 @@ _Antidesma bunius_
 
 ![](image11.jpg)
 
-**Blackberry, raspberry, and dewberry**  
-_Rubus_ species  
+**Blackberry, raspberry, and dewberry**
+_Rubus_ species
 
 **Description:** These plants have prickly stems (canes) that grow upward, arching back toward the ground. They have alternate, usually compound leaves. Their fruits may be red, black, yellow, or orange. This plant is often confused with poison ivy during some seasons but these stems have thorns.
 
@@ -262,8 +262,8 @@ _Rubus_ species
 
 ![](image12.jpg)
 
-**Blueberry and huckleberry**  
-_Vaccinium_ and _Gaylussacia_ species  
+**Blueberry and huckleberry**
+_Vaccinium_ and _Gaylussacia_ species
 
 **Description:** These shrubs vary in size from 30 centimeters (12 inches) to 3.7 meters (12 feet) tall. All have alternate, simple leaves. Their fruits may be dark blue, black, or red and have many small seeds.
 
@@ -275,8 +275,8 @@ _Vaccinium_ and _Gaylussacia_ species
 
 ![](image13.jpg)
 
-**Breadfruit**  
-_Artocarpus incisa_  
+**Breadfruit**
+_Artocarpus incisa_
 
 **Description:** This tree may grow up to 9 meters (30 feet) tall. It has dark green, deeply divided leaves that are 75 centimeters (29 inches) long and 30 centimeters (12 inches) wide. Its fruits are large, green, ball-like structures up to 30 centimeters (12 inches) across when mature.
 
@@ -290,8 +290,8 @@ _Artocarpus incisa_
 
 ![](image14.jpg)
 
-**Burdock**  
-_Arctium lappa_  
+**Burdock**
+_Arctium lappa_
 
 **Description:** This plant has wavy-edged, arrow-shaped leaves and flower heads in burrlike clusters. It grows up to 2 meters (7 feet) tall, with purple or pink flowers and a large, fleshy root.
 
@@ -309,8 +309,8 @@ _Arctium lappa_
 
 ![](image15.jpg)
 
-**Burl Palm**  
-_Corypha elata_  
+**Burl Palm**
+_Corypha elata_
 
 **Description:** This tree may reach 18 meters (60 feet) in height. It has large, fan-shaped leaves up to 3 meters (10 feet) long and split into about 100 narrow segments. It bears flowers in huge dusters at the top of the tree. The tree dies after flowering.
 
@@ -328,8 +328,8 @@ _Corypha elata_
 
 ![](image16.jpg)
 
-**Canna lily**  
-_Canna indica_  
+**Canna lily**
+_Canna indica_
 
 **Description:** The canna lily is a coarse perennial herb, 90 centimeters (36 inches) to 3 meters (10 feet) tall. The plant grows from a large, thick, underground rootstock that is edible. Its large leaves resemble those of the banana plant but are not so large. The flowers of wild canna lily are usually small, relatively inconspicuous, and brightly colored reds, oranges, or yellows.
 
@@ -341,8 +341,8 @@ _Canna indica_
 
 ![](image17.jpg)
 
-**Carob tree**  
-_Ceratonia siliqua_  
+**Carob tree**
+_Ceratonia siliqua_
 
 **Description:** This large tree has a spreading crown. Its leaves are compound and alternate. Its seedpods, also known as Saint John's bread, are up to 45 centimeters (18 inches) long and are filled with round, hard seeds and a thick pulp.
 
@@ -356,8 +356,8 @@ _Ceratonia siliqua_
 
 ![](image18.jpg)
 
-**Cashew nut**  
-_Anacardium occidentale_  
+**Cashew nut**
+_Anacardium occidentale_
 
 **Description:** The cashew is a spreading evergreen tree growing to a height of 12 meters (40 feet), with leaves up to 20 centimeters (8 inches) long and 10 centimeters (4 inches) wide. Its flowers are yellowish-pink. Its fruit is very easy to recognize because of its peculiar structure. The fruit is thick and pear-shaped, pulpy and red or yellow when ripe. This fruit bears a hard, green, kidney-shaped nut at its tip. This nut is smooth, shiny, and green or brown according to its maturity.
 
@@ -373,8 +373,8 @@ _Anacardium occidentale_
 
 ![](image19.jpg)
 
-**Cattail**  
-_Typha latifolia_  
+**Cattail**
+_Typha latifolia_
 
 **Description:** Cattails are grasslike plants with strap-shaped leaves 1 to 5 centimeters (1/4 to 2 inches) wide and growing up to 1.8 meters (6 feet) tall. The male flowers are borne in a dense mass above the female flowers. The male flowers last only a short time, leaving the female flowers, which develop into the brown cattail. Pollen from the male flowers is often abundant and bright yellow.
 
@@ -388,8 +388,8 @@ _Typha latifolia_
 
 ![](image20.jpg)
 
-**Cereus cactus**  
-_Cereus_ species  
+**Cereus cactus**
+_Cereus_ species
 
 **Description:** These cacti are tall and narrow with angled stems and numerous spines.
 
@@ -403,8 +403,8 @@ _Cereus_ species
 
 ![](image21.jpg)
 
-**Chestnut**  
-_Castanea sativa_  
+**Chestnut**
+_Castanea sativa_
 
 **Description:** The European chestnut is usually a large tree, up to 18 meters (60 feet) in height.
 
@@ -417,8 +417,8 @@ _Castanea sativa_
 
 ![](image22.jpg)
 
-**Chicory**  
-_Cichorium intybus_  
+**Chicory**
+_Cichorium intybus_
 
 **Description:** This plant grows up to 1.8 meters (6 feet) tall. It has leaves clustered at the base of the stem and some leaves on the stem. The base leaves resemble those of the dandelion. The flowers are sky blue and stay open only on sunny days. Chicory has a milky juice.
 
@@ -430,8 +430,8 @@ _Cichorium intybus_
 
 ![](image23.jpg)
 
-**Chufa**  
-_Cyperus esculentus_  
+**Chufa**
+_Cyperus esculentus_
 
 **Description:** This very common plant has a triangular stem and grasslike leaves. It grows to a height of 20 to 60 centimeters (8 to 24 inches). The mature plant has a soft, furlike bloom that extends from a whorl of leaves. Tubers 1 to 2.5 centimeters (1/2 to 1 inch) in diameter grow at the ends of the roots.
 
@@ -443,8 +443,8 @@ _Cyperus esculentus_
 
 ![](image24.jpg)
 
-**Coconut**  
-_Cocos nucifera_  
+**Coconut**
+_Cocos nucifera_
 
 **Description:** This tree has a single, narrow, tall trunk with a cluster of very large leaves at the top. Each leaf may be over 6 meters (20 feet) long with over 100 pairs of leaflets.
 
@@ -458,8 +458,8 @@ _Cocos nucifera_
 
 ![](image175.jpg)
 
-**Common jujube**  
-_Ziziphus jujuba_  
+**Common jujube**
+_Ziziphus jujuba_
 
 **Description:** The common jujube is either a deciduous tree growing to a height of 12 meters (40 feet) or a large shrub, depending upon where it grows and how much water is available for growth. Its branches are usually spiny. Its reddish-brown to yellowish-green fruit is oblong to ovoid, 3 centimeters (1 inch) or less in diameter, smooth, and sweet in flavor, but with a rather dry pulp around a comparatively large stone. Its flowers are green.
 
@@ -473,8 +473,8 @@ _Ziziphus jujuba_
 
 ![](image25.jpg)
 
-**Cranberry**  
-_Vaccinium macrocarpon_  
+**Cranberry**
+_Vaccinium macrocarpon_
 
 **Description:** This plant has tiny leaves arranged alternately. Its stem creeps along the ground. Its fruits are red berries.
 
@@ -488,8 +488,8 @@ _Vaccinium macrocarpon_
 
 ![](image177.jpg)
 
-**Crowberry**  
-_Empetrum nigrum_  
+**Crowberry**
+_Empetrum nigrum_
 
 **Description:** This is a dwarf evergreen shrub with short needlelike leaves. It has small, shiny, black berries that remain on the bush throughout the winter.
 
@@ -501,8 +501,8 @@ _Empetrum nigrum_
 
 ![](image178.jpg)
 
-**Cuipo tree**  
-_Cavanillesia platanifolia_  
+**Cuipo tree**
+_Cavanillesia platanifolia_
 
 **Description:** This is a very dominant and easily detected tree because it extends above the other trees. Its height ranges from 45 to 60 meters (149 to 198 feet). It has leaves only at the top and is bare 11 months out of the year. It has rings on its bark that extend to the top to make it easily recognizable. Its bark is reddish or gray in color. Its roots are light reddish-brown or yellowish-brown.
 
@@ -516,8 +516,8 @@ _Cavanillesia platanifolia_
 
 ![](image179.jpg)
 
-**Dandelion**  
-_Taraxacum officinale_  
+**Dandelion**
+_Taraxacum officinale_
 
 **Description:** Dandelion leaves have a jagged edge, grow close to the ground, and are seldom more than 20 centimeters (8 inches) long. The flowers are bright yellow. There are several dandelion species.
 
@@ -531,8 +531,8 @@ _Taraxacum officinale_
 
 ![](image26.jpg)
 
-**Date palm**  
-_Phoenix dactylifera_  
+**Date palm**
+_Phoenix dactylifera_
 
 **Description:** The date palm is a tall, unbranched tree with a crown of huge, compound leaves. Its fruit is yellow when ripe.
 
@@ -546,8 +546,8 @@ _Phoenix dactylifera_
 
 ![](image27.jpg)
 
-**Daylily**  
-_Hemerocallis fulva_  
+**Daylily**
+_Hemerocallis fulva_
 
 **Description:** This plant has unspotted, tawny blossoms that open for 1 day only. It has long, swordlike, green basal leaves. Its root is a mass of swollen and elongated tubers.
 
@@ -563,8 +563,8 @@ _Hemerocallis fulva_
 
 ![](image28.jpg)
 
-**Duchesnea or Indian strawberry**  
-_Duchesnea indica_  
+**Duchesnea or Indian strawberry**
+_Duchesnea indica_
 
 **Description:** The duchesnea is a small plant that has runners and three-parted leaves. Its flowers are yellow and its fruit resembles a strawberry.
 
@@ -576,8 +576,8 @@ _Duchesnea indica_
 
 ![](image29.jpg)
 
-**Elderberry**  
-_Sambucus canadensis_  
+**Elderberry**
+_Sambucus canadensis_
 
 **Description:** Elderberry is a many-stemmed shrub with opposite, compound leaves. It grows to a height of 6 meters (20 feet). Its flowers are fragrant, white, and borne in large flat-topped clusters up to 30 centimeters (12 inches) across. Its berrylike fruits are dark blue or black when ripe.
 
@@ -593,8 +593,8 @@ _Sambucus canadensis_
 
 ![](image180.jpg)
 
-**Fireweed**  
-_Epilobium angustifolium_  
+**Fireweed**
+_Epilobium angustifolium_
 
 **Description:** This plant grows up to 1.8 meters (6 feet) tall. It has large, showy, pink flowers and lance-shaped leaves. Its relative, the dwarf fireweed (_Epilobium latifolium_), grows 30 to 60 centimeters (12 to 24 inches) tall.
 
@@ -606,8 +606,8 @@ _Epilobium angustifolium_
 
 ![](image30.jpg)
 
-**Fishtail palm**  
-_Caryota urens_  
+**Fishtail palm**
+_Caryota urens_
 
 **Description:** Fishtail palms are large trees, at least 18 meters (60 feet) tall. Their leaves are unlike those of any other palm; the leaflets are irregular and toothed on the upper margins. All other palms have either fan-shaped or featherlike leaves. Its massive flowering shoot is borne at the top of the tree and hangs downward.
 
@@ -619,8 +619,8 @@ _Caryota urens_
 
 ![](image31.jpg)
 
-**Foxtail grass**  
-_Setaria_ species  
+**Foxtail grass**
+_Setaria_ species
 
 **Description:** This weedy grass is readily recognized by the narrow, cylindrical head containing long hairs. Its grains are small, less than 6 millimeters (1/4 inch) long. The dense heads of grain often droop when ripe.
 
@@ -632,8 +632,8 @@ _Setaria_ species
 
 ![](image32.jpg)
 
-**Goa bean**  
-_Psophocarpus tetragonolobus_  
+**Goa bean**
+_Psophocarpus tetragonolobus_
 
 **Description:** The goa bean is a climbing plant that may cover small shrubs and trees. Its bean pods are 22 centimeters (9 inches) long, its leaves 15 centimeters (6 inches) long, and its flowers are bright blue. The mature pods are 4-angled, with jagged wings on the pods.
 
@@ -645,8 +645,8 @@ _Psophocarpus tetragonolobus_
 
 ![](image181.jpg)
 
-**Hackberry**  
-_Celtis_ species  
+**Hackberry**
+_Celtis_ species
 
 **Description:** Hackberry trees have smooth, gray bark that often has corky warts or ridges. The tree may reach 39 meters (129 feet) in height. Hackberry trees have long-pointed leaves that grow in two rows. This tree bears small, round berries that can be eaten when they are ripe and fall from the tree. The wood of the hackberry is yellowish.
 
@@ -658,8 +658,8 @@ _Celtis_ species
 
 ![](image182.jpg)
 
-**Hazelnut or wild filbert**  
-_Corylus_ species  
+**Hazelnut or wild filbert**
+_Corylus_ species
 
 **Description:** Hazelnuts grow on bushes 1.8 to 3.6 meters (6 to 12 feet) high. One species in Turkey and another in China are large trees. The nut itself grows in a very bristly husk that conspicuously contracts above the nut into a long neck. The different species vary in this respect as to size and shape.
 
@@ -673,8 +673,8 @@ _Corylus_ species
 
 ![](image33.jpg)
 
-**Horseradish tree**  
-_Moringa pterygosperma_  
+**Horseradish tree**
+_Moringa pterygosperma_
 
 **Description:** This tree grows from 4.5 to 14 meters (15 to 46 feet) tall. Its leaves have a fernlike appearance. Its flowers and long, pendulous fruits grow on the ends of the branches. Its fruit (pod) looks like a giant bean. Its 25- to 60-centimeter-long pods are triangular in cross section, with strong ribs. Its roots have a pungent odor.
 
@@ -688,8 +688,8 @@ _Moringa pterygosperma_
 
 ![](image185.jpg)
 
-**Iceland moss**  
-_Cetraria islandica_  
+**Iceland moss**
+_Cetraria islandica_
 
 **Description:** This moss grows only a few inches high. Its color may be gray, white, or even reddish.
 
@@ -701,8 +701,8 @@ _Cetraria islandica_
 
 ![](image186.jpg)
 
-**Indian potato or Eskimo potato**  
-_Claytonia_ species  
+**Indian potato or Eskimo potato**
+_Claytonia_ species
 
 **Description:** All Claytonia species are somewhat fleshy plants only a few centimeters tall, with showy flowers about 2.5 centimeters (1 inch) across.
 
@@ -714,8 +714,8 @@ _Claytonia_ species
 
 ![](image187.jpg)
 
-**Juniper**  
-_Juniperus_ species  
+**Juniper**
+_Juniperus_ species
 
 **Description:** Junipers, sometimes called cedars, are trees or shrubs with very small, scalelike leaves densely crowded around the branches. Each leaf is less than 1.2 centimeters (1/3 inch) long. All species have a distinct aroma resembling the well-known cedar. The berrylike cones are usually blue and covered with a whitish wax.
 
@@ -731,8 +731,8 @@ _Juniperus_ species
 
 ![](image34.jpg)
 
-**Lotus**  
-_Nelumbo_ species  
+**Lotus**
+_Nelumbo_ species
 
 **Description:** There are two species of lotus: one has yellow flowers and the other pink flowers. The flowers are large and showy. The leaves, which may float on or rise above the surface of the water, often reach 1.5 meters (5 feet) in radius. The fruit has a distinctive flattened shape and contains up to 20 hard seeds.
 
@@ -744,8 +744,8 @@ _Nelumbo_ species
 
 ![](image188.jpg)
 
-**Malanga**  
-_Xanthosoma caracu_  
+**Malanga**
+_Xanthosoma caracu_
 
 **Description:** This plant has soft, arrow-shaped leaves up to 60 centimeters (24 inches) long. The leaves have no aboveground stems.
 
@@ -761,8 +761,8 @@ _Xanthosoma caracu_
 
 ![](image189.jpg)
 
-**Mango**  
-_Mangifera indica_  
+**Mango**
+_Mangifera indica_
 
 **Description:** This tree may reach 30 meters (90 feet) in height. It has alternate, simple, shiny, dark green leaves. Its flowers are small and inconspicuous. Its fruits have a large single seed. There are many cultivated varieties of mango. Some have red flesh, others yellow or orange, often with many fibers and a kerosene taste.
 
@@ -780,8 +780,8 @@ _Mangifera indica_
 
 ![](image191.jpg)
 
-**Manioc**  
-_Manihot utillissima_  
+**Manioc**
+_Manihot utillissima_
 
 **Description:** Manioc is a perennial shrubby plant, 1 to 3 meters (3 to 9 feet) tall, with jointed stems and deep green, fingerlike leaves. It has large, fleshy rootstocks.
 
@@ -799,8 +799,8 @@ _Manihot utillissima_
 
 ![](image35.jpg)
 
-**Marsh marigold**  
-_Caltha palustris_  
+**Marsh marigold**
+_Caltha palustris_
 
 **Description:** This plant has rounded, dark green leaves arising from a short stem. It has bright yellow flowers.
 
@@ -816,8 +816,8 @@ _Caltha palustris_
 
 ![](image36.jpg)
 
-**Mulberry**  
-_Morus_ species  
+**Mulberry**
+_Morus_ species
 
 **Description:** This tree has alternate, simple, often lobed leaves with rough surfaces. Its fruits are blue or black and many-seeded.
 
@@ -833,8 +833,8 @@ _Morus_ species
 
 ![](image37.jpg)
 
-**Nettle**  
-_Urtica_ and _Laportea_ species  
+**Nettle**
+_Urtica_ and _Laportea_ species
 
 **Description:** These plants grow several feet high. They have small, inconspicuous flowers. Fine, hairlike bristles cover the stems, leafstalks, and undersides of leaves. The bristles cause a stinging sensation when they touch the skin.
 
@@ -848,8 +848,8 @@ _Urtica_ and _Laportea_ species
 
 ![](image38.jpg)
 
-**Nipa palm**  
-Nipa fruticans  
+**Nipa palm**
+Nipa fruticans
 
 **Description:** This palm has a short, mainly underground trunk and very large, erect leaves up to 6 meters (20 feet) tall. The leaves are divided into leaflets. A flowering head forms on a short erect stern that rises among the palm leaves. The fruiting (seed) head is dark brown and may be 30 centimeters (12 inches) in diameter.
 
@@ -865,8 +865,8 @@ Nipa fruticans
 
 ![](image39.jpg)
 
-**Oak**  
-_Quercus_ species  
+**Oak**
+_Quercus_ species
 
 **Description:** Oak trees have alternate leaves and acorn fruits. There are two main groups of oaks: red and white. The red oak group has leaves with bristles and smooth bark in the upper part of the tree. Red oak acorns take 2 years to mature. The white oak group has leaves without bristles and a rough bark in the upper portion of the tree. White oak acorns mature in 1 year.
 
@@ -886,8 +886,8 @@ _Quercus_ species
 
 ![](image40.jpg)
 
-**Orach**  
-_Atriplex_ species  
+**Orach**
+_Atriplex_ species
 
 **Description:** This plant is vinelike in growth and has arrowhead-shaped, alternate leaves up to 5 centimeters (2 inches) long. Young leaves maybe silver-colored. Its flowers and fruits are small and inconspicuous.
 
@@ -899,8 +899,8 @@ _Atriplex_ species
 
 ![](image41.jpg)
 
-**Palmetto palm**  
-_Sabal palmetto_  
+**Palmetto palm**
+_Sabal palmetto_
 
 **Description:** The palmetto palm is a tall, unbranched tree with persistent leaf bases on most of the trunk. The leaves are large, simple, and palmately lobed. Its fruits are dark blue or black with a hard seed.
 
@@ -912,8 +912,8 @@ _Sabal palmetto_
 
 ![](image195.jpg)
 
-**Papaya or pawpaw**  
-_Carica papaya_  
+**Papaya or pawpaw**
+_Carica papaya_
 
 **Description:** The papaya is a small tree 1.8 to 6 meters (6 to 20 feet) tall, with a soft, hollow trunk. When cut, the entire plant exudes a milky juice. The trunk is rough and the leaves are crowded at the trunk's apex. The fruit grows directly from the trunk, among and below the leaves. The fruit is green before ripening. When ripe, it turns yellow or remains greenish with a squashlike appearance.
 
@@ -931,8 +931,8 @@ _Carica papaya_
 
 ![](image42.jpg)
 
-**Persimmon**  
-_Diospyros virginiana_ and other species  
+**Persimmon**
+_Diospyros virginiana_ and other species
 
 **Description:** These trees have alternate, dark green, elliptic leaves with entire margins. The flowers are inconspicuous. The fruits are orange, have a sticky consistency, and have several seeds.
 
@@ -948,8 +948,8 @@ _Diospyros virginiana_ and other species
 
 ![](image196.jpg)
 
-**Pincushion cactus**  
-_Mammilaria_ species  
+**Pincushion cactus**
+_Mammilaria_ species
 
 **Description:** Members of this cactus group are round, short, barrel-shaped, and without leaves. Sharp spines cover the entire plant.
 
@@ -961,8 +961,8 @@ _Mammilaria_ species
 
 ![](image43.jpg)
 
-**Pine**  
-_Pinus_ species  
+**Pine**
+_Pinus_ species
 
 **Description:** Pine trees are easily recognized by their needlelike leaves grouped in bundles. Each bundle may contain one to five needles, the number varying among species. The tree's odor and sticky sap provide a simple way to distinguish pines from similar looking trees with needlelike leaves.
 
@@ -976,8 +976,8 @@ _Pinus_ species
 
 ![](image44.jpg)
 
-**Plantain, broad and narrow leaf**  
-_Plantago_ species  
+**Plantain, broad and narrow leaf**
+_Plantago_ species
 
 **Description:** The broad leaf plantain has leaves over 2.5 centimeters (1 inch) across that grow close to the ground. The flowers are on a spike that rises from the middle of the cluster of leaves. The narrow leaf plantain has leaves up to 12 centimeters (5 inches) long and 2.5 centimeters (1 inch) wide, covered with hairs. The leaves form a rosette. The flowers are small and inconspicuous.
 
@@ -991,8 +991,8 @@ _Plantago_ species
 
 ![](image45.jpg)
 
-**Pokeweed**  
-_Phytolacca americana_  
+**Pokeweed**
+_Phytolacca americana_
 
 **Description:** This plant may grow as high as 3 meters (9 feet). Its leaves are elliptic and up to 1 meter (3 feet) in length. It produces many large clusters of purple fruits in late spring.
 
@@ -1010,8 +1010,8 @@ _Phytolacca americana_
 
 ![](image46.jpg)
 
-**Prickly pear cactus**  
-_Opuntia_ species  
+**Prickly pear cactus**
+_Opuntia_ species
 
 **Description:** This cactus has flat, padlike stems that are green. Many round, furry dots that contain sharp-pointed hairs cover these stems.
 
@@ -1029,8 +1029,8 @@ _Opuntia_ species
 
 ![](image47.jpg)
 
-**Purslane**  
-_Portulaca oleracea_  
+**Purslane**
+_Portulaca oleracea_
 
 **Description:** This plant grows close to the ground. It is seldom more than a few centimeters tall. Its stems and leaves are fleshy and often tinged with red. It has paddleshaped leaves, 2.5 centimeters (1 inch) or less long, clustered at the tips of the stems. Its flowers are yellow or pink. Its seeds are tiny and black.
 
@@ -1042,8 +1042,8 @@ _Portulaca oleracea_
 
 ![](image198.jpg)
 
-**Rattan palm**  
-_Calamus_ species  
+**Rattan palm**
+_Calamus_ species
 
 **Description:** The rattan palm is a stout, robust climber. It has hooks on the midrib of its leaves that it uses to remain attached to the trees on which it grows. Sometimes, mature stems grow to 90 meters (300 feet). It has alternate, compound leaves and a whitish flower.
 
@@ -1059,8 +1059,8 @@ _Calamus_ species
 
 ![](image48.jpg)
 
-**Reed**  
-_Phragmites australis_  
+**Reed**
+_Phragmites australis_
 
 **Description:** This tall, coarse grass grows to 3.5 meters (12 feet) tall and has gray-green leaves about 4 centimeters (1 1/2 inch) wide. It has large masses of brown flower branches in early summer. These rarely produce grain and become fluffy, gray masses late in the season.
 
@@ -1072,8 +1072,8 @@ _Phragmites australis_
 
 ![](image200.jpg)
 
-**Reindeer moss**  
-_Cladonia rangiferina_  
+**Reindeer moss**
+_Cladonia rangiferina_
 
 **Description:** Reindeer moss is a low-growing plant only a few centimeters tall. It does not flower but does produce bright red reproductive structures.
 
@@ -1088,8 +1088,8 @@ _Cladonia rangiferina_
 
 ![](image49.jpg)
 
-**Rock tripe**  
-_Umbilicaria_ species  
+**Rock tripe**
+_Umbilicaria_ species
 
 **Description:** This plant forms large patches with curling edges. The top of the plant is usually black. The underside is lighter in color.
 
@@ -1105,8 +1105,8 @@ _Umbilicaria_ species
 
 ![](image202.jpg)
 
-**Rose apple**  
-_Eugenia jambos_  
+**Rose apple**
+_Eugenia jambos_
 
 **Description:** This tree grows 3 to 9 meters (9 to 27 feet) high. It has opposite, simple, dark green, shiny leaves. When fresh, it has fluffy, yellowish-green flowers and red to purple egg-shaped fruit.
 
@@ -1120,8 +1120,8 @@ _Eugenia jambos_
 
 ![](image204.jpg)
 
-**Sago palm**  
-_Metroxylon sagu_  
+**Sago palm**
+_Metroxylon sagu_
 
 **Description:** These palms are low trees, rarely over 9 meters (27 feet) tall, with a stout, spiny trunk. The outer rind is about 5 centimeters (2 inches) thick and hard as bamboo. The rind encloses a spongy inner pith containing a high proportion of starch. It has typical palmlike leaves clustered at the tip.
 
@@ -1133,8 +1133,8 @@ _Metroxylon sagu_
 
 ![](image50.jpg)
 
-**Sassafras**  
-_Sassafras albidum_  
+**Sassafras**
+_Sassafras albidum_
 
 **Description:** This shrub or small tree bears different leaves on the same plant. Some leaves will have one lobe, some two lobes, and some no lobes. The flowers, which appear in early spring, are small and yellow. The fruits are dark blue. The plant parts have a characteristic root beer smell.
 
@@ -1148,8 +1148,8 @@ _Sassafras albidum_
 
 ![](image205.jpg)
 
-**Saxaul**  
-_Haloxylon ammondendron_  
+**Saxaul**
+_Haloxylon ammondendron_
 
 **Description:** The saxaul is found either as a small tree or as a large shrub with heavy, coarse wood and spongy, water-soaked bark. The branches of the young trees are vivid green and pendulous. The flowers are small and yellow.
 
@@ -1161,8 +1161,8 @@ _Haloxylon ammondendron_
 
 ![](image51.jpg)
 
-**Screw pine**  
-_Pandanus_ species  
+**Screw pine**
+_Pandanus_ species
 
 **Description:** The screw pine is a strange plant on stilts, or prop roots, that support the plant above ground so that it appears suspended in midair. These plants are either shrubby or treelike, 3 to 9 meters (9 to 27 feet) tall, with stiff leaves having sawlike edges. The fruits are large, roughened balls resembling pineapples but without the tuft of leaves at the end.
 
@@ -1174,8 +1174,8 @@ _Pandanus_ species
 
 ![](image206.jpg)
 
-**Sea orach**  
-_Atriplex halimus_  
+**Sea orach**
+_Atriplex halimus_
 
 **Description:** The sea orach is a sparingly branched herbaceous plant with small, gray-colored leaves up to 2.5 centimeters (1 inch) long. Sea orach resembles lamb's quarter, a common weed in most gardens in the United States. It produces its flowers in narrow, densely compacted spikes at the tips of its branches.
 
@@ -1187,8 +1187,8 @@ _Atriplex halimus_
 
 ![](image52.jpg)
 
-**Sheep sorrel**  
-_Rumex acerosella_  
+**Sheep sorrel**
+_Rumex acerosella_
 
 **Description:** These plants are seldom more than 30 centimeters (12 inches) tall. They have alternate leaves, often with arrowlike bases, very small flowers, and frequently reddish stems.
 
@@ -1204,8 +1204,8 @@ _Rumex acerosella_
 
 ![](image207.jpg)
 
-**Sorghum**  
-_Sorghum_ species  
+**Sorghum**
+_Sorghum_ species
 
 **Description:** There are many different kinds of sorghum, all of which bear grains in heads at the top of the plants. The grains are brown, white, red, or black. Sorghum is the main food crop in many parts of the world.
 
@@ -1219,8 +1219,8 @@ _Sorghum_ species
 
 ![](image53.jpg)
 
-**Spatterdock or yellow water lily**  
-_Nuphar_ species  
+**Spatterdock or yellow water lily**
+_Nuphar_ species
 
 **Description:** This plant has leaves up to 60 centimeters (24 inches) long with a triangular notch at the base. The shape of the leaves is somewhat variable. The plant's yellow flowers are 2.5 centimeters (1 inch) across and develop into bottle-shaped fruits. The fruits are green when ripe.
 
@@ -1232,8 +1232,8 @@ _Nuphar_ species
 
 ![](image54.jpg)
 
-**Sterculia**  
-_Sterculia foetida_  
+**Sterculia**
+_Sterculia foetida_
 
 **Description:** Sterculias are tall trees, rising in some instances to 30 meters (90 feet). Their leaves are either undivided or palmately lobed. Their flowers are red or purple. The fruit of all sterculias is similar in aspect, with a red, segmented seedpod containing many edible black seeds.
 
@@ -1251,8 +1251,8 @@ _Sterculia foetida_
 
 ![](image55.jpg)
 
-**Strawberry**  
-_Fragaria_ species  
+**Strawberry**
+_Fragaria_ species
 
 **Description:** Strawberry is a small plant with a three-leaved growth pattern. It has small, white flowers usually produced during the spring. Its fruit is red and fleshy.
 
@@ -1268,8 +1268,8 @@ _Fragaria_ species
 
 ![](image56.jpg)
 
-**Sugarcane**  
-_Saccharum officinarum_  
+**Sugarcane**
+_Saccharum officinarum_
 
 **Description:** This plant grows up to 4.5 meters (15 feet) tall. It is a grass and has grasslike leaves. Its green or reddish stems are swollen where the leaves grow. Cultivated sugarcane seldom flowers.
 
@@ -1281,8 +1281,8 @@ _Saccharum officinarum_
 
 ![](image57.jpg)
 
-**Sugar palm**  
-_Arenga pinnata_  
+**Sugar palm**
+_Arenga pinnata_
 
 **Description:** This tree grows about 15 meters (45 feet) high and has huge leaves up to 6 meters (18 feet) long. Needlelike structures stick out of the bases of the leaves. Flowers grow below the leaves and form large conspicuous dusters from which the fruits grow.
 
@@ -1300,8 +1300,8 @@ _Arenga pinnata_
 
 ![](image209.jpg)
 
-**Sweetsop**  
-_Annona squamosa_  
+**Sweetsop**
+_Annona squamosa_
 
 **Description:** This tree is small, seldom more than 6 meters (18 feet) tall, and multi-branched. It has alternate, simple, elongate, dark green leaves. Its fruit is green when ripe, round, and covered with protruding bumps on its surface. The fruit's flesh is white and creamy.
 
@@ -1319,8 +1319,8 @@ _Annona squamosa_
 
 ![](image58.jpg)
 
-**Tamarind**  
-_Tamarindus indica_  
+**Tamarind**
+_Tamarindus indica_
 
 **Description:** The tamarind is a large, densely branched tree. It grows up to 25 meters (75 feet) tall. Its has pinnate leaves (divided like a feather) with 10 to 15 pairs of leaflets.
 
@@ -1332,8 +1332,8 @@ _Tamarindus indica_
 
 ![](image210.jpg)
 
-**Taro, cocoyam, elephant ears, eddo, dasheen**  
-_Colocasia_ and _Alocasia_ species  
+**Taro, cocoyam, elephant ears, eddo, dasheen**
+_Colocasia_ and _Alocasia_ species
 
 **Description:** All plants in these groups have large leaves, sometimes up to 1.8 meters (6 feet) tall, that grow from a very short stem. The rootstock is thick, fleshy, and filled with starch.
 
@@ -1349,8 +1349,8 @@ _Colocasia_ and _Alocasia_ species
 
 ![](image59.jpg)
 
-**Thistle**  
-_Cirsium_ species  
+**Thistle**
+_Cirsium_ species
 
 **Description:** This plant may grow as high as 1.5 meters (5 feet). Its leaves are long-pointed, deeply lobed, and prickly.
 
@@ -1368,8 +1368,8 @@ _Cirsium_ species
 
 ![](image60.jpg)
 
-**Ti**  
-_Cordyline terminalis_  
+**Ti**
+_Cordyline terminalis_
 
 **Description:** The ti has unbranched stems with straplike leaves often clustered at the tip of the stem. The leaves vary in color and may be green or reddish. The flowers grow at the plant's top in large, plumelike clusters. The ti may grow up to 4.5 meters (15 feet) tall.
 
@@ -1383,8 +1383,8 @@ _Cordyline terminalis_
 
 ![](image211.jpg)
 
-**Tree fern**  
-Various genera  
+**Tree fern**
+Various genera
 
 **Description:** Tree ferns are tall trees with long, slender trunks that often have a very rough, barklike covering. Large, lacy leaves uncoil from the top of the trunk.
 
@@ -1396,8 +1396,8 @@ Various genera
 
 ![](image61.jpg)
 
-**Tropical almond**  
-_Terminalia catappa_  
+**Tropical almond**
+_Terminalia catappa_
 
 **Description:** This tree grows up to 9 meters (27 feet) tall. Its leaves are evergreen, leathery, 45 centimeters (18 inches) long, 15 centimeters (6 inches) wide, and very shiny. It has small, yellowish-green flowers. Its fruit is flat, 10 centimeters (4 inches) long, and not quite as wide. The fruit is green when ripe.
 
@@ -1409,8 +1409,8 @@ _Terminalia catappa_
 
 ![](image1.jpg)
 
-**Walnut**  
-_Juglans_ species  
+**Walnut**
+_Juglans_ species
 
 **Description:** Walnuts grow on very large trees, often reaching 18 meters (54 feet) tall. The divided leaves characterize all walnut spades. The walnut itself has a thick outer husk that must be removed to reach the hard inner shell of the nut.
 
@@ -1424,8 +1424,8 @@ _Juglans_ species
 
 ![](image212.jpg)
 
-**Water chestnut**  
-_Trapa natans_  
+**Water chestnut**
+_Trapa natans_
 
 **Description:** The water chestnut is an aquatic plant that roots in the mud and has finely divided leaves that grow underwater. Its floating leaves are much larger and coarsely toothed. The fruits, borne underwater, have four sharp spines on them.
 
@@ -1437,8 +1437,8 @@ _Trapa natans_
 
 ![](image213.jpg)
 
-**Water lettuce**  
-_Ceratopteris_ species  
+**Water lettuce**
+_Ceratopteris_ species
 
 **Description:** The leaves of water lettuce are much like lettuce and are very tender and succulent. One of the easiest ways of distinguishing water lettuce is by the little plantlets that grow from the margins of the leaves. These little plantlets grow in the shape of a rosette. Water lettuce plants often cover large areas in the regions where they are found.
 
@@ -1454,8 +1454,8 @@ _Ceratopteris_ species
 
 ![](image214.jpg)
 
-**Water lily**  
-_Nymphaea odorata_  
+**Water lily**
+_Nymphaea odorata_
 
 **Description:** These plants have large, triangular leaves that float on the water's surface, large, fragrant flowers that are usually white, or red, and thick, fleshy rhizomes that grow in the mud.
 
@@ -1469,8 +1469,8 @@ _Nymphaea odorata_
 
 ![](image215.jpg)
 
-**Water plantain**  
-_Alisma plantago-aquatica_  
+**Water plantain**
+_Alisma plantago-aquatica_
 
 **Description:** This plant has small, white flowers and heart-shaped leaves with pointed tips. The leaves are clustered at the base of the plant.
 
@@ -1486,8 +1486,8 @@ _Alisma plantago-aquatica_
 
 ![](image216.jpg)
 
-**Wild caper**  
-_Capparis aphylla_  
+**Wild caper**
+_Capparis aphylla_
 
 **Description:** This is a thorny shrub that loses its leaves during the dry season. Its stems are gray-green and its flowers pink.
 
@@ -1499,8 +1499,8 @@ _Capparis aphylla_
 
 ![](image217.jpg)
 
-**Wild crab apple or wild apple**  
-_Malus_ species  
+**Wild crab apple or wild apple**
+_Malus_ species
 
 **Description:** Most wild apples look enough like domestic apples that the survivor can easily recognize them. Wild apple varieties are much smaller than cultivated kinds; the largest kinds usually do not exceed 5 to 7.5 centimeters (2 to 3 inches) in diameter, and most often are smaller. They have small, alternate, simple leaves and often have thorns. Their flowers are white or pink and their fruits reddish or yellowish.
 
@@ -1516,8 +1516,8 @@ _Malus_ species
 
 ![](image2.jpg)
 
-**Wild desert gourd or colocynth**  
-_Citrullus colocynthis_  
+**Wild desert gourd or colocynth**
+_Citrullus colocynthis_
 
 **Description:** The wild desert gourd, a member of the watermelon family, produces a 2.4- to 3-meter-long (7 1/2- to 9-foot-long) ground-trailing vine. The perfectly round gourds are as large as an orange. They are yellow when ripe.
 
@@ -1529,8 +1529,8 @@ _Citrullus colocynthis_
 
 ![](image3.jpg)
 
-**Wild dock and wild sorrel**  
-_Rumex crispus_ and _Rumex acetosella_  
+**Wild dock and wild sorrel**
+_Rumex crispus_ and _Rumex acetosella_
 
 **Description:** Wild dock is a stout plant with most of its leaves at the base of its stem that is commonly 15 to 30 centimeters (6 to 12 inches) long. The plants usually develop from a strong, fleshy, carrotlike taproot. Its flowers are usually very small, growing in green to purplish plumelike clusters. Wild sorrel is similar to wild dock but smaller. Many of the basal leaves are arrow-shaped. They are smaller than those of dock and contain sour juice.
 
@@ -1543,8 +1543,8 @@ _Rumex crispus_ and _Rumex acetosella_
 
 ![](image4.jpg)
 
-**Wild fig**  
-_Ficus_ species  
+**Wild fig**
+_Ficus_ species
 
 **Description:** These trees have alternate, simple leaves with entire margins. Often, the leaves are dark green and shiny. All figs have a milky, sticky juice. The fruits vary in size depending on the species, but are usually yellow-brown when ripe.
 
@@ -1558,8 +1558,8 @@ _Ficus_ species
 
 ![](image5.jpg)
 
-**Wild gourd or luffa sponge**  
-_Luffa cylindrica_  
+**Wild gourd or luffa sponge**
+_Luffa cylindrica_
 
 **Description:** The luffa sponge is widely distributed and fairly typical of a wild squash. There are several dozen kinds of wild squashes in tropical regions. Like most squashes, the luffa is a vine with leaves 7.5 to 20 centimeters (3 to 8 inches) across having 3 lobes. Some squashes have leaves twice this size. Luffa fruits are oblong or cylindrical, smooth, and many-seeded. Luffa flowers are bright yellow. The luffa fruit, when mature, is brown and resembles the cucumber.
 
@@ -1572,8 +1572,8 @@ _Luffa cylindrica_
 
 ![](image6.jpg)
 
-**Wild grape vine**  
-_Vitis_ species  
+**Wild grape vine**
+_Vitis_ species
 
 **Description:** The wild grapevine climbs with the aid of tendrils. Most grapevines produce deeply lobed leaves similar to the cultivated grape. Wild grapes grow in pyramidal, hanging bunches and are black-blue to amber, or white when ripe.
 
@@ -1591,8 +1591,8 @@ _Vitis_ species
 
 ![](image7.jpg)
 
-**Wild onion and garlic**  
-_Allium_ species  
+**Wild onion and garlic**
+_Allium_ species
 
 **Description:** _Allium cernuum_ is an example of the many species of wild onions and garlics, all easily recognized by their distinctive odor.
 
@@ -1611,8 +1611,8 @@ _Allium_ species
 
 ![](image8.jpg)
 
-**Wild pistachio**  
-_Pistacia_ species  
+**Wild pistachio**
+_Pistacia_ species
 
 **Description:** Some kinds of pistachio trees are evergreen; others lose their leaves during the dry season. The leaves alternate on the stem and have either three large leaves or a number of leaflets. The fruits or nuts are usually hard and dry at maturity.
 
@@ -1624,8 +1624,8 @@ _Pistacia_ species
 
 ![](image9.jpg)
 
-**Wild rice**  
-_Zizania aquatica_  
+**Wild rice**
+_Zizania aquatica_
 
 **Description:** Wild rice is a tall grass that typically is 1 to 1.5 meters (3 to 4 feet) in height, but may reach 4.5 meters (15 feet). Its grain grows in very loose heads at the top of the plant and is dark brown or blackish when ripe.
 
@@ -1637,8 +1637,8 @@ _Zizania aquatica_
 
 ![](image219.jpg)
 
-**Wild rose**  
-_Rosa_ species  
+**Wild rose**
+_Rosa_ species
 
 **Description:** This shrub grows 60 centimeters to 2.5 meters (24 inches to 8 feet) high. It has alternate leaves and sharp prickles. Its flowers may be red, pink, or yellow. Its fruit, called rose hip, stays on the shrub year-round.
 
@@ -1656,8 +1656,8 @@ _Rosa_ species
 
 ![](image10.jpg)
 
-**Wood sorrel**  
-_Oxalis_ species  
+**Wood sorrel**
+_Oxalis_ species
 
 **Description:** Wood sorrel resembles shamrock or four-leaf clover, with a bell-shaped pink, yellow, or white flower.
 
@@ -1673,8 +1673,8 @@ _Oxalis_ species
 
 ![](image11.jpg)
 
-**Yam**  
-_Dioscorea_ species  
+**Yam**
+_Dioscorea_ species
 
 **Description:** These plants are vines that creep along the ground. They have alternate, heart- or arrow-shaped leaves. Their rootstock may be very large and weigh many kilograms.
 
@@ -1688,8 +1688,8 @@ _Dioscorea_ species
 
 ![](image221.jpg)
 
-**Yam bean**  
-_Pachyrhizus erosus_  
+**Yam bean**
+_Pachyrhizus erosus_
 
 **Description:** The yam bean is a climbing plant of the bean family, with alternate, three-parted leaves and a turniplike root. The bluish or purplish flowers are pealike in shape. The plants are often so rampant that they cover the vegetation upon which they are growing.
 
