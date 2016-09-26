@@ -1,0 +1,3 @@
+[submodule "android/src/main/assets/md"]
+	path = android/src/main/assets/md
+	url = https://github.com/ligi/SurvivalManual.wiki.git

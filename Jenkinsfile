@@ -1,9 +1,10 @@
 node {
  def flavorCombination='Prod'
-
+ 
  stage 'checkout'
   checkout scm
-
+  sh "git submodule update --init"
+  
  stage 'UITest'
   lock('adb') {
    try {
