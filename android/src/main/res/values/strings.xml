@@ -41,6 +41,8 @@
         This is the offline usable survival field manual v$VERSION based on FM 3-05.70 (FM 21-76). This app is libre software - you can find the sourcecode on
         <a href="https://github.com/ligi/SurvivalManual">GitHub</a>. Pull-Requests are welcome!<br/>
         If you have improvements regarding the content or want to help translate you can use <a href="https://github.com/ligi/SurvivalManual/wiki">this wiki.</a><br/>
+        When you want the latest features and like to live on the bleeding edge: Please <a href="https://play.google.com/apps/testing/org.ligi.survivalmanual">join the BetaTesters</a>
+        <br/>
         This app uses the android-support-libraries, <a href="http://kotlinlang.org">Kotlin</a> and <a href="https://github.com/MichaelRocks/bimap/">BiMap</a>
         ]]>
     </string>
