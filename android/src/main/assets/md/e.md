@@ -1,29 +1,24 @@
-> > If you fear snakes, it is probably because you are unfamiliar with them or you have wrong information about them. There is no need for you to fear snakes if you know—
-> > 
-> > *   Their habits.
-> >     
-> >     
-> > *   How to identify the dangerous kinds.
-> >     
-> >     
-> > *   Precautions to take to prevent snakebite.
-> >     
-> >     
-> > *   What actions to take in case of snakebite ([Chapter 3](03)).
-> >     
-> >     
-> > 
-> > For a man wearing shoes and trousers and living in a camp, the danger of being bitten by a venomous snake is small compared to the hazards of malaria, cholera, dysentery, or other diseases.
-> > 
-> > Nearly all snakes avoid man if possible. A few—the king cobra of Southeast Asia, the bushmaster and tropical rattlesnake of South America, and the mamba of Africa—may aggressively attack man, but even these snakes do so only occasionally. Most snakes get out of the way and are seldom seen.
+> If you fear snakes, it is probably because you are unfamiliar with them or you have wrong information about them. There is no need for you to fear snakes if you know—
+> 
+> * Their habits.
+>
+> * How to identify the dangerous kinds.
+>
+> * Precautions to take to prevent snakebite.
+>
+> * What actions to take in case of snakebite ([Chapter 3](03)).
+> 
+> For a man wearing shoes and trousers and living in a camp, the danger of being bitten by a venomous snake is small compared to the hazards of malaria, cholera, dysentery, or other diseases.
+> 
+> Nearly all snakes avoid man if possible. A few—the king cobra of Southeast Asia, the bushmaster and tropical rattlesnake of South America, and the mamba of Africa—may aggressively attack man, but even these snakes do so only occasionally. Most snakes get out of the way and are seldom seen.
 
 ### WAYS TO AVOID SNAKEBITE
 
-E-1\. Snakes are widely distributed. They are found in all tropical, subtropical, and most temperate regions. Some species of snakes have specialized glands that contain a toxic venom, and long, hollow fangs to inject their venom.
+Snakes are widely distributed. They are found in all tropical, subtropical, and most temperate regions. Some species of snakes have specialized glands that contain a toxic venom, and long, hollow fangs to inject their venom.
 
-E-2\. Although venomous snakes use their venom to secure food, they also use it for self-defense. Human accidents occur when you don't see or hear the snake, when you step on them, or when you walk too close to them.
+Although venomous snakes use their venom to secure food, they also use it for self-defense. Human accidents occur when you don't see or hear the snake, when you step on them, or when you walk too close to them.
 
-E-3\. Follow these simple rules to reduce the chance of accidental snakebite:
+Follow these simple rules to reduce the chance of accidental snakebite:
 
 *   Don't sleep next to brush, tall grass, large boulders, or trees. They provide hiding places for snakes. Place your sleeping bag in a clearing. Use mosquito netting tucked well under the bag. This netting should provide a good barrier.
 
@@ -39,33 +34,31 @@ E-3\. Follow these simple rules to reduce the chance of accidental snakebite:
 
 ### SNAKE GROUPS
 
-E-4\. Snakes dangerous to man usually fall into two groups: proteroglypha and solenoglypha. Their fangs and their venom best describe these two groups ([Figure E-1](#fige-1)).
+Snakes dangerous to man usually fall into two groups: proteroglypha and solenoglypha. Their fangs and their venom best describe these two groups:
 
-<a name="fige-1"></a>![Figure E-1\. Snake Group Characteristics](fige-1.png)
-
-**Figure E-1\. Snake Group Characteristics**
+![Figure E-1\. Snake Group Characteristics](fige-1.png)
 
 **FANGS**
 
-E-5\. The proteroglypha have, in front of the upper jaw and preceding the ordinary teeth, permanently erect fangs. These fangs are called fixed fangs.
+The proteroglypha have, in front of the upper jaw and preceding the ordinary teeth, permanently erect fangs. These fangs are called fixed fangs.
 
-E-6\. The solenoglypha have erectile fangs; that is, fangs they can raise to an erect position. These fangs are called folded fangs.
+The solenoglypha have erectile fangs; that is, fangs they can raise to an erect position. These fangs are called folded fangs.
 
 **VENOM**
 
-E-7\. The fixed-fang snakes (proteroglypha) usually have neurotoxic venoms. These venoms affect the nervous system, making the victim unable to breathe.
+The fixed-fang snakes (proteroglypha) usually have neurotoxic venoms. These venoms affect the nervous system, making the victim unable to breathe.
 
-E-8\. The folded-fang snakes (solenoglypha) usually have hemotoxic venoms. These venoms affect the circulatory system, destroying blood cells, damaging skin tissues, and causing internal hemorrhaging.
+The folded-fang snakes (solenoglypha) usually have hemotoxic venoms. These venoms affect the circulatory system, destroying blood cells, damaging skin tissues, and causing internal hemorrhaging.
 
-E-9\. Remember, however, that most venomous snakes have both neurotoxic and hemotoxic venom. Usually one type of venom in the snake is dominant and the other is weak.
+Remember, however, that most venomous snakes have both neurotoxic and hemotoxic venom. Usually one type of venom in the snake is dominant and the other is weak.
 
 **VENOMOUS VERSUS NONVENOMOUS SNAKES**
 
-E-10\. No single characteristic distinguishes a venomous snake from a harmless one except the presence of poison fangs and glands. Only in dead specimens can you determine the presence of these fangs and glands without danger.
+No single characteristic distinguishes a venomous snake from a harmless one except the presence of poison fangs and glands. Only in dead specimens can you determine the presence of these fangs and glands without danger.
 
 ### DESCRIPTIONS OF VENOMOUS SNAKES
 
-E-11\. There are many different venomous snakes throughout the world. It is unlikely you will see many except in a zoo. This manual describes only a few venomous snakes. However, you should be able to spot a venomous snake if you—
+There are many different venomous snakes throughout the world. It is unlikely you will see many except in a zoo. This manual describes only a few venomous snakes. However, you should be able to spot a venomous snake if you—
 
 *   Learn about the two groups of snakes and the families in which they fall ([Figures E-2](#fige-2)).
 
@@ -73,60 +66,60 @@ E-11\. There are many different venomous snakes throughout the world. It is unli
 
 <a name="fige-2"></a>![Figure E-2\. Clinical Effects of Snakebites](fige-2.png)
 
-**Figure E-2\. Clinical Effects of Snakebites**
+**Figure E-2 Clinical Effects of Snakebites**
 
 <a name="fige-2"></a>![Figure E-2\. Clinical Effects of Snakebites (Continued)](fige-2b.png)
 
-**Figure E-2\. Clinical Effects of Snakebites (Continued)**
+**Figure E-2 Clinical Effects of Snakebites (Continued)**
 
 <a name="fige-3"></a>![Figure E-3\. Snake Families](fige-3.png)
 
-**Figure E-3\. Snake Families**
+**Figure E-3 Snake Families**
 
 <a name="fige-3"></a>![Figure E-3\. Snake Families (Continued)](fige-3b.png)
 
-**Figure E-3\. Snake Families (Continued)**
+**Figure E-3 Snake Families (Continued)**
 
 **VIPERIDAE**
 
-E-12\. The viperidae, or true vipers, usually have thick bodies and heads that are much wider than their necks ([Figure E-4](#fige-4)). However, there are many different sizes, markings, and colorations.
+The viperidae, or true vipers, usually have thick bodies and heads that are much wider than their necks ([Figure E-4](#fige-4)). However, there are many different sizes, markings, and colorations.
 
 <a name="fige-4"></a>![Figure E-4\. Positive Identification of Vipers](image271.jpg)
 
 **Figure E-4\. Positive Identification of Vipers**
 
-E-13\. This snake group has developed a highly sophisticated means for delivering venom. They have long, hollow fangs that perform like hypodermic needles. They deliver their venom deep into the wound.
+This snake group has developed a highly sophisticated means for delivering venom. They have long, hollow fangs that perform like hypodermic needles. They deliver their venom deep into the wound.
 
-E-14\. The fangs of this group of snakes are movable. These snakes fold their fangs into the roof of their mouths. When they strike, their fangs come forward, stabbing the victim. The snake controls the movement of its fangs; fang movement is not automatic. The venom is usually hemotoxic. However, there are several species that have large quantities of neurotoxic elements, thus making them even more dangerous. The vipers are responsible for many human fatalities around the world.
+The fangs of this group of snakes are movable. These snakes fold their fangs into the roof of their mouths. When they strike, their fangs come forward, stabbing the victim. The snake controls the movement of its fangs; fang movement is not automatic. The venom is usually hemotoxic. However, there are several species that have large quantities of neurotoxic elements, thus making them even more dangerous. The vipers are responsible for many human fatalities around the world.
 
 **CROTALIDAE**
 
-E-15\. The crotalids, or pit vipers ([Figure E-5](#fige-5)), may be either slender or thick-bodied. Their heads are usually much wider than their necks. These snakes take their name from the deep pit located between the eye and the nostril. They are usually brown with dark blotches but some kinds are green.
+The crotalids, or pit vipers ([Figure E-5](#fige-5)), may be either slender or thick-bodied. Their heads are usually much wider than their necks. These snakes take their name from the deep pit located between the eye and the nostril. They are usually brown with dark blotches but some kinds are green.
 
 <a name="fige-5"></a>![Figure E-5 Positive Identification of Pit Vipers](image272.jpg)
 
 **Figure E-5 Positive Identification of Pit Vipers**
 
-E-16\. Rattlesnakes, copperheads, cottonmouths, and several species of dangerous snakes from Central and South America, Asia, China, and India fall into the pit viper group. The pit is a highly sensitive organ capable of picking up the slightest temperature variance. Most pit vipers are nocturnal. They hunt for food at night with the aid of these specialized pits that let them locate prey in total darkness. Rattlesnakes are the only pit vipers that possess a rattle at the tip of the tail.
+Rattlesnakes, copperheads, cottonmouths, and several species of dangerous snakes from Central and South America, Asia, China, and India fall into the pit viper group. The pit is a highly sensitive organ capable of picking up the slightest temperature variance. Most pit vipers are nocturnal. They hunt for food at night with the aid of these specialized pits that let them locate prey in total darkness. Rattlesnakes are the only pit vipers that possess a rattle at the tip of the tail.
 
-E-17\. India has about twelve species of these snakes. You find them in trees or on the ground in all types of terrain. The tree snakes are slender; the ground snakes are heavy-bodied. All are dangerous.
+India has about twelve species of these snakes. You find them in trees or on the ground in all types of terrain. The tree snakes are slender; the ground snakes are heavy-bodied. All are dangerous.
 
-E-18\. China has a pit viper similar to the cottonmouth found in North America. You find it in the rocky areas of the remote mountains of South China. It reaches a length of 1.4 meters  
+China has a pit viper similar to the cottonmouth found in North America. You find it in the rocky areas of the remote mountains of South China. It reaches a length of 1.4 meters  
 (5 feet) but is not vicious unless irritated. You can also find a small pit viper, about 45 centimeters (18 inches) long, on the plains of eastern China. It is too small to be dangerous to a man wearing shoes.
 
-E-19\. There are about twenty-seven species of rattlesnakes in the United States and Mexico. They vary in color and may or may not have spots or blotches. Some are small but others, such as the diamondbacks, may grow to 2.5 meters (8 feet) long.
+There are about twenty-seven species of rattlesnakes in the United States and Mexico. They vary in color and may or may not have spots or blotches. Some are small but others, such as the diamondbacks, may grow to 2.5 meters (8 feet) long.
 
-E-20\. There are five kinds of rattlesnakes in Central and South America, but only the tropical rattlesnake is widely distributed. The rattle on the tip of the tail is sufficient identification for a rattlesnake.
+There are five kinds of rattlesnakes in Central and South America, but only the tropical rattlesnake is widely distributed. The rattle on the tip of the tail is sufficient identification for a rattlesnake.
 
-E-21\. Most will try to escape without a fight when approached, but there is always a chance one will strike at a passerby. They do not always give a warning; they may strike first and rattle afterwards or not at all.
+Most will try to escape without a fight when approached, but there is always a chance one will strike at a passerby. They do not always give a warning; they may strike first and rattle afterwards or not at all.
 
-E-22\. The genus _Trimeresurus_ is a subgroup of the crotalidae. These are Asian pit vipers. They are normally tree-loving snakes, but some live on the ground. They basically have the same characteristics of the crotalidae—slender build and very dangerous. Their bites usually are on the upper extremities—head, neck, and shoulders. Their venom is largely hemotoxic.
+The genus _Trimeresurus_ is a subgroup of the crotalidae. These are Asian pit vipers. They are normally tree-loving snakes, but some live on the ground. They basically have the same characteristics of the crotalidae—slender build and very dangerous. Their bites usually are on the upper extremities—head, neck, and shoulders. Their venom is largely hemotoxic.
 
 **ELAPIDAE**
 
-E-23\. Elapidae are a group of highly dangerous snakes with a powerful neurotoxic venom that affects the nervous system, causing respiratory paralysis. Included in this family are coral snakes, cobras, mambas, and all the Australian venomous snakes. The coral snake is small and has caused human fatalities. The Australian death adder, tiger, taipan, and king brown snakes are among the most venomous in the world, causing many human fatalities.
+Elapidae are a group of highly dangerous snakes with a powerful neurotoxic venom that affects the nervous system, causing respiratory paralysis. Included in this family are coral snakes, cobras, mambas, and all the Australian venomous snakes. The coral snake is small and has caused human fatalities. The Australian death adder, tiger, taipan, and king brown snakes are among the most venomous in the world, causing many human fatalities.
 
-E-24\. Only by examining a dead snake can you positively determine if it is a cobra or a near relative ([Figure E-6](#fige-6)). On cobras, kraits, and coral snakes, the third scale on the upper lip touches both the nostril scale and the eye. The krait also has a row of enlarged scales down its ridged back.
+Only by examining a dead snake can you positively determine if it is a cobra or a near relative ([Figure E-6](#fige-6)). On cobras, kraits, and coral snakes, the third scale on the upper lip touches both the nostril scale and the eye. The krait also has a row of enlarged scales down its ridged back.
 
 <a name="fige-6"></a>![Figure E-6\. Positive Identification of Cobras, Kraits,and Coral Snakes](image273.jpg)
 
@@ -136,27 +129,27 @@ E-25\. You can find the cobras of Africa and the Near East in almost any habitat
 
 **LATICAUDIDAE AND HYDROPHIDAE**
 
-E-26\. A subfamily of elapidae, these snakes are specialized in that they found a better environment in the oceans. Why they are in the oceans is not clear to scientists.
+A subfamily of elapidae, these snakes are specialized in that they found a better environment in the oceans. Why they are in the oceans is not clear to scientists.
 
-E-27\. Sea snakes differ in appearance from other snakes in that they have an oarlike tail to aid in swimming. Some species of sea  
+Sea snakes differ in appearance from other snakes in that they have an oarlike tail to aid in swimming. Some species of sea  
 nakes have venom several times more toxic than the cobra's. Because of their marine environment, sea snakes seldom come in contact with humans. The exceptions are fisherman who capture these dangerous snakes in fishnets and scuba divers who swim in waters where sea snakes are found.
 
-E-28\. There are many species of sea snakes. They vary greatly in color and shape. Their scales distinguish them from eels that have no scales.
+There are many species of sea snakes. They vary greatly in color and shape. Their scales distinguish them from eels that have no scales.
 
-E-29\. Sea snakes occur in salt water along the coasts throughout the Pacific. There are also sea snakes on the east coast of  
+Sea snakes occur in salt water along the coasts throughout the Pacific. There are also sea snakes on the east coast of  
 Africa and in the Persian Gulf. There are no sea snakes in the Atlantic Ocean.
 
-E-30\. There is no need to fear sea snakes. They have not been known to attack a man swimming. Fishermen occasionally get bitten by a sea snake caught in a net. The bite is dangerous.
+There is no need to fear sea snakes. They have not been known to attack a man swimming. Fishermen occasionally get bitten by a sea snake caught in a net. The bite is dangerous.
 
 **COLUBRIDAE**
 
-E-31\. The colubridae is the largest group of snakes worldwide. In this family there are species that are rear-fanged; however, most are completely harmless to man. They have a venom-producing gland and enlarged, grooved rear fangs that allow venom to flow into the wound. The inefficient venom apparatus and the specialized venom is effective on cold-blooded animals (such as frogs and lizards) but not considered a threat to human life. However, the boomslang and the twig snake of Africa have caused human deaths.
+The colubridae is the largest group of snakes worldwide. In this family there are species that are rear-fanged; however, most are completely harmless to man. They have a venom-producing gland and enlarged, grooved rear fangs that allow venom to flow into the wound. The inefficient venom apparatus and the specialized venom is effective on cold-blooded animals (such as frogs and lizards) but not considered a threat to human life. However, the boomslang and the twig snake of Africa have caused human deaths.
 
 ### LIZARDS
 
-E-32\. There is little to fear from lizards as long as you follow the same precautions as for avoiding snakebite. There are only two poisonous lizards: the Gila monster and the Mexican beaded lizard. The venom of both these lizards is neurotoxic. The two lizards are in the same family, and both are slow moving with a docile nature.
+There is little to fear from lizards as long as you follow the same precautions as for avoiding snakebite. There are only two poisonous lizards: the Gila monster and the Mexican beaded lizard. The venom of both these lizards is neurotoxic. The two lizards are in the same family, and both are slow moving with a docile nature.
 
-E-33\. The komodo dragon _(Varanus komodoensis),_ although not poisonous, can be dangerous due to its large size. These lizards can reach lengths of 3 meters (10 feet) and weigh over 115 kilograms (253 pounds). Do not try to capture this lizard.
+The komodo dragon _(Varanus komodoensis),_ although not poisonous, can be dangerous due to its large size. These lizards can reach lengths of 3 meters (10 feet) and weigh over 115 kilograms (253 pounds). Do not try to capture this lizard.
 
 * * *
 
@@ -164,11 +157,7 @@ E-33\. The komodo dragon _(Varanus komodoensis),_ although not poisonous, can be
 
 * * *
 
-<center>
-
 ![](image274.jpg)
-
-</center>
 
 **American copperhead  
 **_Agkistrodon contortrix_
@@ -204,11 +193,7 @@ E-33\. The komodo dragon _(Varanus komodoensis),_ although not poisonous, can be
 
 **Distribution:** Northern South America and parts of Central America, including Nicaragua, Costa Rica, Panama, Trinidad, and Brazil ([Figure E-8](#fige-8)).
 
-<center>
-
 ![](image277.jpg)
-
-</center>
 
 <a name="fige-8"></a>![Figure E-8\. Bushmaster Habitat](image278.jpg)
 
@@ -403,11 +388,7 @@ _Crotalus atrox_
 
 **Distribution:** Southwest United States, particularly southeast California, Oklahoma, Texas, New Mexico, and Arizona ([Figure E-17](#fige-17)).
 
-<center>
-
 ![](image297.jpg)
-
-</center>
 
 <a name="fige-17"></a>![Figure E-17\. Western Diamondback Rattlesnake Habitat](image298.jpg)
 
@@ -419,11 +400,7 @@ _Crotalus atrox_
 
 * * *
 
-<center>
-
 ![](image299.jpg)
-
-</center>
 
 **Common adder**  
 _Vipera berus_  
@@ -459,11 +436,7 @@ _Vipera ammodytes_
 
 **Distribution:** Italy, Yugoslavia, northern Albania, and Romania ([Figure E-19](#fige-19)).
 
-<center>
-
 ![](image302.jpg)
-
-</center>
 
 <a name="fige-19"></a>![Figure E-19\. Long-Nosed Adder Habitat](image303.jpg)
 
@@ -493,14 +466,10 @@ _Agkistrodon halys_
 
 **Figure E-20\. Pallas' Viper Habitat**
 
-<center>
-
 * * *
 
 ![](image307.jpg)  
 <font size="2">JOHN H. TASHJIAN/BÖTEJE FLARDH</font>
-
-</center>
 
 **Ursini's viper**  
 _Vipera ursinii_  
@@ -525,12 +494,8 @@ _Vipera ursinii_
 
 * * *
 
-<center>
-
 ![](image309.jpg)  
 <font size="2">JOHN H. TASHJIAN/CALIFORNIA ACADEMY OF SCIENCES</font>
-
-</center>
 
 **Boomslang**  
 _Dispholidus typus_  
@@ -713,11 +678,7 @@ _Cerastes cerastes_
 
 **Distribution:** Most of northern Africa and the Mideast ([Figure E-30](#fige-30)).
 
-<center>
-
 ![](image326.jpg)
-
-</center>
 
 <a name="fige-30"></a>![Figure E-30\. Horned Desert Viper Habitat](image327.jpg)
 
@@ -824,11 +785,7 @@ _Eristicophis macmahonii_
 
 **Distribution:** West Pakistan, Iran, and Afghanistan ([Figure E-35](#fige-35)).
 
-<center>
-
 ![](image337.jpg)
-
-</center>
 
 <a name="fige-35"></a>![Figure E-35\. McMahon's Viper Habitat](image338.jpg)
 
@@ -851,11 +808,7 @@ _Atracaspis microlepidota_
 
 **Distribution:** Most of sub-Saharan Africa ([Figure E-36](#fige-36)).
 
-<center>
-
 ![](image340.jpg)
-
-</center>
 
 <a name="fige-36"></a>![Figure E-36\. Mole Viper or Burrowing Viper Habitat](image341.jpg)
 
@@ -920,11 +873,7 @@ _Bitis nasicornis_
 
 **Distribution:** Equatorial Africa ([Figure E-39](#fige-39)).
 
-<center>
-
 ![](image347.jpg)
-
-</center>
 
 <a name="fige-39"></a>![Figure E-39\. Rhinoceros Viper or River Jack Habitat](image348.jpg)
 
@@ -968,24 +917,16 @@ _Cerastes vipera_
 
 **Distribution:** Most of northern Africa and southwest Asia ([Figure E-41](#fige-41)).
 
-<center>
-
 ![](image352.jpg)
-
-</center>
 
 <a name="fige-41"></a>![Figure E-41\. Sand Viper Habitat](image353.jpg)
 
 **Figure E-41\. Sand Viper Habitat**
 
-<center>
-
 * * *
 
 ![](image354.jpg)  
 <font size="2">JOHN H. TASHJIAN/FORT WORTH ZOO</font>
-
-</center>
 
 **Saw-scaled viper**  
 _Echis carinatus_  
@@ -1000,11 +941,7 @@ _Echis carinatus_
 
 **Distribution:** Asia and Africa, including Syria, India, Iraq, Iran, Saudi Arabia, Pakistan, Jordan, Lebanon, Sri Lanka, Algeria, Egypt, and Israel ([Figure E-42](#fige-42)).
 
-<center>
-
 ![](image355.jpg)
-
-</center>
 
 <a name="fige-42"></a>![Figure E-42\. Saw-Scaled Viper Habitat](image356.jpg)
 
@@ -1141,14 +1078,9 @@ _Laticauda colubrina_
 
 **Figure E-48\. Banded Sea Snake Habitat**
 
-<center>
-
 * * *
 
 ![](image368.jpg)  
-<font size="2">WAIKIKI AQUARIUM</font>
-
-</center>
 
 **Yellow-bellied sea snake**  
 _Pelamis platurus_  
@@ -1161,11 +1093,7 @@ _Pelamis platurus_
 
 **Distribution:** Throughout the Pacific Ocean from many of the Pacific islands to Hawaii and to the coast of Central and South America ([Figure E-49](#fige-49)).
 
-<center>
-
 ![](image369.jpg)
-
-</center>
 
 <a name="fige-49"></a>![Figure E-49\. Yellow-Bellied Sea Snake Habitat](image370.jpg)
 
@@ -1196,14 +1124,10 @@ _Heloderma suspectum_
 
 **Figure E-50\. Gila Monster Habitat**
 
-<center>
-
 * * *
 
 ![](image373.jpg)  
 <font size="2">JOHN H. TASHJIAN/FORT WORTH ZOO</font>
-
-</center>
 
 **Mexican beaded lizard**  
 _Heloderma horridum_  
