@@ -48,7 +48,7 @@ class MarkdownRecyclerAdapter(val text: BufferedSource, val imageWidth: Int, val
     }
 
     override fun onBindViewHolder(holder: TextContentViewHolder, position: Int) {
-        setTextViewHTML(holder.itemView as TextView, Processor.process(list.get(position)))
+        setTextViewHTML(holder.itemView as TextView, Processor.process(list[position]))
     }
 
     override fun getItemCount(): Int {
