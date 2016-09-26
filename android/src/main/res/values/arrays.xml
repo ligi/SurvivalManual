@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="daynight_options">
+        <item>@string/auto</item>
+        <item>@string/night</item>
+        <item>@string/day</item>
+    </string-array>
+</resources>

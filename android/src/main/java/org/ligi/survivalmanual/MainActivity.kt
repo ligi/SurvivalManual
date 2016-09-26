@@ -1,5 +1,7 @@
 package org.ligi.survivalmanual
 
+import android.content.DialogInterface
+import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.widget.DrawerLayout
@@ -65,20 +67,48 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_help) {
-            val textView = TextView(this)
-            val helpText = getString(R.string.help_text).replace("\$VERSION", BuildConfig.VERSION_NAME)
-            textView.text = Html.fromHtml(helpText)
-            textView.movementMethod = LinkMovementMethod.getInstance()
-            val padding = resources.getDimensionPixelSize(R.dimen.help_padding)
-            textView.setPadding(padding, padding, padding, padding)
-            AlertDialog.Builder(this)
-                    .setTitle(R.string.help_title)
-                    .setView(textView)
-                    .setPositiveButton(android.R.string.ok, null)
-                    .show()
-            return true
+        when (item.itemId) {
+            R.id.menu_help -> {
+                val textView = TextView(this)
+                val helpText = getString(R.string.help_text).replace("\$VERSION", BuildConfig.VERSION_NAME)
+                textView.text = Html.fromHtml(helpText)
+                textView.movementMethod = LinkMovementMethod.getInstance()
+                val padding = resources.getDimensionPixelSize(R.dimen.help_padding)
+                textView.setPadding(padding, padding, padding, padding)
+                AlertDialog.Builder(this)
+                        .setTitle(R.string.help_title)
+                        .setView(textView)
+                        .setPositiveButton(android.R.string.ok, null)
+                        .show()
+                return true
+            }
+
+            R.id.menu_daynight -> {
+                var newNightMode: Int? = null
+
+                AlertDialog.Builder(this)
+                        .setTitle(R.string.daynight)
+
+                        .setSingleChoiceItems(R.array.daynight_options, State.dayNightMode, { dialogInterface: DialogInterface, i: Int ->
+                            newNightMode = i
+                        })
+                        .setPositiveButton(android.R.string.ok, { dialogInterface: DialogInterface, i: Int ->
+                            if (newNightMode != null) {
+                                State.dayNightMode = newNightMode!!
+                                State.applyDayNightMode()
+                                if (Build.VERSION.SDK_INT >= 11) {
+                                    (this@MainActivity).recreate()
+                                }
+                            }
+                        })
+                        .setNegativeButton(android.R.string.cancel, null)
+                        .show()
+
+
+                return true
+            }
         }
+
         return drawerToggle.onOptionsItemSelected(item)
     }
 

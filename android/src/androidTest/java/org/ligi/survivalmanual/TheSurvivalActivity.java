@@ -3,6 +3,7 @@ package org.ligi.survivalmanual;
 import android.os.SystemClock;
 import android.support.test.espresso.contrib.DrawerActions;
 import android.support.test.rule.ActivityTestRule;
+import android.support.v7.app.AppCompatDelegate;
 import org.junit.Rule;
 import org.junit.Test;
 import static android.support.test.espresso.Espresso.onView;
@@ -36,6 +37,71 @@ public class TheSurvivalActivity {
     }
 
     @Test
+    public void thatDayNightOpens() {
+        onView(withId(R.id.menu_daynight)).perform(click());
+
+        onView(withText(R.string.daynight)).check(matches(isDisplayed()));
+        takeScreenShot(activityTestRule.getActivity(), "daynight_dialog");
+    }
+
+    @Test
+    public void thatDayNightAutoIsSelectable() {
+
+        onView(withId(R.id.menu_daynight)).perform(click());
+
+        onView(withText(R.string.auto)).perform(click());
+
+        onView(withText(android.R.string.ok)).perform(click());
+
+        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_AUTO);
+        assertThat(State.INSTANCE.getDayNightMode()).isEqualTo(0);
+        takeScreenShot(activityTestRule.getActivity(), "daynight_auto");
+    }
+
+    @Test
+    public void thatNightIsSelectable() {
+
+        onView(withId(R.id.menu_daynight)).perform(click());
+
+        onView(withText(R.string.night)).perform(click());
+
+        onView(withText(android.R.string.ok)).perform(click());
+
+        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_YES);
+        assertThat(State.INSTANCE.getDayNightMode()).isEqualTo(1);
+        takeScreenShot(activityTestRule.getActivity(), "daynight_night");
+    }
+
+    @Test
+    public void thatDayIsSelectable() {
+
+        onView(withId(R.id.menu_daynight)).perform(click());
+
+        onView(withText(R.string.day)).perform(click());
+
+        onView(withText(android.R.string.ok)).perform(click());
+
+        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_NO);
+        assertThat(State.INSTANCE.getDayNightMode()).isEqualTo(2);
+        takeScreenShot(activityTestRule.getActivity(), "daynight_day");
+    }
+
+    @Test
+    public void thatDayNightCancelWorks() {
+        thatNightIsSelectable();
+
+        onView(withId(R.id.menu_daynight)).perform(click());
+
+        onView(withText(R.string.day)).perform(click());
+
+        onView(withText(android.R.string.cancel)).perform(click());
+
+        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_YES);
+        assertThat(State.INSTANCE.getDayNightMode()).isEqualTo(1);
+    }
+
+
+    @Test
     public void testThatHelpContainsVersion() {
         thatThatHelpOpens();
 
@@ -44,8 +110,8 @@ public class TheSurvivalActivity {
         takeScreenShot(activityTestRule.getActivity(), "help");
     }
 
-    /* TODO bring back this test - was flaky  - hanging when opening the drawer
-*/
+    /* TODO remove the need for the sleeps - but without the test was flaky */
+
     @Test
     public void testWeCanOpenAllTopics() {
         for (final Integer integer : NavigationDefinitions.INSTANCE.getMenu2htmlMap().keySet()) {

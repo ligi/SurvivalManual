@@ -3,6 +3,7 @@
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
     <string name="introduction">Introduction</string>
+    <string name="daynight">Day/Night</string>
     <string name="psychology">Psychology</string>
     <string name="planning_and_kits">Planning and Kits</string>
     <string name="basic_medicine">Basic Medicine</string>
@@ -43,4 +44,7 @@
         This app uses the android-support-libraries, <a href="http://kotlinlang.org">Kotlin</a> and <a href="https://github.com/MichaelRocks/bimap/">BiMap</a>
         ]]>
     </string>
+    <string name="auto">Automatic</string>
+    <string name="night">Night</string>
+    <string name="day">Day</string>
 </resources>
