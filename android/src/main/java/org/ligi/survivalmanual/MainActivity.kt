@@ -2,6 +2,7 @@ package org.ligi.survivalmanual
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -116,6 +117,14 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent.createChooser(intent, null))
                 return true
             }
+
+            R.id.menu_rate -> {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID);
+                startActivity(intent)
+                return true
+            }
+
         }
 
         return drawerToggle.onOptionsItemSelected(item)

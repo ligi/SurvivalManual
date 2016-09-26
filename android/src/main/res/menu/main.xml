@@ -19,4 +19,9 @@
             android:title="@string/share"
             app:showAsAction="ifRoom"/>
 
+    <item
+            android:id="@+id/menu_rate"
+            android:title="@string/rate"
+            android:icon="@drawable/ic_toggle_star"
+            app:showAsAction="ifRoom"/>
 </menu>
