@@ -13,4 +13,10 @@
             android:title="@string/daynight"
             app:showAsAction="ifRoom"/>
 
+    <item
+            android:id="@+id/menu_share"
+            android:icon="@drawable/ic_social_share"
+            android:title="@string/share"
+            app:showAsAction="ifRoom"/>
+
 </menu>

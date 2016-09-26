@@ -1,6 +1,7 @@
 package org.ligi.survivalmanual
 
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -97,7 +98,7 @@ class MainActivity : AppCompatActivity() {
                                 State.dayNightMode = newNightMode!!
                                 State.applyDayNightMode()
                                 if (Build.VERSION.SDK_INT >= 11) {
-                                    (this@MainActivity).recreate()
+                                    recreate()
                                 }
                             }
                         })
@@ -105,6 +106,14 @@ class MainActivity : AppCompatActivity() {
                         .show()
 
 
+                return true
+            }
+
+            R.id.menu_share -> {
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)
+                intent.type = "text/plain"
+                startActivity(Intent.createChooser(intent, null))
                 return true
             }
         }
