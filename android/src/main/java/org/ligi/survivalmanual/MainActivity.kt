@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.addDrawerListener(drawerToggle)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
         val navigationView = findViewById(R.id.navigationView) as NavigationView
 
         navigationView.setNavigationItemSelectedListener { item ->
@@ -42,17 +41,28 @@ class MainActivity : AppCompatActivity() {
 
         recycler.layoutManager = LinearLayoutManager(this)
 
-        processMenuId(R.id.menu_intro)
+        class RememberPositionOnScroll : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+                State.lastScroll = (recycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+                super.onScrolled(recyclerView, dx, dy)
+            }
+        }
+
+        recycler.addOnScrollListener(RememberPositionOnScroll())
 
         SnackEngage.from(this).withSnack(DefaultRateSnack()).build().engageWhenAppropriate()
 
+        recycler.post {
+            processMenuId(NavigationDefinitions.getMenuResFromURL(State.lastVisitedSite)!!)
+            recycler.scrollToPosition(State.lastScroll)
+        }
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.menu_help) {
@@ -74,6 +84,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun processMenuId(menuId: Int) {
         val urlByMenuId = getURLByMenuId(menuId)
+        State.lastVisitedSite = NavigationDefinitions.menu2htmlMap[menuId]!!
         val imageWidth = Math.min(recycler.width, recycler.height)
         recycler.adapter = MarkdownRecyclerAdapter(Okio.buffer(Okio.source(assets.open(urlByMenuId))), imageWidth, {
             val menuId = NavigationDefinitions.getMenuResFromURL(it)
