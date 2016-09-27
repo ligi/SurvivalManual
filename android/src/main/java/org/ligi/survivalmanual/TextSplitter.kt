@@ -1,23 +1,18 @@
 package org.ligi.survivalmanual
 
 import java.io.InputStream
-import java.util.*
 
 object TextSplitter {
     fun split(text: InputStream): List<String> {
 
-        val list = ArrayList<String>()
-        var current = ""
+        val list = mutableListOf("")
 
         text.bufferedReader().lineSequence().forEach {
             if (it.startsWith("**") || it.startsWith("###")) {
-                list.add(current)
-                current = ""
+                list.add("")
             }
-            current += it + "\n"
+            list[list.lastIndex] += it + "\n"
         }
-
-        list.add(current)
 
         return list
     }
