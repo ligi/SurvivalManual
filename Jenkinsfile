@@ -31,11 +31,11 @@ node {
  stage 'test'
   try {
    sh "./gradlew clean test${flavorCombination}DebugUnitTest"
-   step([$class: 'JUnitResultArchiver', testResults: 'android/build/test-results/*/*.xml'])
   } catch(err) {
    currentBuild.result = FAILURE
   } finally {
-   publishHTML(target:[allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'android/build/reports/tests/', reportFiles: "*/index.html", reportName: 'UnitTest'])
+   step([$class: 'JUnitResultArchiver', testResults: 'android/build/test-results/*/*/*.xml'])
+   publishHTML(target:[allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'android/build/reports/tests/', reportFiles: "*/*/index.html", reportName: 'UnitTest'])
   }
   
  stage 'assemble'
