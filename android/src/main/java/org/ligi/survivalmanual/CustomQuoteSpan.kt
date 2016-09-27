@@ -11,12 +11,12 @@ import android.text.style.LineBackgroundSpan
 /**
  * android.text.style.QuoteSpan hard-codes the strip color and gap. :(
  */
-class CustomQuoteSpan( val context: Context) : LeadingMarginSpan, LineBackgroundSpan {
+class CustomQuoteSpan(val context: Context) : LeadingMarginSpan, LineBackgroundSpan {
 
     val size by lazy { context.resources.getDimension(R.dimen.blockquote_width) }
 
     override fun getLeadingMargin(first: Boolean): Int {
-        return (size*2).toInt()
+        return (size * 2).toInt()
     }
 
     override fun drawLeadingMargin(c: Canvas, p: Paint, x: Int, dir: Int, top: Int, baseline: Int, bottom: Int,
@@ -25,7 +25,7 @@ class CustomQuoteSpan( val context: Context) : LeadingMarginSpan, LineBackground
         val paintColor = p.color
 
         p.style = Paint.Style.FILL
-        p.color = ContextCompat.getColor(context,R.color.colorPrimaryDark);
+        p.color = ContextCompat.getColor(context, R.color.colorPrimaryDark);
 
         c.drawRect(x.toFloat(), top.toFloat(), x + dir * size, bottom.toFloat(), p)
 

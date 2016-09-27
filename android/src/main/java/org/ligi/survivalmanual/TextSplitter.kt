@@ -4,7 +4,7 @@ import okio.BufferedSource
 import java.util.*
 
 object TextSplitter {
-    fun split(text: BufferedSource) : List<String> {
+    fun split(text: BufferedSource): List<String> {
         val list = ArrayList<String>()
         var current = ""
 

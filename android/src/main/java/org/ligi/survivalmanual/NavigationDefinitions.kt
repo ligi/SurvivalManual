@@ -40,7 +40,7 @@ object NavigationDefinitions {
 
     val html2menu = HashBiMap.create(menu2htmlMap)
 
-    fun getMenuResFromURL(url: String): Int?{
+    fun getMenuResFromURL(url: String): Int? {
         return html2menu.inverse[url.split("#").first()]
     }
 
@@ -80,7 +80,7 @@ object NavigationDefinitions {
             R.id.menu_appendix_ropes -> return R.string.ropes_and_knots
         }
 
-        throw IllegalArgumentException("no String for menuId " + menuId +" " +  menu2htmlMap[menuId])
+        throw IllegalArgumentException("no String for menuId " + menuId + " " + menu2htmlMap[menuId])
     }
 
 }

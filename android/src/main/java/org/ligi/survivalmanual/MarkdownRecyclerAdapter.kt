@@ -25,7 +25,7 @@ class MarkdownRecyclerAdapter(val text: BufferedSource, val imageWidth: Int, val
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
 
-        val layoutParams =  LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
+        val layoutParams = LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
         val padding = parent.context.resources.getDimension(R.dimen.content_padding).toInt()
         layoutParams.setMargins(padding, 0, padding, 0)
 
