@@ -17,9 +17,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
-import okio.BufferedSource
+import java.io.InputStream
 
-class MarkdownRecyclerAdapter(val text: BufferedSource, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
+class MarkdownRecyclerAdapter(val text: InputStream, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
 
     val list = TextSplitter.split(text)
 

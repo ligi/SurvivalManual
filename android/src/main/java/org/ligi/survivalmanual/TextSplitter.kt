@@ -1,27 +1,23 @@
 package org.ligi.survivalmanual
 
-import okio.BufferedSource
+import java.io.InputStream
 import java.util.*
 
 object TextSplitter {
-    fun split(text: BufferedSource): List<String> {
+    fun split(text: InputStream): List<String> {
+
         val list = ArrayList<String>()
         var current = ""
 
-        var line = text.readUtf8Line()
-        while (line != null) {
-
-            if (line.startsWith("**") || line.startsWith("###")) {
+        text.bufferedReader().lineSequence().forEach {
+            if (it.startsWith("**") || it.startsWith("###")) {
                 list.add(current)
                 current = ""
             }
-            current += line + "\n"
-            line = text.readUtf8Line()
+            current+= it + "\n"
         }
 
-        if (!current.isEmpty()) {
-            list.add(current)
-        }
+        list.add(current)
 
         return list
     }

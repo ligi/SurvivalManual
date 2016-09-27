@@ -18,7 +18,6 @@ import android.text.method.LinkMovementMethod
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
-import okio.Okio
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 
@@ -137,13 +136,14 @@ class MainActivity : AppCompatActivity() {
         State.lastVisitedSite = NavigationDefinitions.menu2htmlMap[menuId]!!
         val totalWidthPadding = (resources.getDimension(R.dimen.content_padding) * 2).toInt()
         val imageWidth = Math.min(recycler.width - totalWidthPadding, recycler.height)
-        recycler.adapter = MarkdownRecyclerAdapter(Okio.buffer(Okio.source(assets.open(urlByMenuId))), imageWidth, {
+        val textInput = assets.open(urlByMenuId)
+        val onURLClick: (String) -> Unit = {
             val menuId = NavigationDefinitions.getMenuResFromURL(it)
             if (menuId != null) {
                 processMenuId(menuId)
             }
-
-        })
+        }
+        recycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth, onURLClick)
         supportActionBar?.setSubtitle(NavigationDefinitions.getTitleResById(menuId))
     }
 

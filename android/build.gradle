@@ -81,7 +81,6 @@ dependencies {
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:design:$support_version"
     compile 'es.nitaur.markdown:txtmark:0.16'
-    compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.chibatching:kotpref:1.4.0'
 
     androidTestCompile "com.android.support:support-annotations:$support_version"
