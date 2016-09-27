@@ -38,10 +38,10 @@ object NavigationDefinitions {
             R.id.menu_appendix_ropes to "g"
     )
 
-    val html2menu = HashBiMap.create(menu2htmlMap)
+    private val html2menu = HashBiMap.create(menu2htmlMap).inverse
 
     fun getMenuResFromURL(url: String): Int? {
-        return html2menu.inverse[url.split("#").first()]
+        return html2menu[url.split("#").first()]
     }
 
     fun getTitleResById(menuId: Int): Int {
