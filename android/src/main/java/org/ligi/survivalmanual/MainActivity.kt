@@ -135,7 +135,8 @@ class MainActivity : AppCompatActivity() {
     private fun processMenuId(menuId: Int) {
         val urlByMenuId = getURLByMenuId(menuId)
         State.lastVisitedSite = NavigationDefinitions.menu2htmlMap[menuId]!!
-        val imageWidth = Math.min(recycler.width, recycler.height)
+        val totalWidthPadding = (resources.getDimension(R.dimen.content_padding) * 2).toInt()
+        val imageWidth = Math.min(recycler.width - totalWidthPadding, recycler.height)
         recycler.adapter = MarkdownRecyclerAdapter(Okio.buffer(Okio.source(assets.open(urlByMenuId))), imageWidth, {
             val menuId = NavigationDefinitions.getMenuResFromURL(it)
             if (menuId != null) {

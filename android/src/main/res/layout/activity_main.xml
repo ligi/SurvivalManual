@@ -29,8 +29,6 @@
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v7.widget.RecyclerView
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:id="@+id/contentRecycler"
                 android:scrollbars="vertical"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"

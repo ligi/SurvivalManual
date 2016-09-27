@@ -4,6 +4,8 @@ import android.content.Context
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.RecyclerView.LayoutParams
+import android.support.v7.widget.RecyclerView.LayoutParams.WRAP_CONTENT
 import android.text.Html
 import android.text.Spannable
 import android.text.SpannableStringBuilder
@@ -17,12 +19,18 @@ import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
 import okio.BufferedSource
 
-class MarkdownRecyclerAdapter(val text: BufferedSource, val imageWidth: Int, val onURLClick : (url:String)->Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
+class MarkdownRecyclerAdapter(val text: BufferedSource, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
 
     val list = TextSplitter.split(text)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
+
+        val layoutParams =  LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
+        val padding = parent.context.resources.getDimension(R.dimen.content_padding).toInt()
+        layoutParams.setMargins(padding, 0, padding, 0)
+
         val textView = TextView(parent.context)
+        textView.layoutParams = layoutParams
         textView.movementMethod = LinkMovementMethod.getInstance()
         return TextContentViewHolder(textView)
     }

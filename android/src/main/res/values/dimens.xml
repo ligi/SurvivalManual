@@ -1,4 +1,5 @@
 <resources>
     <dimen name="help_padding">16dp</dimen>
+    <dimen name="content_padding">16dp</dimen>
     <dimen name="blockquote_width">8dp</dimen>
 </resources>
