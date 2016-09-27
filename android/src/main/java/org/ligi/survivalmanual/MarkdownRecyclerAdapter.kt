@@ -16,30 +16,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
 import okio.BufferedSource
-import java.util.*
 
 class MarkdownRecyclerAdapter(val text: BufferedSource, val imageWidth: Int, val onURLClick : (url:String)->Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
 
-    val list = ArrayList<String>()
-
-    init {
-        var current = ""
-
-        var line = text.readUtf8Line()
-        while (line != null) {
-
-            if (line.startsWith("**") || line.startsWith("###")) {
-                list.add(current)
-                current = ""
-            }
-            current += line + "\n"
-            line = text.readUtf8Line()
-        }
-
-        if (!current.isEmpty()) {
-            list.add(current)
-        }
-    }
+    val list = TextSplitter.split(text)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
         val textView = TextView(parent.context)
