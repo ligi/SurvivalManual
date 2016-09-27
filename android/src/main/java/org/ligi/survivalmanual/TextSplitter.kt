@@ -14,7 +14,7 @@ object TextSplitter {
                 list.add(current)
                 current = ""
             }
-            current+= it + "\n"
+            current += it + "\n"
         }
 
         list.add(current)
