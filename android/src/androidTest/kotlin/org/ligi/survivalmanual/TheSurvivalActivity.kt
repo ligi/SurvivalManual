@@ -9,8 +9,11 @@ import android.support.test.espresso.contrib.NavigationViewActions.navigateTo
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.rule.ActivityTestRule
 import android.support.v7.app.AppCompatDelegate
+import android.view.WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
+import android.view.WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
 import org.assertj.core.api.Assertions.assertThat
 import org.hamcrest.Matchers.containsString
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.ligi.survivalmanual.ScreenShotTaker.takeScreenShot
@@ -20,6 +23,11 @@ class TheSurvivalActivity {
 
     @get:Rule
     val activityTestRule = ActivityTestRule(MainActivity::class.java)
+
+    @Before
+    fun setUp() {
+        activityTestRule.activity.runOnUiThread { activityTestRule.activity.window.addFlags(FLAG_TURN_SCREEN_ON or FLAG_DISMISS_KEYGUARD) }
+    }
 
     @Test
     fun thatActivityShouldLaunch() {
