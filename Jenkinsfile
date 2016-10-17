@@ -1,5 +1,6 @@
 node {
- def flavorCombination='Prod'
+ def flavorCombination='ProdWithFirebase'
+ def config="-Pgms"
  
  stage 'checkout'
   checkout scm
@@ -8,7 +9,7 @@ node {
  stage 'UITest'
   lock('adb') {
    try {
-    sh "./gradlew clean spoon${flavorCombination}"
+    sh "./gradlew clean spoon${flavorCombination} ${config}"
    } catch(err) {
     currentBuild.result = FAILURE
    } finally {
@@ -39,7 +40,7 @@ node {
   }
   
  stage 'assemble'
-  sh "./gradlew clean assemble${flavorCombination}Release"
+  sh "./gradlew clean assemble${flavorCombination}Release ${config}"
   archive 'android/build/outputs/apk/*'
   archive 'android/build/outputs/mapping/*/release/mapping.txt'
      

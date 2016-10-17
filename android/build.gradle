@@ -1,9 +1,3 @@
-allprojects {
-    repositories {
-        jcenter()
-    }
-}
-
 apply plugin: 'android-sdk-manager'
 apply plugin: 'com.android.application'
 apply plugin: 'spoon'
@@ -32,9 +26,18 @@ android {
         }
     }
 
-    flavorDimensions "build"
+    flavorDimensions "build","fire"
 
     productFlavors {
+
+        withFirebase {
+            dimension "fire"
+        }
+
+        noFirebase {
+            dimension "fire"
+        }
+
         dev {
             dimension "build"
             minSdkVersion 21
@@ -101,8 +104,12 @@ dependencies {
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
     androidTestCompile 'com.jraska:falcon-spoon-compat:1.0.3'
 
-
     testCompile 'com.squareup.assertj:assertj-android:1.1.1'
     testCompile "com.android.support:support-annotations:$support_version"
 
+    withFirebaseCompile 'com.google.firebase:firebase-core:9.6.1'
+}
+
+if (hasProperty("gms")) {
+    apply plugin: 'com.google.gms.google-services'
 }
