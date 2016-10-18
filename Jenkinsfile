@@ -5,6 +5,7 @@ node {
  stage 'checkout'
   checkout scm
   sh "git submodule update --init"
+  sh "git-crypt unlock"
   
  stage 'UITest'
   lock('adb') {
