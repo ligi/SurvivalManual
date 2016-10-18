@@ -13,8 +13,8 @@ android {
         applicationId "org.ligi.survivalmanual"
         minSdkVersion 10
         targetSdkVersion 24
-        versionCode 15
-        versionName "1.5"
+        versionCode 16
+        versionName "1.6"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         archivesBaseName = "SurvivalManual-$versionName"
