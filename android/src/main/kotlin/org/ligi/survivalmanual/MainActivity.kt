@@ -1,10 +1,14 @@
 package org.ligi.survivalmanual
 
+import android.annotation.TargetApi
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.print.PrintAttributes
+import android.print.PrintManager
 import android.support.design.widget.NavigationView
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
@@ -15,9 +19,14 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.text.Html
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.TextView
+import com.github.rjeschke.txtmark.Processor
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 
@@ -27,6 +36,9 @@ class MainActivity : AppCompatActivity() {
 
     private val drawerLayout by lazy { findViewById(R.id.drawer_layout) as DrawerLayout }
     private val drawerToggle by lazy { ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close) }
+
+    var webView: WebView? = null
+    var currentUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -123,20 +135,56 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.data = Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID);
                 startActivity(intent)
+
                 return true
             }
+
+            R.id.menu_print -> {
+                val newWebView = WebView(this@MainActivity)
+                newWebView.setWebViewClient(object : WebViewClient() {
+                    override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                        return false
+                    }
+
+                    override fun onPageFinished(view: WebView, url: String) {
+                        Log.i("", "page finished loading " + url)
+                        createWebPrintJob(view)
+                        webView = null
+                    }
+                })
+
+
+                val htmlDocument = Processor.process(assets.open(currentUrl).reader().readText())
+                newWebView.loadDataWithBaseURL("file:///android_asset/md/", htmlDocument, "text/HTML", "UTF-8", null)
+
+                webView = newWebView
+            }
+
 
         }
 
         return drawerToggle.onOptionsItemSelected(item)
     }
 
+    @TargetApi(19)
+    private fun createWebPrintJob(webView: WebView) {
+        val printManager = getSystemService(Context.PRINT_SERVICE) as PrintManager
+        val printAdapter = webView.createPrintDocumentAdapter()
+        val jobName = getString(R.string.app_name) + " Document"
+        printManager.print(jobName, printAdapter, PrintAttributes.Builder().build())
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        menu.findItem(R.id.menu_print).isVisible = Build.VERSION.SDK_INT >= 19
+        return super.onPrepareOptionsMenu(menu)
+    }
+
     private fun processMenuId(menuId: Int) {
-        val urlByMenuId = getURLByMenuId(menuId)
+        currentUrl = getURLByMenuId(menuId)
         State.lastVisitedSite = NavigationDefinitions.menu2htmlMap[menuId]!!
         val totalWidthPadding = (resources.getDimension(R.dimen.content_padding) * 2).toInt()
         val imageWidth = Math.min(recycler.width - totalWidthPadding, recycler.height)
-        val textInput = assets.open(urlByMenuId)
+        val textInput = assets.open(currentUrl)
         val onURLClick: (String) -> Unit = {
             val menuId = NavigationDefinitions.getMenuResFromURL(it)
             if (menuId != null) {
