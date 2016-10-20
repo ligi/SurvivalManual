@@ -6,13 +6,13 @@ apply plugin: 'de.mobilej.unmock'
 apply plugin: 'com.github.ben-manes.versions'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 25
+    buildToolsVersion "25"
 
     defaultConfig {
         applicationId "org.ligi.survivalmanual"
         minSdkVersion 10
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 16
         versionName "1.6"
         vectorDrawables.useSupportLibrary = true
