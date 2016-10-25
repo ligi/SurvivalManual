@@ -1,7 +1,5 @@
 package org.ligi.survivalmanual
 
-import io.michaelrocks.bimap.HashBiMap
-
 object NavigationDefinitions {
 
     val menu2htmlMap = mapOf(
@@ -38,7 +36,7 @@ object NavigationDefinitions {
             R.id.menu_appendix_ropes to "g"
     )
 
-    private val html2menu = HashBiMap.create(menu2htmlMap).inverse
+    private val html2menu = menu2htmlMap.entries.associate { it.value to it .key }
 
     fun getMenuResFromURL(url: String) = html2menu[url.split("#").first()]
 

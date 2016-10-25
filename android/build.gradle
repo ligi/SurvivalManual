@@ -82,7 +82,6 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-runtime:$kotlin_version"
-    compile 'io.michaelrocks:bimap:1.0.2'
     compile 'org.ligi:snackengage:0.5'
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:design:$support_version"
