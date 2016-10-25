@@ -19,7 +19,6 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.text.Html
 import android.text.method.LinkMovementMethod
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebResourceRequest
@@ -81,89 +80,82 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.menu_help -> {
-                val textView = TextView(this)
-                val helpText = getString(R.string.help_text).replace("\$VERSION", BuildConfig.VERSION_NAME)
-                textView.text = Html.fromHtml(helpText)
-                textView.movementMethod = LinkMovementMethod.getInstance()
-                val padding = resources.getDimensionPixelSize(R.dimen.help_padding)
-                textView.setPadding(padding, padding, padding, padding)
-                AlertDialog.Builder(this)
-                        .setTitle(R.string.help_title)
-                        .setView(textView)
-                        .setPositiveButton(android.R.string.ok, null)
-                        .show()
-                return true
-            }
-
-            R.id.menu_daynight -> {
-                var newNightMode: Int? = null
-
-                AlertDialog.Builder(this)
-                        .setTitle(R.string.daynight)
-
-                        .setSingleChoiceItems(R.array.daynight_options, State.dayNightMode, { dialogInterface: DialogInterface, i: Int ->
-                            newNightMode = i
-                        })
-                        .setPositiveButton(android.R.string.ok, { dialogInterface: DialogInterface, i: Int ->
-                            if (newNightMode != null) {
-                                State.dayNightMode = newNightMode!!
-                                State.applyDayNightMode()
-                                if (Build.VERSION.SDK_INT >= 11) {
-                                    recreate()
-                                }
-                            }
-                        })
-                        .setNegativeButton(android.R.string.cancel, null)
-                        .show()
-
-
-                return true
-            }
-
-            R.id.menu_share -> {
-                val intent = Intent(Intent.ACTION_SEND)
-                intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)
-                intent.type = "text/plain"
-                startActivity(Intent.createChooser(intent, null))
-                return true
-            }
-
-            R.id.menu_rate -> {
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID);
-                startActivity(intent)
-
-                return true
-            }
-
-            R.id.menu_print -> {
-                val newWebView = WebView(this@MainActivity)
-                newWebView.setWebViewClient(object : WebViewClient() {
-                    override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
-                        return false
-                    }
-
-                    override fun onPageFinished(view: WebView, url: String) {
-                        Log.i("", "page finished loading " + url)
-                        createWebPrintJob(view)
-                        webView = null
-                    }
-                })
-
-
-                val htmlDocument = Processor.process(assets.open(currentUrl).reader().readText())
-                newWebView.loadDataWithBaseURL("file:///android_asset/md/", htmlDocument, "text/HTML", "UTF-8", null)
-
-                webView = newWebView
-            }
-
-
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.menu_help -> {
+            val textView = TextView(this)
+            val helpText = getString(R.string.help_text).replace("\$VERSION", BuildConfig.VERSION_NAME)
+            textView.text = Html.fromHtml(helpText)
+            textView.movementMethod = LinkMovementMethod.getInstance()
+            val padding = resources.getDimensionPixelSize(R.dimen.help_padding)
+            textView.setPadding(padding, padding, padding, padding)
+            AlertDialog.Builder(this)
+                    .setTitle(R.string.help_title)
+                    .setView(textView)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show()
+            true
         }
 
-        return drawerToggle.onOptionsItemSelected(item)
+        R.id.menu_daynight -> {
+            var newNightMode: Int? = null
+
+            AlertDialog.Builder(this)
+                    .setTitle(R.string.daynight)
+
+                    .setSingleChoiceItems(R.array.daynight_options, State.dayNightMode, { dialogInterface: DialogInterface, i: Int ->
+                        newNightMode = i
+                    })
+                    .setPositiveButton(android.R.string.ok, { dialogInterface: DialogInterface, i: Int ->
+                        if (newNightMode != null) {
+                            State.dayNightMode = newNightMode!!
+                            State.applyDayNightMode()
+                            if (Build.VERSION.SDK_INT >= 11) {
+                                recreate()
+                            }
+                        }
+                    })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show()
+            true
+        }
+
+        R.id.menu_share -> {
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent, null))
+            true
+        }
+
+        R.id.menu_rate -> {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID);
+            startActivity(intent)
+
+            true
+        }
+
+        R.id.menu_print -> {
+            val newWebView = WebView(this@MainActivity)
+            newWebView.setWebViewClient(object : WebViewClient() {
+                override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                    return false
+                }
+
+                override fun onPageFinished(view: WebView, url: String) {
+                    createWebPrintJob(view)
+                    webView = null
+                }
+            })
+
+            val htmlDocument = Processor.process(assets.open(currentUrl).reader().readText())
+            newWebView.loadDataWithBaseURL("file:///android_asset/md/", htmlDocument, "text/HTML", "UTF-8", null)
+
+            webView = newWebView
+            true
+        }
+
+        else -> drawerToggle.onOptionsItemSelected(item)
     }
 
     @TargetApi(19)
@@ -186,10 +178,7 @@ class MainActivity : AppCompatActivity() {
         val imageWidth = Math.min(recycler.width - totalWidthPadding, recycler.height)
         val textInput = assets.open(currentUrl)
         val onURLClick: (String) -> Unit = {
-            val menuId = NavigationDefinitions.getMenuResFromURL(it)
-            if (menuId != null) {
-                processMenuId(menuId)
-            }
+            NavigationDefinitions.getMenuResFromURL(it)?.let { processMenuId(it) }
         }
         recycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth, onURLClick)
         supportActionBar?.setSubtitle(NavigationDefinitions.getTitleResById(menuId))
