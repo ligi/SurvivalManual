@@ -17,6 +17,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
+import org.ligi.compat.HtmlCompat
 import java.io.InputStream
 
 class MarkdownRecyclerAdapter(val text: InputStream, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
@@ -81,7 +82,7 @@ class MarkdownRecyclerAdapter(val text: InputStream, val imageWidth: Int, val on
 
         }
 
-        val sequence = Html.fromHtml(html, CustomImageGetter(), null)
+        val sequence = HtmlCompat.fromHtml(html, CustomImageGetter(), null)
         val spannable = SpannableStringBuilder(sequence)
         val urls = spannable.getSpans(0, sequence.length, URLSpan::class.java)
         for (span in urls) {

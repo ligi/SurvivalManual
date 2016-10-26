@@ -17,7 +17,6 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
-import android.text.Html
 import android.text.method.LinkMovementMethod
 import android.view.Menu
 import android.view.MenuItem
@@ -26,6 +25,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
+import org.ligi.compat.HtmlCompat
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         R.id.menu_help -> {
             val textView = TextView(this)
             val helpText = getString(R.string.help_text).replace("\$VERSION", BuildConfig.VERSION_NAME)
-            textView.text = Html.fromHtml(helpText)
+            textView.text = HtmlCompat.fromHtml(helpText)
             textView.movementMethod = LinkMovementMethod.getInstance()
             val padding = resources.getDimensionPixelSize(R.dimen.help_padding)
             textView.setPadding(padding, padding, padding, padding)
