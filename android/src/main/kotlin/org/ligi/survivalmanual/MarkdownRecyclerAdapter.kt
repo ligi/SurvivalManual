@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
 import org.ligi.compat.HtmlCompat
+import org.ligi.survivalmanual.ImageLogic.isImage
 import java.io.InputStream
 
 class MarkdownRecyclerAdapter(val text: InputStream, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
@@ -37,7 +38,7 @@ class MarkdownRecyclerAdapter(val text: InputStream, val imageWidth: Int, val on
     }
 
     override fun onBindViewHolder(holder: TextContentViewHolder, position: Int) {
-        setTextViewHTML(holder.itemView as TextView, Processor.process(list[position]))
+        setTextViewHTML(holder.itemView as TextView, Processor.process(ImageLogic.linkImagesInMarkDown(list[position])))
     }
 
     override fun getItemCount(): Int {
@@ -87,7 +88,7 @@ class MarkdownRecyclerAdapter(val text: InputStream, val imageWidth: Int, val on
         val urls = spannable.getSpans(0, sequence.length, URLSpan::class.java)
         for (span in urls) {
 
-            if (NavigationDefinitions.getMenuResFromURL(span.url) != null) {
+            if (NavigationDefinitions.getMenuResFromURL(span.url) != null || isImage(span.url)) {
                 makeLinkClickable(spannable, span)
             } else {
                 if (!span.url.startsWith("#")) {

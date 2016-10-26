@@ -28,6 +28,7 @@ import com.github.rjeschke.txtmark.Processor
 import org.ligi.compat.HtmlCompat
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
+import org.ligi.survivalmanual.ImageLogic.isImage
 
 class MainActivity : AppCompatActivity() {
 
@@ -128,7 +129,7 @@ class MainActivity : AppCompatActivity() {
 
         R.id.menu_rate -> {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID);
+            intent.data = Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID)
             startActivity(intent)
 
             true
@@ -170,7 +171,13 @@ class MainActivity : AppCompatActivity() {
         val imageWidth = Math.min(recycler.width - totalWidthPadding, recycler.height)
         val textInput = assets.open(currentUrl)
         val onURLClick: (String) -> Unit = {
-            NavigationDefinitions.getMenuResFromURL(it)?.let { processMenuId(it) }
+            if (isImage(it)) {
+                val intent = Intent(this, ImageViewActivity::class.java)
+                intent.putExtra("URL",it)
+                startActivity(intent)
+            } else {
+                NavigationDefinitions.getMenuResFromURL(it)?.let { processMenuId(it) }
+            }
         }
         recycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth, onURLClick)
         supportActionBar?.setSubtitle(NavigationDefinitions.getTitleResById(menuId))

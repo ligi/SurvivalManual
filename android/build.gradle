@@ -88,6 +88,8 @@ dependencies {
     compile 'es.nitaur.markdown:txtmark:0.16'
     compile 'com.chibatching:kotpref:1.4.0'
 
+
+    compile 'com.github.ligi:TouchImageView:2.1'
     compile 'com.github.ligi:ExtraCompats:0.2'
 
     androidTestCompile "com.android.support:support-annotations:$support_version"
