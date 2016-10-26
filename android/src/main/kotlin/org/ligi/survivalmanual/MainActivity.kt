@@ -137,13 +137,8 @@ class MainActivity : AppCompatActivity() {
         R.id.menu_print -> {
             val newWebView = WebView(this@MainActivity)
             newWebView.setWebViewClient(object : WebViewClient() {
-                override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
-                    return false
-                }
-
-                override fun onPageFinished(view: WebView, url: String) {
-                    createWebPrintJob(view)
-                }
+                override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?) = false
+                override fun onPageFinished(view: WebView, url: String) = createWebPrintJob(view)
             })
 
             val htmlDocument = Processor.process(assets.open(currentUrl).reader().readText())
