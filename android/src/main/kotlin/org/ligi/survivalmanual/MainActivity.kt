@@ -106,8 +106,8 @@ class MainActivity : AppCompatActivity() {
                         newNightMode = i
                     })
                     .setPositiveButton(android.R.string.ok, { dialogInterface: DialogInterface, i: Int ->
-                        if (newNightMode != null) {
-                            State.dayNightMode = newNightMode!!
+                        newNightMode?.let {
+                            State.dayNightMode = it
                             State.applyDayNightMode()
                             if (Build.VERSION.SDK_INT >= 11) {
                                 recreate()
