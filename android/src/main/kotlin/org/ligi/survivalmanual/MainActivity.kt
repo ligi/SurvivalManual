@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
     private val drawerLayout by lazy { findViewById(R.id.drawer_layout) as DrawerLayout }
     private val drawerToggle by lazy { ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close) }
 
-    var webView: WebView? = null
     var currentUrl: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -144,14 +143,12 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onPageFinished(view: WebView, url: String) {
                     createWebPrintJob(view)
-                    webView = null
                 }
             })
 
             val htmlDocument = Processor.process(assets.open(currentUrl).reader().readText())
             newWebView.loadDataWithBaseURL("file:///android_asset/md/", htmlDocument, "text/HTML", "UTF-8", null)
 
-            webView = newWebView
             true
         }
 
