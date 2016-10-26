@@ -20,9 +20,7 @@ class CustomQuoteSpan(val context: Context) : LeadingMarginSpan {
         }
     }
 
-    override fun getLeadingMargin(first: Boolean): Int {
-        return (size * 2).toInt()
-    }
+    override fun getLeadingMargin(first: Boolean) = (size * 2).toInt()
 
     override fun drawLeadingMargin(c: Canvas, p: Paint, x: Int, dir: Int, top: Int, baseline: Int, bottom: Int,
                                    text: CharSequence, start: Int, end: Int, first: Boolean, layout: Layout) {
