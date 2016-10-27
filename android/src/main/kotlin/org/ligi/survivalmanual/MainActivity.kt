@@ -83,6 +83,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.menu_help -> {
+            EventTracker.trackGeneric("help")
             val textView = TextView(this)
             val helpText = getString(R.string.help_text).replace("\$VERSION", BuildConfig.VERSION_NAME)
             textView.text = HtmlCompat.fromHtml(helpText)
@@ -98,6 +99,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         R.id.menu_daynight -> {
+            EventTracker.trackGeneric("daynight_open")
             var newNightMode: Int? = null
 
             AlertDialog.Builder(this)
@@ -108,6 +110,7 @@ class MainActivity : AppCompatActivity() {
                     })
                     .setPositiveButton(android.R.string.ok, { dialogInterface: DialogInterface, i: Int ->
                         newNightMode?.let {
+                            EventTracker.trackGeneric("select_night_mode", it.toString())
                             State.dayNightMode = it
                             State.applyDayNightMode()
                             if (Build.VERSION.SDK_INT >= 11) {
@@ -121,6 +124,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         R.id.menu_share -> {
+            EventTracker.trackGeneric("share")
             val intent = Intent(Intent.ACTION_SEND)
             intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)
             intent.type = "text/plain"
@@ -129,6 +133,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         R.id.menu_rate -> {
+            EventTracker.trackGeneric("rate")
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID)
             startActivity(intent)
@@ -137,6 +142,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         R.id.menu_print -> {
+            EventTracker.trackGeneric("print", currentUrl!!)
             val newWebView = WebView(this@MainActivity)
             newWebView.setWebViewClient(object : WebViewClient() {
                 override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?) = false
@@ -167,11 +173,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun processMenuId(menuId: Int) {
         currentUrl = getURLByMenuId(menuId)
+        val newTitle = getString(NavigationDefinitions.getTitleResById(menuId))
+        EventTracker.trackContent(getURLByMenuId(menuId), newTitle, "processMenuId")
+
+        supportActionBar?.subtitle = newTitle
+
         State.lastVisitedSite = NavigationDefinitions.menu2htmlMap[menuId]!!
         val totalWidthPadding = (resources.getDimension(R.dimen.content_padding) * 2).toInt()
         val imageWidth = Math.min(recycler.width - totalWidthPadding, recycler.height)
         val textInput = assets.open(currentUrl)
         val onURLClick: (String) -> Unit = {
+            EventTracker.trackContent(it, newTitle, "clicked_in_text")
             if (isImage(it)) {
                 val intent = Intent(this, ImageViewActivity::class.java)
                 intent.putExtra("URL", it)
@@ -181,7 +193,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         recycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth, onURLClick)
-        supportActionBar?.setSubtitle(NavigationDefinitions.getTitleResById(menuId))
+
     }
 
 
