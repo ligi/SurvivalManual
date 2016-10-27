@@ -26,6 +26,7 @@ import android.webkit.WebViewClient
 import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
 import org.ligi.compat.HtmlCompat
+import org.ligi.compat.WebViewCompat
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 import org.ligi.survivalmanual.ImageLogic.isImage
@@ -154,8 +155,8 @@ class MainActivity : AppCompatActivity() {
     @TargetApi(19)
     private fun createWebPrintJob(webView: WebView) {
         val printManager = getSystemService(Context.PRINT_SERVICE) as PrintManager
-        val printAdapter = webView.createPrintDocumentAdapter()
         val jobName = getString(R.string.app_name) + " Document"
+        val printAdapter = WebViewCompat.createPrintDocumentAdapter(webView, jobName)
         printManager.print(jobName, printAdapter, PrintAttributes.Builder().build())
     }
 
@@ -173,7 +174,7 @@ class MainActivity : AppCompatActivity() {
         val onURLClick: (String) -> Unit = {
             if (isImage(it)) {
                 val intent = Intent(this, ImageViewActivity::class.java)
-                intent.putExtra("URL",it)
+                intent.putExtra("URL", it)
                 startActivity(intent)
             } else {
                 NavigationDefinitions.getMenuResFromURL(it)?.let { processMenuId(it) }
