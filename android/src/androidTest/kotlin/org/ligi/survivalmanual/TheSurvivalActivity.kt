@@ -1,6 +1,8 @@
 package org.ligi.survivalmanual
 
 import android.os.SystemClock
+import android.support.test.InstrumentationRegistry
+import android.support.test.espresso.Espresso
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions.matches
@@ -16,6 +18,7 @@ import org.hamcrest.Matchers.containsString
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.ligi.passandroid.reporting.SpooningFailureHandler
 import org.ligi.survivalmanual.ScreenShotTaker.takeScreenShot
 
 
@@ -26,6 +29,7 @@ class TheSurvivalActivity {
 
     @Before
     fun setUp() {
+        Espresso.setFailureHandler (SpooningFailureHandler(InstrumentationRegistry.getInstrumentation()))
         activityTestRule.activity.runOnUiThread { activityTestRule.activity.window.addFlags(FLAG_TURN_SCREEN_ON or FLAG_DISMISS_KEYGUARD) }
     }
 
@@ -36,14 +40,15 @@ class TheSurvivalActivity {
 
     @Test
     fun thatThatHelpOpens() {
-        onView(withId(R.id.menu_help)).perform(click())
+        TestHelper.invokeMenu(R.id.menu_help,R.string.introduction)
 
         onView(withText(R.string.help_title)).check(matches(isDisplayed()))
     }
 
     @Test
     fun thatDayNightOpens() {
-        onView(withId(R.id.menu_daynight)).perform(click())
+        TestHelper.invokeMenu(R.id.menu_daynight,R.string.daynight)
+
 
         onView(withText(R.string.daynight)).check(matches(isDisplayed()))
         takeScreenShot(activityTestRule.activity, "daynight_dialog")
@@ -52,7 +57,7 @@ class TheSurvivalActivity {
     @Test
     fun thatDayNightAutoIsSelectable() {
 
-        onView(withId(R.id.menu_daynight)).perform(click())
+        TestHelper.invokeMenu(R.id.menu_daynight,R.string.daynight)
 
         onView(withText(R.string.auto)).perform(click())
 
@@ -66,7 +71,7 @@ class TheSurvivalActivity {
     @Test
     fun thatNightIsSelectable() {
 
-        onView(withId(R.id.menu_daynight)).perform(click())
+        TestHelper.invokeMenu(R.id.menu_daynight,R.string.daynight)
 
         onView(withText(R.string.night)).perform(click())
 
@@ -80,7 +85,7 @@ class TheSurvivalActivity {
     @Test
     fun thatDayIsSelectable() {
 
-        onView(withId(R.id.menu_daynight)).perform(click())
+        TestHelper.invokeMenu(R.id.menu_daynight,R.string.daynight)
 
         onView(withText(R.string.day)).perform(click())
 
@@ -95,7 +100,7 @@ class TheSurvivalActivity {
     fun thatDayNightCancelWorks() {
         thatNightIsSelectable()
 
-        onView(withId(R.id.menu_daynight)).perform(click())
+        TestHelper.invokeMenu(R.id.menu_daynight,R.string.daynight)
 
         onView(withText(R.string.day)).perform(click())
 
