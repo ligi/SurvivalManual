@@ -123,3 +123,9 @@ dependencies {
 if (hasProperty("gms")) {
     apply plugin: 'com.google.gms.google-services'
 }
+
+spoon {
+    debug = true
+    grantAllPermissions = true
+}
+
