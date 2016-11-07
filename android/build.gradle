@@ -117,7 +117,8 @@ dependencies {
     testCompile 'com.squareup.assertj:assertj-android:1.1.1'
     testCompile "com.android.support:support-annotations:$support_version"
 
-    withFirebaseCompile 'com.google.firebase:firebase-core:9.6.1'
+    withFirebaseCompile "com.google.firebase:firebase-core:$firebase_version"
+    withFirebaseCompile "com.google.firebase:firebase-crash:$firebase_version"
 }
 
 if (hasProperty("gms")) {
