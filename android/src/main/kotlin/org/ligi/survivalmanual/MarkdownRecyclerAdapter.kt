@@ -25,7 +25,7 @@ class MarkdownRecyclerAdapter(val text: InputStream, val imageWidth: Int, val on
     val list = TextSplitter.split(text)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
-        val textView = LayoutInflater.from(parent.context).inflate(R.layout.text,parent,false) as TextView
+        val textView = LayoutInflater.from(parent.context).inflate(R.layout.text, parent, false) as TextView
         textView.movementMethod = LinkMovementMethod.getInstance()
         return TextContentViewHolder(textView)
     }
