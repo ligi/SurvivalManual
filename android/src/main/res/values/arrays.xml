@@ -4,4 +4,17 @@
         <item>@string/night</item>
         <item>@string/day</item>
     </string-array>
+
+    <string-array name="nightmode_keys" >
+        <item>night</item>
+        <item>day</item>
+        <item>auto</item>
+    </string-array>
+
+    <string-array name="night_modes">
+        <item>@string/night</item>
+        <item>@string/day</item>
+        <item>@string/auto</item>
+    </string-array>
+
 </resources>

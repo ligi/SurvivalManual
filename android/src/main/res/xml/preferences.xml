@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+            android:key="@string/preference_key_edittoggle"
+            android:summary="Enhance the information and help survive"
+            android:title="Allow Edit ( Experimental )"/>
+    <!--
+    <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/sort_orders"
+            android:entryValues="@array/sort_order_keys"
+            android:key="@string/preference_key_sort"
+            android:summary="@string/preference_sort_summary"
+            android:title="@string/preference_sort_title"/>
+-->
+
+    <ListPreference
+            android:defaultValue="auto"
+            android:entries="@array/night_modes"
+            android:entryValues="@array/nightmode_keys"
+            android:key="@string/preference_key_nightmode"
+            android:summary="@string/preference_daynight_summary"
+            android:title="@string/preference_daynight_title"/>
+</PreferenceScreen>

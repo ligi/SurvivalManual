@@ -21,7 +21,7 @@ object EventTracker {
         params.putString(FirebaseAnalytics.Param.ITEM_NAME, name)
         params.putString(FirebaseAnalytics.Param.CONTENT_TYPE, type)
 
-        analytics.logEvent(FirebaseAnalytics.Event.VIEW_SEARCH_RESULTS, params)
+        analytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, params)
     }
 
     fun trackGeneric(event: String, value: String) {

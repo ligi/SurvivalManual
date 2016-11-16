@@ -3,7 +3,6 @@
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
     <string name="introduction">Introduction</string>
-    <string name="daynight">Day/Night</string>
     <string name="share">Share</string>
     <string name="rate">Rate</string>
     <string name="print">Print</string>
@@ -58,4 +57,8 @@
     <string name="auto">Automatic</string>
     <string name="night">Night</string>
     <string name="day">Day</string>
+
+    <string name="preference_daynight_title">Day/Night theme</string>
+    <string name="preference_daynight_summary">Should I be dark or light?</string>
+
 </resources>

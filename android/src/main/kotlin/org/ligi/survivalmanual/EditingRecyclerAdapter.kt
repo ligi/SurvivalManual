@@ -1,0 +1,30 @@
+package org.ligi.survivalmanual
+
+import android.support.v7.widget.RecyclerView
+import android.text.method.LinkMovementMethod
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
+import org.ligi.kaxt.doAfterEdit
+
+class EditingRecyclerAdapter(val list: MutableList<String>) : RecyclerView.Adapter<TextContentViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
+        val textView = LayoutInflater.from(parent.context).inflate(R.layout.edit_text, parent, false) as TextView
+        textView.movementMethod = LinkMovementMethod.getInstance()
+        return TextContentViewHolder(textView)
+    }
+
+    override fun onBindViewHolder(holder: TextContentViewHolder, position: Int) {
+        val editText = holder.view as EditText
+        editText.setText(list[holder.adapterPosition])
+
+        editText.doAfterEdit {
+            list[holder.adapterPosition] = editText.text.toString()
+        }
+    }
+
+    override fun getItemCount() = list.size
+
+}

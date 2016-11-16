@@ -2,6 +2,8 @@ apply plugin: 'android-sdk-manager'
 apply plugin: 'com.android.application'
 apply plugin: 'spoon'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'de.mobilej.unmock'
 apply plugin: 'com.github.ben-manes.versions'
 
@@ -29,7 +31,7 @@ android {
         }
     }
 
-    flavorDimensions "build","fire"
+    flavorDimensions "build", "fire"
 
     productFlavors {
 
@@ -86,6 +88,7 @@ dependencies {
 
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:design:$support_version"
+    compile "com.android.support:preference-v7:$support_version"
     compile 'es.nitaur.markdown:txtmark:0.16'
     compile 'com.chibatching:kotpref:1.4.0'
 
@@ -93,6 +96,10 @@ dependencies {
     compile 'com.github.ligi:TouchImageView:2.1'
     compile 'com.github.ligi:ExtraCompats:0.4'
     compile 'com.github.ligi:snackengage:0.9'
+    compile 'com.github.ligi:KAXT:0.6'
+
+    compile 'com.github.hotchemi:permissionsdispatcher:2.2.0'
+    kapt 'com.github.hotchemi:permissionsdispatcher-processor:2.2.0'
 
     androidTestCompile "com.android.support:support-annotations:$support_version"
     androidTestCompile "com.android.support:appcompat-v7:$support_version"

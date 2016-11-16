@@ -2,7 +2,6 @@ package org.ligi.survivalmanual
 
 import android.annotation.TargetApi
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -10,7 +9,6 @@ import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
 import android.support.design.widget.NavigationView
-import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
@@ -25,53 +23,73 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
+import kotlinx.android.synthetic.main.activity_main.*
 import org.ligi.compat.HtmlCompat
 import org.ligi.compat.WebViewCompat
+import org.ligi.kaxt.setVisibility
+import org.ligi.kaxt.startActivityFromClass
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 import org.ligi.survivalmanual.ImageLogic.isImage
 
 class MainActivity : AppCompatActivity() {
 
-    val recycler by lazy { findViewById(R.id.contentRecycler) as RecyclerView }
+    private val drawerToggle by lazy { ActionBarDrawerToggle(this, drawer_layout, R.string.drawer_open, R.string.drawer_close) }
 
-    private val drawerLayout by lazy { findViewById(R.id.drawer_layout) as DrawerLayout }
-    private val drawerToggle by lazy { ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close) }
+    lateinit var currentUrl: String
+    lateinit var textInput: MutableList<String>
 
-    var currentUrl: String? = null
+    fun imageWidth(): Int {
+        val totalWidthPadding = (resources.getDimension(R.dimen.content_padding) * 2).toInt()
+        return Math.min(contentRecycler.width - totalWidthPadding, contentRecycler.height)
+    }
+
+    val onURLClick: (String) -> Unit = {
+        supportActionBar?.subtitle?.let { subtitle ->
+            EventTracker.trackContent(it, subtitle.toString(), "clicked_in_text")
+        }
+
+        if (isImage(it)) {
+            val intent = Intent(this, ImageViewActivity::class.java)
+            intent.putExtra("URL", it)
+            startActivity(intent)
+        } else {
+            NavigationDefinitions.getMenuResFromURL(it)?.let { processMenuId(it) }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        drawerLayout.addDrawerListener(drawerToggle)
+        drawer_layout.addDrawerListener(drawerToggle)
         setSupportActionBar(findViewById(R.id.toolbar) as Toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val navigationView = findViewById(R.id.navigationView) as NavigationView
 
         navigationView.setNavigationItemSelectedListener { item ->
-            drawerLayout.closeDrawers()
+            drawer_layout.closeDrawers()
             processMenuId(item.itemId)
             true
         }
 
-        recycler.layoutManager = LinearLayoutManager(this)
+        contentRecycler.layoutManager = LinearLayoutManager(this)
 
         class RememberPositionOnScroll : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
-                State.lastScroll = (recycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+                State.lastScroll = (contentRecycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
                 super.onScrolled(recyclerView, dx, dy)
             }
         }
 
-        recycler.addOnScrollListener(RememberPositionOnScroll())
+        contentRecycler.addOnScrollListener(RememberPositionOnScroll())
 
         SnackEngage.from(this).withSnack(DefaultRateSnack()).build().engageWhenAppropriate()
 
-        recycler.post {
+        contentRecycler.post {
             processMenuId(NavigationDefinitions.getMenuResFromURL(State.lastVisitedSite)!!)
-            recycler.scrollToPosition(State.lastScroll)
+            switchMode(false)
         }
     }
 
@@ -98,28 +116,8 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        R.id.menu_daynight -> {
-            EventTracker.trackGeneric("daynight_open")
-            var newNightMode: Int? = null
-
-            AlertDialog.Builder(this)
-                    .setTitle(R.string.daynight)
-
-                    .setSingleChoiceItems(R.array.daynight_options, State.dayNightMode, { dialogInterface: DialogInterface, i: Int ->
-                        newNightMode = i
-                    })
-                    .setPositiveButton(android.R.string.ok, { dialogInterface: DialogInterface, i: Int ->
-                        newNightMode?.let {
-                            EventTracker.trackGeneric("select_night_mode", it.toString())
-                            State.dayNightMode = it
-                            State.applyDayNightMode()
-                            if (Build.VERSION.SDK_INT >= 11) {
-                                recreate()
-                            }
-                        }
-                    })
-                    .setNegativeButton(android.R.string.cancel, null)
-                    .show()
+        R.id.menu_settings -> {
+            startActivityFromClass(PreferenceActivity::class.java)
             true
         }
 
@@ -142,7 +140,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         R.id.menu_print -> {
-            EventTracker.trackGeneric("print", currentUrl!!)
+            EventTracker.trackGeneric("print", currentUrl)
             val newWebView = WebView(this@MainActivity)
             newWebView.setWebViewClient(object : WebViewClient() {
                 override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?) = false
@@ -157,6 +155,7 @@ class MainActivity : AppCompatActivity() {
 
         else -> drawerToggle.onOptionsItemSelected(item)
     }
+
 
     @TargetApi(19)
     private fun createWebPrintJob(webView: WebView) {
@@ -179,23 +178,11 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.subtitle = newTitle
 
         State.lastVisitedSite = NavigationDefinitions.menu2htmlMap[menuId]!!
-        val totalWidthPadding = (resources.getDimension(R.dimen.content_padding) * 2).toInt()
-        val imageWidth = Math.min(recycler.width - totalWidthPadding, recycler.height)
-        val textInput = assets.open(currentUrl)
-        val onURLClick: (String) -> Unit = {
-            EventTracker.trackContent(it, newTitle, "clicked_in_text")
-            if (isImage(it)) {
-                val intent = Intent(this, ImageViewActivity::class.java)
-                intent.putExtra("URL", it)
-                startActivity(intent)
-            } else {
-                NavigationDefinitions.getMenuResFromURL(it)?.let { processMenuId(it) }
-            }
-        }
-        recycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth, onURLClick)
 
+        textInput = TextSplitter.split(assets.open(currentUrl))
+
+        contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
     }
-
 
     private fun getURLByMenuId(menuId: Int): String {
         val urlFragmentByMenuId = NavigationDefinitions.menu2htmlMap[menuId]
@@ -205,5 +192,30 @@ class MainActivity : AppCompatActivity() {
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         drawerToggle.syncState()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        fab.setVisibility(State.allowEdit())
+    }
+
+    fun switchMode(editing: Boolean) {
+        if (editing) {
+            fab.setOnClickListener {
+                switchMode(false)
+            }
+
+            fab.setImageResource(R.drawable.ic_image_remove_red_eye)
+            contentRecycler.adapter = EditingRecyclerAdapter(textInput)
+        } else {
+            fab.setOnClickListener {
+                switchMode(true)
+            }
+            fab.setImageResource(R.drawable.ic_editor_mode_edit)
+            contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
+        }
+
+        contentRecycler.scrollToPosition(State.lastScroll)
+
     }
 }

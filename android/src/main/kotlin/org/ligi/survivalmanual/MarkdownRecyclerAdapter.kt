@@ -18,11 +18,8 @@ import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
 import org.ligi.compat.HtmlCompat
 import org.ligi.survivalmanual.ImageLogic.isImage
-import java.io.InputStream
 
-class MarkdownRecyclerAdapter(val text: InputStream, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
-
-    val list = TextSplitter.split(text)
+class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
         val textView = LayoutInflater.from(parent.context).inflate(R.layout.text, parent, false) as TextView
@@ -31,7 +28,7 @@ class MarkdownRecyclerAdapter(val text: InputStream, val imageWidth: Int, val on
     }
 
     override fun onBindViewHolder(holder: TextContentViewHolder, position: Int) {
-        setTextViewHTML(holder.itemView as TextView, Processor.process(ImageLogic.linkImagesInMarkDown(list[position])))
+        setTextViewHTML(holder.view, Processor.process(ImageLogic.linkImagesInMarkDown(list[position])))
     }
 
     override fun getItemCount(): Int {
