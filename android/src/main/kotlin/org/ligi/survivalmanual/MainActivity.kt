@@ -93,9 +93,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
+        if (Build.VERSION.SDK_INT >= 19) {
+            menuInflater.inflate(R.menu.print, menu)
+        }
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -163,11 +165,6 @@ class MainActivity : AppCompatActivity() {
         val jobName = getString(R.string.app_name) + " Document"
         val printAdapter = WebViewCompat.createPrintDocumentAdapter(webView, jobName)
         printManager.print(jobName, printAdapter, PrintAttributes.Builder().build())
-    }
-
-    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
-        menu.findItem(R.id.menu_print).isVisible = Build.VERSION.SDK_INT >= 19
-        return super.onPrepareOptionsMenu(menu)
     }
 
     private fun processMenuId(menuId: Int) {
