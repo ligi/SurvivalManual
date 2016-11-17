@@ -32,6 +32,7 @@ import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 import org.ligi.survivalmanual.ImageLogic.isImage
 
+
 class MainActivity : AppCompatActivity() {
 
     private val drawerToggle by lazy { ActionBarDrawerToggle(this, drawer_layout, R.string.drawer_open, R.string.drawer_close) }
@@ -191,10 +192,28 @@ class MainActivity : AppCompatActivity() {
         drawerToggle.syncState()
     }
 
+    @TargetApi(11)
+    fun recreateActivity() {
+        if (Build.VERSION.SDK_INT >= 11) {
+            recreate()
+        }
+    }
+
+    var lastFontSize = State.getFontSize()
+    var lastNightMode = State.getNightMode()
+
     override fun onResume() {
         super.onResume()
         fab.setVisibility(State.allowEdit())
-        contentRecycler.adapter.notifyDataSetChanged() // to apply maybe changed font size
+        if (lastFontSize != State.getFontSize()) {
+            contentRecycler.adapter?.notifyDataSetChanged()
+            lastFontSize = State.getFontSize()
+        }
+        if (lastNightMode != State.getNightMode()) {
+            recreateActivity()
+            lastNightMode = State.getNightMode()
+        }
+
     }
 
     fun switchMode(editing: Boolean) {

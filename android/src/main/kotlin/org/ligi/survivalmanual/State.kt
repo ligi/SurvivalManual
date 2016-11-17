@@ -12,7 +12,8 @@ object State : KotprefModel() {
 
     fun allowEdit() = sharedPreferences.getBoolean(context.getString(R.string.preference_key_edittoggle), false)
 
-    fun getFontSize() = Integer.parseInt(sharedPreferences.getString(context.getString(R.string.preference_key_fontsize), "2"))
+    fun getFontSize() =
+            8f + 4f*Integer.parseInt(sharedPreferences.getString(context.getString(R.string.preference_key_fontsize), "2"))
 
     fun getNightMode(): Int {
         val key = sharedPreferences.getString(context.getString(R.string.preference_key_nightmode), "auto")
