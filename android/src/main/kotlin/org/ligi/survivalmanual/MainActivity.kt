@@ -194,6 +194,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         fab.setVisibility(State.allowEdit())
+        contentRecycler.adapter.notifyDataSetChanged() // to apply maybe changed font size
     }
 
     fun switchMode(editing: Boolean) {

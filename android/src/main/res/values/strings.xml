@@ -58,9 +58,17 @@
     <string name="night">Night</string>
     <string name="day">Day</string>
 
+    <string name="tiny">Tiny</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="huge">Huge</string>
+
     <string name="preference_daynight_title">Day/Night theme</string>
     <string name="preference_daynight_summary">Should I be dark or light?</string>
 
     <string name="allow_edit">Allow Edit ( Experimental )</string>
+    <string name="preference_fontsize_summary">How big should the letters be?</string>
+    <string name="preference_fontsize_title">Font size</string>
 
 </resources>

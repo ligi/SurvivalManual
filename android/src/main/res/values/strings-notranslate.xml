@@ -2,4 +2,5 @@
 <resources>
     <string name="preference_key_nightmode">NIGHTMODE</string>
     <string name="preference_key_edittoggle">EDITTOGGLE</string>
+    <string name="preference_key_fontsize">FONTSIZETOGGLE</string>
 </resources>

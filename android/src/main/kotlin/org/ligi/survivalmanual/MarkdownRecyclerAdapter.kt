@@ -60,6 +60,8 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
     }
 
     private fun setTextViewHTML(text: TextView, html: String, ctx: Context = text.context) {
+
+        text.textSize = 8f + 4f * State.getFontSize()
         class CustomImageGetter : Html.ImageGetter {
             override fun getDrawable(source: String?): Drawable {
 
