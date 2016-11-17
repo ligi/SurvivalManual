@@ -14,8 +14,7 @@ android {
     defaultConfig {
         applicationId "org.ligi.survivalmanual"
 
-        // can be decreased to 10 again after this issue is closed: https://code.google.com/p/android/issues/detail?id=225734
-        minSdkVersion 11
+        minSdkVersion 10
 
         targetSdkVersion 25
         versionCode 18
