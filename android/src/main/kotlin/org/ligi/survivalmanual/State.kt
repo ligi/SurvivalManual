@@ -15,20 +15,14 @@ object State : KotprefModel() {
     fun getNightMode(): Int {
         val key = sharedPreferences.getString(context.getString(R.string.preference_key_nightmode), "auto")
         return when (key) {
-            "day" -> return AppCompatDelegate.MODE_NIGHT_NO
-            "night" -> return AppCompatDelegate.MODE_NIGHT_YES
-            "auto" -> return AppCompatDelegate.MODE_NIGHT_AUTO
+            "day" -> AppCompatDelegate.MODE_NIGHT_NO
+            "night" -> AppCompatDelegate.MODE_NIGHT_YES
+            "auto" -> AppCompatDelegate.MODE_NIGHT_AUTO
             else -> AppCompatDelegate.MODE_NIGHT_AUTO
         }
     }
 
     fun applyDayNightMode() {
-        val mode = when (getNightMode()) {
-            0 -> AppCompatDelegate.MODE_NIGHT_AUTO
-            1 -> AppCompatDelegate.MODE_NIGHT_YES
-            2 -> AppCompatDelegate.MODE_NIGHT_NO
-            else -> AppCompatDelegate.MODE_NIGHT_AUTO
-        }
-        AppCompatDelegate.setDefaultNightMode(mode)
+        AppCompatDelegate.setDefaultNightMode(getNightMode())
     }
 }

@@ -4,13 +4,11 @@ import android.os.SystemClock
 import android.support.test.InstrumentationRegistry
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.contrib.DrawerActions
 import android.support.test.espresso.contrib.NavigationViewActions.navigateTo
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.rule.ActivityTestRule
-import android.support.v7.app.AppCompatDelegate
 import android.view.WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
 import android.view.WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
 import org.assertj.core.api.Assertions.assertThat
@@ -43,71 +41,6 @@ class TheSurvivalActivity {
         TestHelper.invokeMenu(R.id.menu_help,R.string.introduction)
 
         onView(withText(R.string.help_title)).check(matches(isDisplayed()))
-    }
-
-    @Test
-    fun thatDayNightOpens() {
-        TestHelper.invokeMenu(R.id.menu_daynight,R.string.daynight)
-
-
-        onView(withText(R.string.daynight)).check(matches(isDisplayed()))
-        takeScreenShot(activityTestRule.activity, "daynight_dialog")
-    }
-
-    @Test
-    fun thatDayNightAutoIsSelectable() {
-
-        TestHelper.invokeMenu(R.id.menu_daynight,R.string.daynight)
-
-        onView(withText(R.string.auto)).perform(click())
-
-        onView(withText(android.R.string.ok)).perform(click())
-
-        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_AUTO)
-        assertThat(State.dayNightMode).isEqualTo(0)
-        takeScreenShot(activityTestRule.activity, "daynight_auto")
-    }
-
-    @Test
-    fun thatNightIsSelectable() {
-
-        TestHelper.invokeMenu(R.id.menu_daynight,R.string.daynight)
-
-        onView(withText(R.string.night)).perform(click())
-
-        onView(withText(android.R.string.ok)).perform(click())
-
-        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_YES)
-        assertThat(State.dayNightMode).isEqualTo(1)
-        takeScreenShot(activityTestRule.activity, "daynight_night")
-    }
-
-    @Test
-    fun thatDayIsSelectable() {
-
-        TestHelper.invokeMenu(R.id.menu_daynight,R.string.daynight)
-
-        onView(withText(R.string.day)).perform(click())
-
-        onView(withText(android.R.string.ok)).perform(click())
-
-        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_NO)
-        assertThat(State.dayNightMode).isEqualTo(2)
-        takeScreenShot(activityTestRule.activity, "daynight_day")
-    }
-
-    @Test
-    fun thatDayNightCancelWorks() {
-        thatNightIsSelectable()
-
-        TestHelper.invokeMenu(R.id.menu_daynight,R.string.daynight)
-
-        onView(withText(R.string.day)).perform(click())
-
-        onView(withText(android.R.string.cancel)).perform(click())
-
-        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_YES)
-        assertThat(State.dayNightMode).isEqualTo(1)
     }
 
 

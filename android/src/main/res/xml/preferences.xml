@@ -4,7 +4,7 @@
     <CheckBoxPreference
             android:key="@string/preference_key_edittoggle"
             android:summary="Enhance the information and help survive"
-            android:title="Allow Edit ( Experimental )"/>
+            android:title="@string/allow_edit"/>
     <!--
     <ListPreference
             android:defaultValue="0"

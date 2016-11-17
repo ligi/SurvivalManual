@@ -61,4 +61,6 @@
     <string name="preference_daynight_title">Day/Night theme</string>
     <string name="preference_daynight_summary">Should I be dark or light?</string>
 
+    <string name="allow_edit">Allow Edit ( Experimental )</string>
+
 </resources>
