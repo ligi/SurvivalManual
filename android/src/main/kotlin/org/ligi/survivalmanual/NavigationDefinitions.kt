@@ -27,7 +27,7 @@ object NavigationDefinitions {
             R.id.menu_people to "22",
             R.id.menu_man_made_hazards to "23",
             R.id.menu_appendix_kits to "a",
-            R.id.menu_appendix_medicin_plants to "b",
+            //R.id.menu_appendix_medicin_plants to "b",
             R.id.menu_appendix_poisonplants to "c",
             R.id.menu_appendix_insects to "d",
             R.id.menu_appendix_snakes to "e",
@@ -65,7 +65,7 @@ object NavigationDefinitions {
         R.id.menu_people -> R.string.people
         R.id.menu_man_made_hazards -> R.string.man_made_hazards
         R.id.menu_appendix_kits -> R.string.kits
-        R.id.menu_appendix_medicin_plants -> R.string.edible_medicin_plants
+        //R.id.menu_appendix_medicin_plants -> R.string.edible_medicin_plants
         R.id.menu_appendix_poisonplants -> R.string.poisonous_plants
         R.id.menu_appendix_insects -> R.string.insects_and_arachnids
         R.id.menu_appendix_snakes -> R.string.snakes_and_lizards
