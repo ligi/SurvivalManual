@@ -28,9 +28,7 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
         setTextViewHTML(holder.view, Processor.process(ImageLogic.linkImagesInMarkDown(list[position])))
     }
 
-    override fun getItemCount(): Int {
-        return list.size
-    }
+    override fun getItemCount()= list.size
 
     private fun makeLinkClickable(strBuilder: SpannableStringBuilder, span: URLSpan) {
         strBuilder.apply {
