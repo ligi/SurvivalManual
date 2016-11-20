@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("URL", it)
             startActivity(intent)
         } else {
-            NavigationDefinitions.getMenuResFromURL(it)?.let { processMenuId(it) }
+            processURL(it)
         }
     }
 
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         navigationView.setNavigationItemSelectedListener { item ->
             drawer_layout.closeDrawers()
-            processMenuId(item.itemId)
+            processURL(NavigationDefinitions.menu2htmlMap[item.itemId]!!)
             true
         }
 
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
 
         class RememberPositionOnScroll : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
-                State.lastScroll = (contentRecycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+                State.lastScrollPos = (contentRecycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
                 super.onScrolled(recyclerView, dx, dy)
             }
         }
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         SnackEngage.from(this).withSnack(DefaultRateSnack()).build().engageWhenAppropriate()
 
         contentRecycler.post {
-            processMenuId(NavigationDefinitions.getMenuResFromURL(State.lastVisitedSite)!!)
+            processURL(State.lastVisitedURL)
             switchMode(false)
         }
     }
@@ -168,24 +168,22 @@ class MainActivity : AppCompatActivity() {
         printManager.print(jobName, printAdapter, PrintAttributes.Builder().build())
     }
 
-    private fun processMenuId(menuId: Int) {
-        currentUrl = getURLByMenuId(menuId)
-        val newTitle = getString(NavigationDefinitions.getTitleResById(menuId))
-        EventTracker.trackContent(getURLByMenuId(menuId), newTitle, "processMenuId")
+    private fun processURL(url: String) {
+        currentUrl = url
+        val newTitle = getString(NavigationDefinitions.getTitleResByURL(url))
+        EventTracker.trackContent(url, newTitle, "processMenuId")
 
         supportActionBar?.subtitle = newTitle
 
-        State.lastVisitedSite = NavigationDefinitions.menu2htmlMap[menuId]!!
+        State.lastVisitedURL = url
 
-        textInput = TextSplitter.split(assets.open(currentUrl))
+        textInput = TextSplitter.split(assets.open(getFullMarkDownURL(currentUrl)))
 
         contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
     }
 
-    private fun getURLByMenuId(menuId: Int): String {
-        val urlFragmentByMenuId = NavigationDefinitions.menu2htmlMap[menuId]
-        return "md/$urlFragmentByMenuId.md"
-    }
+
+    private fun getFullMarkDownURL(url: String) = "md/$url.md"
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
@@ -232,7 +230,7 @@ class MainActivity : AppCompatActivity() {
             contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
         }
 
-        contentRecycler.scrollToPosition(State.lastScroll)
+        contentRecycler.scrollToPosition(State.lastScrollPos)
 
     }
 }

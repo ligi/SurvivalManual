@@ -17,7 +17,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
 import org.ligi.compat.HtmlCompat
-import org.ligi.survivalmanual.ImageLogic.isImage
 
 class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
 
@@ -78,16 +77,8 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
         val sequence = HtmlCompat.fromHtml(html, CustomImageGetter(), null)
         val spannable = SpannableStringBuilder(sequence)
         val urls = spannable.getSpans(0, sequence.length, URLSpan::class.java)
-        for (span in urls) {
 
-            if (NavigationDefinitions.getMenuResFromURL(span.url) != null || isImage(span.url)) {
-                makeLinkClickable(spannable, span)
-            } else {
-                if (!span.url.startsWith("#")) {
-                    throw(Exception("Err cannot handle " + span.url))
-                }
-            }
-        }
+        urls.forEach { makeLinkClickable(spannable, it) }
 
         replaceQuoteSpans(ctx, spannable)
         text.text = spannable

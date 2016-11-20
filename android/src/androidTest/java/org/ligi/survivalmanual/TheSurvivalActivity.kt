@@ -57,14 +57,14 @@ class TheSurvivalActivity {
 
     @Test
     fun testWeCanOpenAllTopics() {
-        for (integer in NavigationDefinitions.menu2htmlMap.keys) {
+        for (url in NavigationDefinitions.menu2htmlMap.values) {
             onView(withId(R.id.drawer_layout)).perform(DrawerActions.open())
             SystemClock.sleep(500)
-            onView(withId(R.id.navigationView)).perform(navigateTo(integer))
+            onView(withId(R.id.navigationView)).perform(navigateTo(NavigationDefinitions.getMenuResFromURL(url)!!))
             SystemClock.sleep(500)
             val activity = activityTestRule.activity
             val subtitle = activity.supportActionBar!!.subtitle
-            assertThat(subtitle).isEqualTo(activity.getString(NavigationDefinitions.getTitleResById(integer)))
+            assertThat(subtitle).isEqualTo(activity.getString(NavigationDefinitions.getTitleResByURL(url)))
 
             takeScreenShot(activity, "topic_" + subtitle!!.toString().replace(" ", "_").replace("/", "_"))
         }

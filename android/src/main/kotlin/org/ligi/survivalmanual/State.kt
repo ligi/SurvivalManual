@@ -6,8 +6,8 @@ import com.chibatching.kotpref.KotprefModel
 
 object State : KotprefModel() {
 
-    var lastVisitedSite: String by stringPrefVar("01")
-    var lastScroll: Int by intPrefVar(0)
+    var lastVisitedURL: String by stringPrefVar("01")
+    var lastScrollPos: Int by intPrefVar(0)
     internal val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(context) }
 
     fun allowEdit() = sharedPreferences.getBoolean(context.getString(R.string.preference_key_edittoggle), false)

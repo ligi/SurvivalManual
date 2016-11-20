@@ -128,7 +128,6 @@
                     android:title="@string/kits"/>
 
             <item
-                    android:visible="false"
                     android:id="@+id/menu_appendix_medicin_plants"
                     android:title="@string/edible_medicin_plants"/>
 
