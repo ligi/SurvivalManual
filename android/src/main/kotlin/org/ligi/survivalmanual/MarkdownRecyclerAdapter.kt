@@ -8,11 +8,9 @@ import android.text.Html
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.method.LinkMovementMethod
-import android.text.style.ClickableSpan
 import android.text.style.QuoteSpan
 import android.text.style.URLSpan
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
@@ -35,15 +33,9 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
     }
 
     private fun makeLinkClickable(strBuilder: SpannableStringBuilder, span: URLSpan) {
-        val start = strBuilder.getSpanStart(span)
-        val end = strBuilder.getSpanEnd(span)
-        val flags = strBuilder.getSpanFlags(span)
-        val clickable = object : ClickableSpan() {
-            override fun onClick(view: View) {
-                onURLClick(span.url)
-            }
+        strBuilder.apply {
+            strBuilder.setSpan({ onURLClick(span.url) }, getSpanStart(span), getSpanEnd(span), getSpanFlags(span))
         }
-        strBuilder.setSpan(clickable, start, end, flags)
         strBuilder.removeSpan(span)
     }
 
