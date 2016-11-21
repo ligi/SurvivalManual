@@ -11,6 +11,7 @@ object State : KotprefModel() {
     internal val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(context) }
 
     fun allowEdit() = sharedPreferences.getBoolean(context.getString(R.string.preference_key_edittoggle), false)
+    fun allowSearch() = sharedPreferences.getBoolean(context.getString(R.string.preference_key_search), false)
 
     fun getFontSize() =
             8f + 4f*Integer.parseInt(sharedPreferences.getString(context.getString(R.string.preference_key_fontsize), "2"))

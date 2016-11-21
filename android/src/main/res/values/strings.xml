@@ -68,6 +68,7 @@
     <string name="preference_daynight_summary">Should I be dark or light?</string>
 
     <string name="allow_edit">Allow Edit ( Experimental )</string>
+    <string name="allow_search">Search ( Beta )</string>
     <string name="preference_fontsize_summary">How big should the letters be?</string>
     <string name="preference_fontsize_title">Font size</string>
 

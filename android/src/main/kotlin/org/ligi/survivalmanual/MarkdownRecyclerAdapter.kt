@@ -20,6 +20,8 @@ import org.ligi.compat.HtmlCompat
 
 class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
 
+    var wordHighLight: String? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
         val textView = LayoutInflater.from(parent.context).inflate(R.layout.text, parent, false) as TextView
         textView.movementMethod = LinkMovementMethod.getInstance()
@@ -27,7 +29,14 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
     }
 
     override fun onBindViewHolder(holder: TextContentViewHolder, position: Int) {
-        setTextViewHTML(holder.view, Processor.process(ImageLogic.linkImagesInMarkDown(list[position])))
+
+        val html = Processor.process(ImageLogic.linkImagesInMarkDown( if (wordHighLight.isNullOrEmpty()) {
+            list[position]
+        }else {
+            list[position].replace(Regex("(?i)"+wordHighLight!!), { "<font color='red'>${it.value}</font>" })
+        }))
+
+        setTextViewHTML(holder.view, html)
     }
 
     override fun getItemCount() = list.size

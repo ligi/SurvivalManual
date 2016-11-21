@@ -19,8 +19,14 @@
 
 
     <CheckBoxPreference
+            android:key="@string/preference_key_search"
+            android:summary="Find what you need"
+            android:title="Search ( Beta )"/>
+
+    <CheckBoxPreference
             android:key="@string/preference_key_edittoggle"
             android:summary="Enhance the information and help survive"
             android:title="@string/allow_edit"/>
+
 
 </PreferenceScreen>

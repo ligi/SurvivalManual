@@ -75,4 +75,14 @@ class ThePreferenceActivity {
 
         assertThat(oldState).isEqualTo(!State.allowEdit())
     }
+
+    @Test
+    fun thatWeCanSwitchSearch() {
+
+        val oldState = State.allowSearch()
+
+        onView(withText(R.string.allow_search)).perform(click())
+
+        assertThat(oldState).isEqualTo(!State.allowSearch())
+    }
 }

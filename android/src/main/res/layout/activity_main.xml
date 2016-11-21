@@ -23,6 +23,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/colorPrimary"
                     app:layout_scrollFlags="scroll|enterAlways|snap"
+                    android:theme="@style/ToolbarStyle"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
 

@@ -9,11 +9,13 @@ import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
 import android.support.design.widget.NavigationView
+import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.SearchView
 import android.support.v7.widget.Toolbar
 import android.text.method.LinkMovementMethod
 import android.view.Menu
@@ -59,6 +61,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private val linearLayoutManager by lazy { LinearLayoutManager(this) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -75,7 +79,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        contentRecycler.layoutManager = LinearLayoutManager(this)
+        contentRecycler.layoutManager = linearLayoutManager
 
         class RememberPositionOnScroll : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
@@ -94,11 +98,46 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        menu.findItem(R.id.action_search).isVisible = State.allowSearch()
+        return super.onPrepareOptionsMenu(menu)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         if (Build.VERSION.SDK_INT >= 19) {
             menuInflater.inflate(R.menu.print, menu)
         }
+
+        val searchView = MenuItemCompat.getActionView(menu.findItem(R.id.action_search)) as SearchView
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextChange(newText: String): Boolean {
+                val adapter = contentRecycler.adapter
+                if (adapter is MarkdownRecyclerAdapter) {
+                    adapter.wordHighLight = newText
+
+                    val first = linearLayoutManager.findFirstVisibleItemPosition()
+                    val searchRegex = Regex("(?i)$newText")
+                    if (!adapter.list[first].contains(searchRegex)) {
+                        val next = (first..adapter.list.lastIndex).firstOrNull {
+                            adapter.list[it].contains(searchRegex)
+                        }
+                        if (next != null) {
+                            contentRecycler.smoothScrollToPosition(next)
+                        }
+                    }
+                    adapter.notifyDataSetChanged()
+                }
+
+                return true
+            }
+
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+        })
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -212,20 +251,18 @@ class MainActivity : AppCompatActivity() {
             lastNightMode = State.getNightMode()
         }
 
+        supportInvalidateOptionsMenu()
     }
 
     fun switchMode(editing: Boolean) {
-        if (editing) {
-            fab.setOnClickListener {
-                switchMode(false)
-            }
+        fab.setOnClickListener {
+            switchMode(!editing)
+        }
 
+        if (editing) {
             fab.setImageResource(R.drawable.ic_image_remove_red_eye)
             contentRecycler.adapter = EditingRecyclerAdapter(textInput)
         } else {
-            fab.setOnClickListener {
-                switchMode(true)
-            }
             fab.setImageResource(R.drawable.ic_editor_mode_edit)
             contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
         }
