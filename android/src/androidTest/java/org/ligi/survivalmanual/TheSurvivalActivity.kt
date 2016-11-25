@@ -11,6 +11,7 @@ import org.hamcrest.Matchers.containsString
 import org.junit.Rule
 import org.junit.Test
 import org.ligi.trulesk.TruleskActivityRule
+import org.ligi.trulesk.invokeMenu
 
 class TheSurvivalActivity {
 
@@ -24,7 +25,7 @@ class TheSurvivalActivity {
 
     @Test
     fun thatThatHelpOpens() {
-        TestHelper.invokeMenu(R.id.menu_help, R.string.introduction)
+        invokeMenu(R.id.menu_help, R.string.introduction)
 
         onView(withText(R.string.help_title)).check(matches(isDisplayed()))
     }
