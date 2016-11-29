@@ -75,7 +75,7 @@ object NavigationDefinitions {
         "g" -> R.string.ropes_and_knots
         "h" -> R.string.clouds
 
-        else -> throw IllegalArgumentException("no String for url " + url)
+        else -> null
     }
 
 

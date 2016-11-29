@@ -93,7 +93,10 @@ class MainActivity : AppCompatActivity() {
         SnackEngage.from(this).withSnack(DefaultRateSnack()).build().engageWhenAppropriate()
 
         contentRecycler.post {
-            processURL(State.lastVisitedURL)
+            if (intent.data == null || !processURL(intent.data.path.replace("/",""))) {
+                processURL(State.lastVisitedURL)
+            }
+
             switchMode(false)
         }
     }
@@ -207,9 +210,13 @@ class MainActivity : AppCompatActivity() {
         printManager.print(jobName, printAdapter, PrintAttributes.Builder().build())
     }
 
-    private fun processURL(url: String) {
+    private fun processURL(url: String) : Boolean {
+
+        val titleResByURL = NavigationDefinitions.getTitleResByURL(url) ?: return false
+
         currentUrl = url
-        val newTitle = getString(NavigationDefinitions.getTitleResByURL(url))
+
+        val newTitle = getString(titleResByURL)
         EventTracker.trackContent(url, newTitle, "processMenuId")
 
         supportActionBar?.subtitle = newTitle
@@ -219,6 +226,7 @@ class MainActivity : AppCompatActivity() {
         textInput = TextSplitter.split(assets.open(getFullMarkDownURL(currentUrl)))
 
         contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
+        return true
     }
 
 
