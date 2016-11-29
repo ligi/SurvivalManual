@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
     val onURLClick: (String) -> Unit = {
         supportActionBar?.subtitle?.let { subtitle ->
-            EventTracker.trackContent(it, subtitle.toString(), "clicked_in_text")
+            EventTracker.trackContent(it, subtitle.toString())
         }
 
         if (isImage(it)) {
@@ -217,7 +217,7 @@ class MainActivity : AppCompatActivity() {
         currentUrl = url
 
         val newTitle = getString(titleResByURL)
-        EventTracker.trackContent(url, newTitle, "processMenuId")
+        EventTracker.trackContent(url, newTitle)
 
         supportActionBar?.subtitle = newTitle
 
