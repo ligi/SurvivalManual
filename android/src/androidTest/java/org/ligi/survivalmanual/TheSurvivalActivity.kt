@@ -51,7 +51,7 @@ class TheSurvivalActivity {
             SystemClock.sleep(500)
             val activity = activityTestRule.activity
             val subtitle = activity.supportActionBar!!.subtitle
-            assertThat(subtitle).isEqualTo(activity.getString(NavigationDefinitions.getTitleResByURL(url)))
+            assertThat(subtitle).isEqualTo(activity.getString(NavigationDefinitions.getTitleResByURL(url)!!))
 
             activityTestRule.screenShot("topic_" + subtitle!!.toString().replace(" ", "_").replace("/", "_"))
         }
