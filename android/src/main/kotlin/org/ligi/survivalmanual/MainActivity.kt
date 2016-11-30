@@ -32,7 +32,6 @@ import org.ligi.kaxt.setVisibility
 import org.ligi.kaxt.startActivityFromClass
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
-import org.ligi.survivalmanual.ImageLogic.isImage
 
 
 class MainActivity : AppCompatActivity() {
@@ -223,7 +222,7 @@ class MainActivity : AppCompatActivity() {
 
         State.lastVisitedURL = url
 
-        textInput = TextSplitter.split(assets.open(getFullMarkDownURL(currentUrl)))
+        textInput = splitText(assets.open(getFullMarkDownURL(currentUrl)))
 
         contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
         return true

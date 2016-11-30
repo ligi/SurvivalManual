@@ -30,7 +30,7 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
 
     override fun onBindViewHolder(holder: TextContentViewHolder, position: Int) {
 
-        val html = Processor.process(ImageLogic.linkImagesInMarkDown( if (wordHighLight.isNullOrEmpty()) {
+        val html = Processor.process(linkImagesInMarkDown( if (wordHighLight.isNullOrEmpty()) {
             list[position]
         }else {
             list[position].replace(Regex("(?i)"+wordHighLight!!), { "<font color='red'>${it.value}</font>" })

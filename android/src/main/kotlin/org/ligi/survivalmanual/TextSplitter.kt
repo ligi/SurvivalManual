@@ -2,18 +2,17 @@ package org.ligi.survivalmanual
 
 import java.io.InputStream
 
-object TextSplitter {
-    fun split(text: InputStream): MutableList<String> {
 
-        val list = mutableListOf("")
+fun splitText(text: InputStream): MutableList<String> {
 
-        text.bufferedReader().lineSequence().forEach {
-            if (it.startsWith("**") || it.startsWith("###")) {
-                list.add("")
-            }
-            list[list.lastIndex] += it + "\n"
+    val list = mutableListOf("")
+
+    text.bufferedReader().lineSequence().forEach {
+        if (it.startsWith("**") || it.startsWith("###")) {
+            list.add("")
         }
-
-        return list
+        list[list.lastIndex] += it + "\n"
     }
+
+    return list
 }
