@@ -28,6 +28,7 @@ import com.github.rjeschke.txtmark.Processor
 import kotlinx.android.synthetic.main.activity_main.*
 import org.ligi.compat.HtmlCompat
 import org.ligi.compat.WebViewCompat
+import org.ligi.kaxt.recreateWhenPossible
 import org.ligi.kaxt.setVisibility
 import org.ligi.kaxt.startActivityFromClass
 import org.ligi.snackengage.SnackEngage
@@ -236,13 +237,6 @@ class MainActivity : AppCompatActivity() {
         drawerToggle.syncState()
     }
 
-    @TargetApi(11)
-    fun recreateActivity() {
-        if (Build.VERSION.SDK_INT >= 11) {
-            recreate()
-        }
-    }
-
     var lastFontSize = State.getFontSize()
     var lastNightMode = State.getNightMode()
 
@@ -254,7 +248,7 @@ class MainActivity : AppCompatActivity() {
             lastFontSize = State.getFontSize()
         }
         if (lastNightMode != State.getNightMode()) {
-            recreateActivity()
+            recreateWhenPossible()
             lastNightMode = State.getNightMode()
         }
 
