@@ -1,4 +1,4 @@
-package org.ligi.survivalmanual
+package org.ligi.survivalmanual.viewholder
 
 import android.support.v7.widget.RecyclerView
 import android.widget.TextView

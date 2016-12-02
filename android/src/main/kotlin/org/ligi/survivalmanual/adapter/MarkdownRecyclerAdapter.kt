@@ -1,4 +1,4 @@
-package org.ligi.survivalmanual
+package org.ligi.survivalmanual.adapter
 
 import android.content.Context
 import android.graphics.drawable.BitmapDrawable
@@ -17,10 +17,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.github.rjeschke.txtmark.Processor
 import org.ligi.compat.HtmlCompat
+import org.ligi.survivalmanual.R
+import org.ligi.survivalmanual.functions.highLight
+import org.ligi.survivalmanual.functions.linkImagesInMarkDown
+import org.ligi.survivalmanual.model.State
+import org.ligi.survivalmanual.ui.CustomQuoteSpan
+import org.ligi.survivalmanual.viewholder.TextContentViewHolder
 
 class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
-
-    var wordHighLight: String? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
         val textView = LayoutInflater.from(parent.context).inflate(R.layout.text, parent, false) as TextView
@@ -30,10 +34,10 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
 
     override fun onBindViewHolder(holder: TextContentViewHolder, position: Int) {
 
-        val html = Processor.process(linkImagesInMarkDown( if (wordHighLight.isNullOrEmpty()) {
+        val html = Processor.process(linkImagesInMarkDown( if (State.searchTerm.isNullOrEmpty()) {
             list[position]
         }else {
-            list[position].replace(Regex("(?i)"+wordHighLight!!), { "<font color='red'>${it.value}</font>" })
+            highLight(list[position],State.searchTerm)
         }))
 
         setTextViewHTML(holder.view, html)

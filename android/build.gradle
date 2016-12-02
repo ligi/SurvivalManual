@@ -91,11 +91,12 @@ dependencies {
     compile 'es.nitaur.markdown:txtmark:0.16'
     compile 'com.chibatching:kotpref:1.4.0'
 
+    compile "com.android.support:cardview-v7:$support_version"
 
     compile 'com.github.ligi:TouchImageView:2.1'
     compile 'com.github.ligi:ExtraCompats:0.4'
     compile 'com.github.ligi:snackengage:0.9'
-    compile 'com.github.ligi:KAXT:0.9'
+    compile 'com.github.ligi:KAXT:0.10'
 
     compile 'com.github.hotchemi:permissionsdispatcher:2.2.0'
     kapt 'com.github.hotchemi:permissionsdispatcher-processor:2.2.0'

@@ -1,4 +1,4 @@
-package org.ligi.survivalmanual;
+package org.ligi.survivalmanual.ui;
 
 import android.annotation.TargetApi;
 import android.content.SharedPreferences;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import org.jetbrains.annotations.NotNull;
+import org.ligi.survivalmanual.R;
+import org.ligi.survivalmanual.model.State;
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.RuntimePermissions;
 import static android.support.v7.app.AppCompatDelegate.MODE_NIGHT_AUTO;

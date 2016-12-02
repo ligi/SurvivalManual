@@ -12,11 +12,11 @@
             android:name=".App"
             android:installLocation="auto"
             android:theme="@style/AppTheme">
-        <activity android:name=".ImageViewActivity"
+        <activity android:name=".ui.ImageViewActivity"
                   android:theme="@style/AppThemeWithActionBar"/>
-        <activity android:name=".PreferenceActivity"
+        <activity android:name=".ui.PreferenceActivity"
             android:theme="@style/AppThemeWithActionBar"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

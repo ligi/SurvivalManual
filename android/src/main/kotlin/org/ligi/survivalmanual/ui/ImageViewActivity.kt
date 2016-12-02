@@ -1,4 +1,4 @@
-package org.ligi.survivalmanual
+package org.ligi.survivalmanual.ui
 
 import android.graphics.BitmapFactory
 import android.os.Bundle

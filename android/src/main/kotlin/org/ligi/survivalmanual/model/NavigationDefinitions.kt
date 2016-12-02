@@ -1,4 +1,6 @@
-package org.ligi.survivalmanual
+package org.ligi.survivalmanual.model
+
+import org.ligi.survivalmanual.R
 
 object NavigationDefinitions {
 

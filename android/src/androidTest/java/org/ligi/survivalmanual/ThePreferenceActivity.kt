@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatDelegate
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Rule
 import org.junit.Test
+import org.ligi.survivalmanual.ui.PreferenceActivity
+import org.ligi.survivalmanual.model.State
 import org.ligi.trulesk.TruleskActivityRule
 
 

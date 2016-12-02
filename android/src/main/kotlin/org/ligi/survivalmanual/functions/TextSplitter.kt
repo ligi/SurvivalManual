@@ -1,13 +1,11 @@
-package org.ligi.survivalmanual
-
-import java.io.InputStream
+package org.ligi.survivalmanual.functions
 
 
-fun splitText(text: InputStream): MutableList<String> {
+fun splitText(text: String): MutableList<String> {
 
     val list = mutableListOf("")
 
-    text.bufferedReader().lineSequence().forEach {
+    text.lineSequence().forEach {
         if (it.startsWith("**") || it.startsWith("###")) {
             list.add("")
         }

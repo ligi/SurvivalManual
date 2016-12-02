@@ -1,8 +1,9 @@
-package org.ligi.survivalmanual
+package org.ligi.survivalmanual.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import org.ligi.survivalmanual.R
 
 class PreferenceActivity : AppCompatActivity() {
 

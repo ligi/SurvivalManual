@@ -1,4 +1,4 @@
-package org.ligi.survivalmanual
+package org.ligi.survivalmanual.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.text.method.LinkMovementMethod
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
 import org.ligi.kaxt.doAfterEdit
+import org.ligi.survivalmanual.R
+import org.ligi.survivalmanual.viewholder.TextContentViewHolder
 
 class EditingRecyclerAdapter(val list: MutableList<String>) : RecyclerView.Adapter<TextContentViewHolder>() {
 

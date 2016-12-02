@@ -1,13 +1,15 @@
-package org.ligi.survivalmanual
+package org.ligi.survivalmanual.model
 
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatDelegate
 import com.chibatching.kotpref.KotprefModel
+import org.ligi.survivalmanual.R
 
 object State : KotprefModel() {
 
-    var lastVisitedURL: String by stringPrefVar("01")
-    var lastScrollPos: Int by intPrefVar(0)
+    var lastVisitedURL by stringPrefVar("01")
+    var searchTerm by stringNullablePrefVar(null)
+    var lastScrollPos by intPrefVar(0)
     internal val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(context) }
 
     fun allowEdit() = sharedPreferences.getBoolean(context.getString(R.string.preference_key_edittoggle), false)

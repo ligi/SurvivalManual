@@ -10,6 +10,8 @@ import org.assertj.core.api.Assertions.assertThat
 import org.hamcrest.Matchers.containsString
 import org.junit.Rule
 import org.junit.Test
+import org.ligi.survivalmanual.model.NavigationDefinitions
+import org.ligi.survivalmanual.ui.MainActivity
 import org.ligi.trulesk.TruleskActivityRule
 import org.ligi.trulesk.invokeMenu
 
