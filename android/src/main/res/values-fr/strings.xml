@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Manuel de Survie</string>
+    <string name="drawer_open">ouvrir</string>
+    <string name="drawer_close">fermer</string>
+    <string name="introduction">Introduction</string>
+    <string name="share">Partager</string>
+    <string name="rate">Noter</string>
+    <string name="print">Imprimer</string>
+    <string name="psychology">Psychologie</string>
+    <string name="planning_and_kits">Préparation et Equipement</string>
+    <string name="basic_medicine">Médecine de Base</string>
+    <string name="shelter">Abri</string>
+    <string name="water">Eau</string>
+    <string name="fire">Feu</string>
+    <string name="food">Nourriture</string>
+    <string name="plants">Plantes</string>
+    <string name="poisonous_plants">Plantes Toxiques</string>
+    <string name="animals">Animaux</string>
+    <string name="tools">Outils</string>
+    <string name="desert">Désert</string>
+    <string name="tropical">Tropical</string>
+    <string name="cold">Froid</string>
+    <string name="sea">Mer</string>
+    <string name="water_crossing">Traverser de l\'Eau</string>
+    <string name="directionfinding">Trouver sa Direction</string>
+    <string name="signaling">Se Signaler</string>
+    <string name="camouflage">Se Camoufler</string>
+    <string name="people">Population</string>
+    <string name="man_made_hazards">Risques causés par l\'Homme</string>
+    <string name="evasion_plan">Plan d\'Evasion</string>
+    <string name="clouds">Nuages</string>
+    <string name="ropes_and_knots">Cordes et nœuds</string>
+    <string name="fish_and_mollusks">Poissons et Mollusques</string>
+    <string name="insects_and_arachnids">Insectes et Arachnides</string>
+    <string name="snakes_and_lizards">Serpents et Lézards</string>
+    <string name="edible_medicin_plants">Plantes Comestibles / Médicinales</string>
+    <string name="kits">Equipement</string>
+    <string name="appendix">Annexes</string>
+    <string name="help_title">Aide</string>
+    <string name="hostile_areas">Régions Hostiles</string>
+    <string name="help_text">
+<![CDATA[
+Ceci est le manuel de survie de terrain, utilisable hors ligne v$VERSION basé sur le manuel FM 3-05.70 (FM 21-76). Cette application est un logiciel libre - vous pouvez retrouver le code source sur <a href=\"https://github.com/ligi/SurvivalManual\">GitHub</a>. Les demandes de fusion (Pull-Requests) sont bienvenues !<br/>
+Si vous avez des améliorations à proposer vis à vis du contenu ou si vous voulez aider à traduire, vous pouvez utiliser <a href=\"https://github.com/ligi/SurvivalManual/wiki\">ce wiki.</a><br/>
+Si vous désirez disposer des dernières fonctionnalités et vivre sur la \"bleeding edge\", merci de <a href=\"https://play.google.com/apps/testing/org.ligi.survivalmanual\">rejoindre les Bêta-Testeurs</a>
+<br/>
+Cette application utilise des librairies de support Android \"android-support-libraries\"
+<a href=\"http://kotlinlang.org\">Kotlin</a>,
+<a href=\"https://github.com/MichaelRocks/bimap/\">BiMap</a>,
+<a href=\"https://github.com/chibatching/Kotpref\">KotPref</a>,
+<a href=\"https://github.com/rjeschke/txtmark\">TxtMark</a>
+et <a href=\"https://github.com/ligi/SnackEngage\">SnackEngage</a>
+]]></string>
+    <string name="auto">Automatique</string>
+    <string name="night">Nuit</string>
+    <string name="day">Jour</string>
+
+    <string name="tiny">Minuscule</string>
+    <string name="small">Petit</string>
+    <string name="medium">Moyenne</string>
+    <string name="large">Grande</string>
+    <string name="huge">Enorme</string>
+
+    <string name="preference_daynight_title">Thème Jour/Nuit</string>
+    <string name="preference_daynight_summary">Dois-je être sombre ou clair ?</string>
+
+    <string name="allow_edit">Autoriser l\'édition (Expérimental)</string>
+    <string name="allow_search">Rechercher (Bêta)</string>
+    <string name="preference_fontsize_summary">De quelle taille devraient être les caractères ?</string>
+    <string name="preference_fontsize_title">Taille de police</string>
+
+</resources>
