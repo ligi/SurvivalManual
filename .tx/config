@@ -1,0 +1,22 @@
+[main]
+host = https://www.transifex.com
+
+[survivalmanual.strings]
+file_filter = android/src/main/res/values-<lang>/strings.xml
+source_file = android/src/main/res/values/strings.xml
+source_lang = en
+type = ANDROID
+
+[survivalmanual.play_short_description]
+lang_map = en:en-GB
+file_filter = android/src/prodWithFirebase/play/<lang>/listing/shortdescription
+source_file = android/src/prodWithFirebase/play/en-GB/listing/shortdescription
+source_lang = en
+type = TXT
+
+[survivalmanual.play_description]
+file_filter = meta/txt/<lang>/play_description.txt
+source_file = meta/txt/en/play_description.txt
+source_lang = en
+type = TXT
+
