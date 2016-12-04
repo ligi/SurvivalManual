@@ -75,7 +75,9 @@ android {
 
     lintOptions {
         warning 'InvalidPackage'
+        warning 'MissingTranslation'
     }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
