@@ -26,9 +26,8 @@ node {
   } catch(err) {
    currentBuild.result = FAILURE
   } finally {
-   publishHTML(target:[allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'android/build/outputs/', reportFiles: "lint-results-*Release.html", reportName: 'Lint'])
    androidLint canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
-}
+  }
 
  stage 'test'
   try {
