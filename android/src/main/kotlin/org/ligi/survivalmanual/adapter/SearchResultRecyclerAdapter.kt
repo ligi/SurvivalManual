@@ -28,10 +28,10 @@ class SearchResultRecyclerAdapter(private var term: String, var survivalContent:
     }
 
     override fun onBindViewHolder(holder: SearchResultViewHolder, position: Int) {
-        holder.titleTextView.text = holder.view.context.getString(NavigationDefinitions.getTitleResByURL(list[position].title)!!)
+        holder.titleTextView.text = holder.view.context.getString(NavigationDefinitions.titleResByURLMap[list[position].file]!!)
         holder.teaserTextView.text = HtmlCompat.fromHtml(highLight(list[position].teaser, term))
         holder.itemView.setOnClickListener{
-            onClick.invoke(list[holder.adapterPosition].title)
+            onClick.invoke(list[holder.adapterPosition].file)
         }
     }
 

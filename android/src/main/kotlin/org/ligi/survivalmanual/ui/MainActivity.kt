@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
 
         navigationView.setNavigationItemSelectedListener { item ->
             drawer_layout.closeDrawers()
-            processURL(NavigationDefinitions.menu2htmlMap[item.itemId]!!)
+            processURL(NavigationDefinitions.content[item.itemId].entry.url)
             true
         }
 

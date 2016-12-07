@@ -7,6 +7,7 @@ import android.support.test.espresso.contrib.DrawerActions
 import android.support.test.espresso.contrib.NavigationViewActions.navigateTo
 import android.support.test.espresso.matcher.ViewMatchers.*
 import org.assertj.core.api.Assertions.assertThat
+
 import org.hamcrest.Matchers.containsString
 import org.junit.Rule
 import org.junit.Test
@@ -46,17 +47,18 @@ class TheSurvivalActivity {
 
     @Test
     fun testWeCanOpenAllTopics() {
-        for (url in NavigationDefinitions.menu2htmlMap.values) {
+        NavigationDefinitions.content.forEach {
             onView(withId(R.id.drawer_layout)).perform(DrawerActions.open())
             SystemClock.sleep(500)
-            onView(withId(R.id.navigationView)).perform(navigateTo(NavigationDefinitions.getMenuResFromURL(url)!!))
+            onView(withId(R.id.navigationView)).perform(navigateTo(it.id))
             SystemClock.sleep(500)
             val activity = activityTestRule.activity
             val subtitle = activity.supportActionBar!!.subtitle
-            assertThat(subtitle).isEqualTo(activity.getString(NavigationDefinitions.getTitleResByURL(url)!!))
+            assertThat(subtitle).isEqualTo(activity.getString(NavigationDefinitions.titleResByURLMap[it.entry.url]!!))
 
             activityTestRule.screenShot("topic_" + subtitle!!.toString().replace(" ", "_").replace("/", "_"))
         }
+
     }
 
 }

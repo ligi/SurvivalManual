@@ -47,11 +47,9 @@
             app:srcCompat="@drawable/ic_editor_mode_edit"/>
     </android.support.design.widget.CoordinatorLayout>
 
-    <android.support.design.widget.NavigationView
+    <org.ligi.survivalmanual.ui.MyNavigationView
             android:id="@+id/navigationView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
-
-            app:menu="@menu/navigation"/>
+            android:layout_gravity="start"/>
 </android.support.v4.widget.DrawerLayout>
