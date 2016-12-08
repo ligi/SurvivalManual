@@ -16,14 +16,13 @@ import org.ligi.survivalmanual.ui.MainActivity
 import org.ligi.trulesk.TruleskActivityRule
 import org.ligi.trulesk.invokeMenu
 
-class TheSurvivalActivity {
+class TheSurvivalActivityDirectStart {
 
     @get:Rule
     val activityTestRule = TruleskActivityRule(MainActivity::class.java)
 
     @Test
     fun thatActivityShouldLaunch() {
-
     }
 
     @Test

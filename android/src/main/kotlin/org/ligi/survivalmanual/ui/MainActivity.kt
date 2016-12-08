@@ -104,7 +104,9 @@ class MainActivity : AppCompatActivity() {
 
         contentRecycler.post {
             if (intent.data == null || !processURL(intent.data.path.replace("/", ""))) {
-                processURL(State.lastVisitedURL)
+                if (!processURL(State.lastVisitedURL)) {
+                    processURL(State.FALLBACK_URL)
+                }
             }
 
             switchMode(false)

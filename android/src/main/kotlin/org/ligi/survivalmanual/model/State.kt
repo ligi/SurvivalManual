@@ -7,7 +7,9 @@ import org.ligi.survivalmanual.R
 
 object State : KotprefModel() {
 
-    var lastVisitedURL by stringPrefVar("01")
+    val FALLBACK_URL="02"
+
+    var lastVisitedURL by stringPrefVar(FALLBACK_URL)
     var searchTerm by stringNullablePrefVar(null)
     var lastScrollPos by intPrefVar(0)
     internal val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(context) }
