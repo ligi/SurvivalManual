@@ -1,5 +1,7 @@
 package org.ligi.survivalmanual
 
+import android.content.Intent
+import android.net.Uri
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Rule
 import org.junit.Test
@@ -41,6 +43,22 @@ class TheSurvivalActivityLaunchAfterSetup {
         activityTestRule.launchActivity()
 
         verifyCorrectSubtitle(State.FALLBACK_URL)
+    }
+
+    @Test
+    fun thatWeCanRecoverFromBadURL05() {
+
+        activityTestRule.launchActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://survivalmanual.github.io/05")))
+
+        verifyCorrectSubtitle("05")
+    }
+
+    @Test
+    fun thatWeCanRecoverFromBadURL06() {
+
+        activityTestRule.launchActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://survivalmanual.github.io/06")))
+
+        verifyCorrectSubtitle("06")
     }
 
     private fun verifyCorrectSubtitle(s: String) {
