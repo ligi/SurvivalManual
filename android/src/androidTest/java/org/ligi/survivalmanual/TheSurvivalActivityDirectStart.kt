@@ -46,7 +46,7 @@ class TheSurvivalActivityDirectStart {
 
     @Test
     fun testWeCanOpenAllTopics() {
-        NavigationDefinitions.content.forEach {
+        NavigationDefinitions.content.filter { it.entry.isListed }.forEach {
             onView(withId(R.id.drawer_layout)).perform(DrawerActions.open())
             SystemClock.sleep(500)
             onView(withId(R.id.navigationView)).perform(navigateTo(it.id))

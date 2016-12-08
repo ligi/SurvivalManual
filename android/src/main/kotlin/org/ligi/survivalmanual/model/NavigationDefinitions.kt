@@ -6,8 +6,14 @@ import org.ligi.survivalmanual.R
 
 object NavigationDefinitions {
 
-    open class MenuEntry(val url: String, @StringRes val titleRes: Int, @DrawableRes val iconRes: Int? = null, val isAppendix: Boolean = false)
-    class MenuEntryWithId(val id: Int, val entry: MenuEntry)
+    open class MenuEntry(val url: String,
+                         @StringRes val titleRes: Int,
+                         @DrawableRes val iconRes: Int? = null,
+                         val isAppendix: Boolean = false,
+                         val isListed: Boolean = true)
+
+    class MenuEntryWithId(val id: Int,
+                          val entry: MenuEntry)
 
     val content = arrayOf(
             MenuEntry("02", R.string.psychology, R.drawable.ic_image_portrait),
@@ -35,7 +41,7 @@ object NavigationDefinitions {
 
             MenuEntry("a", R.string.kits, isAppendix = true),
             MenuEntry("b", R.string.edible_medicin_plants, isAppendix = true),
-            MenuEntry("b_wip", R.string.edible_medicin_plants, isAppendix = true),
+            MenuEntry("b_wip", R.string.edible_medicin_plants, isListed = false),
             MenuEntry("c", R.string.poisonous_plants, isAppendix = true),
             MenuEntry("d", R.string.insects_and_arachnids, isAppendix = true),
             MenuEntry("e", R.string.snakes_and_lizards, isAppendix = true),
@@ -44,6 +50,6 @@ object NavigationDefinitions {
             MenuEntry("h", R.string.clouds, isAppendix = true)
     ).mapIndexed(::MenuEntryWithId)
 
-    val titleResByURLMap = content.associate {  it.entry.url to it.entry.titleRes }
+    val titleResByURLMap = content.associate { it.entry.url to it.entry.titleRes }
     fun getTitleResByURL(url: String) = titleResByURLMap[url.split("#").first()]
 }

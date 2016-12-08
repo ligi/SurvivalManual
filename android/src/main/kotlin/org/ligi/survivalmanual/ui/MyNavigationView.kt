@@ -10,7 +10,9 @@ class MyNavigationView(context: Context, attrs: AttributeSet) : NavigationView(c
 
     init {
 
-        NavigationDefinitions.content.filter { !it.entry.isAppendix }.forEach {
+        val listedItems = NavigationDefinitions.content.filter { it.entry.isListed }
+
+        listedItems.filter { !it.entry.isAppendix }.forEach {
             menu.add(0, it.id, Menu.NONE, it.entry.titleRes).apply {
                 it.entry.iconRes?.let { setIcon(it) }
             }
@@ -18,7 +20,7 @@ class MyNavigationView(context: Context, attrs: AttributeSet) : NavigationView(c
 
         val submenu = menu.addSubMenu("Appendix")
 
-        NavigationDefinitions.content.filter { it.entry.isAppendix }.forEach {
+        listedItems.filter { it.entry.isAppendix }.forEach {
             submenu.add(0, it.id, Menu.NONE, it.entry.titleRes)
         }
     }
