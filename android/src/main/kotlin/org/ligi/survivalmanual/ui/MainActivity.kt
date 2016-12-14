@@ -39,9 +39,10 @@ import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
 import org.ligi.survivalmanual.adapter.SearchResultRecyclerAdapter
 import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
-import org.ligi.survivalmanual.model.NavigationDefinitions
+import org.ligi.survivalmanual.model.NavigationEntryMap
 import org.ligi.survivalmanual.model.State
 import org.ligi.survivalmanual.model.SurvivalContent
+import org.ligi.survivalmanual.model.getTitleResByURL
 
 class MainActivity : AppCompatActivity() {
 
@@ -85,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
         navigationView.setNavigationItemSelectedListener { item ->
             drawer_layout.closeDrawers()
-            processURL(NavigationDefinitions.content[item.itemId].entry.url)
+            processURL(NavigationEntryMap[item.itemId].entry.url)
             true
         }
 
@@ -244,7 +245,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun processURL(url: String): Boolean {
 
-        val titleResByURL = NavigationDefinitions.getTitleResByURL(url) ?: return false
+        val titleResByURL = getTitleResByURL(url) ?: return false
 
         currentUrl = url
 

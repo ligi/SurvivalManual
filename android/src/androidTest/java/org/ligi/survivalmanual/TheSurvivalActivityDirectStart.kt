@@ -11,7 +11,8 @@ import org.assertj.core.api.Assertions.assertThat
 import org.hamcrest.Matchers.containsString
 import org.junit.Rule
 import org.junit.Test
-import org.ligi.survivalmanual.model.NavigationDefinitions
+import org.ligi.survivalmanual.model.NavigationEntryMap
+import org.ligi.survivalmanual.model.titleResByURLMap
 import org.ligi.survivalmanual.ui.MainActivity
 import org.ligi.trulesk.TruleskActivityRule
 import org.ligi.trulesk.invokeMenu
@@ -46,14 +47,14 @@ class TheSurvivalActivityDirectStart {
 
     @Test
     fun testWeCanOpenAllTopics() {
-        NavigationDefinitions.content.filter { it.entry.isListed }.forEach {
+        NavigationEntryMap.filter { it.entry.isListed }.forEach {
             onView(withId(R.id.drawer_layout)).perform(DrawerActions.open())
             SystemClock.sleep(500)
             onView(withId(R.id.navigationView)).perform(navigateTo(it.id))
             SystemClock.sleep(500)
             val activity = activityTestRule.activity
             val subtitle = activity.supportActionBar!!.subtitle
-            assertThat(subtitle).isEqualTo(activity.getString(NavigationDefinitions.titleResByURLMap[it.entry.url]!!))
+            assertThat(subtitle).isEqualTo(activity.getString(titleResByURLMap[it.entry.url]!!))
 
             activityTestRule.screenShot("topic_" + subtitle!!.toString().replace(" ", "_").replace("/", "_"))
         }
