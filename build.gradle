@@ -1,7 +1,7 @@
 buildscript {
     ext {
         kotlin_version = '1.0.5-2'
-        support_version = '25.0.1'
+        support_version = '25.1.0'
         firebase_version = '9.8.0'
     }
 
