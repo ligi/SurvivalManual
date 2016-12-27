@@ -225,7 +225,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onPageFinished(view: WebView, url: String) = createWebPrintJob(view)
             })
 
-            val htmlDocument = Processor.process(assets.open(currentUrl).reader().readText())
+            val htmlDocument = Processor.process(survivalContent.getMarkdown(currentUrl))
             newWebView.loadDataWithBaseURL("file:///android_asset/md/", htmlDocument, "text/HTML", "UTF-8", null)
 
             true
