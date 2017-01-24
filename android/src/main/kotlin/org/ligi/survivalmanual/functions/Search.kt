@@ -14,7 +14,7 @@ fun getExtract(text: String, term: String) :String {
 
 fun search(content: SurvivalContent, searchTerm: String)
         = content.getAllFiles()
-        .associate { it to content.getMarkdown(it) }
+        .associate { it to content.getMarkdown(it)!! }
         .filter { it.value.contains(searchTerm) }
         .map {
             SearchResult(it.key, getExtract(it.value, searchTerm))

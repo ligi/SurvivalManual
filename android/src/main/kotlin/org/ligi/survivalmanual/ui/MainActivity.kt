@@ -149,7 +149,7 @@ class MainActivity : AppCompatActivity() {
                 } else if (adapter is SearchResultRecyclerAdapter) {
                     adapter.changeTerm(searchTerm)
                     adapter.toast()
-                    if (survivalContent.getMarkdown(currentUrl).contains(searchTerm)) {
+                    if (survivalContent.getMarkdown(currentUrl)!!.contains(searchTerm)) {
                         contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
                         State.searchTerm = searchTerm
                     }
@@ -256,18 +256,22 @@ class MainActivity : AppCompatActivity() {
 
         State.lastVisitedURL = url
 
-        textInput = splitText(survivalContent.getMarkdown(currentUrl))
+        survivalContent.getMarkdown(currentUrl)?.let { markdown ->
+            textInput = splitText(markdown)
 
-        val newAdapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
-        contentRecycler.adapter = newAdapter
-        if (!State.searchTerm.isNullOrBlank()) {
-            newAdapter.notifyDataSetChanged()
-            newAdapter.getPositionForWord(State.searchTerm!!)?.let {
-                contentRecycler.scrollToPosition(it)
+            val newAdapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
+            contentRecycler.adapter = newAdapter
+            if (!State.searchTerm.isNullOrBlank()) {
+                newAdapter.notifyDataSetChanged()
+                newAdapter.getPositionForWord(State.searchTerm!!)?.let {
+                    contentRecycler.scrollToPosition(it)
+                }
+
             }
-
+            return true
         }
-        return true
+
+        return false
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
