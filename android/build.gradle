@@ -17,8 +17,8 @@ android {
         minSdkVersion 10
 
         targetSdkVersion 25
-        versionCode 28
-        versionName "2.8"
+        versionCode 29
+        versionName "2.9"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         archivesBaseName = "SurvivalManual-$versionName"
