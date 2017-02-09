@@ -37,6 +37,7 @@ import org.ligi.survivalmanual.EventTracker
 import org.ligi.survivalmanual.adapter.EditingRecyclerAdapter
 import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
 import org.ligi.survivalmanual.adapter.SearchResultRecyclerAdapter
+import org.ligi.survivalmanual.functions.CaseInsensitiveSearch
 import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.NavigationEntryMap
@@ -172,10 +173,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun MarkdownRecyclerAdapter.getPositionForWord(searchTerm: String): Int? {
         val first = Math.max(linearLayoutManager.findFirstVisibleItemPosition(), 0)
-        val searchRegex = Regex("(?i)$searchTerm")
+        val search = CaseInsensitiveSearch(searchTerm)
 
         val next = (first..list.lastIndex).firstOrNull {
-            list[it].contains(searchRegex)
+            search.isInContent(list[it])
         }
         return next
     }
