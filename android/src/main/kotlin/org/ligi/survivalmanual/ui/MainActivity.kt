@@ -60,16 +60,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     val onURLClick: (String) -> Unit = {
-        supportActionBar?.subtitle?.let { subtitle ->
-            EventTracker.trackContent(it, subtitle.toString())
-        }
-
-        if (isImage(it)) {
-            val intent = Intent(this, ImageViewActivity::class.java)
-            intent.putExtra("URL", it)
-            startActivity(intent)
+        if (it.startsWith("http")) {
+            startActivityFromURL(it)
         } else {
-            processURL(it)
+            supportActionBar?.subtitle?.let { subtitle ->
+                EventTracker.trackContent(it, subtitle.toString())
+            }
+
+            if (isImage(it)) {
+                val intent = Intent(this, ImageViewActivity::class.java)
+                intent.putExtra("URL", it)
+                startActivity(intent)
+            } else {
+                processURL(it)
+            }
         }
     }
 

@@ -16,7 +16,8 @@ class NavigationEntryWithId(val id: Int,
 
 val NavigationEntryMap = arrayOf(
         NavigationEntry("02", R.string.psychology, R.drawable.ic_image_portrait),
-        NavigationEntry("03", R.string.planning_and_kits, R.drawable.ic_editor_format_list_numbered),
+        NavigationEntry("Kits", R.string.planning_and_kits, R.drawable.ic_editor_format_list_numbered),
+        NavigationEntry("Apps", R.string.apps, R.drawable.ic_hardware_phone_android),
         NavigationEntry("04", R.string.basic_medicine, R.drawable.ic_image_healing),
         NavigationEntry("05", R.string.shelter, R.drawable.ic_action_store),
         NavigationEntry("06", R.string.water, R.drawable.ic_maps_local_drink),
@@ -38,9 +39,11 @@ val NavigationEntryMap = arrayOf(
         NavigationEntry("22", R.string.people, R.drawable.ic_social_people),
         NavigationEntry("23", R.string.man_made_hazards, R.drawable.ic_editor_attach_money),
 
-        NavigationEntry("a", R.string.kits, isAppendix = true),
+        NavigationEntry("MultiTool", R.string.multitool, isAppendix = true),
         NavigationEntry("b", R.string.edible_medicin_plants, isAppendix = true),
         NavigationEntry("b_wip", R.string.edible_medicin_plants, isListed = false),
+
+
         NavigationEntry("c", R.string.poisonous_plants, isAppendix = true),
         NavigationEntry("d", R.string.insects_and_arachnids, isAppendix = true),
         NavigationEntry("e", R.string.snakes_and_lizards, isAppendix = true),
