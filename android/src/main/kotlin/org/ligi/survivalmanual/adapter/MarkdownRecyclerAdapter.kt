@@ -38,6 +38,9 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
 
     override fun onBindViewHolder(holder: TextContentViewHolder, position: Int) {
 
+        val paddingTop = if (position == 0) holder.view.paddingLeft else 0
+        holder.view.setPadding(holder.view.paddingLeft, paddingTop, holder.view.paddingRight, 0)
+
         val html = Processor.process(linkImagesInMarkDown(if (State.searchTerm.isNullOrEmpty()) {
             list[position]
         } else {
