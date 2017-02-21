@@ -282,6 +282,7 @@ class MainActivity : AppCompatActivity() {
 
     var lastFontSize = State.getFontSize()
     var lastNightMode = State.getNightMode()
+    var lastAllowSelect = State.allowSelect()
 
     override fun onResume() {
         super.onResume()
@@ -289,6 +290,10 @@ class MainActivity : AppCompatActivity() {
         if (lastFontSize != State.getFontSize()) {
             contentRecycler.adapter?.notifyDataSetChanged()
             lastFontSize = State.getFontSize()
+        }
+        if (lastAllowSelect != State.allowSelect()) {
+            recreateWhenPossible()
+            lastAllowSelect = State.allowSelect()
         }
         if (lastNightMode != State.getNightMode()) {
             recreateWhenPossible()

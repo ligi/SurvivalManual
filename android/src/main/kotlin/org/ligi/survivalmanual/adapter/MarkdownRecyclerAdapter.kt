@@ -3,6 +3,7 @@ package org.ligi.survivalmanual.adapter
 import android.content.Context
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.support.v7.widget.RecyclerView
 import android.text.Html
 import android.text.Spannable
@@ -29,15 +30,18 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
         val textView = LayoutInflater.from(parent.context).inflate(R.layout.text, parent, false) as TextView
         textView.movementMethod = LinkMovementMethod.getInstance()
+        if (Build.VERSION.SDK_INT >= 11) {
+            textView.setTextIsSelectable(State.allowSelect())
+        }
         return TextContentViewHolder(textView)
     }
 
     override fun onBindViewHolder(holder: TextContentViewHolder, position: Int) {
 
-        val html = Processor.process(linkImagesInMarkDown( if (State.searchTerm.isNullOrEmpty()) {
+        val html = Processor.process(linkImagesInMarkDown(if (State.searchTerm.isNullOrEmpty()) {
             list[position]
-        }else {
-            highLight(list[position],State.searchTerm)
+        } else {
+            highLight(list[position], State.searchTerm)
         }))
 
         setTextViewHTML(holder.view, html)

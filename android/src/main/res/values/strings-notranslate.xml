@@ -4,4 +4,5 @@
     <string name="preference_key_edittoggle">EDITTOGGLE</string>
     <string name="preference_key_fontsize">FONTSIZETOGGLE</string>
     <string name="preference_key_search">SEARCHTOGGLE</string>
+    <string name="preference_key_select_text">SELECTTEXTTOGGLE</string>
 </resources>

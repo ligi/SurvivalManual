@@ -19,6 +19,11 @@
 
 
     <CheckBoxPreference
+            android:key="@string/preference_key_select_text"
+            android:summary="Makes you able to select text to copy. This is an option as it can disturb scrolling and on some older android devices even crash"
+            android:title="Allow selection of text"/>
+
+    <CheckBoxPreference
             android:key="@string/preference_key_search"
             android:summary="Find what you need"
             android:title="Search ( Beta )"/>

@@ -16,6 +16,7 @@ object State : KotprefModel() {
 
     fun allowEdit() = sharedPreferences.getBoolean(context.getString(R.string.preference_key_edittoggle), false)
     fun allowSearch() = sharedPreferences.getBoolean(context.getString(R.string.preference_key_search), false)
+    fun allowSelect() = sharedPreferences.getBoolean(context.getString(R.string.preference_key_select_text), false)
 
     fun getFontSize() =
             8f + 4f*Integer.parseInt(sharedPreferences.getString(context.getString(R.string.preference_key_fontsize), "2"))
