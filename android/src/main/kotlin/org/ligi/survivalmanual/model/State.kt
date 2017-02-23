@@ -12,6 +12,8 @@ object State : KotprefModel() {
     var lastVisitedURL by stringPrefVar(FALLBACK_URL)
     var searchTerm by stringNullablePrefVar(null)
     var lastScrollPos by intPrefVar(0)
+    var isIntitalOpening by booleanPrefVar(true)
+
     internal val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(context) }
 
     fun allowEdit() = sharedPreferences.getBoolean(context.getString(R.string.preference_key_edittoggle), false)

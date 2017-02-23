@@ -1,6 +1,5 @@
 package org.ligi.survivalmanual.ui
 
-import android.R
 import android.annotation.TargetApi
 import android.content.Context
 import android.content.Intent
@@ -11,23 +10,20 @@ import android.print.PrintManager
 import android.support.design.widget.NavigationView
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
 import android.support.v7.widget.Toolbar
-import android.text.method.LinkMovementMethod
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.TextView
 import android.widget.Toast
 import com.github.rjeschke.txtmark.Processor
 import kotlinx.android.synthetic.main.activity_main.*
-import org.ligi.compat.HtmlCompat
 import org.ligi.compat.WebViewCompat
 import org.ligi.kaxt.*
 import org.ligi.snackengage.SnackEngage
@@ -116,6 +112,11 @@ class MainActivity : AppCompatActivity() {
             }
 
             switchMode(false)
+        }
+
+        if (State.isIntitalOpening) {
+            drawer_layout.openDrawer(Gravity.LEFT)
+            State.isIntitalOpening = false
         }
     }
 
