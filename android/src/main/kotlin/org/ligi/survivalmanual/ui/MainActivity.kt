@@ -2,6 +2,7 @@ package org.ligi.survivalmanual.ui
 
 import android.annotation.TargetApi
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -10,12 +11,14 @@ import android.print.PrintManager
 import android.support.design.widget.NavigationView
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
 import android.support.v7.widget.Toolbar
 import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebResourceRequest
@@ -30,6 +33,7 @@ import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 import org.ligi.survivalmanual.BuildConfig
 import org.ligi.survivalmanual.EventTracker
+import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.adapter.EditingRecyclerAdapter
 import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
 import org.ligi.survivalmanual.adapter.SearchResultRecyclerAdapter
@@ -58,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     val onURLClick: (String) -> Unit = {
         if (it.startsWith("http")) {
             startActivityFromURL(it)
-        } else {
+        } else if (!processProductLinks(it)) {
             supportActionBar?.subtitle?.let { subtitle ->
                 EventTracker.trackContent(it, subtitle.toString())
             }
@@ -70,6 +74,40 @@ class MainActivity : AppCompatActivity() {
             } else {
                 processURL(it)
             }
+        }
+    }
+
+    fun processProductLinks(it: String): Boolean {
+        val map = mapOf(
+                "SolarUSBCharger" to "B012YUJJM8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B012YUJJM8&linkCode=as2&tag=ligi-20&linkId=02d3fbda3eaadbd10744c42805e0e791",
+                "CampStoveUSB" to "B00BQHET9O/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00BQHET9O&linkCode=as2&tag=ligi-20&linkId=d949a1aca04d67b5e61d3bf77ce89d22",
+                "HandCrankUSB" to "B01AD7IN4O/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01AD7IN4O&linkCode=as2&tag=ligi-20&linkId=9a9c9d7ff318d594d077fa917f8c3739",
+                "CarUSBCharger" to "B00VH84L5E/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00VH84L5E&linkCode=as2&tag=ligi-20&linkId=41a56b9c800ed019a0af367a49050502",
+                "OHTMultiTool" to "B008P8EYWE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B008P8EYWE&linkCode=as2&tag=ligi-20&linkId=e72720183453da1b74c2a0413521b194"
+        )
+
+        if (map.containsKey(it)) {
+            val url = "https://www.amazon.com/gp/product/" + map[it]
+            val view = LayoutInflater.from(this@MainActivity).inflate(R.layout.alert_product_link, null)
+
+            AlertDialog.Builder(this@MainActivity)
+                    .setTitle("Product Link Disclaimer")
+                    .setView(view)
+                    .setNegativeButton("cancel", null)
+                    .setPositiveButton("to amazon", { dialogInterface: DialogInterface, i: Int ->
+                        startActivityFromURL(url)
+                    })
+                    .setNeutralButton("share link", { dialogInterface: DialogInterface, i: Int ->
+                        val sendIntent = Intent()
+                        sendIntent.action = Intent.ACTION_SEND
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, url)
+                        sendIntent.type = "text/plain"
+                        startActivity(Intent.createChooser(sendIntent, "Send link to"))
+                    })
+                    .show()
+            return true
+        } else {
+            return false
         }
     }
 

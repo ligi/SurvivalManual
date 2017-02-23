@@ -46,7 +46,6 @@ val NavigationEntryMap = arrayOf(
         NavigationEntry("b", R.string.edible_medicin_plants, isAppendix = true),
         NavigationEntry("b_wip", R.string.edible_medicin_plants, isListed = false),
 
-
         NavigationEntry("c", R.string.poisonous_plants, isAppendix = true),
         NavigationEntry("d", R.string.insects_and_arachnids, isAppendix = true),
         NavigationEntry("e", R.string.snakes_and_lizards, isAppendix = true),
