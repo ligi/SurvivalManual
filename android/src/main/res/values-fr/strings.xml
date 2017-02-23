@@ -38,19 +38,6 @@
     <string name="appendix">Annexes</string>
     <string name="help_title">Aide</string>
     <string name="hostile_areas">Régions Hostiles</string>
-    <string name="help_text">
-<![CDATA[
-Ceci est le manuel de survie de terrain, utilisable hors ligne v$VERSION basé sur le manuel FM 3-05.70 (FM 21-76). Cette application est un logiciel libre - vous pouvez retrouver le code source sur <a href=\"https://github.com/ligi/SurvivalManual\">GitHub</a>. Les demandes de fusion (Pull-Requests) sont bienvenues !<br/>
-Si vous avez des améliorations à proposer vis à vis du contenu ou si vous voulez aider à traduire, vous pouvez utiliser <a href=\"https://github.com/ligi/SurvivalManual/wiki\">ce wiki.</a><br/>
-Si vous désirez disposer des dernières fonctionnalités et vivre sur la \"bleeding edge\", merci de <a href=\"https://play.google.com/apps/testing/org.ligi.survivalmanual\">rejoindre les Bêta-Testeurs</a>
-<br/>
-Cette application utilise des librairies de support Android \"android-support-libraries\"
-<a href=\"http://kotlinlang.org\">Kotlin</a>,
-<a href=\"https://github.com/MichaelRocks/bimap/\">BiMap</a>,
-<a href=\"https://github.com/chibatching/Kotpref\">KotPref</a>,
-<a href=\"https://github.com/rjeschke/txtmark\">TxtMark</a>
-et <a href=\"https://github.com/ligi/SnackEngage\">SnackEngage</a>
-]]></string>
     <string name="auto">Automatique</string>
     <string name="night">Nuit</string>
     <string name="day">Jour</string>
