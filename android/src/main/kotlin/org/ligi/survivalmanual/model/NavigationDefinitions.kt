@@ -44,14 +44,16 @@ val NavigationEntryMap = arrayOf(
 
         NavigationEntry("MultiTool", R.string.multitool, isAppendix = true),
         NavigationEntry("b", R.string.edible_medicin_plants, isAppendix = true),
-        NavigationEntry("b_wip", R.string.edible_medicin_plants, isListed = false),
-
         NavigationEntry("c", R.string.poisonous_plants, isAppendix = true),
         NavigationEntry("d", R.string.insects_and_arachnids, isAppendix = true),
         NavigationEntry("e", R.string.snakes_and_lizards, isAppendix = true),
         NavigationEntry("f", R.string.fish_and_mollusks, isAppendix = true),
         NavigationEntry("g", R.string.ropes_and_knots, isAppendix = true),
-        NavigationEntry("h", R.string.clouds, isAppendix = true)
+        NavigationEntry("h", R.string.clouds, isAppendix = true),
+
+        NavigationEntry("TranslatorNotes", R.string.translator_notes, isListed = false),
+        NavigationEntry("b_wip", R.string.edible_medicin_plants, isListed = false)
+
 ).mapIndexed(::NavigationEntryWithId)
 
 val titleResByURLMap = NavigationEntryMap.associate { it.entry.url to it.entry.titleRes }

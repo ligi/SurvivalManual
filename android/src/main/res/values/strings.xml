@@ -74,5 +74,6 @@
     <string name="preference_fontsize_summary">How big should the letters be?</string>
     <string name="preference_fontsize_title">Font size</string>
     <string name="power">Power</string>
+    <string name="translator_notes">Translator Notes</string>
 
 </resources>
