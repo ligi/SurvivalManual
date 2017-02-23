@@ -186,21 +186,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        org.ligi.survivalmanual.R.id.menu_help -> {
-            EventTracker.trackGeneric("help")
-            val textView = TextView(this)
-            val helpText = getString(org.ligi.survivalmanual.R.string.help_text).replace("\$VERSION", BuildConfig.VERSION_NAME)
-            textView.text = HtmlCompat.fromHtml(helpText)
-            textView.movementMethod = LinkMovementMethod.getInstance()
-            val padding = resources.getDimensionPixelSize(org.ligi.survivalmanual.R.dimen.help_padding)
-            textView.setPadding(padding, padding, padding, padding)
-            AlertDialog.Builder(this)
-                    .setTitle(org.ligi.survivalmanual.R.string.help_title)
-                    .setView(textView)
-                    .setPositiveButton(R.string.ok, null)
-                    .show()
-            true
-        }
 
         org.ligi.survivalmanual.R.id.menu_settings -> {
             startActivityFromClass(PreferenceActivity::class.java)

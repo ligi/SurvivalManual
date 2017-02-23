@@ -1,12 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-            android:id="@+id/menu_help"
-            android:icon="@drawable/ic_action_help_outline"
-            android:title="@string/introduction"
-            app:showAsAction="ifRoom"/>
-
     <item android:id="@+id/action_search"
           android:title="Search"
           android:icon="@drawable/ic_action_search"

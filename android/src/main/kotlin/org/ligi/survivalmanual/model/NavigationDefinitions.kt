@@ -15,6 +15,7 @@ class NavigationEntryWithId(val id: Int,
                             val entry: NavigationEntry)
 
 val NavigationEntryMap = arrayOf(
+        NavigationEntry("Introduction", R.string.introduction, R.drawable.ic_action_info_outline),
         NavigationEntry("02", R.string.psychology, R.drawable.ic_image_portrait),
         NavigationEntry("Power", R.string.power, R.drawable.ic_notification_power),
         NavigationEntry("Kits", R.string.planning_and_kits, R.drawable.ic_editor_format_list_numbered),
