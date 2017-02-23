@@ -109,7 +109,7 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
 
         override fun handleTag(opening: Boolean, tag: String, output: Editable, xmlReader: XMLReader) {
             if (tag.equals("li", ignoreCase = true)) {
-                output.append(if (opening) "\u2022 " else "\n")
+                output.append(if (opening) "\u2023 " else "\n")
             }
         }
     }
