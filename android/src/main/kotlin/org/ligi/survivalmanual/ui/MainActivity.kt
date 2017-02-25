@@ -83,7 +83,8 @@ class MainActivity : AppCompatActivity() {
                 "CampStoveUSB" to "B00BQHET9O/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00BQHET9O&linkCode=as2&tag=ligi-20&linkId=d949a1aca04d67b5e61d3bf77ce89d22",
                 "HandCrankUSB" to "B01AD7IN4O/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01AD7IN4O&linkCode=as2&tag=ligi-20&linkId=9a9c9d7ff318d594d077fa917f8c3739",
                 "CarUSBCharger" to "B00VH84L5E/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00VH84L5E&linkCode=as2&tag=ligi-20&linkId=41a56b9c800ed019a0af367a49050502",
-                "OHTMultiTool" to "B008P8EYWE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B008P8EYWE&linkCode=as2&tag=ligi-20&linkId=e72720183453da1b74c2a0413521b194"
+                "OHTMultiTool" to "B008P8EYWE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B008P8EYWE&linkCode=as2&tag=ligi-20&linkId=e72720183453da1b74c2a0413521b194",
+                "TreadMultiTool" to "B018IOXXP8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B018IOXXP8&linkCode=as2&tag=ligi-20&linkId=1c14c69653606e308b9f4b98372a5a51"
         )
 
         if (map.containsKey(it)) {
