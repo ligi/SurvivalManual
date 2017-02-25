@@ -6,6 +6,7 @@ import android.content.Intent
 import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
 import org.ligi.kaxt.startActivityFromURL
+import org.ligi.survivalmanual.EventTracker
 import org.ligi.survivalmanual.R
 
 fun processProductLinks(it: String, activity: Activity): Boolean {
@@ -20,17 +21,22 @@ fun processProductLinks(it: String, activity: Activity): Boolean {
     )
 
     if (map.containsKey(it)) {
+        EventTracker.trackGeneric("product", "click")
         val url = "https://www.amazon.com/gp/product/" + map[it]
         val view = LayoutInflater.from(activity).inflate(R.layout.alert_product_link, null)
 
         AlertDialog.Builder(activity)
                 .setTitle("Product Link")
                 .setView(view)
-                .setNegativeButton("cancel", null)
+                .setNegativeButton("cancel", { dialogInterface: DialogInterface, i: Int ->
+                    EventTracker.trackGeneric("product", "cancel")
+                })
                 .setPositiveButton("to amazon", { dialogInterface: DialogInterface, i: Int ->
+                    EventTracker.trackGeneric("product", "go")
                     activity.startActivityFromURL(url)
                 })
                 .setNeutralButton("send link", { dialogInterface: DialogInterface, i: Int ->
+                    EventTracker.trackGeneric("product", "send")
                     val sendIntent = Intent()
                     sendIntent.action = Intent.ACTION_SEND
                     sendIntent.putExtra(Intent.EXTRA_TEXT, url)
