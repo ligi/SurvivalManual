@@ -1,9 +1,7 @@
 package org.ligi.survivalmanual.ui
 
 import android.annotation.TargetApi
-import android.app.Activity
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -12,14 +10,12 @@ import android.print.PrintManager
 import android.support.design.widget.NavigationView
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
 import android.support.v7.widget.Toolbar
 import android.view.Gravity
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebResourceRequest
@@ -34,7 +30,6 @@ import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 import org.ligi.survivalmanual.BuildConfig
 import org.ligi.survivalmanual.EventTracker
-import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.adapter.EditingRecyclerAdapter
 import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
 import org.ligi.survivalmanual.adapter.SearchResultRecyclerAdapter
@@ -61,12 +56,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     val onURLClick: (String) -> Unit = {
+        EventTracker.trackContent(it)
         if (it.startsWith("http")) {
             startActivityFromURL(it)
         } else if (!processProductLinks(it, this)) {
-            supportActionBar?.subtitle?.let { subtitle ->
-                EventTracker.trackContent(it, subtitle.toString())
-            }
 
             if (isImage(it)) {
                 val intent = Intent(this, ImageViewActivity::class.java)
@@ -247,7 +240,7 @@ class MainActivity : AppCompatActivity() {
         currentUrl = url
 
         val newTitle = getString(titleResByURL)
-        EventTracker.trackContent(url, newTitle)
+        EventTracker.trackContent(url)
 
         supportActionBar?.subtitle = newTitle
 

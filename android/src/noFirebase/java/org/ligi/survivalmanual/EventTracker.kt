@@ -4,7 +4,7 @@ import android.content.Context
 
 object EventTracker {
     fun init(context: Context) {}
-    fun trackContent(id: String, type: String) {}
+    fun trackContent(id: String) {}
     fun trackGeneric(event: String, value: String) {}
     fun trackGeneric(event: String) {}
 }

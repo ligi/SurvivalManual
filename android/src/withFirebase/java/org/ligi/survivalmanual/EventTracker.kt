@@ -14,10 +14,9 @@ object EventTracker {
         this.context = context
     }
 
-    fun trackContent(id: String, type: String) {
+    fun trackContent(type: String) {
         val params = Bundle()
 
-        params.putString(FirebaseAnalytics.Param.ITEM_ID, id)
         params.putString(FirebaseAnalytics.Param.CONTENT_TYPE, type)
 
         analytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, params)
