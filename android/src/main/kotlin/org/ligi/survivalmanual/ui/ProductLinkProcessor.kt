@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
 import android.support.v7.app.AlertDialog
-import android.view.LayoutInflater
+import org.ligi.kaxt.inflate
 import org.ligi.kaxt.startActivityFromURL
 import org.ligi.survivalmanual.EventTracker
 import org.ligi.survivalmanual.R
@@ -24,7 +24,7 @@ fun processProductLinks(it: String, activity: Activity): Boolean {
     if (map.containsKey(it)) {
         EventTracker.trackGeneric("product", "click")
         val url = "https://www.amazon.com/gp/product/" + map[it]
-        val view = LayoutInflater.from(activity).inflate(R.layout.alert_product_link, null)
+        val view = activity.inflate(R.layout.alert_product_link)
 
         AlertDialog.Builder(activity)
                 .setTitle("Product Link")
