@@ -113,9 +113,9 @@ class MainActivity : AppCompatActivity() {
             switchMode(false)
         }
 
-        if (State.isIntitalOpening) {
+        if (State.isInitialOpening) {
             drawer_layout.openDrawer(Gravity.LEFT)
-            State.isIntitalOpening = false
+            State.isInitialOpening = false
         }
     }
 

@@ -9,10 +9,10 @@ object State : KotprefModel() {
 
     val FALLBACK_URL="02"
 
-    var lastVisitedURL by stringPrefVar(FALLBACK_URL)
-    var searchTerm by stringNullablePrefVar(null)
-    var lastScrollPos by intPrefVar(0)
-    var isIntitalOpening by booleanPrefVar(true)
+    var lastVisitedURL by stringPref(FALLBACK_URL)
+    var searchTerm by nullableStringPref(null)
+    var lastScrollPos by intPref(0)
+    var isInitialOpening by booleanPref(true)
 
     internal val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(context) }
 
