@@ -16,22 +16,22 @@ class TheSurvivalActivityLaunchAfterSetup {
     val activityTestRule = TruleskActivityRule(MainActivity::class.java, false)
 
     @Test
-    fun thatWeCanLaunchWith04() {
-        State.lastVisitedURL = "04"
+    fun thatWeCanLaunchWithTools() {
+        State.lastVisitedURL = "Tools"
 
         activityTestRule.launchActivity()
 
-        verifyCorrectSubtitle("04")
+        verifyCorrectSubtitle("Tools")
     }
 
 
     @Test
-    fun thatWeCanLaunchWith05() {
-        State.lastVisitedURL = "05"
+    fun thatWeCanLaunchWithPower() {
+        State.lastVisitedURL = "Power"
 
         activityTestRule.launchActivity()
 
-        verifyCorrectSubtitle("05")
+        verifyCorrectSubtitle("Power")
     }
 
 
@@ -46,19 +46,19 @@ class TheSurvivalActivityLaunchAfterSetup {
     }
 
     @Test
-    fun thatWeCanRecoverFromBadURL05() {
+    fun testPowerViaIntentData() {
 
-        activityTestRule.launchActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://survivalmanual.github.io/05")))
+        activityTestRule.launchActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://survivalmanual.github.io/Power")))
 
-        verifyCorrectSubtitle("05")
+        verifyCorrectSubtitle("Power")
     }
 
     @Test
-    fun thatWeCanRecoverFromBadURL06() {
+    fun testToolsViaIntentData() {
 
-        activityTestRule.launchActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://survivalmanual.github.io/06")))
+        activityTestRule.launchActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://survivalmanual.github.io/Tools")))
 
-        verifyCorrectSubtitle("06")
+        verifyCorrectSubtitle("Tools")
     }
 
     private fun verifyCorrectSubtitle(s: String) {

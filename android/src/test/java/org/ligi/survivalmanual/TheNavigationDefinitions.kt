@@ -8,8 +8,8 @@ class TheNavigationDefinitions {
 
     @Test
     fun getMenuResFromURLWorks() {
-        assertThat(getTitleResByURL("02")).isEqualTo(R.string.psychology)
-        assertThat(getTitleResByURL("b")).isEqualTo(R.string.edible_medicin_plants)
-        assertThat(getTitleResByURL("b#foo")).isEqualTo(R.string.edible_medicin_plants)
+        assertThat(getTitleResByURL("Psychology")).isEqualTo(R.string.psychology)
+        assertThat(getTitleResByURL("Clouds")).isEqualTo(R.string.clouds)
+        assertThat(getTitleResByURL("Clouds#foo")).isEqualTo(R.string.clouds)
     }
 }

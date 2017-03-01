@@ -7,7 +7,7 @@ import org.ligi.survivalmanual.R
 
 object State : KotprefModel() {
 
-    val FALLBACK_URL="02"
+    val FALLBACK_URL = NavigationEntryMap.first().entry.url
 
     var lastVisitedURL by stringPref(FALLBACK_URL)
     var searchTerm by nullableStringPref(null)
@@ -21,7 +21,7 @@ object State : KotprefModel() {
     fun allowSelect() = sharedPreferences.getBoolean(context.getString(R.string.preference_key_select_text), false)
 
     fun getFontSize() =
-            8f + 4f*Integer.parseInt(sharedPreferences.getString(context.getString(R.string.preference_key_fontsize), "2"))
+            8f + 4f * Integer.parseInt(sharedPreferences.getString(context.getString(R.string.preference_key_fontsize), "2"))
 
     fun getNightMode(): Int {
         val key = sharedPreferences.getString(context.getString(R.string.preference_key_nightmode), "auto")
