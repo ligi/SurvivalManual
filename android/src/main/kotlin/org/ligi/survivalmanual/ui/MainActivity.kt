@@ -8,8 +8,6 @@ import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
-import android.support.design.widget.NavigationView
-import android.support.v4.content.ContextCompat.startActivity
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AlertDialog
@@ -85,8 +83,6 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(drawerToggle)
         setSupportActionBar(findViewById(org.ligi.survivalmanual.R.id.toolbar) as Toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        val navigationView = findViewById(org.ligi.survivalmanual.R.id.navigationView) as NavigationView
 
         navigationView.setNavigationItemSelectedListener { item ->
             drawer_layout.closeDrawers()
@@ -252,6 +248,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun processURL(url: String): Boolean {
 
+        VisitedURLStore.add(url)
         val titleResByURL = getTitleResByURL(url) ?: return false
 
         currentUrl = url
@@ -275,6 +272,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
+            navigationView.refresh()
+
             return true
         }
 
