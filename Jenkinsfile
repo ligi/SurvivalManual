@@ -35,8 +35,8 @@ node {
   } catch(err) {
    currentBuild.result = FAILURE
   } finally {
-   step([$class: 'JUnitResultArchiver', testResults: 'android/build/test-results/*/*/*.xml'])
-   publishHTML(target:[allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'android/build/reports/tests/', reportFiles: "*/*/index.html", reportName: 'UnitTest'])
+   step([$class: 'JUnitResultArchiver', testResults: 'android/build/test-results/*/*.xml'])
+   publishHTML(target:[allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'android/build/reports/tests/', reportFiles: "*/index.html", reportName: 'UnitTest'])
   }
   
  stage 'assemble'
