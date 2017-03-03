@@ -43,12 +43,12 @@ val NavigationEntryMap = arrayOf(
         NavigationEntry("ManMadeHazards", R.string.man_made_hazards, R.drawable.ic_editor_attach_money),
 
         NavigationEntry("MultiTool", R.string.multitool, isAppendix = true),
-        NavigationEntry("b", R.string.edible_medicin_plants, isAppendix = true),
-        NavigationEntry("c", R.string.poisonous_plants, isAppendix = true),
-        NavigationEntry("d", R.string.insects_and_arachnids, isAppendix = true),
-        NavigationEntry("e", R.string.snakes_and_lizards, isAppendix = true),
-        NavigationEntry("f", R.string.fish_and_mollusks, isAppendix = true),
-        NavigationEntry("g", R.string.ropes_and_knots, isAppendix = true),
+        NavigationEntry("MedicinalPlants", R.string.edible_medicin_plants, isAppendix = true),
+        NavigationEntry("PoisonousPlantsList", R.string.poisonous_plants, isAppendix = true),
+        NavigationEntry("InsectsAndArachnids", R.string.insects_and_arachnids, isAppendix = true),
+        NavigationEntry("SnakesAndLizards", R.string.snakes_and_lizards, isAppendix = true),
+        NavigationEntry("FishAndMollusks", R.string.fish_and_mollusks, isAppendix = true),
+        NavigationEntry("RopesAndKnots", R.string.ropes_and_knots, isAppendix = true),
         NavigationEntry("Clouds", R.string.clouds, isAppendix = true),
 
         NavigationEntry("TranslatorNotes", R.string.translator_notes, isListed = false),
