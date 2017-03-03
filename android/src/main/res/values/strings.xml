@@ -76,5 +76,6 @@
     <string name="power">Power</string>
     <string name="translator_notes">Translator Notes</string>
     <string name="product_link_disclaimer">You clicked on a product link. They can help to support this app because they are affiliate links from amazon. If you buy this product or something else on amazon behind this link - then I should get some money from them.</string>
+    <string name="bookmark">Bookmark</string>
 
 </resources>

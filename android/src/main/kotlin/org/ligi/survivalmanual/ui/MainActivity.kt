@@ -2,14 +2,17 @@ package org.ligi.survivalmanual.ui
 
 import android.annotation.TargetApi
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
 import android.support.design.widget.NavigationView
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -24,22 +27,21 @@ import android.webkit.WebViewClient
 import android.widget.Toast
 import com.github.rjeschke.txtmark.Processor
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.bookmark.view.*
 import org.ligi.compat.WebViewCompat
 import org.ligi.kaxt.*
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 import org.ligi.survivalmanual.BuildConfig
 import org.ligi.survivalmanual.EventTracker
+import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.adapter.EditingRecyclerAdapter
 import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
 import org.ligi.survivalmanual.adapter.SearchResultRecyclerAdapter
 import org.ligi.survivalmanual.functions.CaseInsensitiveSearch
 import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
-import org.ligi.survivalmanual.model.NavigationEntryMap
-import org.ligi.survivalmanual.model.State
-import org.ligi.survivalmanual.model.SurvivalContent
-import org.ligi.survivalmanual.model.getTitleResByURL
+import org.ligi.survivalmanual.model.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,6 +50,8 @@ class MainActivity : AppCompatActivity() {
     val survivalContent by lazy { SurvivalContent(assets) }
 
     lateinit var currentUrl: String
+    lateinit var currentTopicName: String
+
     lateinit var textInput: MutableList<String>
 
     fun imageWidth(): Int {
@@ -146,7 +150,7 @@ class MainActivity : AppCompatActivity() {
                         contentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent, {
                             processURL(it)
                             closeKeyboard()
-                        }).toast()
+                        }).apply { toast() }
 
                     }
 
@@ -168,11 +172,10 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    fun SearchResultRecyclerAdapter.toast(): SearchResultRecyclerAdapter {
-        if (this.list.isEmpty()) {
+    fun SearchResultRecyclerAdapter.toast() = {
+        if (list.isEmpty()) {
             Toast.makeText(this@MainActivity, State.searchTerm + " not found", Toast.LENGTH_LONG).show()
         }
-        return this
     }
 
     private fun MarkdownRecyclerAdapter.getPositionForWord(searchTerm: String): Int? {
@@ -221,6 +224,20 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        org.ligi.survivalmanual.R.id.menu_bookmark -> {
+            val view = inflate(R.layout.bookmark)
+            view.topicText.text = currentTopicName
+            AlertDialog.Builder(this)
+                    .setView(view)
+                    .setTitle("Add Bookmark")
+                    .setPositiveButton("Bookmark", { _: DialogInterface, _: Int ->
+                        Bookmarks.persist(Bookmark(currentUrl, view.commentEdit.text.toString(), ""))
+                    })
+                    .setNegativeButton("Cancel", { _: DialogInterface, _: Int -> })
+                    .show()
+            true
+        }
+
         else -> drawerToggle.onOptionsItemSelected(item)
     }
 
@@ -239,10 +256,10 @@ class MainActivity : AppCompatActivity() {
 
         currentUrl = url
 
-        val newTitle = getString(titleResByURL)
+        currentTopicName = getString(titleResByURL)
         EventTracker.trackContent(url)
 
-        supportActionBar?.subtitle = newTitle
+        supportActionBar?.subtitle = currentTopicName
 
         State.lastVisitedURL = url
 
