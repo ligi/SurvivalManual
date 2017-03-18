@@ -123,7 +123,7 @@ dependencies {
         exclude module: 'recyclerview-v7'
     }
 
-    androidTestCompile 'com.github.ligi:trulesk:0.16'
+    androidTestCompile 'com.github.ligi:trulesk:0.18'
     androidTestCompile 'com.squareup.assertj:assertj-android:1.1.1'
     androidTestCompile 'org.mockito:mockito-core:2.7.10'
     androidTestCompile 'com.linkedin.dexmaker:dexmaker-mockito:2.2.0'
