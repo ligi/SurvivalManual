@@ -11,6 +11,12 @@ class SurvivalContent(val assetManager: AssetManager) {
         null
     }
 
+    fun hasFile(url: String) = try {
+        assetManager.open("md/" + url) != null
+    } catch (e: IOException) {
+        false
+    }
+
     fun getAllFiles() = assetManager.list("md").filter { it.endsWith(".md") }.map { it.replace(".md", "") }
 
     private fun getFullMarkDownURL(url: String) = "md/$url.md"
