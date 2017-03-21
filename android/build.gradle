@@ -89,14 +89,8 @@ dependencies {
     compile "com.android.support:design:$support_version"
     compile "com.android.support:preference-v7:$support_version"
 
-    compile("com.chibatching.kotpref:kotpref:2.0.0") {
-        exclude group: 'org.jetbrains.kotlin'
-    }
-
-    compile("com.chibatching.kotpref:initializer:2.0.0") {
-        exclude group: 'org.jetbrains.kotlin'
-    }
-
+    compile "com.chibatching.kotpref:kotpref:2.1.0"
+    compile "com.chibatching.kotpref:initializer:2.1.0"
 
     compile "com.android.support:cardview-v7:$support_version"
 
