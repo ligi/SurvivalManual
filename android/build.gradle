@@ -100,7 +100,7 @@ dependencies {
     compile "com.github.ligi:ExtraCompats:0.4"
 
     compile 'com.github.ligi:snackengage:0.9'
-    compile 'com.github.ligi:KAXT:0.15'
+    compile 'com.github.ligi:KAXT:0.16'
 
     compile 'com.github.hotchemi:permissionsdispatcher:2.3.2'
     kapt 'com.github.hotchemi:permissionsdispatcher-processor:2.3.2'
