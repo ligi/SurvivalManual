@@ -15,7 +15,7 @@ import org.ligi.survivalmanual.model.NavigationEntryMap
 import org.ligi.survivalmanual.model.SurvivalContent
 import org.ligi.survivalmanual.ui.PRODUCT_MAP
 
-class TheSurvivalData {
+class TheSurvivalContent {
 
     val survivalContent = SurvivalContent(InstrumentationRegistry.getTargetContext().assets)
 
