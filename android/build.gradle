@@ -88,7 +88,6 @@ dependencies {
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:design:$support_version"
     compile "com.android.support:preference-v7:$support_version"
-    compile 'es.nitaur.markdown:txtmark:0.16'
 
     compile("com.chibatching.kotpref:kotpref:2.0.0") {
         exclude group: 'org.jetbrains.kotlin'
@@ -101,9 +100,7 @@ dependencies {
 
     compile "com.android.support:cardview-v7:$support_version"
 
-    androidTestCompile('com.github.ligi:intellij-markdown:android_via_jitpack') {
-        exclude group: 'org.jetbrains.kotlin'
-    }
+    compile('com.github.ligi:intellij-markdown:android_via_jitpack')
 
     compile 'com.github.ligi:TouchImageView:2.1'
     compile('com.github.ligi:ExtraCompats:0.4') {

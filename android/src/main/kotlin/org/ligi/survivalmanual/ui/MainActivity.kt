@@ -23,7 +23,6 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
-import com.github.rjeschke.txtmark.Processor
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bookmark.view.*
 import org.ligi.compat.WebViewCompat
@@ -38,6 +37,7 @@ import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
 import org.ligi.survivalmanual.adapter.SearchResultRecyclerAdapter
 import org.ligi.survivalmanual.functions.CaseInsensitiveSearch
 import org.ligi.survivalmanual.functions.isImage
+import org.ligi.survivalmanual.functions.convertMarkdownToHtml
 import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.*
 
@@ -214,7 +214,8 @@ class MainActivity : AppCompatActivity() {
                 override fun onPageFinished(view: WebView, url: String) = createWebPrintJob(view)
             })
 
-            val htmlDocument = Processor.process(survivalContent.getMarkdown(currentUrl))
+            val htmlDocument = convertMarkdownToHtml(survivalContent.getMarkdown(currentUrl)!!)
+
             newWebView.loadDataWithBaseURL("file:///android_asset/md/", htmlDocument, "text/HTML", "UTF-8", null)
 
             true

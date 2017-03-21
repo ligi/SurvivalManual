@@ -17,9 +17,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.github.rjeschke.txtmark.Processor
 import org.ligi.compat.HtmlCompat
 import org.ligi.survivalmanual.R
+import org.ligi.survivalmanual.functions.convertMarkdownToHtml
 import org.ligi.survivalmanual.functions.highLight
 import org.ligi.survivalmanual.functions.linkImagesInMarkDown
 import org.ligi.survivalmanual.model.State
@@ -43,7 +43,7 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
         val paddingTop = if (position == 0) holder.view.paddingLeft else 0
         holder.view.setPadding(holder.view.paddingLeft, paddingTop, holder.view.paddingRight, 0)
 
-        val html = Processor.process(linkImagesInMarkDown(if (State.searchTerm.isNullOrEmpty()) {
+        val html = convertMarkdownToHtml(linkImagesInMarkDown(if (State.searchTerm.isNullOrEmpty()) {
             list[position]
         } else {
             highLight(list[position], State.searchTerm)
