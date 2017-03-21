@@ -27,8 +27,10 @@
     <string name="camouflage">Camouflage</string>
     <string name="people">People</string>
     <string name="man_made_hazards">Man-Made Hazards</string>
+    <string name="credits">Credits</string>
     <string name="evasion_plan">Evasion Plan</string>
     <string name="clouds">Clouds</string>
+    <string name="faq">FAQ</string>
     <string name="ropes_and_knots">Ropes and Knots</string>
     <string name="fish_and_mollusks">Fish and Mollusks</string>
     <string name="insects_and_arachnids">Insects and Arachnids</string>

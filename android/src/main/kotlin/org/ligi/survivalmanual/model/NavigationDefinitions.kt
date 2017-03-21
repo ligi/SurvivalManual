@@ -36,11 +36,12 @@ val NavigationEntryMap = arrayOf(
         NavigationEntry("Sea", R.string.sea, R.drawable.ic_maps_directions_boat),
         NavigationEntry("WaterCrossing", R.string.water_crossing, R.drawable.ic_action_rowing),
         NavigationEntry("DirectionFinding", R.string.directionfinding, R.drawable.ic_action_explore),
+        NavigationEntry("ManMadeHazards", R.string.man_made_hazards, R.drawable.ic_editor_attach_money),
         NavigationEntry("Signaling", R.string.signaling, R.drawable.ic_content_flag),
         NavigationEntry("HostileAreas", R.string.hostile_areas, R.drawable.ic_image_flash_on),
         NavigationEntry("Camouflage", R.string.camouflage, R.drawable.ic_image_color_lens),
         NavigationEntry("People", R.string.people, R.drawable.ic_social_people),
-        NavigationEntry("ManMadeHazards", R.string.man_made_hazards, R.drawable.ic_editor_attach_money),
+        NavigationEntry("Credits", R.string.credits, R.drawable.ic_star),
 
         NavigationEntry("MultiTool", R.string.multitool, isAppendix = true),
         NavigationEntry("MedicinalPlants", R.string.edible_medicin_plants, isAppendix = true),
@@ -50,9 +51,11 @@ val NavigationEntryMap = arrayOf(
         NavigationEntry("FishAndMollusks", R.string.fish_and_mollusks, isAppendix = true),
         NavigationEntry("RopesAndKnots", R.string.ropes_and_knots, isAppendix = true),
         NavigationEntry("Clouds", R.string.clouds, isAppendix = true),
+        NavigationEntry("FAQ", R.string.faq, isAppendix = true),
 
         NavigationEntry("TranslatorNotes", R.string.translator_notes, isListed = false),
         NavigationEntry("b_wip", R.string.edible_medicin_plants, isListed = false)
+
 
 ).mapIndexed(::NavigationEntryWithId)
 

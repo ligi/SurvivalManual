@@ -13,6 +13,7 @@ import org.intellij.markdown.parser.MarkdownParser
 import org.junit.Test
 import org.ligi.survivalmanual.model.NavigationEntryMap
 import org.ligi.survivalmanual.model.SurvivalContent
+import org.ligi.survivalmanual.model.titleResByURLMap
 import org.ligi.survivalmanual.ui.PRODUCT_MAP
 
 class TheSurvivalContent {
@@ -37,11 +38,11 @@ class TheSurvivalContent {
 
             val unresolvedLinks = elementCollectingVisitor.elementList.map { it.getTextInNode(tested).toString() }.filter { !it.startsWith("#") }
                     .filter { !it.startsWith("http") }
-                    .filter { !survivalContent.hasFile(it)}
-                    .filter { survivalContent.getMarkdown(it) == null }
+                    .filter { !survivalContent.hasFile(it) }
+                    .filterNot { survivalContent.getMarkdown(it) != null && titleResByURLMap.containsKey(it) }
                     .filter { !PRODUCT_MAP.containsKey(it) }
 
-            if(unresolvedLinks.isNotEmpty()) {
+            if (unresolvedLinks.isNotEmpty()) {
                 fail("unresolved links in $url:$unresolvedLinks")
             }
         }
