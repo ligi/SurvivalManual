@@ -79,5 +79,9 @@
     <string name="translator_notes">Translator Notes</string>
     <string name="product_link_disclaimer">You clicked on a product link. They can help to support this app because they are affiliate links from amazon. If you buy this product or something else on amazon behind this link - then I should get some money from them.</string>
     <string name="bookmark">Bookmark</string>
+    <string name="amazon_link_title">Amazon Link</string>
+    <string name="cancel">cancel</string>
+    <string name="to_amazon">to amazon</string>
+    <string name="send_link">send link</string>
 
 </resources>
