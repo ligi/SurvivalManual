@@ -29,9 +29,21 @@ android {
         }
     }
 
-    flavorDimensions "build", "fire"
+    flavorDimensions "build", "fire", "store"
 
     productFlavors {
+
+        forFDroid {
+            dimension "store"
+        }
+
+        forAmazon {
+            dimension "store"
+        }
+
+        forPlay {
+            dimension "store"
+        }
 
         withFirebase {
             dimension "fire"
@@ -99,7 +111,10 @@ dependencies {
     compile 'com.github.ligi:TouchImageView:2.1'
     compile "com.github.ligi:ExtraCompats:0.4"
 
-    compile 'com.github.ligi:snackengage:0.9'
+    forPlayCompile 'com.github.ligi.snackengage:snackengage-playrate:0.10'
+    forFDroidCompile 'com.github.ligi.snackengage:snackengage-playrate:0.10'
+    forAmazonCompile 'com.github.ligi.snackengage:snackengage-amazonrate:0.10'
+
     compile 'com.github.ligi:KAXT:0.16'
 
     compile 'com.github.hotchemi:permissionsdispatcher:2.3.2'
