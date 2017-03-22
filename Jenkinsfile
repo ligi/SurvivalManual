@@ -1,5 +1,5 @@
 node {
- def flavorCombination='ProdWithFirebase'
+ def flavorCombination='ProdWithFirebaseForPlay'
  def config="-Pgms"
  
  stage 'checkout'
