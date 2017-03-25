@@ -5,6 +5,7 @@ import android.support.design.widget.NavigationView
 import android.util.AttributeSet
 import android.view.Menu
 import org.ligi.survivalmanual.model.NavigationEntryMap
+import org.ligi.survivalmanual.model.State
 import org.ligi.survivalmanual.model.VisitedURLStore
 
 class MyNavigationView(context: Context, attrs: AttributeSet) : NavigationView(context, attrs) {
@@ -31,7 +32,7 @@ class MyNavigationView(context: Context, attrs: AttributeSet) : NavigationView(c
         }
     }
 
-    fun Int.asStringWithMarkingWhenRead(url: String) = context.getString(this).appendIf(VisitedURLStore.getAll().contains(url), "👁")
+    fun Int.asStringWithMarkingWhenRead(url: String) = context.getString(this).appendIf(State.markVisited() && VisitedURLStore.getAll().contains(url), "👁")
 
     fun String.appendIf(bool: Boolean, suffix: String) = if (bool) this + suffix else this
 }

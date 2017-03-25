@@ -5,4 +5,5 @@
     <string name="preference_key_fontsize">FONTSIZETOGGLE</string>
     <string name="preference_key_search">SEARCHTOGGLE</string>
     <string name="preference_key_select_text">SELECTTEXTTOGGLE</string>
+    <string name="preference_mark_visited">MARKVISITED</string>
 </resources>

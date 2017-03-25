@@ -16,6 +16,7 @@ object State : KotprefModel() {
 
     internal val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(context) }
 
+    fun markVisited() = sharedPreferences.getBoolean(preference_mark_visited.string(), false)
     fun allowEdit() = sharedPreferences.getBoolean(preference_key_edittoggle.string(), false)
     fun allowSearch() = sharedPreferences.getBoolean(preference_key_search.string(), false)
     fun allowSelect() = sharedPreferences.getBoolean(preference_key_select_text.string(), false)

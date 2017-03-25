@@ -36,8 +36,8 @@ import org.ligi.survivalmanual.adapter.EditingRecyclerAdapter
 import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
 import org.ligi.survivalmanual.adapter.SearchResultRecyclerAdapter
 import org.ligi.survivalmanual.functions.CaseInsensitiveSearch
-import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.convertMarkdownToHtml
+import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.*
 
@@ -292,6 +292,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        navigationView.refresh()
         fab.setVisibility(State.allowEdit())
         if (lastFontSize != State.getFontSize()) {
             contentRecycler.adapter?.notifyDataSetChanged()
