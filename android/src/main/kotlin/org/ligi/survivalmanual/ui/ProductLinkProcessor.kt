@@ -17,7 +17,8 @@ val PRODUCT_MAP = mapOf(
         "OHTMultiTool" to "B008P8EYWE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B008P8EYWE&linkCode=as2&tag=ligi-20&linkId=e72720183453da1b74c2a0413521b194",
         "LifeStraw" to "B006QF3TW4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B006QF3TW4&linkCode=as2&tag=ligi-20&linkId=5b949343cb5a5f03b220651ad6830a9d",
         "TreadMultiTool" to "B018IOXXP8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B018IOXXP8&linkCode=as2&tag=ligi-20&linkId=1c14c69653606e308b9f4b98372a5a51",
-        "PandaDubLionsDen" to "B00F48QJUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00F48QJUS&linkCode=as2&tag=ligi-20&linkId=3e9b42f0dee5e03da96ea1f14be223ea"
+        "PandaDubLionsDen" to "B00F48QJUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00F48QJUS&linkCode=as2&tag=ligi-20&linkId=3e9b42f0dee5e03da96ea1f14be223ea",
+        "Audible" to "B00NB86OYE/?ref_=assoc_tag_ph_1485906643682&_encoding=UTF8&camp=1789&creative=9325&linkCode=pf4&tag=ligi-20&linkId=38dacab0a96e0ecaa625fa375f70c517"
 )
 
 fun processProductLinks(it: String, activity: Activity): Boolean {
