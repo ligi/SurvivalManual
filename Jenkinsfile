@@ -1,5 +1,5 @@
 node {
- def flavorCombination='ProdWithFirebaseForPlay'
+ def flavorCombination='WithFirebaseForPlay'
  def config="-Pgms"
  
  stage 'checkout'
@@ -10,7 +10,7 @@ node {
  stage 'UITest'
   lock('adb') {
    try {
-    sh "./gradlew clean spoon${flavorCombination} ${config}"
+    sh "./gradlew clean spoonDev${flavorCombination} ${config}"
    } catch(err) {
     currentBuild.result = FAILURE
    } finally {
@@ -22,7 +22,7 @@ node {
 
  stage 'lint'
   try {
-   sh "./gradlew clean lint${flavorCombination}Release"
+   sh "./gradlew clean lintProd${flavorCombination}Release"
   } catch(err) {
    currentBuild.result = FAILURE
   } finally {
@@ -31,7 +31,7 @@ node {
 
  stage 'test'
   try {
-   sh "./gradlew clean test${flavorCombination}DebugUnitTest"
+   sh "./gradlew clean testProd${flavorCombination}ReleaseUnitTest"
   } catch(err) {
    currentBuild.result = FAILURE
   } finally {
@@ -40,7 +40,7 @@ node {
   }
   
  stage 'assemble'
-  sh "./gradlew clean assemble${flavorCombination}Release ${config}"
+  sh "./gradlew clean assembleProd${flavorCombination}Release ${config}"
   archive 'android/build/outputs/apk/*'
   archive 'android/build/outputs/mapping/*/release/mapping.txt'
      
