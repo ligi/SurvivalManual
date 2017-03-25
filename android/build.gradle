@@ -35,14 +35,17 @@ android {
 
         forFDroid {
             dimension "store"
+            buildConfigField 'String', 'STORE', '"fdroid"'
         }
 
         forAmazon {
             dimension "store"
+            buildConfigField 'String', 'STORE', '"amazon"'
         }
 
         forPlay {
             dimension "store"
+            buildConfigField 'String', 'STORE', '"play"'
         }
 
         withFirebase {

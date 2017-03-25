@@ -9,5 +9,6 @@ class App : Application() {
         super.onCreate()
         EventTracker.init(this)
         State.applyDayNightMode()
+        BuildConfig.STORE
     }
 }

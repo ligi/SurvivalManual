@@ -3,6 +3,7 @@ package org.ligi.survivalmanual
 import android.content.Context
 import android.os.Bundle
 import com.google.firebase.analytics.FirebaseAnalytics
+import org.ligi.survivalmanual.model.State
 
 object EventTracker {
 
@@ -12,6 +13,13 @@ object EventTracker {
 
     fun init(context: Context) {
         this.context = context
+
+        analytics.setUserProperty("store", BuildConfig.STORE)
+        analytics.setUserProperty("nightmode", State.nightModeString())
+        analytics.setUserProperty("select", State.allowSelect().toString())
+        analytics.setUserProperty("search", State.allowSearch().toString())
+        analytics.setUserProperty("fontsize", State.getFontSize().toString())
+        analytics.setUserProperty("edit", State.allowEdit().toString())
     }
 
     fun trackContent(type: String) {
@@ -33,4 +41,5 @@ object EventTracker {
     fun trackGeneric(event: String) {
         analytics.logEvent(event, Bundle())
     }
+
 }
