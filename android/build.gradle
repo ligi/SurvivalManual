@@ -75,7 +75,8 @@ android {
         def isRelease = variant.buildType.name == 'release'
         def isDebug = variant.buildType.name == 'debug'
 
-        if (((store == 'forAmazon' || store == 'forPlay') && firebase == 'noFirebase')
+        if ((project.hasProperty("singleFlavor") && (store != 'forPlay') && (build != 'prod'))
+                || ((store == 'forAmazon' || store == 'forPlay') && firebase == 'noFirebase')
                 || (store == 'forFDroid' && firebase != 'noFirebase')
                 || (build == 'prod' && isDebug)
                 || (build == 'dev' && isRelease)) {
