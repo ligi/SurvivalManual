@@ -29,18 +29,9 @@ android {
         }
     }
 
-    flavorDimensions "build", "fire", "store"
+    flavorDimensions  "fire", "store"
 
     productFlavors {
-        dev {
-            dimension "build"
-            minSdkVersion 21
-        }
-
-        prod {
-            dimension "build"
-        }
-
         forFDroid {
             dimension "store"
             buildConfigField 'String', 'STORE', '"fdroid"'
@@ -68,18 +59,12 @@ android {
     }
 
     android.variantFilter { variant ->
-        def build = variant.getFlavors().get(0).name
-        def firebase = variant.getFlavors().get(1).name
-        def store = variant.getFlavors().get(2).name
+        def firebase = variant.getFlavors().get(0).name
+        def store = variant.getFlavors().get(1).name
 
-        def isRelease = variant.buildType.name == 'release'
-        def isDebug = variant.buildType.name == 'debug'
-
-        if ((project.hasProperty("singleFlavor") && (store != 'forPlay') && (build != 'prod'))
+        if ((project.hasProperty("singleFlavor") && (store != 'forPlay'))
                 || ((store == 'forAmazon' || store == 'forPlay') && firebase == 'noFirebase')
-                || (store == 'forFDroid' && firebase != 'noFirebase')
-                || (build == 'prod' && isDebug)
-                || (build == 'dev' && isRelease)) {
+                || (store == 'forFDroid' && firebase != 'noFirebase')) {
             variant.setIgnore(true)
         }
     }
@@ -113,6 +98,7 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+
 }
 
 dependencies {
