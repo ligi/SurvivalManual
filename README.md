@@ -2,7 +2,7 @@
 [![Android app on FDroid](http://ligi.de/img/fdroid_badge.png)](https://f-droid.org/repository/browse/?fdid=org.ligi.survivalmanual)
 [![Android app at Amazon](http://ligi.de/img/amazon_badge.png)](https://www.amazon.com/ligi-Survival-Manual/dp/B06WW43R3T)
 
-This is a Survival Manual / Guide based on the ( public domain )  US Army Survival Field-Manual FM 21-76
+This is a Survival Manual / Guide based on the ( public domain )  US Army Survival Field-Manual
 It is fully working offline ( which is important in a case of catastrophy )
 The content ist currated in [this wiki](https://github.com/ligi/SurvivalManual/wiki).
 
