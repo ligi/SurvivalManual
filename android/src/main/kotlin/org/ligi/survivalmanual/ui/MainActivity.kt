@@ -40,6 +40,7 @@ import org.ligi.survivalmanual.functions.convertMarkdownToHtml
 import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.*
+import org.ligi.tracedroid.logging.Log
 
 class MainActivity : AppCompatActivity() {
 
@@ -248,6 +249,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun processURL(url: String): Boolean {
+
+        Log.i("processing url $url")
 
         VisitedURLStore.add(url)
         val titleResByURL = getTitleResByURL(url) ?: return false

@@ -117,6 +117,8 @@ dependencies {
 
     compile 'com.github.ligi:TouchImageView:2.1'
     compile "com.github.ligi:ExtraCompats:0.4"
+    compile 'com.github.ligi:tracedroid:1.4'
+
 
     forPlayCompile 'com.github.ligi.snackengage:snackengage-playrate:0.10'
     forFDroidCompile 'com.github.ligi.snackengage:snackengage-playrate:0.10'
