@@ -8,7 +8,7 @@ The content ist currated in [this wiki](https://github.com/ligi/SurvivalManual/w
 
 ![](https://raw.githubusercontent.com/ligi/SurvivalManual/master/assets/promo.png)
 
-This app is libre software ( GPLv3 )
+This app is libre software
 
 Pull requests are welcome - if you want to help translating - the app strings are [on transifex](https://www.transifex.com/ligi/survivalmanual)
 
