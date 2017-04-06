@@ -1,6 +1,7 @@
 package org.ligi.survivalmanual.ui
 
 import android.annotation.TargetApi
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
@@ -8,6 +9,7 @@ import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
+import android.support.design.widget.Snackbar
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AlertDialog
@@ -29,6 +31,7 @@ import org.ligi.compat.WebViewCompat
 import org.ligi.kaxt.*
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
+import org.ligi.snackengage.snacks.RateSnack
 import org.ligi.survivalmanual.BuildConfig
 import org.ligi.survivalmanual.EventTracker
 import org.ligi.survivalmanual.R
@@ -195,7 +198,7 @@ class MainActivity : AppCompatActivity() {
         org.ligi.survivalmanual.R.id.menu_share -> {
             EventTracker.trackGeneric("share")
             val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)
+            intent.putExtra(Intent.EXTRA_TEXT, RateSnack().getUri(this))
             intent.type = "text/plain"
             startActivity(Intent.createChooser(intent, null))
             true
@@ -203,7 +206,7 @@ class MainActivity : AppCompatActivity() {
 
         org.ligi.survivalmanual.R.id.menu_rate -> {
             EventTracker.trackGeneric("rate")
-            startActivityFromURL("market://details?id=" + BuildConfig.APPLICATION_ID)
+            startActivityFromURL(RateSnack().getUri(this))
             true
         }
 
