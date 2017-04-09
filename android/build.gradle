@@ -159,7 +159,7 @@ dependencies {
     withFirebaseCompile "com.google.firebase:firebase-crash:$firebase_version"
 }
 
-if (hasProperty("gms")) {
+if (hasProperty("isCI")) {
     apply plugin: 'com.google.gms.google-services'
 }
 
