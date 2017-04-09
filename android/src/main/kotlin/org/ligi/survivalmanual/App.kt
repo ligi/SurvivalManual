@@ -11,6 +11,5 @@ class App : Application() {
         TraceDroid.init(this)
         EventTracker.init(this)
         State.applyDayNightMode()
-        BuildConfig.STORE
     }
 }

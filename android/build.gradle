@@ -101,6 +101,18 @@ android {
 
 }
 
+configurations {
+
+    // http://stackoverflow.com/questions/30578243/why-would-adding-espresso-contrib-cause-an-inflateexception
+    androidTestCompile.exclude group: 'com.android.support', module: 'appcompat-v7'
+    androidTestCompile.exclude group: 'com.android.support', module: 'design'
+    androidTestCompile.exclude group: 'com.android.support', module: 'support-v4'
+    androidTestCompile.exclude group: 'com.android.support', module: 'support-annotations'
+    androidTestCompile.exclude group: 'com.android.support', module: 'preference-v7'
+    androidTestCompile.exclude module: 'recyclerview-v7'
+    androidTestCompile.exclude module: 'kotlin-stdlib'
+}
+
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
@@ -119,7 +131,6 @@ dependencies {
     compile "com.github.ligi:ExtraCompats:0.4"
     compile 'com.github.ligi:tracedroid:1.4'
 
-
     forPlayCompile 'com.github.ligi.snackengage:snackengage-playrate:0.12'
     forFDroidCompile 'com.github.ligi.snackengage:snackengage-playrate:0.12'
     forAmazonCompile 'com.github.ligi.snackengage:snackengage-amazonrate:0.12'
@@ -133,12 +144,7 @@ dependencies {
     androidTestCompile "com.android.support:appcompat-v7:$support_version"
     androidTestCompile "com.android.support:design:$support_version"
 
-    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.2') {
-        // http://stackoverflow.com/questions/30578243/why-would-adding-espresso-contrib-cause-an-inflateexception
-        exclude group: 'com.android.support', module: 'appcompat'
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude module: 'recyclerview-v7'
-    }
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.2')
 
     androidTestCompile 'com.github.ligi:trulesk:0.18'
     androidTestCompile 'com.squareup.assertj:assertj-android:1.1.1'
