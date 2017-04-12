@@ -6,7 +6,7 @@ This is a Survival Manual / Guide based on the ( public domain )  US Army Surviv
 It is fully working offline ( which is important in a case of catastrophy )
 The content ist currated in [this wiki](https://github.com/ligi/SurvivalManual/wiki).
 
-![](https://raw.githubusercontent.com/ligi/SurvivalManual/master/assets/promo.png)
+![](https://raw.githubusercontent.com/ligi/SurvivalManual/master/assets/banner.png)
 
 This app is libre software
 
