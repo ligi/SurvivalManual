@@ -3,12 +3,12 @@ package org.ligi.survivalmanual
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.matcher.ViewMatchers.withText
-import android.support.v7.app.AppCompatDelegate
+import android.support.v7.app.AppCompatDelegate.*
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Rule
 import org.junit.Test
-import org.ligi.survivalmanual.ui.PreferenceActivity
 import org.ligi.survivalmanual.model.State
+import org.ligi.survivalmanual.ui.PreferenceActivity
 import org.ligi.trulesk.TruleskActivityRule
 
 
@@ -24,8 +24,8 @@ class ThePreferenceActivity {
 
         onView(withText(R.string.auto)).perform(click())
 
-        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_AUTO)
-        assertThat(State.getNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_AUTO)
+        assertThat(getDefaultNightMode()).isEqualTo(MODE_NIGHT_AUTO)
+        assertThat(State.getNightMode()).isEqualTo(MODE_NIGHT_AUTO)
         activityTestRule.screenShot("daynight_auto")
     }
 
@@ -36,8 +36,8 @@ class ThePreferenceActivity {
 
         onView(withText(R.string.day)).perform(click())
 
-        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_NO)
-        assertThat(State.getNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_NO)
+        assertThat(getDefaultNightMode()).isEqualTo(MODE_NIGHT_NO)
+        assertThat(State.getNightMode()).isEqualTo(MODE_NIGHT_NO)
         activityTestRule.screenShot("daynight_day")
     }
 
@@ -48,8 +48,8 @@ class ThePreferenceActivity {
 
         onView(withText(R.string.night)).perform(click())
 
-        assertThat(AppCompatDelegate.getDefaultNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_YES)
-        assertThat(State.getNightMode()).isEqualTo(AppCompatDelegate.MODE_NIGHT_YES)
+        assertThat(getDefaultNightMode()).isEqualTo(MODE_NIGHT_YES)
+        assertThat(State.getNightMode()).isEqualTo(MODE_NIGHT_YES)
         activityTestRule.screenShot("daynight_night")
     }
 
