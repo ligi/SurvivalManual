@@ -146,7 +146,7 @@ dependencies {
 
     androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.2')
 
-    androidTestCompile 'com.github.ligi:trulesk:0.18'
+    androidTestCompile 'com.github.ligi:trulesk:0.19'
     androidTestCompile 'com.squareup.assertj:assertj-android:1.1.1'
     androidTestCompile 'org.mockito:mockito-core:2.7.21'
     androidTestCompile 'com.linkedin.dexmaker:dexmaker-mockito:2.2.0'
