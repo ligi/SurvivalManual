@@ -17,7 +17,7 @@ class CustomQuoteSpan(val context: Context) : LeadingMarginSpan {
     val paint by lazy {
         Paint().apply {
             style = Paint.Style.FILL
-            color = ContextCompat.getColor(context, R.color.colorPrimaryDark)
+            color = ContextCompat.getColor(context, R.color.colorAccent)
         }
     }
 
