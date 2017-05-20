@@ -253,6 +253,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun processURL(url: String): Boolean {
 
+        appbar.setExpanded(true)
         Log.i("processing url $url")
 
         VisitedURLStore.add(url)
