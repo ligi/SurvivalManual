@@ -198,7 +198,7 @@ class MainActivity : AppCompatActivity() {
         org.ligi.survivalmanual.R.id.menu_share -> {
             EventTracker.trackGeneric("share")
             val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_TEXT, RateSnack().getUri(this))
+            intent.putExtra(Intent.EXTRA_TEXT, RateSnack().getUri(this).toString())
             intent.type = "text/plain"
             startActivity(Intent.createChooser(intent, null))
             true
