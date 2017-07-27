@@ -144,7 +144,7 @@ dependencies {
     androidTestCompile "com.android.support:appcompat-v7:$support_version"
     androidTestCompile "com.android.support:design:$support_version"
 
-    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.2')
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:3.0.0')
 
     androidTestCompile 'com.github.ligi:trulesk:0.19'
     androidTestCompile 'com.squareup.assertj:assertj-android:1.1.1'
