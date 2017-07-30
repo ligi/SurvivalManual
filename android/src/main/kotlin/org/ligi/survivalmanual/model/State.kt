@@ -29,6 +29,7 @@ object State : KotprefModel() {
     fun getNightMode() = when (nightModeString()) {
         "day" -> AppCompatDelegate.MODE_NIGHT_NO
         "night" -> AppCompatDelegate.MODE_NIGHT_YES
+        "darknight" -> AppCompatDelegate.MODE_NIGHT_YES
         "auto" -> AppCompatDelegate.MODE_NIGHT_AUTO
         else -> AppCompatDelegate.MODE_NIGHT_AUTO
     }

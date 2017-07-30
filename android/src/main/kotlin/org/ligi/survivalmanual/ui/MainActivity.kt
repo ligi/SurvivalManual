@@ -1,7 +1,6 @@
 package org.ligi.survivalmanual.ui
 
 import android.annotation.TargetApi
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
@@ -9,11 +8,9 @@ import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
-import android.support.design.widget.Snackbar
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
@@ -32,7 +29,6 @@ import org.ligi.kaxt.*
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 import org.ligi.snackengage.snacks.RateSnack
-import org.ligi.survivalmanual.BuildConfig
 import org.ligi.survivalmanual.EventTracker
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.adapter.EditingRecyclerAdapter
@@ -45,7 +41,7 @@ import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.*
 import org.ligi.tracedroid.logging.Log
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private val drawerToggle by lazy { ActionBarDrawerToggle(this, drawer_layout, org.ligi.survivalmanual.R.string.drawer_open, org.ligi.survivalmanual.R.string.drawer_close) }
 
@@ -294,7 +290,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     var lastFontSize = State.getFontSize()
-    var lastNightMode = State.getNightMode()
+    var lastNightMode = State.nightModeString()
     var lastAllowSelect = State.allowSelect()
 
     override fun onResume() {
@@ -309,9 +305,9 @@ class MainActivity : AppCompatActivity() {
             recreateWhenPossible()
             lastAllowSelect = State.allowSelect()
         }
-        if (lastNightMode != State.getNightMode()) {
+        if (lastNightMode != State.nightModeString()) {
             recreateWhenPossible()
-            lastNightMode = State.getNightMode()
+            lastNightMode = State.nightModeString()
         }
 
         supportInvalidateOptionsMenu()

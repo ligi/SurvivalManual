@@ -60,6 +60,7 @@
     </string>
     <string name="auto">Automatic</string>
     <string name="night">Night</string>
+    <string name="dark_night">Dark Night</string>
     <string name="day">Day</string>
 
     <string name="tiny">Tiny</string>

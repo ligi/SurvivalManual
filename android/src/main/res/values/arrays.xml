@@ -1,19 +1,15 @@
 <resources>
-    <string-array name="daynight_options">
-        <item>@string/auto</item>
-        <item>@string/night</item>
-        <item>@string/day</item>
-    </string-array>
-
     <string-array name="nightmode_keys" >
-        <item>night</item>
         <item>day</item>
+        <item>night</item>
+        <item>darknight</item>
         <item>auto</item>
     </string-array>
 
     <string-array name="night_modes">
-        <item>@string/night</item>
         <item>@string/day</item>
+        <item>@string/night</item>
+        <item>@string/dark_night</item>
         <item>@string/auto</item>
     </string-array>
 
