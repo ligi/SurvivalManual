@@ -226,11 +226,11 @@ class MainActivity : BaseActivity() {
             view.topicText.text = currentTopicName
             AlertDialog.Builder(this)
                     .setView(view)
-                    .setTitle("Add Bookmark")
-                    .setPositiveButton("Bookmark", { _: DialogInterface, _: Int ->
+                    .setTitle(R.string.add_bookmark)
+                    .setPositiveButton(R.string.bookmark, { _: DialogInterface, _: Int ->
                         Bookmarks.persist(Bookmark(currentUrl, view.commentEdit.text.toString(), ""))
                     })
-                    .setNegativeButton("Cancel", { _: DialogInterface, _: Int -> })
+                    .setNegativeButton(R.string.cancel, { _: DialogInterface, _: Int -> })
                     .show()
             true
         }

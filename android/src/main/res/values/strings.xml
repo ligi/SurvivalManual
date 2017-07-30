@@ -84,5 +84,6 @@
     <string name="cancel">cancel</string>
     <string name="to_amazon">to amazon</string>
     <string name="send_link">send link</string>
+    <string name="add_bookmark">Add Bookmark</string>
 
 </resources>
