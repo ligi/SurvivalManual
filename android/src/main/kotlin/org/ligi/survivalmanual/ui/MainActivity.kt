@@ -101,7 +101,7 @@ class MainActivity : BaseActivity() {
 
         contentRecycler.addOnScrollListener(RememberPositionOnScroll())
 
-        SnackEngage.from(this).withSnack(DefaultRateSnack()).build().engageWhenAppropriate()
+        SnackEngage.from(fab).withSnack(DefaultRateSnack()).build().engageWhenAppropriate()
 
         contentRecycler.post {
             if (intent.data == null || !processURL(intent.data.path.replace("/", ""))) {
