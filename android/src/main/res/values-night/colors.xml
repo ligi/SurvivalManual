@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorAccent">#61733b</color>
+    <color name="colorAccent">@color/colorAccentLight</color>
 </resources>

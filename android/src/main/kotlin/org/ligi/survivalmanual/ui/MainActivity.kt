@@ -8,6 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AlertDialog
@@ -101,7 +102,8 @@ class MainActivity : BaseActivity() {
 
         contentRecycler.addOnScrollListener(RememberPositionOnScroll())
 
-        SnackEngage.from(fab).withSnack(DefaultRateSnack()).build().engageWhenAppropriate()
+        val rateSnack = DefaultRateSnack().apply { setActionColor(ContextCompat.getColor(this@MainActivity, R.color.colorAccentLight)) }
+        SnackEngage.from(fab).withSnack(rateSnack).build().engageWhenAppropriate()
 
         contentRecycler.post {
             if (intent.data == null || !processURL(intent.data.path.replace("/", ""))) {

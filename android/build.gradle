@@ -131,9 +131,9 @@ dependencies {
     compile "com.github.ligi:ExtraCompats:0.4"
     compile 'com.github.ligi:tracedroid:1.4'
 
-    forPlayCompile 'com.github.ligi.snackengage:snackengage-playrate:0.13'
-    forFDroidCompile 'com.github.ligi.snackengage:snackengage-playrate:0.13'
-    forAmazonCompile 'com.github.ligi.snackengage:snackengage-amazonrate:0.13'
+    forPlayCompile 'com.github.ligi.snackengage:snackengage-playrate:0.14'
+    forFDroidCompile 'com.github.ligi.snackengage:snackengage-playrate:0.14'
+    forAmazonCompile 'com.github.ligi.snackengage:snackengage-amazonrate:0.14'
 
     compile 'com.github.ligi:KAXT:0.17'
 
