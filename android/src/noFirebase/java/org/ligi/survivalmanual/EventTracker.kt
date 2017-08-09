@@ -7,4 +7,5 @@ object EventTracker {
     fun trackContent(id: String) {}
     fun trackGeneric(event: String, value: String) {}
     fun trackGeneric(event: String) {}
+    fun trackError(event: String) {}
 }

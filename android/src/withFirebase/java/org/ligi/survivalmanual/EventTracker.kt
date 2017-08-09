@@ -3,6 +3,7 @@ package org.ligi.survivalmanual
 import android.content.Context
 import android.os.Bundle
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.crash.FirebaseCrash
 import org.ligi.survivalmanual.model.State
 
 object EventTracker {
@@ -40,6 +41,10 @@ object EventTracker {
 
     fun trackGeneric(event: String) {
         analytics.logEvent(event, Bundle())
+    }
+
+    fun trackError(event: String) {
+        FirebaseCrash.log(event)
     }
 
 }
