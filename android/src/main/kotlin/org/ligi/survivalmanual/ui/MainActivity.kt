@@ -122,7 +122,9 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
-        menu.findItem(org.ligi.survivalmanual.R.id.action_search).isVisible = State.allowSearch()
+        menu.findItem(org.ligi.survivalmanual.R.id.action_search)?.let {
+            it.isVisible = State.allowSearch()
+        }
         return super.onPrepareOptionsMenu(menu)
     }
 
