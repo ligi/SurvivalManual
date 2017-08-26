@@ -44,17 +44,11 @@ val NavigationEntryMap = arrayOf(
         NavigationEntry("Credits", R.string.credits, R.drawable.ic_star),
 
         NavigationEntry("MultiTool", R.string.multitool, isAppendix = true),
-        NavigationEntry("MedicinalPlants", R.string.edible_medicin_plants, isAppendix = true),
-        NavigationEntry("PoisonousPlantsList", R.string.poisonous_plants, isAppendix = true),
-        NavigationEntry("InsectsAndArachnids", R.string.insects_and_arachnids, isAppendix = true),
-        NavigationEntry("SnakesAndLizards", R.string.snakes_and_lizards, isAppendix = true),
+        NavigationEntry("DangerousArthropods", R.string.insects_and_arachnids, isAppendix = true),
         NavigationEntry("FishAndMollusks", R.string.fish_and_mollusks, isAppendix = true),
         NavigationEntry("RopesAndKnots", R.string.ropes_and_knots, isAppendix = true),
-        NavigationEntry("Clouds", R.string.clouds, isAppendix = true),
         NavigationEntry("FAQ", R.string.faq, isAppendix = true),
-
-        NavigationEntry("TranslatorNotes", R.string.translator_notes, isListed = false),
-        NavigationEntry("b_wip", R.string.edible_medicin_plants, isListed = false)
+        NavigationEntry("TranslatorNotes", R.string.translator_notes, isListed = false)
 
 
 ).mapIndexed(::NavigationEntryWithId)
