@@ -38,6 +38,7 @@ class TheSurvivalContent {
 
             val unresolvedLinks = elementCollectingVisitor.elementList.map { it.getTextInNode(tested).toString() }.filter { !it.startsWith("#") }
                     .filter { !it.startsWith("http") }
+                    .filter { !it.endsWith(".vd") }
                     .filter { !survivalContent.hasFile(it) }
                     .filterNot { survivalContent.getMarkdown(it) != null && titleResByURLMap.containsKey(it) }
                     .filter { !PRODUCT_MAP.containsKey(it) }

@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Build
+import android.support.graphics.drawable.VectorDrawableCompat
 import android.support.v7.widget.RecyclerView
 import android.text.Editable
 import android.text.Html
@@ -20,6 +21,7 @@ import android.widget.TextView
 import org.ligi.compat.HtmlCompat
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.functions.convertMarkdownToHtml
+import org.ligi.survivalmanual.functions.getSurvivalDrawable
 import org.ligi.survivalmanual.functions.highLight
 import org.ligi.survivalmanual.functions.linkImagesInMarkDown
 import org.ligi.survivalmanual.model.State
@@ -82,15 +84,16 @@ class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val o
 
         text.textSize = State.getFontSize()
         class CustomImageGetter : Html.ImageGetter {
-            override fun getDrawable(source: String?): Drawable {
+            override fun getDrawable(source: String): Drawable {
 
-                val bitmapDrawable = BitmapDrawable.createFromStream(ctx.assets.open("md/" + source), source) as BitmapDrawable
+                val bitmapDrawable = getSurvivalDrawable(ctx, source)!!
 
-                val ratio = bitmapDrawable.bitmap.height.toFloat() / bitmapDrawable.bitmap.width
+                val ratio = bitmapDrawable.intrinsicHeight.toFloat() / bitmapDrawable.intrinsicWidth.toFloat()
 
                 bitmapDrawable.setBounds(0, 0, imageWidth, (imageWidth * ratio).toInt())
                 return bitmapDrawable
             }
+
 
         }
 
