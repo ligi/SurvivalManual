@@ -148,7 +148,7 @@ dependencies {
 
     androidTestCompile 'com.github.ligi:trulesk:0.20'
     androidTestCompile 'com.squareup.assertj:assertj-android:1.2.0'
-    androidTestCompile 'org.mockito:mockito-core:2.8.47'
+    androidTestCompile 'org.mockito:mockito-core:2.9.0'
     androidTestCompile 'com.linkedin.dexmaker:dexmaker-mockito:2.2.0'
 
     testCompile 'junit:junit:4.12'
