@@ -14,7 +14,7 @@ object State : KotprefModel() {
     var lastScrollPos by intPref(0)
     var isInitialOpening by booleanPref(true)
 
-    internal val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(context) }
+    private val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(context) }
 
     fun markVisited() = sharedPreferences.getBoolean(preference_mark_visited.string(), false)
     fun allowEdit() = sharedPreferences.getBoolean(preference_key_edittoggle.string(), false)
