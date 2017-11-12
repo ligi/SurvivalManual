@@ -135,7 +135,7 @@ dependencies {
     forFDroidCompile 'com.github.ligi.snackengage:snackengage-playrate:0.14'
     forAmazonCompile 'com.github.ligi.snackengage:snackengage-amazonrate:0.14'
 
-    compile 'com.github.ligi:KAXT:0.17'
+    compile 'com.github.ligi:KAXT:0.19'
 
     compile 'com.github.hotchemi:permissionsdispatcher:2.3.2'
     kapt 'com.github.hotchemi:permissionsdispatcher-processor:2.3.2'
