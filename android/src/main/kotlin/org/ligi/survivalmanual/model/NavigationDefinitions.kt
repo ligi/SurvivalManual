@@ -14,7 +14,7 @@ open class NavigationEntry(val url: String,
 class NavigationEntryWithId(val id: Int,
                             val entry: NavigationEntry)
 
-val NavigationEntryMap = arrayOf(
+val navigationEntryMap = arrayOf(
         NavigationEntry("Introduction", R.string.introduction, R.drawable.ic_action_info_outline),
         NavigationEntry("Psychology", R.string.psychology, R.drawable.ic_image_portrait),
         NavigationEntry("Power", R.string.power, R.drawable.ic_notification_power),
@@ -53,6 +53,6 @@ val NavigationEntryMap = arrayOf(
 
 ).mapIndexed(::NavigationEntryWithId)
 
-val titleResByURLMap = NavigationEntryMap.associate { it.entry.url to it.entry.titleRes }
+val titleResByURLMap = navigationEntryMap.associate { it.entry.url to it.entry.titleRes }
 fun getTitleResByURL(url: String) = titleResByURLMap[url.split("#").first()]
 

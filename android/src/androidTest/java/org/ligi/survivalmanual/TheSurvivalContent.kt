@@ -11,7 +11,7 @@ import org.intellij.markdown.ast.visitors.RecursiveVisitor
 import org.intellij.markdown.flavours.commonmark.CommonMarkFlavourDescriptor
 import org.intellij.markdown.parser.MarkdownParser
 import org.junit.Test
-import org.ligi.survivalmanual.model.NavigationEntryMap
+import org.ligi.survivalmanual.model.navigationEntryMap
 import org.ligi.survivalmanual.model.SurvivalContent
 import org.ligi.survivalmanual.model.titleResByURLMap
 import org.ligi.survivalmanual.ui.PRODUCT_MAP
@@ -23,7 +23,7 @@ class TheSurvivalContent {
 
     @Test
     fun weCanLoadAllEntriesFromNavigation() {
-        NavigationEntryMap.forEach {
+        navigationEntryMap.forEach {
             val url = it.entry.url
             val tested = survivalContent.getMarkdown(url)
             if (tested == null) {

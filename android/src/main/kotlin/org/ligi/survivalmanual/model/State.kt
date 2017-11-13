@@ -7,7 +7,7 @@ import org.ligi.survivalmanual.R.string.*
 
 object State : KotprefModel() {
 
-    val FALLBACK_URL = NavigationEntryMap.first().entry.url
+    val FALLBACK_URL = navigationEntryMap.first().entry.url
 
     var lastVisitedURL by stringPref(FALLBACK_URL)
     var searchTerm by nullableStringPref(null)

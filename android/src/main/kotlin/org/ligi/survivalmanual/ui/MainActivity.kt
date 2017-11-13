@@ -87,7 +87,7 @@ class MainActivity : BaseActivity() {
 
         navigationView.setNavigationItemSelectedListener { item ->
             drawer_layout.closeDrawers()
-            processURL(NavigationEntryMap[item.itemId].entry.url)
+            processURL(navigationEntryMap[item.itemId].entry.url)
             true
         }
 

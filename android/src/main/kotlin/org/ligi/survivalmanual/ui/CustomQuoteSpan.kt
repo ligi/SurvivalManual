@@ -14,7 +14,7 @@ import org.ligi.survivalmanual.R
 class CustomQuoteSpan(val context: Context) : LeadingMarginSpan {
 
     val size by lazy { context.resources.getDimension(R.dimen.blockquote_width) }
-    val paint by lazy {
+    private val paint by lazy {
         Paint().apply {
             style = Paint.Style.FILL
             color = ContextCompat.getColor(context, R.color.colorAccent)

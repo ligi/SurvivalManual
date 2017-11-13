@@ -4,7 +4,7 @@ import android.support.annotation.VisibleForTesting
 import org.ligi.survivalmanual.model.SearchResult
 import org.ligi.survivalmanual.model.SurvivalContent
 
-private val EXCERPT_SIZE = 100
+private const val EXCERPT_SIZE = 100
 
 @VisibleForTesting
 fun getExcerpt(text: String, term: String): String {

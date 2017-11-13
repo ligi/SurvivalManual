@@ -13,7 +13,9 @@ import org.ligi.survivalmanual.model.SurvivalContent
 import org.ligi.survivalmanual.model.titleResByURLMap
 import org.ligi.survivalmanual.viewholder.SearchResultViewHolder
 
-class SearchResultRecyclerAdapter(private var term: String, var survivalContent: SurvivalContent, val onClick: (url: String) -> Unit) : RecyclerView.Adapter<SearchResultViewHolder>() {
+class SearchResultRecyclerAdapter(private var term: String,
+                                  private var survivalContent: SurvivalContent,
+                                  private val onClick: (url: String) -> Unit) : RecyclerView.Adapter<SearchResultViewHolder>() {
 
     var list: List<SearchResult> = search(survivalContent, term)
 

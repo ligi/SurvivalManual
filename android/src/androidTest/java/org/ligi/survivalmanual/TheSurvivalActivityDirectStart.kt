@@ -8,7 +8,7 @@ import android.support.test.espresso.matcher.ViewMatchers.withId
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Rule
 import org.junit.Test
-import org.ligi.survivalmanual.model.NavigationEntryMap
+import org.ligi.survivalmanual.model.navigationEntryMap
 import org.ligi.survivalmanual.model.titleResByURLMap
 import org.ligi.survivalmanual.ui.MainActivity
 import org.ligi.trulesk.TruleskActivityRule
@@ -26,7 +26,7 @@ class TheSurvivalActivityDirectStart {
 
     @Test
     fun testWeCanOpenAllTopics() {
-        NavigationEntryMap.filter { it.entry.isListed }.forEach {
+        navigationEntryMap.filter { it.entry.isListed }.forEach {
             onView(withId(R.id.drawer_layout)).perform(DrawerActions.open())
             SystemClock.sleep(500)
             onView(withId(R.id.navigationView)).perform(navigateTo(it.id))
