@@ -81,7 +81,7 @@ class MainActivity : BaseActivity() {
         setContentView(org.ligi.survivalmanual.R.layout.activity_main)
 
         drawer_layout.addDrawerListener(drawerToggle)
-        setSupportActionBar(findViewById(org.ligi.survivalmanual.R.id.toolbar) as Toolbar)
+        setSupportActionBar(findViewById<Toolbar>(org.ligi.survivalmanual.R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         navigationView.setNavigationItemSelectedListener { item ->
