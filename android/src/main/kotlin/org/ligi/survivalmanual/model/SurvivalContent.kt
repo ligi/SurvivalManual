@@ -3,7 +3,7 @@ package org.ligi.survivalmanual.model
 import android.content.res.AssetManager
 import java.io.IOException
 
-class SurvivalContent(val assetManager: AssetManager) {
+class SurvivalContent(private val assetManager: AssetManager) {
 
     fun getMarkdown(url: String) = try {
         assetManager.open(getFullMarkDownURL(url)).use { it.bufferedReader().readText() }

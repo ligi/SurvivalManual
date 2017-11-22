@@ -20,7 +20,7 @@ interface Search {
 }
 
 class CaseInsensitiveSearch(override val term: String) : Search {
-    val escapedTerm = Regex.escape(term)
+    private val escapedTerm = Regex.escape(term)
     val regex = Regex("(?i)$escapedTerm")
 
     override fun isInContent(content: String) = content.contains(regex)

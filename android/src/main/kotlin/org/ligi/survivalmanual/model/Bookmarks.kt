@@ -18,7 +18,7 @@ object Bookmarks : KotprefModel() {
 
     fun getAll() = bookmarks.toList()
 
-    fun readBookmarks(): MutableList<Bookmark>
+    private fun readBookmarks(): MutableList<Bookmark>
             = serialized.lines()
             .map { it.split(";") }
             .map { Bookmark(it[0].decodeURL(), it[1].decodeURL(), it[2].decodeURL()) }

@@ -32,7 +32,7 @@ class MyNavigationView(context: Context, attrs: AttributeSet) : NavigationView(c
         }
     }
 
-    fun Int.asStringWithMarkingWhenRead(url: String) = context.getString(this).appendIf(State.markVisited() && VisitedURLStore.getAll().contains(url), "👁")
+    private fun Int.asStringWithMarkingWhenRead(url: String) = context.getString(this).appendIf(State.markVisited() && VisitedURLStore.getAll().contains(url), "👁")
 
-    fun String.appendIf(bool: Boolean, suffix: String) = if (bool) this + suffix else this
+    private fun String.appendIf(bool: Boolean, suffix: String) = if (bool) this + suffix else this
 }
