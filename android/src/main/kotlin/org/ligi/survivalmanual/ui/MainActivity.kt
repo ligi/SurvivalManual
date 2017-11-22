@@ -8,7 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
-import android.support.v4.content.ContextCompat
+import android.support.v4.content.ContextCompat.getColor
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AlertDialog
@@ -33,6 +33,7 @@ import org.ligi.snackengage.snacks.RateSnack
 import org.ligi.survivalmanual.EventTracker
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.R.*
+import org.ligi.survivalmanual.R.color.colorAccentLight
 import org.ligi.survivalmanual.R.id.*
 import org.ligi.survivalmanual.R.string.drawer_close
 import org.ligi.survivalmanual.R.string.drawer_open
@@ -45,6 +46,7 @@ import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.*
 import org.ligi.tracedroid.logging.Log
+import kotlin.properties.Delegates.observable
 
 class MainActivity : BaseActivity() {
 
@@ -62,6 +64,18 @@ class MainActivity : BaseActivity() {
 
     private val linearLayoutManager by lazy { LinearLayoutManager(this) }
 
+    private var isInEditMode by observable(false, onChange = { _, _, newMode ->
+        if (newMode) {
+            fab.setImageResource(drawable.ic_image_remove_red_eye)
+            contentRecycler.adapter = EditingRecyclerAdapter(textInput)
+        } else {
+            fab.setImageResource(drawable.ic_editor_mode_edit)
+            contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
+        }
+
+        contentRecycler.scrollToPosition(State.lastScrollPos)
+    })
+
     private fun imageWidth(): Int {
         val totalWidthPadding = (resources.getDimension(dimen.content_padding) * 2).toInt()
         return Math.min(contentRecycler.width - totalWidthPadding, contentRecycler.height)
@@ -74,9 +88,9 @@ class MainActivity : BaseActivity() {
         } else if (!processProductLinks(it, this)) {
 
             if (isImage(it)) {
-                val intent = Intent(this, ImageViewActivity::class.java)
-                intent.putExtra("URL", it)
-                startActivity(intent)
+                startActivity(Intent(this, ImageViewActivity::class.java).apply {
+                    putExtra("URL", it)
+                })
             } else {
                 processURL(it)
             }
@@ -108,7 +122,7 @@ class MainActivity : BaseActivity() {
 
         contentRecycler.addOnScrollListener(RememberPositionOnScroll())
 
-        val rateSnack = DefaultRateSnack().apply { setActionColor(ContextCompat.getColor(this@MainActivity, color.colorAccentLight)) }
+        val rateSnack = DefaultRateSnack().apply { setActionColor(getColor(baseContext, colorAccentLight)) }
         SnackEngage.from(fab).withSnack(rateSnack).build().engageWhenAppropriate()
 
         contentRecycler.post {
@@ -118,21 +132,25 @@ class MainActivity : BaseActivity() {
                 }
             }
 
-            switchMode(false)
+            isInEditMode = false
         }
 
         if (State.isInitialOpening) {
             drawer_layout.openDrawer(Gravity.LEFT)
             State.isInitialOpening = false
         }
+
+        fab.setOnClickListener {
+            isInEditMode = !isInEditMode
+        }
+
     }
 
-    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
-        menu.findItem(id.action_search)?.let {
+    override fun onPrepareOptionsMenu(menu: Menu) = super.onPrepareOptionsMenu(menu.apply {
+        findItem(id.action_search)?.let {
             it.isVisible = State.allowSearch()
         }
-        return super.onPrepareOptionsMenu(menu)
-    }
+    })
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
@@ -316,20 +334,4 @@ class MainActivity : BaseActivity() {
         supportInvalidateOptionsMenu()
     }
 
-    private fun switchMode(editing: Boolean) {
-        fab.setOnClickListener {
-            switchMode(!editing)
-        }
-
-        if (editing) {
-            fab.setImageResource(drawable.ic_image_remove_red_eye)
-            contentRecycler.adapter = EditingRecyclerAdapter(textInput)
-        } else {
-            fab.setImageResource(drawable.ic_editor_mode_edit)
-            contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
-        }
-
-        contentRecycler.scrollToPosition(State.lastScrollPos)
-
-    }
 }
