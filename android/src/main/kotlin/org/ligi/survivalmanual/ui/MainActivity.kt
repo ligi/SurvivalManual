@@ -46,14 +46,19 @@ class MainActivity : BaseActivity() {
 
     private val drawerToggle by lazy { ActionBarDrawerToggle(this, drawer_layout, org.ligi.survivalmanual.R.string.drawer_open, org.ligi.survivalmanual.R.string.drawer_close) }
 
-    val survivalContent by lazy { SurvivalContent(assets) }
+    private val survivalContent by lazy { SurvivalContent(assets) }
 
-    lateinit var currentUrl: String
-    lateinit var currentTopicName: String
+    private lateinit var currentUrl: String
+    private lateinit var currentTopicName: String
+    private lateinit var textInput: MutableList<String>
 
-    lateinit var textInput: MutableList<String>
+    private var lastFontSize = State.getFontSize()
+    private var lastNightMode = State.nightModeString()
+    private var lastAllowSelect = State.allowSelect()
 
-    fun imageWidth(): Int {
+    private val linearLayoutManager by lazy { LinearLayoutManager(this) }
+
+    private fun imageWidth(): Int {
         val totalWidthPadding = (resources.getDimension(org.ligi.survivalmanual.R.dimen.content_padding) * 2).toInt()
         return Math.min(contentRecycler.width - totalWidthPadding, contentRecycler.height)
     }
@@ -73,9 +78,6 @@ class MainActivity : BaseActivity() {
             }
         }
     }
-
-
-    private val linearLayoutManager by lazy { LinearLayoutManager(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -182,10 +184,9 @@ class MainActivity : BaseActivity() {
         val first = Math.max(linearLayoutManager.findFirstVisibleItemPosition(), 0)
         val search = CaseInsensitiveSearch(searchTerm)
 
-        val next = (first..list.lastIndex).firstOrNull {
+        return (first..list.lastIndex).firstOrNull {
             search.isInContent(list[it])
         }
-        return next
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
@@ -293,9 +294,6 @@ class MainActivity : BaseActivity() {
         drawerToggle.syncState()
     }
 
-    var lastFontSize = State.getFontSize()
-    var lastNightMode = State.nightModeString()
-    var lastAllowSelect = State.allowSelect()
 
     override fun onResume() {
         super.onResume()
@@ -317,7 +315,7 @@ class MainActivity : BaseActivity() {
         supportInvalidateOptionsMenu()
     }
 
-    fun switchMode(editing: Boolean) {
+    private fun switchMode(editing: Boolean) {
         fab.setOnClickListener {
             switchMode(!editing)
         }
