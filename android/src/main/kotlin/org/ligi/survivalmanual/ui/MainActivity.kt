@@ -152,14 +152,14 @@ class MainActivity : BaseActivity() {
                         contentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent, {
                             processURL(it)
                             closeKeyboard()
-                        }).apply { toast() }
+                        }).apply { showToastWhenListIsEmpty() }
 
                     }
 
                     adapter.notifyDataSetChanged()
                 } else if (adapter is SearchResultRecyclerAdapter) {
                     adapter.changeTerm(searchTerm)
-                    adapter.toast()
+                    adapter.showToastWhenListIsEmpty()
                     if (survivalContent.getMarkdown(currentUrl)!!.contains(searchTerm)) {
                         contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
                         State.searchTerm = searchTerm
@@ -174,7 +174,7 @@ class MainActivity : BaseActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    fun SearchResultRecyclerAdapter.toast() = {
+    fun SearchResultRecyclerAdapter.showToastWhenListIsEmpty() {
         if (list.isEmpty()) {
             Toast.makeText(this@MainActivity, State.searchTerm + " not found", Toast.LENGTH_LONG).show()
         }
