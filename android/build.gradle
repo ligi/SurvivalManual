@@ -29,7 +29,7 @@ android {
         }
     }
 
-    flavorDimensions  "fire", "store"
+    flavorDimensions "fire", "store"
 
     productFlavors {
         forFDroid {
@@ -166,5 +166,6 @@ if (hasProperty("isCI")) {
 spoon {
     debug = true
     grantAllPermissions = true
+    failIfNoDeviceConnected = true
 }
 
