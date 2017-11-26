@@ -12,7 +12,7 @@ The content list is curated in [this wiki](https://github.com/ligi/SurvivalManua
 
 ## Contributing
 This app is libre (open) software, so pull requests are welcome.
-If you want to help translate, the app strings are on [Ttransifex](https://www.transifex.com/ligi/survivalmanual)
+If you want to help translate, the app strings are on [Transifex](https://www.transifex.com/ligi/survivalmanual)
 
 Happy survival!
 
