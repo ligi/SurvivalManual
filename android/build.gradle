@@ -120,8 +120,8 @@ dependencies {
     compile "com.android.support:design:$support_version"
     compile "com.android.support:preference-v7:$support_version"
 
-    compile "com.chibatching.kotpref:kotpref:2.1.2"
-    compile "com.chibatching.kotpref:initializer:2.1.2"
+    compile "com.chibatching.kotpref:kotpref:2.2.0"
+    compile "com.chibatching.kotpref:initializer:2.2.0"
 
     compile "com.android.support:cardview-v7:$support_version"
 
