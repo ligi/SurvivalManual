@@ -30,7 +30,7 @@
     <CheckBoxPreference
             android:key="@string/preference_key_search"
             android:summary="Find what you need"
-            android:title="Search ( Beta )"/>
+            android:title="@string/allow_search"/>
 
     <CheckBoxPreference
             android:key="@string/preference_key_edittoggle"
