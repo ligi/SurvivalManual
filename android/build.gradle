@@ -7,15 +7,12 @@ apply plugin: 'de.mobilej.unmock'
 apply plugin: 'com.github.ben-manes.versions'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
-
+    compileSdkVersion 28
+    buildToolsVersion "28.0.2"
     defaultConfig {
         applicationId "org.ligi.survivalmanual"
-
-        minSdkVersion 10
-
-        targetSdkVersion 25
+        minSdkVersion 14
+        targetSdkVersion 28
         versionCode 42
         versionName "4.2"
         vectorDrawables.useSupportLibrary = true
@@ -27,6 +24,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     flavorDimensions "fire", "store"
@@ -54,8 +56,6 @@ android {
         noFirebase {
             dimension "fire"
         }
-
-
     }
 
     android.variantFilter { variant ->
@@ -98,65 +98,65 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
-
 }
 
 configurations {
-
     // http://stackoverflow.com/questions/30578243/why-would-adding-espresso-contrib-cause-an-inflateexception
-    androidTestCompile.exclude group: 'com.android.support', module: 'appcompat-v7'
-    androidTestCompile.exclude group: 'com.android.support', module: 'design'
-    androidTestCompile.exclude group: 'com.android.support', module: 'support-v4'
-    androidTestCompile.exclude group: 'com.android.support', module: 'support-annotations'
-    androidTestCompile.exclude group: 'com.android.support', module: 'preference-v7'
-    androidTestCompile.exclude module: 'recyclerview-v7'
-    androidTestCompile.exclude module: 'kotlin-stdlib'
+    androidTestImplementation.exclude group: 'com.android.support', module: 'appcompat-v7'
+    androidTestImplementation.exclude group: 'com.android.support', module: 'design'
+    androidTestImplementation.exclude group: 'com.android.support', module: 'support-v4'
+    androidTestImplementation.exclude group: 'com.android.support', module: 'support-annotations'
+    androidTestImplementation.exclude group: 'com.android.support', module: 'preference-v7'
+    androidTestImplementation.exclude module: 'recyclerview-v7'
+    androidTestImplementation.exclude module: 'kotlin-stdlib'
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    compile "com.android.support:appcompat-v7:$support_version"
-    compile "com.android.support:design:$support_version"
-    compile "com.android.support:preference-v7:$support_version"
+    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation "com.android.support:support-v4:$support_version"
+    implementation "com.android.support:support-v13:$support_version"
+    implementation "com.android.support:support-media-compat:$support_version"
+    implementation "com.android.support:design:$support_version"
+    implementation "com.android.support:preference-v7:$support_version"
+    implementation "com.android.support:cardview-v7:$support_version"
 
-    compile "com.chibatching.kotpref:kotpref:2.5.0"
-    compile "com.chibatching.kotpref:initializer:2.5.0"
+    implementation 'com.chibatching.kotpref:kotpref:2.5.0'
+    implementation 'com.chibatching.kotpref:initializer:2.5.0'
 
-    compile "com.android.support:cardview-v7:$support_version"
+    implementation('com.github.ligi:intellij-markdown:android_via_jitpack')
 
-    compile('com.github.ligi:intellij-markdown:android_via_jitpack')
+    implementation 'com.github.ligi:TouchImageView:2.1'
+    implementation 'com.github.ligi:ExtraCompats:0.4'
+    implementation 'com.github.ligi:tracedroid:1.4'
 
-    compile 'com.github.ligi:TouchImageView:2.1'
-    compile "com.github.ligi:ExtraCompats:0.4"
-    compile 'com.github.ligi:tracedroid:1.4'
+    forPlayImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.15'
+    forFDroidImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.15'
+    forAmazonImplementation 'com.github.ligi.snackengage:snackengage-amazonrate:0.15'
 
-    forPlayCompile 'com.github.ligi.snackengage:snackengage-playrate:0.15'
-    forFDroidCompile 'com.github.ligi.snackengage:snackengage-playrate:0.15'
-    forAmazonCompile 'com.github.ligi.snackengage:snackengage-amazonrate:0.15'
+    implementation 'com.github.ligi:KAXT:0.20'
 
-    compile 'com.github.ligi:KAXT:0.20'
+    implementation 'com.github.hotchemi:permissionsdispatcher:3.3.1'
+    kapt 'com.github.hotchemi:permissionsdispatcher-processor:3.3.1'
 
-    compile 'com.github.hotchemi:permissionsdispatcher:2.3.2'
-    kapt 'com.github.hotchemi:permissionsdispatcher-processor:2.3.2'
+    androidTestImplementation "com.android.support:support-annotations:$support_version"
+    androidTestImplementation "com.android.support:appcompat-v7:$support_version"
+    androidTestImplementation "com.android.support:design:$support_version"
 
-    androidTestCompile "com.android.support:support-annotations:$support_version"
-    androidTestCompile "com.android.support:appcompat-v7:$support_version"
-    androidTestCompile "com.android.support:design:$support_version"
+    androidTestImplementation('com.android.support.test.espresso:espresso-contrib:3.0.2')
 
-    androidTestCompile('com.android.support.test.espresso:espresso-contrib:3.0.0')
+    androidTestImplementation 'com.github.ligi:trulesk:0.25'
+    androidTestImplementation 'com.squareup.assertj:assertj-android:1.2.0'
+    androidTestImplementation 'org.mockito:mockito-core:2.21.0'
+    androidTestImplementation 'com.linkedin.dexmaker:dexmaker-mockito:2.19.1'
 
-    androidTestCompile 'com.github.ligi:trulesk:0.21'
-    androidTestCompile 'com.squareup.assertj:assertj-android:1.2.0'
-    androidTestCompile 'org.mockito:mockito-core:2.9.0'
-    androidTestCompile 'com.linkedin.dexmaker:dexmaker-mockito:2.2.0'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'com.squareup.assertj:assertj-android:1.2.0'
+    testImplementation "com.android.support:support-annotations:$support_version"
 
-    testCompile 'junit:junit:4.12'
-    testCompile 'com.squareup.assertj:assertj-android:1.1.1'
-    testCompile "com.android.support:support-annotations:$support_version"
-
-    withFirebaseCompile "com.google.firebase:firebase-core:$firebase_version"
-    withFirebaseCompile "com.google.firebase:firebase-crash:$firebase_version"
+    withFirebaseImplementation "com.google.firebase:firebase-core:$firebase_version"
+    withFirebaseImplementation "com.google.firebase:firebase-crash:$firebase_version"
 }
 
 if (hasProperty("isCI")) {
@@ -168,4 +168,3 @@ spoon {
     grantAllPermissions = true
     failIfNoDeviceConnected = true
 }
-

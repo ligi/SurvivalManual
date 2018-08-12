@@ -11,7 +11,6 @@ import org.ligi.survivalmanual.model.State
 import org.ligi.survivalmanual.ui.PreferenceActivity
 import org.ligi.trulesk.TruleskActivityRule
 
-
 class ThePreferenceActivity {
 
     @get:Rule

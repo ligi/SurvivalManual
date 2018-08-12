@@ -13,7 +13,10 @@ object Bookmarks : KotprefModel() {
     fun persist(bookmark: Bookmark) {
         bookmarks.add(bookmark)
 
-        serialized = bookmarks.joinToString("\n") { it.url.encodeURL() + ";" + it.description.encodeURL() + ";" + it.excerpt.encodeURL() }
+        serialized = bookmarks.joinToString("\n") {
+            it.url.encodeURL() +
+                    ";" + it.description.encodeURL() + ";" + it.excerpt.encodeURL()
+        }
     }
 
     fun getAll() = bookmarks.toList()

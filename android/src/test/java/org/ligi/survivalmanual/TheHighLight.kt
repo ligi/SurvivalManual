@@ -19,5 +19,4 @@ class TheHighLight {
 
         assertThat(tested.length).isEqualTo(3)
     }
-
 }

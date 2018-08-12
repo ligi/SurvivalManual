@@ -27,5 +27,4 @@ class TheSearch {
         assertThat(tested.isInContent("ESCAPE)")).isTrue()
         assertThat(tested.isInContent("NO")).isFalse()
     }
-
 }

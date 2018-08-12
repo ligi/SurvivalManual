@@ -37,7 +37,5 @@ class TheSurvivalActivityDirectStart {
 
             activityTestRule.screenShot("topic_" + subtitle!!.toString().replace(" ", "_").replace("/", "_"))
         }
-
     }
-
 }

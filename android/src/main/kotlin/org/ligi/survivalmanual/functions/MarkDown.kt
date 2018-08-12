@@ -4,7 +4,6 @@ import org.intellij.markdown.flavours.commonmark.CommonMarkFlavourDescriptor
 import org.intellij.markdown.html.HtmlGenerator
 import org.intellij.markdown.parser.MarkdownParser
 
-
 private val flavour = CommonMarkFlavourDescriptor()
 
 fun convertMarkdownToHtml(input: String): String {
