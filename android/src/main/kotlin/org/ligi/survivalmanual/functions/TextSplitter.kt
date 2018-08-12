@@ -1,6 +1,5 @@
 package org.ligi.survivalmanual.functions
 
-
 fun splitText(text: String): MutableList<String> {
 
     val list = mutableListOf("")
@@ -11,6 +10,5 @@ fun splitText(text: String): MutableList<String> {
         }
         list[list.lastIndex] += it + "\n"
     }
-
     return list
 }

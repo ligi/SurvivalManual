@@ -1,8 +1,7 @@
 package org.ligi.survivalmanual.ui
 
 import android.R
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.ContextCompat.*
+import android.support.v4.content.ContextCompat.getColor
 import android.support.v7.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity() {

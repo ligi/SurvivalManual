@@ -31,21 +31,21 @@ fun processProductLinks(it: String, activity: Activity): Boolean {
         AlertDialog.Builder(activity)
                 .setTitle(R.string.amazon_link_title)
                 .setView(view)
-                .setNegativeButton(R.string.cancel, { _: DialogInterface, _: Int ->
+                .setNegativeButton(R.string.cancel) { _: DialogInterface, _: Int ->
                     EventTracker.trackGeneric("product", "cancel")
-                })
-                .setPositiveButton(R.string.to_amazon, { _: DialogInterface, _: Int ->
+                }
+                .setPositiveButton(R.string.to_amazon) { _: DialogInterface, _: Int ->
                     EventTracker.trackGeneric("product", "go")
                     activity.startActivityFromURL(url)
-                })
-                .setNeutralButton(R.string.send_link, { _: DialogInterface, _: Int ->
+                }
+                .setNeutralButton(R.string.send_link) { _: DialogInterface, _: Int ->
                     EventTracker.trackGeneric("product", "send")
                     val sendIntent = Intent(Intent.ACTION_SEND).apply {
                         putExtra(Intent.EXTRA_TEXT, url)
                         type = "text/plain"
                     }
                     activity.startActivity(Intent.createChooser(sendIntent, "Send link to"))
-                })
+                }
                 .show()
         return true
     } else {

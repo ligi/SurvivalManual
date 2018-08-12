@@ -19,7 +19,7 @@ class MyNavigationView(context: Context, attrs: AttributeSet) : NavigationView(c
 
         val listedItems = navigationEntryMap.filter { it.entry.isListed }
 
-        listedItems.filter { !it.entry.isAppendix }.forEach {
+        listedItems.filter { !it.entry.isAppendix }.forEach { it ->
             menu.add(0, it.id, Menu.NONE, it.entry.titleRes.asStringWithMarkingWhenRead(it.entry.url)).apply {
                 it.entry.iconRes?.let { setIcon(it) }
             }

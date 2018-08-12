@@ -22,9 +22,11 @@ object State : KotprefModel() {
     fun allowSelect() = sharedPreferences.getBoolean(preference_key_select_text.string(), false)
     fun getFontSize() = 8f + 4f * Integer.parseInt(getFontSizeString())
 
-    private fun getFontSizeString() = sharedPreferences.getString(preference_key_fontsize.string(), "2")
+    private fun getFontSizeString() =
+            sharedPreferences.getString(preference_key_fontsize.string(), "2")
 
-    fun nightModeString(): String? = sharedPreferences.getString(preference_key_nightmode.string(), "auto")
+    fun nightModeString(): String? =
+            sharedPreferences.getString(preference_key_nightmode.string(), "auto")
 
     fun getNightMode() = when (nightModeString()) {
         "day" -> AppCompatDelegate.MODE_NIGHT_NO
@@ -34,7 +36,7 @@ object State : KotprefModel() {
         else -> AppCompatDelegate.MODE_NIGHT_AUTO
     }
 
-    fun Int.string() = context.getString(this)!!
+    fun Int.string(): String = context.getString(this)
 
     fun applyDayNightMode() {
         AppCompatDelegate.setDefaultNightMode(getNightMode())

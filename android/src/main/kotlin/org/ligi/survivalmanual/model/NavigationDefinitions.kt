@@ -4,7 +4,6 @@ import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 import org.ligi.survivalmanual.R
 
-
 open class NavigationEntry(val url: String,
                            @StringRes val titleRes: Int,
                            @DrawableRes val iconRes: Int? = null,

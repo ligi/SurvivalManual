@@ -12,7 +12,7 @@ class SurvivalContent(private val assetManager: AssetManager) {
     }
 
     fun hasFile(url: String) = try {
-        assetManager.open("md/" + url) != null
+        true
     } catch (e: IOException) {
         false
     }

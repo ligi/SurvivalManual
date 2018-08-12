@@ -15,7 +15,6 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
-import android.support.v7.widget.Toolbar
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
@@ -102,7 +101,7 @@ class MainActivity : BaseActivity() {
         setContentView(layout.activity_main)
 
         drawer_layout.addDrawerListener(drawerToggle)
-        setSupportActionBar(findViewById(id.toolbar) as Toolbar)
+        setSupportActionBar(findViewById(id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         navigationView.setNavigationItemSelectedListener { item ->
@@ -114,7 +113,7 @@ class MainActivity : BaseActivity() {
         contentRecycler.layoutManager = linearLayoutManager
 
         class RememberPositionOnScroll : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 State.lastScrollPos = (contentRecycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
                 super.onScrolled(recyclerView, dx, dy)
             }
@@ -136,7 +135,7 @@ class MainActivity : BaseActivity() {
         }
 
         if (State.isInitialOpening) {
-            drawer_layout.openDrawer(Gravity.LEFT)
+            drawer_layout.openDrawer(Gravity.START)
             State.isInitialOpening = false
         }
 
@@ -171,10 +170,10 @@ class MainActivity : BaseActivity() {
                     if (positionForWord != null) {
                         contentRecycler.smoothScrollToPosition(positionForWord)
                     } else {
-                        contentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent, {
+                        contentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent) {
                             processURL(it)
                             closeKeyboard()
-                        }).apply { showToastWhenListIsEmpty() }
+                        }.apply { showToastWhenListIsEmpty() }
 
                     }
 
@@ -229,10 +228,10 @@ class MainActivity : BaseActivity() {
             menu_print to {
                 EventTracker.trackGeneric("print", currentUrl)
                 val newWebView = WebView(this@MainActivity)
-                newWebView.setWebViewClient(object : WebViewClient() {
+                newWebView.webViewClient = object : WebViewClient() {
                     override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?) = false
                     override fun onPageFinished(view: WebView, url: String) = createWebPrintJob(view)
-                })
+                }
 
                 val htmlDocument = convertMarkdownToHtml(survivalContent.getMarkdown(currentUrl)!!)
 
@@ -246,10 +245,10 @@ class MainActivity : BaseActivity() {
                 AlertDialog.Builder(this)
                         .setView(view)
                         .setTitle(string.add_bookmark)
-                        .setPositiveButton(string.bookmark, { _: DialogInterface, _: Int ->
+                        .setPositiveButton(string.bookmark) { _: DialogInterface, _: Int ->
                             Bookmarks.persist(Bookmark(currentUrl, view.commentEdit.text.toString(), ""))
-                        })
-                        .setNegativeButton(string.cancel, { _: DialogInterface, _: Int -> })
+                        }
+                        .setNegativeButton(string.cancel) { _: DialogInterface, _: Int -> }
                         .show()
                 true
             }
@@ -298,13 +297,10 @@ class MainActivity : BaseActivity() {
                 newAdapter.getPositionForWord(State.searchTerm!!)?.let {
                     contentRecycler.scrollToPosition(it)
                 }
-
             }
             navigationView.refresh()
-
             return true
         }
-
         return false
     }
 
@@ -312,7 +308,6 @@ class MainActivity : BaseActivity() {
         super.onPostCreate(savedInstanceState)
         drawerToggle.syncState()
     }
-
 
     override fun onResume() {
         super.onResume()

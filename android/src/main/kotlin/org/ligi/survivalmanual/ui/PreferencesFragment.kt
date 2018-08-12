@@ -34,10 +34,9 @@ class PreferencesFragment : PreferenceFragmentCompat(), SharedPreferences.OnShar
             }
 
             AppCompatDelegate.setDefaultNightMode(nightMode)
-            activity.recreateWhenPossible()
+            activity?.recreateWhenPossible()
         }
     }
-
 
     override fun onCreatePreferences(bundle: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
@@ -48,7 +47,8 @@ class PreferencesFragment : PreferenceFragmentCompat(), SharedPreferences.OnShar
         // Intentionally empty
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
+                                            grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         PreferencesFragmentPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults)
     }

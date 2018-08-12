@@ -10,10 +10,11 @@ import org.ligi.kaxt.doAfterEdit
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.viewholder.TextContentViewHolder
 
-class EditingRecyclerAdapter(val list: MutableList<String>) : RecyclerView.Adapter<TextContentViewHolder>() {
+class EditingRecyclerAdapter(private val list: MutableList<String>) : RecyclerView.Adapter<TextContentViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
-        val textView = LayoutInflater.from(parent.context).inflate(R.layout.edit_text, parent, false) as TextView
+        val textView = LayoutInflater.from(parent.context).inflate(R.layout.edit_text,
+                parent, false) as TextView
         textView.movementMethod = LinkMovementMethod.getInstance()
         return TextContentViewHolder(textView)
     }
@@ -26,7 +27,5 @@ class EditingRecyclerAdapter(val list: MutableList<String>) : RecyclerView.Adapt
             list[holder.adapterPosition] = editText.text.toString()
         }
     }
-
     override fun getItemCount() = list.size
-
 }

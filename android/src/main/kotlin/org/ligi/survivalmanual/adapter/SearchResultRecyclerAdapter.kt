@@ -15,7 +15,8 @@ import org.ligi.survivalmanual.viewholder.SearchResultViewHolder
 
 class SearchResultRecyclerAdapter(private var term: String,
                                   private var survivalContent: SurvivalContent,
-                                  private val onClick: (url: String) -> Unit) : RecyclerView.Adapter<SearchResultViewHolder>() {
+                                  private val onClick: (url: String) -> Unit) :
+        RecyclerView.Adapter<SearchResultViewHolder>() {
 
     var list: List<SearchResult> = search(survivalContent, term)
 
@@ -26,7 +27,8 @@ class SearchResultRecyclerAdapter(private var term: String,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchResultViewHolder {
-        val textView = LayoutInflater.from(parent.context).inflate(R.layout.search_result, parent, false)
+        val textView = LayoutInflater.from(parent.context).inflate(R.layout.search_result,
+                parent, false)
         return SearchResultViewHolder(textView)
     }
 
@@ -43,8 +45,5 @@ class SearchResultRecyclerAdapter(private var term: String,
             onClick.invoke(list[holder.adapterPosition].file)
         }
     }
-
     override fun getItemCount() = list.size
-
-
 }
