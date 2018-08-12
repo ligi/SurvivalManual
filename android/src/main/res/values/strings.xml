@@ -35,9 +35,9 @@
     <string name="fish_and_mollusks">Fish and Mollusks</string>
     <string name="insects_and_arachnids">Insects and Arachnids</string>
     <string name="snakes_and_lizards">Snakes and Lizards</string>
-    <string name="edible_medicin_plants">Edible/Medicin Plants</string>
+    <string name="edible_medicin_plants">Edible/Medicinal Plants</string>
     <string name="apps">Apps</string>
-    <string name="multitool">MultiTool</string>
+    <string name="multitool">Multitool</string>
     <string name="kits">Kits</string>
     <string name="appendix">Appendix</string>
     <string name="help_title">Help</string>
@@ -47,14 +47,13 @@
         This is the offline usable survival field manual v$VERSION based on FM 3-05.70 (FM 21-76). This app is libre software - you can find the sourcecode on
         <a href="https://github.com/ligi/SurvivalManual">GitHub</a>. Pull-Requests are welcome!<br/>
         If you have improvements regarding the content or want to help translate you can use <a href="https://github.com/ligi/SurvivalManual/wiki">this wiki.</a><br/>
-        When you want the latest features and like to live on the bleeding edge: Please <a href="https://play.google.com/apps/testing/org.ligi.survivalmanual">join the BetaTesters</a>
+        If you want the latest features and like to live on the bleeding edge, <a href="https://play.google.com/apps/testing/org.ligi.survivalmanual">join the beta testers.</a>
         <br/>
         This app uses the android-support-libraries,
         <a href="http://kotlinlang.org">Kotlin</a>,
         <a href="https://github.com/MichaelRocks/bimap/">BiMap</a>,
         <a href="https://github.com/chibatching/Kotpref">KotPref</a>,
         <a href="https://github.com/rjeschke/txtmark">TxtMark</a>
-
         and <a href="https://github.com/ligi/SnackEngage">SnackEngage</a>
         ]]>
     </string>
@@ -70,20 +69,20 @@
     <string name="huge">Huge</string>
 
     <string name="preference_daynight_title">Day/Night theme</string>
-    <string name="preference_daynight_summary">Should I be dark or light?</string>
+    <string name="preference_daynight_summary">Should I use day or night theme?</string>
 
-    <string name="allow_edit">Allow Edit ( Experimental )</string>
-    <string name="allow_search">Search ( Beta )</string>
+    <string name="allow_edit">Allow Editing (Experimental)</string>
+    <string name="allow_search">Search (Beta)</string>
     <string name="preference_fontsize_summary">How big should the letters be?</string>
-    <string name="preference_fontsize_title">Font size</string>
+    <string name="preference_fontsize_title">Text size</string>
     <string name="power">Power</string>
     <string name="translator_notes">Translator Notes</string>
-    <string name="product_link_disclaimer">You clicked on a product link. They can help to support this app because they are affiliate links from amazon. If you buy this product or something else on amazon behind this link - then I should get some money from them.</string>
+    <string name="product_link_disclaimer">You clicked on a product link. They help support this app because they are affiliate links from Amazon. If you buy this product or something else on amazon behind this link - then I should get some money from them.</string>
     <string name="bookmark">Bookmark</string>
     <string name="amazon_link_title">Amazon Link</string>
-    <string name="cancel">cancel</string>
-    <string name="to_amazon">to amazon</string>
-    <string name="send_link">send link</string>
+    <string name="cancel">Cancel</string>
+    <string name="to_amazon">To Amazon</string>
+    <string name="send_link">Send Link</string>
     <string name="add_bookmark">Add Bookmark</string>
 
 </resources>
