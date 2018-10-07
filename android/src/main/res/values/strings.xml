@@ -77,7 +77,7 @@
     <string name="preference_fontsize_title">Text size</string>
     <string name="power">Power</string>
     <string name="translator_notes">Translator Notes</string>
-    <string name="product_link_disclaimer">You clicked on a product link. They help support this app because they are affiliate links from Amazon. If you buy this product or something else on amazon behind this link - then I should get some money from them.</string>
+    <string name="product_link_disclaimer">You clicked on a product link - this will get you to amazon. You could also get it from somewhere else</string>
     <string name="bookmark">Bookmark</string>
     <string name="amazon_link_title">Amazon Link</string>
     <string name="cancel">Cancel</string>
