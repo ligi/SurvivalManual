@@ -63,7 +63,7 @@ android {
         def store = variant.getFlavors().get(1).name
 
         if ((project.hasProperty("singleFlavor") && (store != 'forPlay'))
-                || ((store == 'forAmazon' || store == 'forPlay') && firebase == 'noFirebase')
+                || (store == 'forAmazon' && firebase == 'noFirebase')
                 || (store == 'forFDroid' && firebase != 'noFirebase')) {
             variant.setIgnore(true)
         }
