@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">Руководство по выживанию</string>
+    <string name="drawer_open">открыть</string>
+    <string name="drawer_close">закрыть</string>
+    <string name="introduction">Введение</string>
+    <string name="share">Share</string> <!--Участие or Поделиться-->
+    <string name="rate">Rate</string> <!--Темп-->
+    <string name="print">Печать</string>
+    <string name="psychology">Психология</string>
+    <string name="planning">Планирование</string>
+    <string name="basic_medicine">Основная медицина</string>
+    <string name="shelter">Убежище</string>
+    <string name="water">Вода</string>
+    <string name="fire">Огонь</string>
+    <string name="food">Еда</string> <!--Питание-->
+    <string name="plants">Растения</string>
+    <string name="poisonous_plants">Ядовитые растения</string>
+    <string name="animals">Животные</string
+    <string name="tools">Инструменты</string>
+    <string name="desert">Пустыня</string>
+    <string name="tropical">Тропики</string>
+    <string name="cold">Холод</string>
+    <string name="sea">Море</string>
+    <string name="water_crossing">Пересечение воды</string>
+    <string name="directionfinding">Поиск направления</string>
+    <string name="signaling">Сигнализация</string>
+    <string name="camouflage">Маскировка</string> <!--Комуфляж-->
+    <string name="people">Люди</string>
+    <string name="man_made_hazards">Искусственные опасности</string>
+    <string name="credits">Credits</string>  <!--Пожертвовать-->
+    <string name="evasion_plan">Планирование побега</string>
+    <string name="clouds">Облака</string>
+    <string name="faq">FAQ</string>
+    <string name="ropes_and_knots">Веревки и узлы</string>
+    <string name="fish_and_mollusks">Рыба и моллюски</string>
+    <string name="insects_and_arachnids">Насекомые и паукообразные</string>
+    <string name="snakes_and_lizards">Змеи и ящерицы</string>
+    <string name="edible_medicin_plants">Съедобные/Лекарственные растения</string>
+    <string name="apps">Приложения</string>
+    <string name="multitool">Мульти инструмент</string>
+    <string name="kits">Набор инструментов</string>
+    <string name="appendix">Приложение</string>
+    <string name="help_title">Помощь</string>
+    <string name="hostile_areas">Враждебная зона</string>
+    <string name="help_text">
+        <![CDATA[
+        Это автономное руководство по выживанию на выживание v$VERSION основанный на FM 3-05.70 (FM 21-76). Это приложение является бесплатным программным обеспечением - вы можете найти исходный код на
+        <a href="https://github.com/ligi/SurvivalManual">GitHub</a>. Pull-Requests are welcome!<br/>
+        Если у вас есть улучшения в отношении контента или вы хотите помочь в переводе, вы можете использовать <a href="https://github.com/ligi/SurvivalManual/wiki">эту вики.</a><br/>
+        Когда вам нужны последние функции и ваша жизнь на краю лезвия: Пожалуйста, <a href="https://play.google.com/apps/testing/org.ligi.survivalmanual">присоединяйтесь к бета-тестерам</a>
+        <br/>
+        Это приложение использует библиотеки поддержки Android,
+        <a href="http://kotlinlang.org">Kotlin</a>,
+        <a href="https://github.com/MichaelRocks/bimap/">BiMap</a>,
+        <a href="https://github.com/chibatching/Kotpref">KotPref</a>,
+        <a href="https://github.com/rjeschke/txtmark">TxtMark</a>
+        and <a href="https://github.com/ligi/SnackEngage">SnackEngage</a>
+        ]]>
+    </string>
+    <string name="auto">Автоматизация</string>
+    <string name="night">Ночь</string>
+    <string name="dark_night">Темная ночь</string>
+    <string name="day">День</string>
+    
+    <string name="tiny">Крошечный</string>
+    <string name="small">Маленький</string>
+    <string name="medium">Средний</string>
+    <string name="large">Большой</string>
+    <string name="huge">Огромный</string>
+    
+    <string name="preference_daynight_title">Дневная/Ночная тема</string>
+    <string name="preference_daynight_summary">Должен ли я быть темным или светлым?</string>
+    
+    <string name="allow_edit">Разрешить редактирование (Экспериментальное)</string>
+    <string name="allow_search">Поиск (Бета)</string>
+    <string name="preference_fontsize_summary">Насколько большые должны быть буквы?</string>
+    <string name="preference_fontsize_title">Размер шрифта</string>
+    <string name="power">Энергия</string>
+    <string name="translator_notes">Примечания переводчика</string>
+    <string name="product_link_disclaimer">Вы нажали на ссылку продукта - это приведет вас на Amazon. Вы также можете получить его из другого места</string>
+    <string name="bookmark">Закладка</string>
+    <string name="amazon_link_title">Amazon Link</string>
+    <string name="cancel">отмена</string>
+    <string name="to_amazon">to amazon</string>
+    <string name="send_link">Отправить ссылку</string
+    <string name="add_bookmark">Добавить закладку</string>
+    
+</resources>
