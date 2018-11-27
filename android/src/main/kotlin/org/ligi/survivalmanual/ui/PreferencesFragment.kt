@@ -34,7 +34,7 @@ class PreferencesFragment : PreferenceFragmentCompat(), SharedPreferences.OnShar
             }
 
             AppCompatDelegate.setDefaultNightMode(nightMode)
-            activity.recreateWhenPossible()
+            activity?.recreateWhenPossible()
         }
     }
 

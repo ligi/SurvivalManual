@@ -114,7 +114,7 @@ class MainActivity : BaseActivity() {
         contentRecycler.layoutManager = linearLayoutManager
 
         class RememberPositionOnScroll : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 State.lastScrollPos = (contentRecycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
                 super.onScrolled(recyclerView, dx, dy)
             }

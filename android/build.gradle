@@ -6,15 +6,14 @@ apply plugin: 'de.mobilej.unmock'
 apply plugin: 'com.github.ben-manes.versions'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "org.ligi.survivalmanual"
 
-        minSdkVersion 10
+        minSdkVersion 14
 
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode 421
         versionName "4.2.1"
         vectorDrawables.useSupportLibrary = true
@@ -119,7 +118,7 @@ dependencies {
     compile('com.github.ligi:intellij-markdown:android_via_jitpack')
 
     compile 'com.github.ligi:TouchImageView:2.1'
-    compile "com.github.ligi:ExtraCompats:0.4"
+    compile "com.github.ligi:ExtraCompats:0.5"
     compile 'com.github.ligi:tracedroid:1.4'
 
     forPlayCompile 'com.github.ligi.snackengage:snackengage-playrate:0.15'
