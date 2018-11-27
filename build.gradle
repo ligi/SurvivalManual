@@ -15,7 +15,6 @@ buildscript {
         classpath 'de.mobilej.unmock:UnMockPlugin:0.6.4'
 
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.20.0'
-        classpath 'com.stanfy.spoon:spoon-gradle-plugin:1.2.2'
 
         classpath 'com.google.gms:google-services:3.1.1'
     }
