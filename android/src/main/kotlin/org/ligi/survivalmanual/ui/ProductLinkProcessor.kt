@@ -6,7 +6,6 @@ import android.content.Intent
 import android.support.v7.app.AlertDialog
 import org.ligi.kaxt.inflate
 import org.ligi.kaxt.startActivityFromURL
-import org.ligi.survivalmanual.EventTracker
 import org.ligi.survivalmanual.R
 
 val PRODUCT_MAP = mapOf(
@@ -24,28 +23,23 @@ val PRODUCT_MAP = mapOf(
 fun processProductLinks(it: String, activity: Activity): Boolean {
 
     if (PRODUCT_MAP.containsKey(it)) {
-        EventTracker.trackGeneric("product", "click")
         val url = "https://www.amazon.com/gp/product/" + PRODUCT_MAP[it]
         val view = activity.inflate(R.layout.alert_product_link)
 
         AlertDialog.Builder(activity)
                 .setTitle(R.string.amazon_link_title)
                 .setView(view)
-                .setNegativeButton(R.string.cancel, { _: DialogInterface, _: Int ->
-                    EventTracker.trackGeneric("product", "cancel")
-                })
-                .setPositiveButton(R.string.to_amazon, { _: DialogInterface, _: Int ->
-                    EventTracker.trackGeneric("product", "go")
+                .setNegativeButton(R.string.cancel, null)
+                .setPositiveButton(R.string.to_amazon) { _: DialogInterface, _: Int ->
                     activity.startActivityFromURL(url)
-                })
-                .setNeutralButton(R.string.send_link, { _: DialogInterface, _: Int ->
-                    EventTracker.trackGeneric("product", "send")
+                }
+                .setNeutralButton(R.string.send_link) { _: DialogInterface, _: Int ->
                     val sendIntent = Intent(Intent.ACTION_SEND).apply {
                         putExtra(Intent.EXTRA_TEXT, url)
                         type = "text/plain"
                     }
                     activity.startActivity(Intent.createChooser(sendIntent, "Send link to"))
-                })
+                }
                 .show()
         return true
     } else {

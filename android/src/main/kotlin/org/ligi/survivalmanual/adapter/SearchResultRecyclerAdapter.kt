@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import org.ligi.compat.HtmlCompat
-import org.ligi.survivalmanual.EventTracker
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.functions.highLight
 import org.ligi.survivalmanual.functions.search
@@ -34,8 +33,6 @@ class SearchResultRecyclerAdapter(private var term: String,
         val title = titleResByURLMap[list[position].file]
         if (title != null) {
             holder.titleTextView.text = holder.view.context.getString(title)
-        } else {
-            EventTracker.trackError("no title-res for " + list[position].file)
         }
 
         holder.teaserTextView.text = HtmlCompat.fromHtml(highLight(list[position].teaser, term))

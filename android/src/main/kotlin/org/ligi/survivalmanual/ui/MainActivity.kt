@@ -30,7 +30,6 @@ import org.ligi.kaxt.*
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 import org.ligi.snackengage.snacks.RateSnack
-import org.ligi.survivalmanual.EventTracker
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.R.*
 import org.ligi.survivalmanual.R.color.colorAccentLight
@@ -82,7 +81,6 @@ class MainActivity : BaseActivity() {
     }
 
     val onURLClick: (String) -> Unit = {
-        EventTracker.trackContent(it)
         if (it.startsWith("http")) {
             startActivityFromURL(it)
         } else if (!processProductLinks(it, this)) {
@@ -214,7 +212,6 @@ class MainActivity : BaseActivity() {
     private val optionsMap = mapOf(
             menu_settings to { startActivityFromClass(PreferenceActivity::class.java) },
             menu_share to {
-                EventTracker.trackGeneric("share")
                 val intent = Intent(Intent.ACTION_SEND)
                 intent.putExtra(Intent.EXTRA_TEXT, RateSnack().getUri(this).toString())
                 intent.type = "text/plain"
@@ -222,12 +219,10 @@ class MainActivity : BaseActivity() {
             },
 
             menu_rate to {
-                EventTracker.trackGeneric("rate")
                 startActivityFromURL(RateSnack().getUri(this))
             },
 
             menu_print to {
-                EventTracker.trackGeneric("print", currentUrl)
                 val newWebView = WebView(this@MainActivity)
                 newWebView.setWebViewClient(object : WebViewClient() {
                     override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?) = false
@@ -282,7 +277,6 @@ class MainActivity : BaseActivity() {
         currentUrl = url
 
         currentTopicName = getString(titleResByURL)
-        EventTracker.trackContent(url)
 
         supportActionBar?.subtitle = currentTopicName
 

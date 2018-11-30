@@ -9,7 +9,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         TraceDroid.init(this)
-        EventTracker.init(this)
         State.applyDayNightMode()
     }
 }
