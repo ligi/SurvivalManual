@@ -89,7 +89,7 @@ dependencies {
 
     implementation 'com.github.ligi:TouchImageView:2.1'
     implementation "com.github.ligi:ExtraCompats:0.5"
-    implementation 'com.github.ligi:tracedroid:1.4'
+    implementation 'com.github.ligi:tracedroid:2.0'
 
     forPlayImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.15'
     forFDroidImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.15'
