@@ -80,8 +80,8 @@ dependencies {
     implementation "com.android.support:design:$support_version"
     implementation "com.android.support:preference-v7:$support_version"
 
-    implementation "com.chibatching.kotpref:kotpref:2.5.0"
-    implementation "com.chibatching.kotpref:initializer:2.5.0"
+    implementation "com.chibatching.kotpref:kotpref:2.6.0"
+    implementation "com.chibatching.kotpref:initializer:2.6.0"
 
     implementation "com.android.support:cardview-v7:$support_version"
 
