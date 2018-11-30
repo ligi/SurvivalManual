@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'de.mobilej.unmock'
 apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'composer'
 
 android {
     compileSdkVersion 28
@@ -115,4 +116,8 @@ dependencies {
     testImplementation 'com.squareup.assertj:assertj-android:1.2.0'
     testImplementation "com.android.support:support-annotations:$support_version"
 
+}
+
+composer {
+     apkInstallTimeout 600
 }
