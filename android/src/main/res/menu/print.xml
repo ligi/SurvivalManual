@@ -7,4 +7,10 @@
             android:icon="@drawable/ic_action_print"
             app:showAsAction="ifRoom"/>
 
+    <item
+        android:id="@+id/menu_print_all"
+        android:title="@string/print_all"
+        android:icon="@drawable/ic_action_print_all"
+        app:showAsAction="ifRoom"/>
+
 </menu>

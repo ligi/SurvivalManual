@@ -39,6 +39,7 @@ import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.*
 import org.ligi.tracedroid.logging.Log
+import java.lang.StringBuilder
 import kotlin.properties.Delegates.observable
 
 class MainActivity : BaseActivity() {
@@ -231,6 +232,24 @@ class MainActivity : BaseActivity() {
                 val htmlDocument = convertMarkdownToHtml(survivalContent.getMarkdown(currentUrl)!!)
 
                 newWebView.loadDataWithBaseURL("file:///android_asset/md/", htmlDocument, "text/HTML", "UTF-8", null)
+
+            },
+
+            menu_print_all to {
+                val newWebView = WebView(this@MainActivity)
+                newWebView.setWebViewClient(object : WebViewClient() {
+                    override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?) = false
+                    override fun onPageFinished(view: WebView, url: String) = createWebPrintJob(view)
+                })
+
+                val fullHtmlDocument = StringBuilder()
+                for (content in navigationEntryMap){
+                    val convertedUrl = convertMarkdownToHtml(survivalContent.getMarkdown(content.entry.url)!!)
+                    fullHtmlDocument.append(convertedUrl)
+                    fullHtmlDocument.append("\n\n")
+                }
+
+                newWebView.loadDataWithBaseURL("", fullHtmlDocument.toString(), "text/HTML", "UTF-8", null)
 
             },
 
