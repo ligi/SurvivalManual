@@ -3,13 +3,14 @@ package org.ligi.survivalmanual.functions
 import android.support.annotation.VisibleForTesting
 import org.ligi.survivalmanual.model.SearchResult
 import org.ligi.survivalmanual.model.SurvivalContent
+import kotlin.math.max
 
 private const val EXCERPT_SIZE = 100
 
 @VisibleForTesting
 fun getExcerpt(text: String, term: String): String {
     val index = text.indexOf(term)
-    val rough = text.substring(Math.max(index - EXCERPT_SIZE, 0)..Math.min(index + EXCERPT_SIZE, text.lastIndex))
+    val rough = text.substring(max(index - EXCERPT_SIZE, 0)..(index + EXCERPT_SIZE).coerceAtMost(text.lastIndex))
     return rough.substring(rough.indexOf(" ")..rough.lastIndexOf(" "))
 }
 
@@ -30,7 +31,7 @@ fun search(content: SurvivalContent, searchTerm: String) = search(content, CaseI
 
 fun search(content: SurvivalContent, search: Search)
         = content.getAllFiles()
-        .associate { it to content.getMarkdown(it)!! }
+        .associateWith { content.getMarkdown(it)!! }
         .filter { search.isInContent(it.value) }
         .map {
             SearchResult(it.key, getExcerpt(it.value, search.term))

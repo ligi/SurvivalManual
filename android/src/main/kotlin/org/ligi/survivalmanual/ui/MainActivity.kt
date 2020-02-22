@@ -15,7 +15,6 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
-import android.support.v7.widget.Toolbar
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
@@ -32,7 +31,6 @@ import org.ligi.snackengage.snacks.DefaultRateSnack
 import org.ligi.snackengage.snacks.RateSnack
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.R.*
-import org.ligi.survivalmanual.R.color.colorAccentLight
 import org.ligi.survivalmanual.R.id.*
 import org.ligi.survivalmanual.adapter.EditingRecyclerAdapter
 import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
@@ -100,7 +98,7 @@ class MainActivity : BaseActivity() {
         setContentView(layout.activity_main)
 
         drawer_layout.addDrawerListener(drawerToggle)
-        setSupportActionBar(findViewById(id.toolbar) as Toolbar)
+        setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         navigationView.setNavigationItemSelectedListener { item ->
@@ -171,10 +169,10 @@ class MainActivity : BaseActivity() {
                     if (positionForWord != null) {
                         contentRecycler.smoothScrollToPosition(positionForWord)
                     } else {
-                        contentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent, {
+                        contentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent) {
                             processURL(it)
                             closeKeyboard()
-                        }).apply { showToastWhenListIsEmpty() }
+                        }.apply { showToastWhenListIsEmpty() }
 
                     }
 
@@ -243,10 +241,10 @@ class MainActivity : BaseActivity() {
                 AlertDialog.Builder(this)
                         .setView(view)
                         .setTitle(string.add_bookmark)
-                        .setPositiveButton(string.bookmark, { _: DialogInterface, _: Int ->
+                        .setPositiveButton(string.bookmark) { _: DialogInterface, _: Int ->
                             Bookmarks.persist(Bookmark(currentUrl, view.commentEdit.text.toString(), ""))
-                        })
-                        .setNegativeButton(string.cancel, { _: DialogInterface, _: Int -> })
+                        }
+                        .setNegativeButton(string.cancel) { _: DialogInterface, _: Int -> }
                         .show()
                 true
             }
@@ -327,7 +325,7 @@ class MainActivity : BaseActivity() {
             lastNightMode = State.nightModeString()
         }
 
-        supportInvalidateOptionsMenu()
+        invalidateOptionsMenu()
     }
 
 }
