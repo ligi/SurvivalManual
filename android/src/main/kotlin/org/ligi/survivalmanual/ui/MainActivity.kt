@@ -276,7 +276,14 @@ class MainActivity : BaseActivity() {
         val printManager = getSystemService(Context.PRINT_SERVICE) as PrintManager
         val jobName = getString(string.app_name) + " Document"
         val printAdapter = WebViewCompat.createPrintDocumentAdapter(webView, jobName)
-        printManager.print(jobName, printAdapter, PrintAttributes.Builder().build())
+        try {
+            printManager.print(jobName, printAdapter, PrintAttributes.Builder().build())
+        } catch (iae : IllegalArgumentException) {
+            AlertDialog.Builder(this)
+                    .setMessage("Problem printing: " + iae.message)
+                    .setPositiveButton(android.R.string.ok,null)
+                    .show()
+        }
     }
 
     private fun processURL(url: String): Boolean {
