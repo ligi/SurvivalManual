@@ -34,8 +34,6 @@ import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.R.*
 import org.ligi.survivalmanual.R.color.colorAccentLight
 import org.ligi.survivalmanual.R.id.*
-import org.ligi.survivalmanual.R.string.drawer_close
-import org.ligi.survivalmanual.R.string.drawer_open
 import org.ligi.survivalmanual.adapter.EditingRecyclerAdapter
 import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
 import org.ligi.survivalmanual.adapter.SearchResultRecyclerAdapter
@@ -49,7 +47,9 @@ import kotlin.properties.Delegates.observable
 
 class MainActivity : BaseActivity() {
 
-    private val drawerToggle by lazy { ActionBarDrawerToggle(this, drawer_layout, drawer_open, drawer_close) }
+    private val drawerToggle by lazy {
+        ActionBarDrawerToggle(this, drawer_layout, string.drawer_open, string.drawer_close)
+    }
 
     private val survivalContent by lazy { SurvivalContent(assets) }
 
@@ -120,7 +120,9 @@ class MainActivity : BaseActivity() {
 
         contentRecycler.addOnScrollListener(RememberPositionOnScroll())
 
-        val rateSnack = DefaultRateSnack().apply { setActionColor(getColor(baseContext, colorAccentLight)) }
+        val rateSnack = DefaultRateSnack().apply {
+            setActionColor(getColor(baseContext, R.color.colorAccentLight))
+        }
         SnackEngage.from(fab).withSnack(rateSnack).build().engageWhenAppropriate()
 
         contentRecycler.post {

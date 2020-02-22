@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'de.mobilej.unmock'
-apply plugin: 'composer'
+apply plugin: 'com.trevjonez.composer'
 
 android {
     compileSdkVersion 28
