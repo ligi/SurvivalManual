@@ -90,9 +90,9 @@ dependencies {
     implementation "com.github.ligi:ExtraCompats:1.0"
     implementation 'com.github.ligi:tracedroid:3.0'
 
-    forPlayImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.15'
-    forFDroidImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.15'
-    forAmazonImplementation 'com.github.ligi.snackengage:snackengage-amazonrate:0.15'
+    forPlayImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.24'
+    forFDroidImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.24'
+    forAmazonImplementation 'com.github.ligi.snackengage:snackengage-amazonrate:0.24'
 
     implementation 'com.github.ligi:KAXT:0.20'
 
