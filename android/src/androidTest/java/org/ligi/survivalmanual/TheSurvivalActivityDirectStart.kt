@@ -1,10 +1,10 @@
 package org.ligi.survivalmanual
 
 import android.os.SystemClock
-import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.contrib.DrawerActions
-import android.support.test.espresso.contrib.NavigationViewActions.navigateTo
-import android.support.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.contrib.DrawerActions
+import androidx.test.espresso.contrib.NavigationViewActions.navigateTo
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Rule
 import org.junit.Test

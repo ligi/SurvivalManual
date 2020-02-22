@@ -1,6 +1,6 @@
 package org.ligi.survivalmanual.functions
 
-import android.support.annotation.VisibleForTesting
+import androidx.annotation.VisibleForTesting
 import org.ligi.survivalmanual.model.SearchResult
 import org.ligi.survivalmanual.model.SurvivalContent
 import kotlin.math.max

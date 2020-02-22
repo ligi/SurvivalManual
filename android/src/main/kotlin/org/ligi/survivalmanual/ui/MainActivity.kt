@@ -8,13 +8,13 @@ import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
-import android.support.v4.content.ContextCompat.getColor
-import android.support.v4.view.MenuItemCompat
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AlertDialog
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.SearchView
+import androidx.core.content.ContextCompat.getColor
+import androidx.core.view.MenuItemCompat
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.SearchView
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
@@ -59,7 +59,7 @@ class MainActivity : BaseActivity() {
     private var lastNightMode = State.nightModeString()
     private var lastAllowSelect = State.allowSelect()
 
-    private val linearLayoutManager by lazy { LinearLayoutManager(this) }
+    private val linearLayoutManager by lazy { androidx.recyclerview.widget.LinearLayoutManager(this) }
 
     private var isInEditMode by observable(false, onChange = { _, _, newMode ->
         if (newMode) {
@@ -109,9 +109,9 @@ class MainActivity : BaseActivity() {
 
         contentRecycler.layoutManager = linearLayoutManager
 
-        class RememberPositionOnScroll : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                State.lastScrollPos = (contentRecycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+        class RememberPositionOnScroll : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
+                State.lastScrollPos = (contentRecycler.layoutManager as androidx.recyclerview.widget.LinearLayoutManager).findFirstVisibleItemPosition()
                 super.onScrolled(recyclerView, dx, dy)
             }
         }

@@ -1,7 +1,7 @@
 package org.ligi.survivalmanual.ui
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import com.ortiz.touch.TouchImageView
 import org.ligi.survivalmanual.functions.getSurvivalDrawable

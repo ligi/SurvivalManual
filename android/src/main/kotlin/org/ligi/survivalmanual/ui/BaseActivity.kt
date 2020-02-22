@@ -1,9 +1,9 @@
 package org.ligi.survivalmanual.ui
 
 import android.R
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.ContextCompat.*
-import android.support.v7.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.*
+import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity() {
 

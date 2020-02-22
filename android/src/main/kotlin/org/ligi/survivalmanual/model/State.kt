@@ -1,7 +1,7 @@
 package org.ligi.survivalmanual.model
 
 import android.preference.PreferenceManager
-import android.support.v7.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate
 import com.chibatching.kotpref.KotprefModel
 import org.ligi.survivalmanual.R.string.*
 

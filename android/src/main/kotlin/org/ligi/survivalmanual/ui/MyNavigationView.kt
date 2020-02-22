@@ -1,7 +1,7 @@
 package org.ligi.survivalmanual.ui
 
 import android.content.Context
-import android.support.design.widget.NavigationView
+import com.google.android.material.navigation.NavigationView
 import android.util.AttributeSet
 import android.view.Menu
 import org.ligi.survivalmanual.model.State

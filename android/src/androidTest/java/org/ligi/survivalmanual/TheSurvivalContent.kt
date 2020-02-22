@@ -1,6 +1,6 @@
 package org.ligi.survivalmanual
 
-import android.support.test.InstrumentationRegistry
+import androidx.test.platform.app.InstrumentationRegistry
 import junit.framework.Assert.fail
 import org.assertj.core.api.Assertions.assertThat
 import org.intellij.markdown.IElementType
@@ -11,15 +11,14 @@ import org.intellij.markdown.ast.visitors.RecursiveVisitor
 import org.intellij.markdown.flavours.commonmark.CommonMarkFlavourDescriptor
 import org.intellij.markdown.parser.MarkdownParser
 import org.junit.Test
-import org.ligi.survivalmanual.model.navigationEntryMap
 import org.ligi.survivalmanual.model.SurvivalContent
+import org.ligi.survivalmanual.model.navigationEntryMap
 import org.ligi.survivalmanual.model.titleResByURLMap
 import org.ligi.survivalmanual.ui.PRODUCT_MAP
 
 class TheSurvivalContent {
 
-    val survivalContent = SurvivalContent(InstrumentationRegistry.getTargetContext().assets)
-
+    val survivalContent = SurvivalContent(InstrumentationRegistry.getInstrumentation().targetContext.assets)
 
     @Test
     fun weCanLoadAllEntriesFromNavigation() {

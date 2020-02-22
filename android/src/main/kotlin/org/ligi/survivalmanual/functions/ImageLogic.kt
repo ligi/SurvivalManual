@@ -2,7 +2,7 @@ package org.ligi.survivalmanual.functions
 
 import android.content.Context
 import android.graphics.drawable.BitmapDrawable
-import android.support.graphics.drawable.VectorDrawableCompat
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
 import org.ligi.survivalmanual.R
 
 fun linkImagesInMarkDown(markdown: String): String {

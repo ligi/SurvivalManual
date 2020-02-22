@@ -1,11 +1,8 @@
 package org.ligi.survivalmanual.adapter
 
 import android.content.Context
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Build
-import android.support.graphics.drawable.VectorDrawableCompat
-import android.support.v7.widget.RecyclerView
 import android.text.Editable
 import android.text.Html
 import android.text.Spannable
@@ -18,6 +15,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import org.ligi.compat.HtmlCompat
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.functions.convertMarkdownToHtml
@@ -29,7 +27,10 @@ import org.ligi.survivalmanual.ui.CustomQuoteSpan
 import org.ligi.survivalmanual.viewholder.TextContentViewHolder
 import org.xml.sax.XMLReader
 
-class MarkdownRecyclerAdapter(val list: List<String>, val imageWidth: Int, val onURLClick: (url: String) -> Unit) : RecyclerView.Adapter<TextContentViewHolder>() {
+class MarkdownRecyclerAdapter(val list: List<String>,
+                              val imageWidth: Int,
+                              val onURLClick: (url: String) -> Unit
+) : RecyclerView.Adapter<TextContentViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
         val textView = LayoutInflater.from(parent.context).inflate(R.layout.text, parent, false) as TextView

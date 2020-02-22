@@ -2,9 +2,9 @@ package org.ligi.survivalmanual.ui
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.support.v7.app.AppCompatDelegate
-import android.support.v7.app.AppCompatDelegate.MODE_NIGHT_AUTO
-import android.support.v7.preference.PreferenceFragmentCompat
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_AUTO
+import androidx.preference.PreferenceFragmentCompat
 import org.ligi.kaxt.recreateWhenPossible
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.model.State
