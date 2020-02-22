@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ListPreference
             android:defaultValue="auto"
             android:entries="@array/night_modes"
             android:entryValues="@array/nightmode_keys"
+            app:iconSpaceReserved="false"
             android:key="@string/preference_key_nightmode"
             android:summary="@string/preference_daynight_summary"
             android:title="@string/preference_daynight_title"/>
@@ -13,27 +15,32 @@
             android:defaultValue="2"
             android:entries="@array/font_sizes"
             android:entryValues="@array/font_sizes_values"
+            app:iconSpaceReserved="false"
             android:key="@string/preference_key_fontsize"
             android:summary="@string/preference_fontsize_summary"
             android:title="@string/preference_fontsize_title"/>
 
     <CheckBoxPreference
             android:key="@string/preference_mark_visited"
+            app:iconSpaceReserved="false"
             android:summary="Indicate visited chapters in the left table of contents"
             android:title="Mark visited chapters"/>
 
     <CheckBoxPreference
             android:key="@string/preference_key_select_text"
+            app:iconSpaceReserved="false"
             android:summary="Makes you able to select text to copy. This is an option as it can disturb scrolling and on some older android devices even crash"
             android:title="Allow selection of text"/>
 
     <CheckBoxPreference
             android:key="@string/preference_key_search"
+            app:iconSpaceReserved="false"
             android:summary="Find what you need"
             android:title="@string/allow_search"/>
 
     <CheckBoxPreference
             android:key="@string/preference_key_edittoggle"
+            app:iconSpaceReserved="false"
             android:summary="Enhance the information and help survive"
             android:title="@string/allow_edit"/>
 
