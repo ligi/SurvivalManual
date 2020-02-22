@@ -14,8 +14,8 @@ android {
         minSdkVersion 14
 
         targetSdkVersion 29
-        versionCode 422
-        versionName "4.2.2"
+        versionCode 423
+        versionName "4.2.3"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "org.ligi.trulesk.BaseTruleskRunner"
         archivesBaseName = "SurvivalManual-$versionName"
