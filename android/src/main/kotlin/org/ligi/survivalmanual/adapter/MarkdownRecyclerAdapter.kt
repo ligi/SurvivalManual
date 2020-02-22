@@ -2,7 +2,6 @@ package org.ligi.survivalmanual.adapter
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.text.Editable
 import android.text.Html
 import android.text.Spannable
@@ -35,9 +34,7 @@ class MarkdownRecyclerAdapter(val list: List<String>,
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextContentViewHolder {
         val textView = LayoutInflater.from(parent.context).inflate(R.layout.text, parent, false) as TextView
         textView.movementMethod = LinkMovementMethod.getInstance()
-        if (Build.VERSION.SDK_INT >= 11) {
-            textView.setTextIsSelectable(State.allowSelect())
-        }
+        textView.setTextIsSelectable(State.allowSelect())
         return TextContentViewHolder(textView)
     }
 

@@ -1,6 +1,6 @@
 package org.ligi.survivalmanual.viewholder
 
-import androidx.recyclerview.widget.RecyclerView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 
-class TextContentViewHolder(val view: TextView) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view)
+class TextContentViewHolder(val view: TextView) : RecyclerView.ViewHolder(view)
