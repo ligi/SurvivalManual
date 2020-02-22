@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_AUTO
 import androidx.preference.PreferenceFragmentCompat
-import org.ligi.kaxt.recreateWhenPossible
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.model.State
 import permissions.dispatcher.NeedsPermission
@@ -34,7 +33,7 @@ class PreferencesFragment : PreferenceFragmentCompat(), SharedPreferences.OnShar
             }
 
             AppCompatDelegate.setDefaultNightMode(nightMode)
-            activity?.recreateWhenPossible()
+            activity?.recreate()
         }
     }
 

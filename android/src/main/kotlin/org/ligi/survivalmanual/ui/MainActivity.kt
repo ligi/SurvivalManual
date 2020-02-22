@@ -8,13 +8,6 @@ import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
-import androidx.core.content.ContextCompat.getColor
-import androidx.core.view.MenuItemCompat
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.appcompat.widget.SearchView
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
@@ -22,6 +15,11 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat.getColor
+import androidx.core.view.MenuItemCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bookmark.view.*
 import org.ligi.compat.WebViewCompat
@@ -317,11 +315,11 @@ class MainActivity : BaseActivity() {
             lastFontSize = State.getFontSize()
         }
         if (lastAllowSelect != State.allowSelect()) {
-            recreateWhenPossible()
+            recreate()
             lastAllowSelect = State.allowSelect()
         }
         if (lastNightMode != State.nightModeString()) {
-            recreateWhenPossible()
+            recreate()
             lastNightMode = State.nightModeString()
         }
 

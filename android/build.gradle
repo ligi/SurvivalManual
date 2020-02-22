@@ -94,7 +94,7 @@ dependencies {
     forFDroidImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.24'
     forAmazonImplementation 'com.github.ligi.snackengage:snackengage-amazonrate:0.24'
 
-    implementation 'com.github.ligi:KAXT:0.20'
+    implementation 'com.github.ligi:KAXT:1.0'
 
     implementation 'com.github.hotchemi:permissionsdispatcher:2.3.2'
     kapt 'com.github.hotchemi:permissionsdispatcher-processor:2.3.2'
