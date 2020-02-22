@@ -37,6 +37,7 @@ val navigationEntryMap = arrayOf(
         NavigationEntry("WaterCrossing", R.string.water_crossing, R.drawable.ic_action_rowing),
         NavigationEntry("DirectionFinding", R.string.directionfinding, R.drawable.ic_action_explore),
         NavigationEntry("ManMadeHazards", R.string.man_made_hazards, R.drawable.ic_editor_attach_money),
+        NavigationEntry("Self-defense", R.string.self_defense, R.drawable.ic_security_black_24dp),
         NavigationEntry("Signaling", R.string.signaling, R.drawable.ic_content_flag),
         NavigationEntry("HostileAreas", R.string.hostile_areas, R.drawable.ic_image_flash_on),
         NavigationEntry("Camouflage", R.string.camouflage, R.drawable.ic_image_color_lens),
