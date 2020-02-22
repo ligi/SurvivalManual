@@ -39,7 +39,6 @@ import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.*
 import org.ligi.tracedroid.logging.Log
-import java.lang.StringBuilder
 import kotlin.properties.Delegates.observable
 
 class MainActivity : BaseActivity() {
@@ -223,36 +222,32 @@ class MainActivity : BaseActivity() {
             },
 
             menu_print to {
-                val newWebView = WebView(this@MainActivity)
-                newWebView.setWebViewClient(object : WebViewClient() {
-                    override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?) = false
-                    override fun onPageFinished(view: WebView, url: String) = createWebPrintJob(view)
-                })
+                AlertDialog.Builder(this)
+                        .setSingleChoiceItems(arrayOf("This chapter", "Everything"), 0, null)
+                        .setTitle("Print")
+                        .setPositiveButton(android.R.string.ok) { dialog, _ ->
+                            val text = when ((dialog as AlertDialog).listView.checkedItemPosition) {
+                                0 -> convertMarkdownToHtml(survivalContent.getMarkdown(currentUrl)!!)
+                                else ->  navigationEntryMap.map {
+                                    convertMarkdownToHtml(survivalContent.getMarkdown(it.entry.url)!!)
+                                }.joinToString ("<hr/>")
+                            }
 
-                val htmlDocument = convertMarkdownToHtml(survivalContent.getMarkdown(currentUrl)!!)
+                            val newWebView = WebView(this@MainActivity)
+                            newWebView.webViewClient = object : WebViewClient() {
+                                override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?) = false
+                                override fun onPageFinished(view: WebView, url: String) = createWebPrintJob(view)
+                            }
 
-                newWebView.loadDataWithBaseURL("file:///android_asset/md/", htmlDocument, "text/HTML", "UTF-8", null)
 
-            },
+                            newWebView.loadDataWithBaseURL("file:///android_asset/md/", text, "text/HTML", "UTF-8", null)
 
-            menu_print_all to {
-                val newWebView = WebView(this@MainActivity)
-                newWebView.setWebViewClient(object : WebViewClient() {
-                    override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?) = false
-                    override fun onPageFinished(view: WebView, url: String) = createWebPrintJob(view)
-                })
+                        }
+                        .setNegativeButton(android.R.string.cancel, null)
+                        .show()
 
-                val fullHtmlDocument = StringBuilder()
-                for (content in navigationEntryMap){
-                    val convertedUrl = convertMarkdownToHtml(survivalContent.getMarkdown(content.entry.url)!!)
-                    fullHtmlDocument.append(convertedUrl)
-                    fullHtmlDocument.append("\n\n")
-                }
-
-                newWebView.loadDataWithBaseURL("", fullHtmlDocument.toString(), "text/HTML", "UTF-8", null)
 
             },
-
             menu_bookmark to {
                 val view = inflate(layout.bookmark)
                 view.topicText.text = currentTopicName
