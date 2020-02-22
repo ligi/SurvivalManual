@@ -1,9 +1,11 @@
 package org.ligi.survivalmanual.model
 
-import android.preference.PreferenceManager
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.preference.PreferenceManager
 import com.chibatching.kotpref.KotprefModel
 import org.ligi.survivalmanual.R.string.*
+
+private const val DEFAULT_FONT_SIZE_STRING = "2"
 
 object State : KotprefModel() {
 
@@ -22,7 +24,8 @@ object State : KotprefModel() {
     fun allowSelect() = sharedPreferences.getBoolean(preference_key_select_text.string(), false)
     fun getFontSize() = 8f + 4f * Integer.parseInt(getFontSizeString())
 
-    private fun getFontSizeString() = sharedPreferences.getString(preference_key_fontsize.string(), "2")
+    private fun getFontSizeString() =
+            sharedPreferences.getString(preference_key_fontsize.string(), DEFAULT_FONT_SIZE_STRING) ?: DEFAULT_FONT_SIZE_STRING
 
     fun nightModeString(): String? = sharedPreferences.getString(preference_key_nightmode.string(), "auto")
 
@@ -34,7 +37,7 @@ object State : KotprefModel() {
         else -> AppCompatDelegate.MODE_NIGHT_AUTO
     }
 
-    fun Int.string() = context.getString(this)!!
+    fun Int.string() = context.getString(this)
 
     fun applyDayNightMode() {
         AppCompatDelegate.setDefaultNightMode(getNightMode())

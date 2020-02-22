@@ -122,7 +122,8 @@ class MainActivity : BaseActivity() {
         SnackEngage.from(fab).withSnack(rateSnack).build().engageWhenAppropriate()
 
         contentRecycler.post {
-            if (intent.data == null || !processURL(intent.data.path.replace("/", ""))) {
+            val data = intent.data?.path
+            if (data == null || !processURL(data.replace("/", ""))) {
                 if (!processURL(State.lastVisitedURL)) {
                     processURL(State.FALLBACK_URL)
                 }
