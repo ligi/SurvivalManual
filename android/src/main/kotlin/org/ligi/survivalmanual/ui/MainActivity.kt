@@ -4,6 +4,7 @@ import android.annotation.TargetApi
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
@@ -228,12 +229,17 @@ class MainActivity : BaseActivity() {
                         .setPositiveButton(android.R.string.ok) { dialog, _ ->
                             val text = when ((dialog as AlertDialog).listView.checkedItemPosition) {
                                 0 -> convertMarkdownToHtml(survivalContent.getMarkdown(currentUrl)!!)
-                                else ->  navigationEntryMap.map {
+                                else -> navigationEntryMap.map {
                                     convertMarkdownToHtml(survivalContent.getMarkdown(it.entry.url)!!)
-                                }.joinToString ("<hr/>")
+                                }.joinToString("<hr/>")
                             }
 
-                            val newWebView = WebView(this@MainActivity)
+                            val newWebView = if (Build.VERSION.SDK_INT >= 17) {
+                                WebView(createConfigurationContext(Configuration()))
+                            } else {
+                                WebView(this@MainActivity)
+                            }
+
                             newWebView.webViewClient = object : WebViewClient() {
                                 override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?) = false
                                 override fun onPageFinished(view: WebView, url: String) = createWebPrintJob(view)
@@ -278,10 +284,10 @@ class MainActivity : BaseActivity() {
         val printAdapter = WebViewCompat.createPrintDocumentAdapter(webView, jobName)
         try {
             printManager.print(jobName, printAdapter, PrintAttributes.Builder().build())
-        } catch (iae : IllegalArgumentException) {
+        } catch (iae: IllegalArgumentException) {
             AlertDialog.Builder(this)
                     .setMessage("Problem printing: " + iae.message)
-                    .setPositiveButton(android.R.string.ok,null)
+                    .setPositiveButton(android.R.string.ok, null)
                     .show()
         }
     }
