@@ -29,7 +29,7 @@ class PreferencesFragment : PreferenceFragmentCompat(), SharedPreferences.OnShar
             @AppCompatDelegate.NightMode val nightMode = State.getNightMode()
 
             if (nightMode == MODE_NIGHT_AUTO) {
-                PreferencesFragmentPermissionsDispatcher.ensureDayNightWithCheck(this)
+                ensureDayNightWithPermissionCheck()
             }
 
             AppCompatDelegate.setDefaultNightMode(nightMode)
@@ -49,7 +49,7 @@ class PreferencesFragment : PreferenceFragmentCompat(), SharedPreferences.OnShar
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        PreferencesFragmentPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults)
+        onRequestPermissionsResult(requestCode, grantResults)
     }
 
 }
