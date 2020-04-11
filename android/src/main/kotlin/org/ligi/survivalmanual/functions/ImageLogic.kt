@@ -19,5 +19,5 @@ fun getSurvivalDrawable(ctx: Context, source: String) = if (source.endsWith(".vd
         else -> throw IllegalArgumentException("Illegal vector drawable")
     }
 } else {
-    BitmapDrawable.createFromStream(ctx.assets.open("md/" + source), source) as BitmapDrawable
+    BitmapDrawable.createFromStream(ctx.assets.open("md/$source"), source) as BitmapDrawable
 }

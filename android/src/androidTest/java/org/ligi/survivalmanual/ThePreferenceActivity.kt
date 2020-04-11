@@ -26,10 +26,10 @@ class ThePreferenceActivity {
 
         onView(withText(R.string.preference_daynight_title)).perform(click())
 
-        onView(withText(R.string.auto)).perform(click())
+        onView(withText(R.string.system)).perform(click())
 
-        assertThat(getDefaultNightMode()).isEqualTo(MODE_NIGHT_AUTO)
-        assertThat(State.getNightMode()).isEqualTo(MODE_NIGHT_AUTO)
+        assertThat(getDefaultNightMode()).isEqualTo(MODE_NIGHT_FOLLOW_SYSTEM)
+        assertThat(State.getNightMode()).isEqualTo(MODE_NIGHT_FOLLOW_SYSTEM)
         activityTestRule.screenShot("daynight_auto")
     }
 
