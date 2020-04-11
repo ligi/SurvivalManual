@@ -22,8 +22,8 @@ class TheSurvivalContent {
 
     @Test
     fun weCanLoadAllEntriesFromNavigation() {
-        navigationEntryMap.forEach {
-            val url = it.entry.url
+        navigationEntryMap.forEach { navEntryWithId ->
+            val url = navEntryWithId.entry.url
             val tested = survivalContent.getMarkdown(url)
             if (tested == null) {
                 fail("could not load $url")
@@ -35,12 +35,14 @@ class TheSurvivalContent {
             val elementCollectingVisitor = ElementCollectingVisitor(MarkdownElementTypes.LINK_DESTINATION)
             elementCollectingVisitor.visitNode(parsedTree)
 
-            val unresolvedLinks = elementCollectingVisitor.elementList.map { it.getTextInNode(tested).toString() }.filter { !it.startsWith("#") }
-                    .filter { !it.startsWith("http") }
-                    .filter { !it.endsWith(".vd") }
-                    .filter { !survivalContent.hasFile(it) }
-                    .filterNot { survivalContent.getMarkdown(it) != null && titleResByURLMap.containsKey(it) }
-                    .filter { !PRODUCT_MAP.containsKey(it) }
+            val unresolvedLinks = elementCollectingVisitor.elementList.asSequence()
+                    .map { element -> element.getTextInNode(tested).toString() }
+                    .filter { link -> !link.startsWith("#") }
+                    .filter { link -> !link.startsWith("http") }
+                    .filter { link -> !link.endsWith(".vd") }
+                    .filter { link -> !survivalContent.hasFile(link) }
+                    .filterNot { link -> survivalContent.getMarkdown(link) != null && titleResByURLMap.containsKey(link) }
+                    .filter { link -> !PRODUCT_MAP.containsKey(link) }.toList()
 
             if (unresolvedLinks.isNotEmpty()) {
                 fail("unresolved links in $url:$unresolvedLinks")
