@@ -1,7 +1,6 @@
 package org.ligi.survivalmanual.adapter
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.text.Editable
 import android.text.Html
 import android.text.Spannable
@@ -82,17 +81,10 @@ class MarkdownRecyclerAdapter(val list: List<String>,
 
         text.textSize = State.getFontSize()
         class CustomImageGetter : Html.ImageGetter {
-            override fun getDrawable(source: String): Drawable {
-
-                val bitmapDrawable = getSurvivalDrawable(ctx, source)!!
-
-                val ratio = bitmapDrawable.intrinsicHeight.toFloat() / bitmapDrawable.intrinsicWidth.toFloat()
-
-                bitmapDrawable.setBounds(0, 0, imageWidth, (imageWidth * ratio).toInt())
-                return bitmapDrawable
+            override fun getDrawable(source: String) = getSurvivalDrawable(ctx, source)?.apply {
+                val ratio = intrinsicHeight.toFloat() / intrinsicWidth.toFloat()
+                setBounds(0, 0, imageWidth, (imageWidth * ratio).toInt())
             }
-
-
         }
 
         val sequence = HtmlCompat.fromHtml(html, CustomImageGetter(), ListTagHandler())
