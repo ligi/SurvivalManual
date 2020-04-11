@@ -1,9 +1,7 @@
 package org.ligi.survivalmanual.ui
 
-import android.R
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.getColor
 
 abstract class BaseActivity : AppCompatActivity() {
 
@@ -11,7 +9,7 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onResume()
 
         if (org.ligi.survivalmanual.model.State.nightModeString() == "darknight") {
-            window.decorView.rootView.setBackgroundColor(getColor(this, R.color.black))
+            window.decorView.rootView.setBackgroundColor(getColor(this, android.R.color.black))
         }
     }
 }

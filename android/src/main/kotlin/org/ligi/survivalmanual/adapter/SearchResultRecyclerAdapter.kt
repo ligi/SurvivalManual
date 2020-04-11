@@ -18,9 +18,9 @@ class SearchResultRecyclerAdapter(private var term: String,
 
     var list: List<SearchResult> = search(survivalContent, term)
 
-    fun changeTerm(term: String) {
-        this.term = term
-        list = search(survivalContent, term)
+    fun changeTerm(newTerm: String) {
+        term = newTerm
+        list = search(survivalContent, newTerm)
         notifyDataSetChanged()
     }
 
@@ -30,8 +30,7 @@ class SearchResultRecyclerAdapter(private var term: String,
     }
 
     override fun onBindViewHolder(holder: SearchResultViewHolder, position: Int) {
-        val title = titleResByURLMap[list[position].file]
-        if (title != null) {
+        titleResByURLMap[list[position].file]?.let { title ->
             holder.titleTextView.text = holder.view.context.getString(title)
         }
 

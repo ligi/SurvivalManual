@@ -27,14 +27,14 @@ object State : KotprefModel() {
     private fun getFontSizeString() =
             sharedPreferences.getString(preference_key_fontsize.string(), DEFAULT_FONT_SIZE_STRING) ?: DEFAULT_FONT_SIZE_STRING
 
-    fun nightModeString(): String? = sharedPreferences.getString(preference_key_nightmode.string(), "auto")
+    fun nightModeString(): String? = sharedPreferences.getString(preference_key_nightmode.string(), "system")
 
     fun getNightMode() = when (nightModeString()) {
         "day" -> AppCompatDelegate.MODE_NIGHT_NO
         "night" -> AppCompatDelegate.MODE_NIGHT_YES
         "darknight" -> AppCompatDelegate.MODE_NIGHT_YES
-        "auto" -> AppCompatDelegate.MODE_NIGHT_AUTO
-        else -> AppCompatDelegate.MODE_NIGHT_AUTO
+        "system" -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
     }
 
     fun Int.string() = context.getString(this)
