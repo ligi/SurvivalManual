@@ -12,8 +12,8 @@ android {
         applicationId "org.ligi.survivalmanual"
         minSdkVersion 14
         targetSdkVersion 29
-        versionCode 424
-        versionName "4.2.4"
+        versionCode 425
+        versionName "4.2.5"
 
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "org.ligi.trulesk.BaseTruleskRunner"
