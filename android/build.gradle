@@ -10,16 +10,16 @@ android {
 
     defaultConfig {
         applicationId "org.ligi.survivalmanual"
-
         minSdkVersion 14
-
         targetSdkVersion 29
         versionCode 424
         versionName "4.2.4"
+
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "org.ligi.trulesk.BaseTruleskRunner"
         archivesBaseName = "SurvivalManual-$versionName"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -27,8 +27,7 @@ android {
         }
     }
 
-    flavorDimensions  "store"
-
+    flavorDimensions "store"
     productFlavors {
         forFDroid {
             dimension "store"
@@ -44,8 +43,6 @@ android {
             dimension "store"
             buildConfigField 'String', 'STORE', '"play"'
         }
-
-
     }
 
     packagingOptions {
@@ -57,8 +54,7 @@ android {
         // hack for instrumentation testing :-(
         exclude 'LICENSE.txt'
 
-        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
-        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+        exclude 'META-INF/*'
     }
 
     lintOptions {
@@ -70,57 +66,59 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    compileOptions {
+        encoding = 'UTF-8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
+// Android support
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.google.android.material:material:1.1.0'
-    implementation 'androidx.preference:preference:1.1.0'
-
-    implementation "com.chibatching.kotpref:kotpref:2.10.0"
-    implementation "com.chibatching.kotpref:initializer:2.10.0"
-
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.preference:preference:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+
+// Third party
+    implementation 'com.chibatching.kotpref:kotpref:2.10.0'
+    implementation 'com.chibatching.kotpref:initializer:2.10.0'
 
     implementation('com.github.ligi:intellij-markdown:android_via_jitpack')
-
     implementation 'com.github.ligi:TouchImageView:2.1'
-    implementation "com.github.ligi:ExtraCompats:1.0"
+    implementation 'com.github.ligi:ExtraCompats:1.0'
     implementation 'com.github.ligi:tracedroid:3.0'
+    implementation 'com.github.ligi:KAXT:1.0'
 
     forPlayImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.24'
     forFDroidImplementation 'com.github.ligi.snackengage:snackengage-playrate:0.24'
     forAmazonImplementation 'com.github.ligi.snackengage:snackengage-amazonrate:0.24'
 
-    implementation 'com.github.ligi:KAXT:1.0'
+    implementation 'org.permissionsdispatcher:permissionsdispatcher:4.7.0'
+    kapt 'org.permissionsdispatcher:permissionsdispatcher-processor:4.7.0'
 
-    implementation 'com.github.hotchemi:permissionsdispatcher:2.3.2'
-    kapt 'com.github.hotchemi:permissionsdispatcher-processor:2.3.2'
 
+// Testing
     androidTestImplementation 'androidx.annotation:annotation:1.1.0'
     androidTestImplementation 'androidx.appcompat:appcompat:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.2.0'
+    androidTestImplementation 'androidx.test:core:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
     androidTestImplementation 'com.google.android.material:material:1.1.0'
-
-    androidTestImplementation('androidx.test.espresso:espresso-contrib:3.1.0')
 
     androidTestImplementation 'com.github.ligi:trulesk:0.31'
     androidTestImplementation 'com.squareup.assertj:assertj-android:1.2.0'
-    androidTestImplementation 'org.mockito:mockito-core:2.9.0'
+    androidTestImplementation 'org.mockito:mockito-core:3.2.4'
     androidTestImplementation 'com.linkedin.dexmaker:dexmaker-mockito:2.2.0'
-    androidTestImplementation 'androidx.test:rules:1.2.0'
-
-    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.2.0'
-    androidTestImplementation 'androidx.test:core:1.2.0'
 
     testImplementation 'androidx.test:core:1.2.0'
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     testImplementation 'com.squareup.assertj:assertj-android:1.2.0'
     testImplementation 'androidx.annotation:annotation:1.1.0'
-
 }
 
 composer {
-     apkInstallTimeout 600
+    apkInstallTimeout 600
 }
