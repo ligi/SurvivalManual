@@ -17,15 +17,15 @@ class TheSearch {
     fun testCaseInSensitiveWorks() {
         val tested = CaseInsensitiveSearch("foo")
 
-        assertThat(tested.isInContent("FOO")).isTrue()
+        assertThat(tested.isInContent("FOO")).isEqualTo(true)
     }
 
     @Test
     fun testEscapingForCaseInsensitiveSearch() {
         val tested = CaseInsensitiveSearch("E)")
 
-        assertThat(tested.isInContent("ESCAPE)")).isTrue()
-        assertThat(tested.isInContent("NO")).isFalse()
+        assertThat(tested.isInContent("ESCAPE)")).isEqualTo(true)
+        assertThat(tested.isInContent("NO")).isEqualTo(false)
     }
 
 }
