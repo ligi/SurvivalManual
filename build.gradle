@@ -1,5 +1,3 @@
-apply plugin: 'com.github.ben-manes.versions'
-
 buildscript {
     ext.kotlin_version = '1.3.71'
     repositories {
@@ -32,3 +30,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+apply from: 'https://raw.githubusercontent.com/ligi/gradle-common/master/versions_plugin_stable_only.gradle'
