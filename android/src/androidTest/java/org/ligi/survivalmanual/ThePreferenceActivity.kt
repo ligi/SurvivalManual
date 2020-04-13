@@ -57,15 +57,6 @@ class ThePreferenceActivity {
         activityTestRule.screenShot("daynight_night")
     }
 
-    @Test
-    fun thatWeCanSwitchEdit() {
-
-        val oldState = State.allowEdit()
-
-        onView(withText(R.string.allow_edit)).perform(click())
-
-        assertThat(oldState).isEqualTo(!State.allowEdit())
-    }
 
     @Test
     fun thatWeCanSwitchSearch() {

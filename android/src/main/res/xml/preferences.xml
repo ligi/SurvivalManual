@@ -27,22 +27,25 @@
             android:title="Mark visited chapters"/>
 
     <CheckBoxPreference
-            android:key="@string/preference_key_select_text"
-            app:iconSpaceReserved="false"
-            android:summary="Makes you able to select text to copy. This is an option as it can disturb scrolling and on some older android devices even crash"
-            android:title="Allow selection of text"/>
-
-    <CheckBoxPreference
             android:key="@string/preference_key_search"
             app:iconSpaceReserved="false"
             android:summary="Find what you need"
             android:title="@string/allow_search"/>
 
-    <CheckBoxPreference
-            android:key="@string/preference_key_edittoggle"
-            app:iconSpaceReserved="false"
-            android:summary="Enhance the information and help survive"
-            android:title="@string/allow_edit"/>
 
+    <!--
 
+        <CheckBoxPreference
+                android:key="@string/preference_key_select_text"
+                app:iconSpaceReserved="false"
+                android:summary="Makes you able to select text to copy. This is an option as it can disturb scrolling and on some older android devices even crash"
+                android:title="Allow selection of text"/>
+
+        <CheckBoxPreference
+                android:key="@string/preference_key_edittoggle"
+                app:iconSpaceReserved="false"
+                android:summary="Enhance the information and help survive"
+                android:title="@string/allow_edit"/>
+
+    -->
 </PreferenceScreen>
