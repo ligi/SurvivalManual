@@ -37,7 +37,7 @@
     <string name="fish_and_mollusks">Fish and Mollusks</string>
     <string name="insects_and_arachnids">Insects and Arachnids</string>
     <string name="snakes_and_lizards">Snakes and Lizards</string>
-    <string name="edible_medicin_plants">Edible/Medicinal Plants</string>
+    <string name="edible_medicinal_plants">Edible/Medicinal Plants</string>
     <string name="apps">Apps</string>
     <string name="multitool">Multitool</string>
     <string name="kits">Kits</string>
@@ -79,12 +79,15 @@
     <string name="preference_fontsize_title">Text size</string>
     <string name="power">Power</string>
     <string name="translator_notes">Translator Notes</string>
-    <string name="product_link_disclaimer">You clicked on a product link. They help support this app because they are affiliate links from Amazon. If you buy this product or something else on amazon behind this link - then I should get some money from them.</string>
+    <string name="product_link_disclaimer">You clicked on a product link. They help support this app because they are affiliate links from Amazon. If you buy this product or something else on Amazon behind this link, then I should get some money from them.</string>
     <string name="bookmark">Bookmark</string>
     <string name="amazon_link_title">Amazon Link</string>
     <string name="cancel">Cancel</string>
     <string name="to_amazon">To Amazon</string>
     <string name="send_link">Send Link</string>
     <string name="add_bookmark">Add Bookmark</string>
+
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
 
 </resources>
