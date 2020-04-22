@@ -29,8 +29,7 @@ class CaseInsensitiveSearch(override val term: String) : Search {
 
 fun search(content: SurvivalContent, searchTerm: String) = search(content, CaseInsensitiveSearch(searchTerm))
 
-fun search(content: SurvivalContent, search: Search)
-        = content.getAllFiles()
+fun search(content: SurvivalContent, search: Search) = content.getAllFiles()
         .associateWith { content.getMarkdown(it)!! }
         .filter { search.isInContent(it.value) }
         .map {

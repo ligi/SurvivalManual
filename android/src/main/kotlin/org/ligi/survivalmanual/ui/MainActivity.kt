@@ -9,7 +9,6 @@ import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
-import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebResourceRequest
@@ -20,6 +19,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat.getColor
+import androidx.core.view.GravityCompat
 import androidx.core.view.MenuItemCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bookmark.view.*
@@ -40,6 +40,8 @@ import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.*
 import org.ligi.tracedroid.logging.Log
+import kotlin.math.max
+import kotlin.math.min
 import kotlin.properties.Delegates.observable
 
 class MainActivity : BaseActivity() {
@@ -74,7 +76,7 @@ class MainActivity : BaseActivity() {
 
     private fun imageWidth(): Int {
         val totalWidthPadding = (resources.getDimension(dimen.content_padding) * 2).toInt()
-        return Math.min(contentRecycler.width - totalWidthPadding, contentRecycler.height)
+        return min(contentRecycler.width - totalWidthPadding, contentRecycler.height)
     }
 
     val onURLClick: (String) -> Unit = {
@@ -118,7 +120,7 @@ class MainActivity : BaseActivity() {
         contentRecycler.addOnScrollListener(RememberPositionOnScroll())
 
         val rateSnack = DefaultRateSnack().apply {
-            setActionColor(getColor(baseContext, R.color.colorAccentLight))
+            setActionColor(getColor(baseContext, color.colorAccentLight))
         }
         SnackEngage.from(fab).withSnack(rateSnack).build().engageWhenAppropriate()
 
@@ -134,7 +136,7 @@ class MainActivity : BaseActivity() {
         }
 
         if (State.isInitialOpening) {
-            drawer_layout.openDrawer(Gravity.LEFT)
+            drawer_layout.openDrawer(GravityCompat.START)
             State.isInitialOpening = false
         }
 
@@ -145,7 +147,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) = super.onPrepareOptionsMenu(menu.apply {
-        findItem(id.action_search)?.let {
+        findItem(action_search)?.let {
             it.isVisible = State.allowSearch()
         }
     })
@@ -156,7 +158,7 @@ class MainActivity : BaseActivity() {
             menuInflater.inflate(R.menu.print, menu)
         }
 
-        val searchView = MenuItemCompat.getActionView(menu.findItem(id.action_search)) as SearchView
+        val searchView = MenuItemCompat.getActionView(menu.findItem(action_search)) as SearchView
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(searchTerm: String): Boolean {
@@ -201,7 +203,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun MarkdownRecyclerAdapter.getPositionForWord(searchTerm: String): Int? {
-        val first = Math.max(linearLayoutManager.findFirstVisibleItemPosition(), 0)
+        val first = max(linearLayoutManager.findFirstVisibleItemPosition(), 0)
         val search = CaseInsensitiveSearch(searchTerm)
 
         return (first..list.lastIndex).firstOrNull {
@@ -229,9 +231,9 @@ class MainActivity : BaseActivity() {
                         .setPositiveButton(android.R.string.ok) { dialog, _ ->
                             val text = when ((dialog as AlertDialog).listView.checkedItemPosition) {
                                 0 -> convertMarkdownToHtml(survivalContent.getMarkdown(currentUrl)!!)
-                                else -> navigationEntryMap.map {
+                                else -> navigationEntryMap.joinToString("<hr/>") {
                                     convertMarkdownToHtml(survivalContent.getMarkdown(it.entry.url)!!)
-                                }.joinToString("<hr/>")
+                                }
                             }
 
                             val newWebView = if (Build.VERSION.SDK_INT >= 17) {
@@ -265,7 +267,6 @@ class MainActivity : BaseActivity() {
                         }
                         .setNegativeButton(string.cancel) { _: DialogInterface, _: Int -> }
                         .show()
-                true
             }
     )
 

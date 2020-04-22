@@ -17,7 +17,7 @@ class ImageViewActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val bitmap = getSurvivalDrawable(this,intent.getStringExtra("URL"))
+        val bitmap = getSurvivalDrawable(this, intent.getStringExtra("URL"))
         touch_image_view.setImageDrawable(bitmap)
     }
 

@@ -25,7 +25,8 @@ object State : KotprefModel() {
     fun getFontSize() = 8f + 4f * Integer.parseInt(getFontSizeString())
 
     private fun getFontSizeString() =
-            sharedPreferences.getString(preference_key_fontsize.string(), DEFAULT_FONT_SIZE_STRING) ?: DEFAULT_FONT_SIZE_STRING
+            sharedPreferences.getString(preference_key_fontsize.string(), DEFAULT_FONT_SIZE_STRING)
+                    ?: DEFAULT_FONT_SIZE_STRING
 
     fun nightModeString(): String? = sharedPreferences.getString(preference_key_nightmode.string(), "system")
 
