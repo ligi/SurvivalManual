@@ -34,7 +34,7 @@
     <string name="fish_and_mollusks">Poissons et Mollusques</string>
     <string name="insects_and_arachnids">Insectes et Arachnides</string>
     <string name="snakes_and_lizards">Serpents et Lézards</string>
-    <string name="edible_medicin_plants">Plantes Comestibles / Médicinales</string>
+    <string name="edible_medicinal_plants">Plantes Comestibles / Médicinales</string>
     <string name="kits">Equipement</string>
     <string name="appendix">Annexes</string>
     <string name="help_title">Aide</string>
@@ -55,5 +55,8 @@
     <string name="allow_search">Rechercher (Bêta)</string>
     <string name="preference_fontsize_summary">De quelle taille devraient être les caractères ?</string>
     <string name="preference_fontsize_title">Taille de police</string>
+
+    <string name="search">Rechercher</string>
+    <string name="settings">Paramètres</string>
 
 </resources>

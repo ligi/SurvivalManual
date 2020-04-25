@@ -1,34 +1,35 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <item android:id="@+id/action_search"
-          android:title="Search"
-          android:icon="@drawable/ic_action_search"
-          app:showAsAction="always|collapseActionView"
-          app:actionViewClass="androidx.appcompat.widget.SearchView" />
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-            android:id="@+id/menu_settings"
-            android:icon="@drawable/ic_action_settings"
-            android:title="Settings"
-            app:showAsAction="ifRoom"/>
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_search"
+        android:title="@string/search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always|collapseActionView" />
 
     <item
-            android:id="@+id/menu_bookmark"
-            android:title="@string/bookmark"
-            android:visible="false"
-            android:icon="@drawable/ic_action_bookmark"
-            app:showAsAction="ifRoom"/>
+        android:id="@+id/menu_settings"
+        android:icon="@drawable/ic_action_settings"
+        android:title="@string/settings"
+        app:showAsAction="ifRoom" />
 
     <item
-            android:id="@+id/menu_share"
-            android:icon="@drawable/ic_social_share"
-            android:title="@string/share"
-            app:showAsAction="ifRoom"/>
+        android:id="@+id/menu_bookmark"
+        android:icon="@drawable/ic_action_bookmark"
+        android:title="@string/bookmark"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
 
     <item
-            android:id="@+id/menu_rate"
-            android:title="@string/rate"
-            android:icon="@drawable/ic_toggle_star"
-            app:showAsAction="ifRoom"/>
+        android:id="@+id/menu_share"
+        android:icon="@drawable/ic_social_share"
+        android:title="@string/share"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_rate"
+        android:icon="@drawable/ic_toggle_star"
+        android:title="@string/rate"
+        app:showAsAction="ifRoom" />
 </menu>

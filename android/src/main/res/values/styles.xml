@@ -1,5 +1,7 @@
 <resources>
-    <style name="AppBaseTheme" parent="Theme.AppCompat.DayNight.NoActionBar"/>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.DayNight.NoActionBar" />
+
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

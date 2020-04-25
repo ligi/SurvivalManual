@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ListPreference
-            android:defaultValue="auto"
-            android:entries="@array/night_modes"
-            android:entryValues="@array/nightmode_keys"
-            app:iconSpaceReserved="false"
-            android:key="@string/preference_key_nightmode"
-            android:summary="@string/preference_daynight_summary"
-            android:title="@string/preference_daynight_title"/>
+        android:defaultValue="auto"
+        android:entries="@array/night_modes"
+        android:entryValues="@array/nightmode_keys"
+        android:key="@string/preference_key_nightmode"
+        android:summary="@string/preference_daynight_summary"
+        android:title="@string/preference_daynight_title"
+        app:iconSpaceReserved="false" />
 
     <ListPreference
-            android:defaultValue="2"
-            android:entries="@array/font_sizes"
-            android:entryValues="@array/font_sizes_values"
-            app:iconSpaceReserved="false"
-            android:key="@string/preference_key_fontsize"
-            android:summary="@string/preference_fontsize_summary"
-            android:title="@string/preference_fontsize_title"/>
+        android:defaultValue="2"
+        android:entries="@array/font_sizes"
+        android:entryValues="@array/font_sizes_values"
+        android:key="@string/preference_key_fontsize"
+        android:summary="@string/preference_fontsize_summary"
+        android:title="@string/preference_fontsize_title"
+        app:iconSpaceReserved="false" />
 
     <CheckBoxPreference
-            android:key="@string/preference_mark_visited"
-            app:iconSpaceReserved="false"
-            android:summary="Indicate visited chapters in the left table of contents"
-            android:title="Mark visited chapters"/>
+        android:key="@string/preference_mark_visited"
+        android:summary="Indicate visited chapters in the left table of contents"
+        android:title="Mark visited chapters"
+        app:iconSpaceReserved="false" />
 
     <CheckBoxPreference
-            android:key="@string/preference_key_search"
-            app:iconSpaceReserved="false"
-            android:summary="Find what you need"
-            android:title="@string/allow_search"/>
+        android:key="@string/preference_key_search"
+        android:summary="Find what you need"
+        android:title="@string/allow_search"
+        app:iconSpaceReserved="false" />
 
 
     <!--

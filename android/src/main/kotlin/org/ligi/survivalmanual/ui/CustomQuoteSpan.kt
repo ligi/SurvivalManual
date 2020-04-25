@@ -3,9 +3,9 @@ package org.ligi.survivalmanual.ui
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
-import androidx.core.content.ContextCompat
 import android.text.Layout
 import android.text.style.LeadingMarginSpan
+import androidx.core.content.ContextCompat
 import org.ligi.survivalmanual.R
 
 /**
@@ -13,7 +13,7 @@ import org.ligi.survivalmanual.R
  */
 class CustomQuoteSpan(val context: Context) : LeadingMarginSpan {
 
-    val size by lazy { context.resources.getDimension(R.dimen.blockquote_width) }
+    private val size by lazy { context.resources.getDimension(R.dimen.blockquote_width) }
     private val paint by lazy {
         Paint().apply {
             style = Paint.Style.FILL
