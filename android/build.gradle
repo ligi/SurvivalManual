@@ -97,7 +97,7 @@ dependencies {
     forAmazonImplementation 'com.github.ligi.snackengage:snackengage-amazonrate:0.24'
 
     implementation 'org.permissionsdispatcher:permissionsdispatcher:4.7.0'
-    kapt 'org.permissionsdispatcher:permissionsdispatcher-processor:4.7.0'
+    kapt 'org.permissionsdispatcher:permissionsdispatcher-processor:4.8.0'
 
 
 // Testing
