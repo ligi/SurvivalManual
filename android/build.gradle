@@ -84,7 +84,7 @@ dependencies {
 
 // Third party
     implementation 'com.chibatching.kotpref:kotpref:2.11.0'
-    implementation 'com.chibatching.kotpref:initializer:2.11.0'
+    implementation 'com.chibatching.kotpref:initializer:2.12.0'
 
     implementation('com.github.ligi:intellij-markdown:android_via_jitpack')
     implementation 'com.github.ligi:TouchImageView:2.1'
