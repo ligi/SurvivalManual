@@ -34,7 +34,7 @@
     <string name="clouds">Тучи</string>
     <string name="faq">ЧаВо</string>
     <string name="ropes_and_knots">Верёвки и узлы</string>
-    <string name="fish_and_mollusks">Рыба и молюски</string>
+    <string name="fish_and_mollusks">Рыба и моллюски</string>
     <string name="insects_and_arachnids">Насекомые и паукообразные</string>
     <string name="snakes_and_lizards">Змеи и ящерицы</string>
     <string name="edible_medicinal_plants">Съедобные/Лекарственные растения</string>
@@ -47,7 +47,7 @@
     <string name="help_text">
         <![CDATA[
         Автономное руководство по выживанию v$VERSION основано на FM 3-05.70 (FM 21-76). Приложение бесплатное - исходный код можно найти на
-        <a href="https://github.com/ligi/SurvivalManual">GitHub</a>. Запросы с предложениями привествуются!<br/>
+        <a href="https://github.com/ligi/SurvivalManual">GitHub</a>. Запросы с предложениями приветствуются!<br/>
         Если вы хотите улучшить руководство или добавить перевод, вы можете сделать это в <a href="https://github.com/ligi/SurvivalManual/wiki">Вики.</a><br/>
         Если вы хотите использовать новые функции приложения, то <a href="https://play.google.com/apps/testing/org.ligi.survivalmanual">становитесь бета-тестером.</a>
         <br/>
