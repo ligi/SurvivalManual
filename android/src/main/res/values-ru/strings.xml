@@ -48,10 +48,10 @@
         <![CDATA[
         Автономное руководство по выживанию v$VERSION основано на FM 3-05.70 (FM 21-76). Приложение бесплатное - исходный код можно найти на
         <a href="https://github.com/ligi/SurvivalManual">GitHub</a>. Запросы с предложениями привествуются!<br/>
-        Если вы хотите внести улучнения по тексту или добавить перевод, вы можете использовать <a href="https://github.com/ligi/SurvivalManual/wiki">Вики.</a><br/>
-        Если вы хотите использовать новые функции приложения, то <a href="https://play.google.com/apps/testing/org.ligi.survivalmanual">становитесь бета-тестерами.</a>
+        Если вы хотите улучшить руководство или добавить перевод, вы можете сделать это в <a href="https://github.com/ligi/SurvivalManual/wiki">Вики.</a><br/>
+        Если вы хотите использовать новые функции приложения, то <a href="https://play.google.com/apps/testing/org.ligi.survivalmanual">становитесь бета-тестером.</a>
         <br/>
-        Это приложение использует Библиотеку поддердки старых версий Андроид,
+        Это приложение использует Библиотеку поддержки старых версий Андроид,
         <a href="http://kotlinlang.org">Kotlin</a>,
         <a href="https://github.com/MichaelRocks/bimap/">BiMap</a>,
         <a href="https://github.com/chibatching/Kotpref">KotPref</a>,
@@ -71,15 +71,15 @@
     <string name="huge">Огромный</string>
 
     <string name="preference_daynight_title">Цветовая тема</string>
-    <string name="preference_daynight_summary">Использовать дневную или ночную тему?</string>
+    <string name="preference_daynight_summary">Хотите использовать дневную или ночную тему?</string>
 
     <string name="allow_edit">Разрешить редактирование (экспериментально)</string>
     <string name="allow_search">Поиск (Бета)</string>
-    <string name="preference_fontsize_summary">Насколько большими долен быть шрифт?</string>
+    <string name="preference_fontsize_summary">Какого размера должен быть шрифт?</string>
     <string name="preference_fontsize_title">Размер текста</string>
     <string name="power">Энергия</string>
     <string name="translator_notes">Примечания переводчика</string>
-    <string name="product_link_disclaimer">На нажали на ссылку продукта. Они помогают поддерживать приложение, потому что являются партнёрскими ссылками от Amazon. Если вы купите этот или другой продукт на Amazon, они должны заплатить мне немного денег.</string>
+    <string name="product_link_disclaimer">Вы нажали на ссылку продукта. Это помогает поддерживать приложение, потому что является партнёрской ссылкой от Amazon. Если вы купите этот или другой продукт на Amazon, они должны заплатить мне немного денег.</string>
     <string name="bookmark">Закладка</string>
     <string name="amazon_link_title">Ссылка на Amazon</string>
     <string name="cancel">Отмена</string>
