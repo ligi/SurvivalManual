@@ -80,7 +80,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.preference:preference:1.1.1'
-    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
 
 // Third party
     implementation 'com.chibatching.kotpref:kotpref:2.11.0'
@@ -106,7 +106,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.2.0'
     androidTestImplementation "androidx.test:core:$androidx_test_version"
     androidTestImplementation "androidx.test:rules:$androidx_test_version"
-    androidTestImplementation 'com.google.android.material:material:1.1.0'
+    androidTestImplementation 'com.google.android.material:material:1.2.1'
 
     androidTestImplementation 'com.github.ligi:trulesk:0.31'
     androidTestImplementation 'com.squareup.assertj:assertj-android:1.2.0'
