@@ -158,7 +158,7 @@ class MainActivity : BaseActivity() {
             menuInflater.inflate(R.menu.print, menu)
         }
 
-        val searchView = MenuItemCompat.getActionView(menu.findItem(action_search)) as SearchView
+        val searchView = menu.findItem(action_search).actionView as SearchView
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(searchTerm: String): Boolean {
