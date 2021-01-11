@@ -6,12 +6,12 @@ apply plugin: 'de.mobilej.unmock'
 apply plugin: 'com.trevjonez.composer'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "org.ligi.survivalmanual"
         minSdkVersion 14
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 426
         versionName "4.2.6"
 
