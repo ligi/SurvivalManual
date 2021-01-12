@@ -271,7 +271,7 @@ class MainActivity : BaseActivity() {
     )
 
     override fun onOptionsItemSelected(item: MenuItem) = if (optionsMap.containsKey(item.itemId)) {
-        optionsMap[item.itemId]!!.invoke()
+        (optionsMap[item.itemId] ?: error("selected item ${item.itemId} not in optionsMap")).invoke()
         true
     } else {
         drawerToggle.onOptionsItemSelected(item)
