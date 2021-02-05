@@ -20,7 +20,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.view.GravityCompat
-import androidx.core.view.MenuItemCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bookmark.view.*
 import org.ligi.compat.WebViewCompat
@@ -96,7 +95,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layout.activity_main)
+        setContentView(R.layout.activity_main)
 
         drawer_layout.addDrawerListener(drawerToggle)
         setSupportActionBar(toolbar)
@@ -257,7 +256,7 @@ class MainActivity : BaseActivity() {
 
             },
             menu_bookmark to {
-                val view = inflate(layout.bookmark)
+                val view = inflate(R.layout.bookmark)
                 view.topicText.text = currentTopicName
                 AlertDialog.Builder(this)
                         .setView(view)
