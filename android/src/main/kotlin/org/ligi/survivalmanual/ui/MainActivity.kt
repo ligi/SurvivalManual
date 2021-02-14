@@ -333,6 +333,13 @@ class MainActivity : BaseActivity() {
         drawerToggle.syncState()
     }
 
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(navigationView)) {
+            drawer_layout.closeDrawer(navigationView)
+        } else {
+            super.onBackPressed()
+        }
+    }
 
     override fun onResume() {
         super.onResume()
