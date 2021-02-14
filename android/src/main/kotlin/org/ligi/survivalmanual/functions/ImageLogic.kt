@@ -4,7 +4,7 @@ import android.content.Context
 import android.graphics.drawable.BitmapDrawable
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
 import org.ligi.survivalmanual.R
-import org.ligi.tracedroid.logging.Log
+import timber.log.Timber
 import java.io.FileNotFoundException
 
 fun linkImagesInMarkDown(markdown: String): String {
@@ -23,6 +23,6 @@ fun getSurvivalDrawable(ctx: Context, source: String) = if (source.endsWith(".vd
 } else try {
     BitmapDrawable.createFromStream(ctx.assets.open("md/$source"), source) as BitmapDrawable
 } catch (e: FileNotFoundException) {
-    Log.e("Could not find md/$source")
+    Timber.e("Could not find md/$source")
     null
 }

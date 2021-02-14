@@ -38,7 +38,7 @@ import org.ligi.survivalmanual.functions.convertMarkdownToHtml
 import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.*
-import org.ligi.tracedroid.logging.Log
+import timber.log.Timber
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.properties.Delegates.observable
@@ -295,7 +295,7 @@ class MainActivity : BaseActivity() {
     private fun processURL(url: String): Boolean {
 
         appbar.setExpanded(true)
-        Log.i("processing url $url")
+        Timber.i("processing url $url")
 
         VisitedURLStore.add(url)
         val titleResByURL = getTitleResByURL(url) ?: return false
