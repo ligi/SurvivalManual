@@ -2,6 +2,8 @@ package org.ligi.survivalmanual.ui
 
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import kotlinx.android.synthetic.main.activity_main.*
 import org.ligi.survivalmanual.R
 
@@ -15,6 +17,10 @@ class PreferenceActivity : BaseActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if (org.ligi.survivalmanual.model.State.nightModeString() == "darknight") {
             window.decorView.rootView.setBackgroundColor(0)
+        }
+
+        supportFragmentManager.commit {
+            replace<PreferencesFragment>(R.id.prefs_container)
         }
     }
 
