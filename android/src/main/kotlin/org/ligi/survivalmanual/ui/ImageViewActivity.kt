@@ -3,8 +3,7 @@ package org.ligi.survivalmanual.ui
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_image.*
-import org.ligi.survivalmanual.R
+import org.ligi.survivalmanual.databinding.ActivityImageBinding
 import org.ligi.survivalmanual.functions.getSurvivalDrawable
 
 
@@ -13,14 +12,16 @@ class ImageViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_image)
-        setSupportActionBar(toolbar)
+        val binding: ActivityImageBinding = ActivityImageBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val source = intent.getStringExtra("URL")
                 ?: throw IllegalArgumentException("ImageViewActivity called without URL extra")
         val bitmap = getSurvivalDrawable(this, source)
-        touch_image_view.setImageDrawable(bitmap)
+        binding.touchImageView.setImageDrawable(bitmap)
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
