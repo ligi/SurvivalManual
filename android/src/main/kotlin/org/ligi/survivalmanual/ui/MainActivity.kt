@@ -20,6 +20,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.view.GravityCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bookmark.view.*
 import org.ligi.compat.WebViewCompat
@@ -59,7 +61,7 @@ class MainActivity : BaseActivity() {
     private var lastNightMode = State.nightModeString()
     private var lastAllowSelect = State.allowSelect()
 
-    private val linearLayoutManager by lazy { androidx.recyclerview.widget.LinearLayoutManager(this) }
+    private val linearLayoutManager by lazy { LinearLayoutManager(this) }
 
     private var isInEditMode by observable(false, onChange = { _, _, newMode ->
         if (newMode) {
@@ -109,9 +111,9 @@ class MainActivity : BaseActivity() {
 
         contentRecycler.layoutManager = linearLayoutManager
 
-        class RememberPositionOnScroll : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
-                State.lastScrollPos = (contentRecycler.layoutManager as androidx.recyclerview.widget.LinearLayoutManager).findFirstVisibleItemPosition()
+        class RememberPositionOnScroll : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                State.lastScrollPos = (contentRecycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
                 super.onScrolled(recyclerView, dx, dy)
             }
         }

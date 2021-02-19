@@ -6,6 +6,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import kotlinx.android.synthetic.main.activity_main.*
 import org.ligi.survivalmanual.R
+import org.ligi.survivalmanual.model.State
 
 class PreferenceActivity : BaseActivity() {
 
@@ -15,7 +16,7 @@ class PreferenceActivity : BaseActivity() {
         setContentView(R.layout.activity_prefs)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        if (org.ligi.survivalmanual.model.State.nightModeString() == "darknight") {
+        if (State.nightModeString() == "darknight") {
             window.decorView.rootView.setBackgroundColor(0)
         }
 
