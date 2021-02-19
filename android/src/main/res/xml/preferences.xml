@@ -20,32 +20,32 @@
         android:title="@string/preference_fontsize_title"
         app:iconSpaceReserved="false" />
 
-    <CheckBoxPreference
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
         android:key="@string/preference_mark_visited"
         android:summary="Indicate visited chapters in the left table of contents"
         android:title="Mark visited chapters"
         app:iconSpaceReserved="false" />
 
-    <CheckBoxPreference
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
         android:key="@string/preference_key_search"
         android:summary="Find what you need"
         android:title="@string/allow_search"
         app:iconSpaceReserved="false" />
 
+    <!--SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="@string/preference_key_select_text"
+        android:summary="Makes you able to select text to copy. This is an option as it can disturb scrolling and on some older android devices even crash"
+        android:title="Allow selection of text"
+        app:iconSpaceReserved="false" />
 
-    <!--
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="@string/preference_key_edittoggle"
+        android:summary="Enhance the information and help survive"
+        android:title="@string/allow_edit"
+        app:iconSpaceReserved="false" /-->
 
-        <CheckBoxPreference
-                android:key="@string/preference_key_select_text"
-                app:iconSpaceReserved="false"
-                android:summary="Makes you able to select text to copy. This is an option as it can disturb scrolling and on some older android devices even crash"
-                android:title="Allow selection of text"/>
-
-        <CheckBoxPreference
-                android:key="@string/preference_key_edittoggle"
-                app:iconSpaceReserved="false"
-                android:summary="Enhance the information and help survive"
-                android:title="@string/allow_edit"/>
-
-    -->
 </PreferenceScreen>
