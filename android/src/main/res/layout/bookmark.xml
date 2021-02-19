@@ -7,7 +7,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/topicText"
+        android:id="@+id/bookmark_topicText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="for topic" />
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/commentEdit"
+            android:id="@+id/bookmark_commentEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="comment" />

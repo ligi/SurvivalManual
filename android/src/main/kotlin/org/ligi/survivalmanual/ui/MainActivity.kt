@@ -49,7 +49,7 @@ import kotlin.properties.Delegates.observable
 class MainActivity : BaseActivity() {
 
     private val drawerToggle by lazy {
-        ActionBarDrawerToggle(this, mainBinding.drawerLayout, string.drawer_open, string.drawer_close)
+        ActionBarDrawerToggle(this, mainBinding.mainDrawerLayout, string.drawer_open, string.drawer_close)
     }
 
     private val survivalContent by lazy { SurvivalContent(assets) }
@@ -68,19 +68,19 @@ class MainActivity : BaseActivity() {
 
     private var isInEditMode by observable(false, onChange = { _, _, newMode ->
         if (newMode) {
-            mainBinding.fab.setImageResource(drawable.ic_remove_red_eye)
-            mainBinding.contentRecycler.adapter = EditingRecyclerAdapter(textInput)
+            mainBinding.mainFab.setImageResource(drawable.ic_remove_red_eye)
+            mainBinding.mainContentRecycler.adapter = EditingRecyclerAdapter(textInput)
         } else {
-            mainBinding.fab.setImageResource(drawable.ic_edit)
-            mainBinding.contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
+            mainBinding.mainFab.setImageResource(drawable.ic_edit)
+            mainBinding.mainContentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
         }
 
-        mainBinding.contentRecycler.scrollToPosition(State.lastScrollPos)
+        mainBinding.mainContentRecycler.scrollToPosition(State.lastScrollPos)
     })
 
     private fun imageWidth(): Int {
         val totalWidthPadding = (resources.getDimension(dimen.content_padding) * 2).toInt()
-        return min(mainBinding.contentRecycler.width - totalWidthPadding, mainBinding.contentRecycler.height)
+        return min(mainBinding.mainContentRecycler.width - totalWidthPadding, mainBinding.mainContentRecycler.height)
     }
 
     val onURLClick: (String) -> Unit = {
@@ -104,33 +104,33 @@ class MainActivity : BaseActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
 
-        mainBinding.drawerLayout.addDrawerListener(drawerToggle)
-        setSupportActionBar(mainBinding.toolbar)
+        mainBinding.mainDrawerLayout.addDrawerListener(drawerToggle)
+        setSupportActionBar(mainBinding.mainToolbar.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        mainBinding.navigationView.setNavigationItemSelectedListener { item ->
-            mainBinding.drawerLayout.closeDrawers()
+        mainBinding.mainNavigationView.setNavigationItemSelectedListener { item ->
+            mainBinding.mainDrawerLayout.closeDrawers()
             processURL(navigationEntryMap[item.itemId].entry.url)
             true
         }
 
-        mainBinding.contentRecycler.layoutManager = linearLayoutManager
+        mainBinding.mainContentRecycler.layoutManager = linearLayoutManager
 
         class RememberPositionOnScroll : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                State.lastScrollPos = (mainBinding.contentRecycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
+                State.lastScrollPos = (mainBinding.mainContentRecycler.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
                 super.onScrolled(recyclerView, dx, dy)
             }
         }
 
-        mainBinding.contentRecycler.addOnScrollListener(RememberPositionOnScroll())
+        mainBinding.mainContentRecycler.addOnScrollListener(RememberPositionOnScroll())
 
         val rateSnack = DefaultRateSnack().apply {
             setActionColor(getColor(baseContext, color.colorAccentLight))
         }
-        SnackEngage.from(mainBinding.fab).withSnack(rateSnack).build().engageWhenAppropriate()
+        SnackEngage.from(mainBinding.mainFab).withSnack(rateSnack).build().engageWhenAppropriate()
 
-        mainBinding.contentRecycler.post {
+        mainBinding.mainContentRecycler.post {
             val data = intent.data?.path
             if (data == null || !processURL(data.replace("/", ""))) {
                 if (!processURL(State.lastVisitedURL)) {
@@ -142,11 +142,11 @@ class MainActivity : BaseActivity() {
         }
 
         if (State.isInitialOpening) {
-            mainBinding.drawerLayout.openDrawer(GravityCompat.START)
+            mainBinding.mainDrawerLayout.openDrawer(GravityCompat.START)
             State.isInitialOpening = false
         }
 
-        mainBinding.fab.setOnClickListener {
+        mainBinding.mainFab.setOnClickListener {
             isInEditMode = !isInEditMode
         }
 
@@ -169,15 +169,15 @@ class MainActivity : BaseActivity() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(searchTerm: String): Boolean {
                 State.searchTerm = searchTerm
-                val adapter = mainBinding.contentRecycler.adapter
+                val adapter = mainBinding.mainContentRecycler.adapter
                 if (adapter is MarkdownRecyclerAdapter) {
 
                     val positionForWord = adapter.getPositionForWord(searchTerm)
 
                     if (positionForWord != null) {
-                        mainBinding.contentRecycler.smoothScrollToPosition(positionForWord)
+                        mainBinding.mainContentRecycler.smoothScrollToPosition(positionForWord)
                     } else {
-                        mainBinding.contentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent) {
+                        mainBinding.mainContentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent) {
                             processURL(it)
                             closeKeyboard()
                         }.apply { showToastWhenListIsEmpty() }
@@ -189,7 +189,7 @@ class MainActivity : BaseActivity() {
                     adapter.changeTerm(searchTerm)
                     adapter.showToastWhenListIsEmpty()
                     if (survivalContent.getMarkdown(currentUrl)!!.contains(searchTerm)) {
-                        mainBinding.contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
+                        mainBinding.mainContentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
                         State.searchTerm = searchTerm
                     }
                 }
@@ -265,12 +265,12 @@ class MainActivity : BaseActivity() {
             menu_bookmark to {
                 val bookmarkBinding: BookmarkBinding = BookmarkBinding.inflate(layoutInflater)
                 val view = inflate(R.layout.bookmark)
-                bookmarkBinding.topicText.text = currentTopicName
+                bookmarkBinding.bookmarkTopicText.text = currentTopicName
                 AlertDialog.Builder(this)
                         .setView(view)
                         .setTitle(string.add_bookmark)
                         .setPositiveButton(string.bookmark) { _: DialogInterface, _: Int ->
-                            Bookmarks.persist(Bookmark(currentUrl, bookmarkBinding.commentEdit.text.toString(), ""))
+                            Bookmarks.persist(Bookmark(currentUrl, bookmarkBinding.bookmarkCommentEdit.text.toString(), ""))
                         }
                         .setNegativeButton(string.cancel) { _: DialogInterface, _: Int -> }
                         .show()
@@ -302,7 +302,7 @@ class MainActivity : BaseActivity() {
 
     private fun processURL(url: String): Boolean {
 
-        mainBinding.appbar.setExpanded(true)
+        mainBinding.mainAppbar.setExpanded(true)
         Log.i("processing url $url")
 
         VisitedURLStore.add(url)
@@ -320,15 +320,15 @@ class MainActivity : BaseActivity() {
             textInput = splitText(markdown)
 
             val newAdapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
-            mainBinding.contentRecycler.adapter = newAdapter
+            mainBinding.mainContentRecycler.adapter = newAdapter
             if (!State.searchTerm.isNullOrBlank()) {
                 newAdapter.notifyDataSetChanged()
                 newAdapter.getPositionForWord(State.searchTerm!!)?.let {
-                    mainBinding.contentRecycler.scrollToPosition(it)
+                    mainBinding.mainContentRecycler.scrollToPosition(it)
                 }
 
             }
-            mainBinding.navigationView.refresh()
+            mainBinding.mainNavigationView.refresh()
 
             return true
         }
@@ -344,10 +344,10 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        mainBinding.navigationView.refresh()
-        mainBinding.fab.setVisibility(State.allowEdit())
+        mainBinding.mainNavigationView.refresh()
+        mainBinding.mainFab.setVisibility(State.allowEdit())
         if (lastFontSize != State.getFontSize()) {
-            mainBinding.contentRecycler.adapter?.notifyDataSetChanged()
+            mainBinding.mainContentRecycler.adapter?.notifyDataSetChanged()
             lastFontSize = State.getFontSize()
         }
         if (lastAllowSelect != State.allowSelect()) {
