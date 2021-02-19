@@ -16,7 +16,7 @@ class PreferenceActivity : BaseActivity() {
         val binding: ActivityPrefsBinding = ActivityPrefsBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding.prefsToolbar.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if (State.nightModeString() == "darknight") {
             window.decorView.rootView.setBackgroundColor(0)

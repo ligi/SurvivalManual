@@ -15,13 +15,13 @@ class ImageViewActivity : AppCompatActivity() {
         val binding: ActivityImageBinding = ActivityImageBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding.imageToolbar.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val source = intent.getStringExtra("URL")
                 ?: throw IllegalArgumentException("ImageViewActivity called without URL extra")
         val bitmap = getSurvivalDrawable(this, source)
-        binding.touchImageView.setImageDrawable(bitmap)
+        binding.imageTouchView.setImageDrawable(bitmap)
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {

@@ -27,9 +27,9 @@ class TheSurvivalActivityDirectStart {
     @Test
     fun testWeCanOpenAllTopics() {
         navigationEntryMap.filter { it.entry.isListed }.forEach {
-            onView(withId(R.id.drawer_layout)).perform(DrawerActions.open())
+            onView(withId(R.id.main_drawer_layout)).perform(DrawerActions.open())
             SystemClock.sleep(500)
-            onView(withId(R.id.navigationView)).perform(navigateTo(it.id))
+            onView(withId(R.id.main_navigationView)).perform(navigateTo(it.id))
             SystemClock.sleep(500)
             val activity = activityTestRule.activity
             val subtitle = activity.supportActionBar!!.subtitle
