@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
-import kotlinx.android.synthetic.main.activity_main.*
 import org.ligi.survivalmanual.R
+import org.ligi.survivalmanual.databinding.ActivityPrefsBinding
 import org.ligi.survivalmanual.model.State
 
 class PreferenceActivity : BaseActivity() {
@@ -13,8 +13,10 @@ class PreferenceActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_prefs)
-        setSupportActionBar(toolbar)
+        val binding: ActivityPrefsBinding = ActivityPrefsBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if (State.nightModeString() == "darknight") {
             window.decorView.rootView.setBackgroundColor(0)
