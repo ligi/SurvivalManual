@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
-            app:srcCompat="@drawable/ic_editor_mode_edit" />
+            app:srcCompat="@drawable/ic_edit" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <org.ligi.survivalmanual.ui.MyNavigationView

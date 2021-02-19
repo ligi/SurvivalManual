@@ -63,10 +63,10 @@ class MainActivity : BaseActivity() {
 
     private var isInEditMode by observable(false, onChange = { _, _, newMode ->
         if (newMode) {
-            fab.setImageResource(drawable.ic_image_remove_red_eye)
+            fab.setImageResource(drawable.ic_remove_red_eye)
             contentRecycler.adapter = EditingRecyclerAdapter(textInput)
         } else {
-            fab.setImageResource(drawable.ic_editor_mode_edit)
+            fab.setImageResource(drawable.ic_edit)
             contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
         }
 

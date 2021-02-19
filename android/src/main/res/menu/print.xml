@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/menu_print"
-        android:icon="@drawable/ic_action_print"
+        android:icon="@drawable/ic_print"
         android:title="@string/print"
         app:showAsAction="ifRoom" />
 
