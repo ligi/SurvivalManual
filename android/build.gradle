@@ -101,7 +101,8 @@ dependencies {
     implementation('com.github.ligi:intellij-markdown:android_via_jitpack')
     implementation 'com.github.ligi:TouchImageView:2.1'
     implementation 'com.github.ligi:ExtraCompats:1.0'
-    implementation 'com.github.ligi:tracedroid:3.0'
+    implementation 'com.github.ligi:tracedroid:4.0'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.github.ligi:KAXT:1.0'
 
     forPlayImplementation "com.github.ligi.snackengage:snackengage-playrate:$snackengage_version"
@@ -119,7 +120,7 @@ dependencies {
     androidTestImplementation "androidx.test:core:$androidx_test_version"
     androidTestImplementation "androidx.test:rules:$androidx_test_version"
 
-    androidTestImplementation 'com.github.ligi:trulesk:0.31'
+    androidTestImplementation 'com.github.ligi:trulesk:4.0'
     androidTestImplementation 'com.squareup.assertj:assertj-android:1.2.0'
     androidTestImplementation 'org.mockito:mockito-core:3.4.6'
     androidTestImplementation 'com.linkedin.dexmaker:dexmaker-mockito:2.28.0'
