@@ -20,8 +20,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.view.GravityCompat
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.bookmark.view.*
 import org.ligi.compat.WebViewCompat
 import org.ligi.kaxt.*
 import org.ligi.snackengage.SnackEngage
@@ -33,6 +31,8 @@ import org.ligi.survivalmanual.R.id.*
 import org.ligi.survivalmanual.adapter.EditingRecyclerAdapter
 import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
 import org.ligi.survivalmanual.adapter.SearchResultRecyclerAdapter
+import org.ligi.survivalmanual.databinding.ActivityMainBinding
+import org.ligi.survivalmanual.databinding.BookmarkBinding
 import org.ligi.survivalmanual.functions.CaseInsensitiveSearch
 import org.ligi.survivalmanual.functions.convertMarkdownToHtml
 import org.ligi.survivalmanual.functions.isImage
@@ -45,8 +45,10 @@ import kotlin.properties.Delegates.observable
 
 class MainActivity : BaseActivity() {
 
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
     private val drawerToggle by lazy {
-        ActionBarDrawerToggle(this, drawer_layout, string.drawer_open, string.drawer_close)
+        ActionBarDrawerToggle(this, binding.drawerLayout, string.drawer_open, string.drawer_close)
     }
 
     private val survivalContent by lazy { SurvivalContent(assets) }
@@ -63,19 +65,19 @@ class MainActivity : BaseActivity() {
 
     private var isInEditMode by observable(false, onChange = { _, _, newMode ->
         if (newMode) {
-            fab.setImageResource(drawable.ic_image_remove_red_eye)
-            contentRecycler.adapter = EditingRecyclerAdapter(textInput)
+            binding.fab.setImageResource(drawable.ic_image_remove_red_eye)
+            binding.contentRecycler.adapter = EditingRecyclerAdapter(textInput)
         } else {
-            fab.setImageResource(drawable.ic_editor_mode_edit)
-            contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
+            binding.fab.setImageResource(drawable.ic_editor_mode_edit)
+            binding.contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
         }
 
-        contentRecycler.scrollToPosition(State.lastScrollPos)
+        binding.contentRecycler.scrollToPosition(State.lastScrollPos)
     })
 
     private fun imageWidth(): Int {
         val totalWidthPadding = (resources.getDimension(dimen.content_padding) * 2).toInt()
-        return min(contentRecycler.width - totalWidthPadding, contentRecycler.height)
+        return min(binding.contentRecycler.width - totalWidthPadding, binding.contentRecycler.height)
     }
 
     val onURLClick: (String) -> Unit = {
@@ -95,35 +97,35 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
-        drawer_layout.addDrawerListener(drawerToggle)
-        setSupportActionBar(toolbar)
+        binding.drawerLayout.addDrawerListener(drawerToggle)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        navigationView.setNavigationItemSelectedListener { item ->
-            drawer_layout.closeDrawers()
+        binding.navigationView.setNavigationItemSelectedListener { item ->
+            binding.drawerLayout.closeDrawers()
             processURL(navigationEntryMap[item.itemId].entry.url)
             true
         }
 
-        contentRecycler.layoutManager = linearLayoutManager
+        binding.contentRecycler.layoutManager = linearLayoutManager
 
         class RememberPositionOnScroll : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
-                State.lastScrollPos = (contentRecycler.layoutManager as androidx.recyclerview.widget.LinearLayoutManager).findFirstVisibleItemPosition()
+                State.lastScrollPos = (binding.contentRecycler.layoutManager as androidx.recyclerview.widget.LinearLayoutManager).findFirstVisibleItemPosition()
                 super.onScrolled(recyclerView, dx, dy)
             }
         }
 
-        contentRecycler.addOnScrollListener(RememberPositionOnScroll())
+        binding.contentRecycler.addOnScrollListener(RememberPositionOnScroll())
 
         val rateSnack = DefaultRateSnack().apply {
             setActionColor(getColor(baseContext, color.colorAccentLight))
         }
-        SnackEngage.from(fab).withSnack(rateSnack).build().engageWhenAppropriate()
+        SnackEngage.from(binding.fab).withSnack(rateSnack).build().engageWhenAppropriate()
 
-        contentRecycler.post {
+        binding.contentRecycler.post {
             val data = intent.data?.path
             if (data == null || !processURL(data.replace("/", ""))) {
                 if (!processURL(State.lastVisitedURL)) {
@@ -135,11 +137,11 @@ class MainActivity : BaseActivity() {
         }
 
         if (State.isInitialOpening) {
-            drawer_layout.openDrawer(GravityCompat.START)
+            binding.drawerLayout.openDrawer(GravityCompat.START)
             State.isInitialOpening = false
         }
 
-        fab.setOnClickListener {
+        binding.fab.setOnClickListener {
             isInEditMode = !isInEditMode
         }
 
@@ -162,15 +164,15 @@ class MainActivity : BaseActivity() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(searchTerm: String): Boolean {
                 State.searchTerm = searchTerm
-                val adapter = contentRecycler.adapter
+                val adapter = binding.contentRecycler.adapter
                 if (adapter is MarkdownRecyclerAdapter) {
 
                     val positionForWord = adapter.getPositionForWord(searchTerm)
 
                     if (positionForWord != null) {
-                        contentRecycler.smoothScrollToPosition(positionForWord)
+                        binding.contentRecycler.smoothScrollToPosition(positionForWord)
                     } else {
-                        contentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent) {
+                        binding.contentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent) {
                             processURL(it)
                             closeKeyboard()
                         }.apply { showToastWhenListIsEmpty() }
@@ -182,7 +184,7 @@ class MainActivity : BaseActivity() {
                     adapter.changeTerm(searchTerm)
                     adapter.showToastWhenListIsEmpty()
                     if (survivalContent.getMarkdown(currentUrl)!!.contains(searchTerm)) {
-                        contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
+                        binding.contentRecycler.adapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
                         State.searchTerm = searchTerm
                     }
                 }
@@ -256,10 +258,10 @@ class MainActivity : BaseActivity() {
 
             },
             menu_bookmark to {
-                val view = inflate(R.layout.bookmark)
+                val view = BookmarkBinding.inflate(layoutInflater)
                 view.topicText.text = currentTopicName
                 AlertDialog.Builder(this)
-                        .setView(view)
+                        .setView(view.root)
                         .setTitle(string.add_bookmark)
                         .setPositiveButton(string.bookmark) { _: DialogInterface, _: Int ->
                             Bookmarks.persist(Bookmark(currentUrl, view.commentEdit.text.toString(), ""))
@@ -294,7 +296,7 @@ class MainActivity : BaseActivity() {
 
     private fun processURL(url: String): Boolean {
 
-        appbar.setExpanded(true)
+        binding.appbar.setExpanded(true)
         Timber.i("processing url $url")
 
         VisitedURLStore.add(url)
@@ -312,15 +314,15 @@ class MainActivity : BaseActivity() {
             textInput = splitText(markdown)
 
             val newAdapter = MarkdownRecyclerAdapter(textInput, imageWidth(), onURLClick)
-            contentRecycler.adapter = newAdapter
+            binding.contentRecycler.adapter = newAdapter
             if (!State.searchTerm.isNullOrBlank()) {
                 newAdapter.notifyDataSetChanged()
                 newAdapter.getPositionForWord(State.searchTerm!!)?.let {
-                    contentRecycler.scrollToPosition(it)
+                    binding.contentRecycler.scrollToPosition(it)
                 }
 
             }
-            navigationView.refresh()
+            binding.navigationView.refresh()
 
             return true
         }
@@ -334,8 +336,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(navigationView)) {
-            drawer_layout.closeDrawer(navigationView)
+        if (binding.drawerLayout.isDrawerOpen(binding.navigationView)) {
+            binding.drawerLayout.closeDrawer(binding.navigationView)
         } else {
             super.onBackPressed()
         }
@@ -343,10 +345,10 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        navigationView.refresh()
-        fab.setVisibility(State.allowEdit())
+        binding.navigationView.refresh()
+        binding.fab.setVisibility(State.allowEdit())
         if (lastFontSize != State.getFontSize()) {
-            contentRecycler.adapter?.notifyDataSetChanged()
+            binding.contentRecycler.adapter?.notifyDataSetChanged()
             lastFontSize = State.getFontSize()
         }
         if (lastAllowSelect != State.allowSelect()) {

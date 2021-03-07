@@ -2,16 +2,17 @@ package org.ligi.survivalmanual.ui
 
 import android.os.Bundle
 import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_main.*
-import org.ligi.survivalmanual.R
+import org.ligi.survivalmanual.databinding.ActivityPrefsBinding
 
 class PreferenceActivity : BaseActivity() {
+
+    private val binding by lazy { ActivityPrefsBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_prefs)
-        setSupportActionBar(toolbar)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if (org.ligi.survivalmanual.model.State.nightModeString() == "darknight") {
             window.decorView.rootView.setBackgroundColor(0)
