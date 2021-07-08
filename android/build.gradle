@@ -120,7 +120,7 @@ dependencies {
     androidTestImplementation "androidx.test:core:$androidx_test_version"
     androidTestImplementation "androidx.test:rules:$androidx_test_version"
 
-    androidTestImplementation 'com.github.ligi:trulesk:4.0'
+    androidTestImplementation 'com.github.ligi:trulesk:4.3'
     androidTestImplementation 'com.squareup.assertj:assertj-android:1.2.0'
     androidTestImplementation 'org.mockito:mockito-core:3.10.0'
     androidTestImplementation 'com.linkedin.dexmaker:dexmaker-mockito:2.28.0'
