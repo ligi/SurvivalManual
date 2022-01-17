@@ -20,7 +20,7 @@ buildscript {
 
         classpath 'com.trevjonez.composer:plugin:1.0.0-rc08'
 
-        classpath 'de.mobilej.unmock:UnMockPlugin:0.7.6'
+	classpath 'com.github.bjoernq:unmockplugin:0.7.9'
 
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.41.0'
     }
