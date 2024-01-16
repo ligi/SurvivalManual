@@ -125,7 +125,7 @@ dependencies {
     androidTestImplementation 'org.mockito:mockito-core:4.2.0'
     androidTestImplementation 'com.linkedin.dexmaker:dexmaker-mockito:2.28.0'
 
-    androidTestUtil 'com.linkedin.testbutler:test-butler-app:2.1.1'
+    androidTestUtil 'com.linkedin.testbutler:test-butler-app:2.2.1'
 
     testImplementation "androidx.test:core:$androidx_test_version"
     testImplementation 'junit:junit:4.13.2'
