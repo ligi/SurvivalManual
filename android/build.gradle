@@ -5,7 +5,9 @@ apply plugin: 'de.mobilej.unmock'
 apply plugin: 'com.trevjonez.composer'
 
 android {
-    compileSdkVersion 30
+    compileSdk 34
+
+    namespace "org.ligi.survivalmanual"
 
     defaultConfig {
         applicationId "org.ligi.survivalmanual"
@@ -17,6 +19,11 @@ android {
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "org.ligi.trulesk.BaseTruleskRunner"
         archivesBaseName = "SurvivalManual-$versionName"
+    }
+
+    buildFeatures {
+        buildConfig true
+        viewBinding true
     }
 
     buildTypes {
@@ -77,10 +84,6 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
-    }
-
-    buildFeatures {
-        viewBinding true
     }
 }
 
