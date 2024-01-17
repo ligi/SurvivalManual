@@ -112,9 +112,6 @@ dependencies {
     forFDroidImplementation "com.github.ligi.snackengage:snackengage-playrate:$snackengage_version"
     forAmazonImplementation "com.github.ligi.snackengage:snackengage-amazonrate:$snackengage_version"
 
-    implementation 'org.permissionsdispatcher:permissionsdispatcher:4.8.0'
-    kapt 'org.permissionsdispatcher:permissionsdispatcher-processor:4.8.0'
-
 
 // Testing
     androidTestImplementation 'androidx.annotation:annotation:1.7.1'
@@ -127,8 +124,6 @@ dependencies {
     androidTestImplementation 'com.squareup.assertj:assertj-android:1.2.0'
     androidTestImplementation 'org.mockito:mockito-core:5.9.0'
     androidTestImplementation 'com.linkedin.dexmaker:dexmaker-mockito:2.28.3'
-
-    androidTestUtil 'com.linkedin.testbutler:test-butler-app:2.2.1'
 
     testImplementation "androidx.test:core:$androidx_test_version"
     testImplementation 'junit:junit:4.13.2'
