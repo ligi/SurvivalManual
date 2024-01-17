@@ -78,17 +78,17 @@ android {
 
     compileOptions {
         encoding "UTF-8"
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
 // Android support
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -114,7 +114,6 @@ dependencies {
 
 
 // Testing
-    androidTestImplementation 'androidx.annotation:annotation:1.7.1'
     androidTestImplementation 'androidx.appcompat:appcompat:1.6.1'
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.1'
     androidTestImplementation "androidx.test:core:$androidx_test_version"
