@@ -1,12 +1,13 @@
 package org.ligi.survivalmanual
 
-import android.Manifest
-import androidx.appcompat.app.AppCompatDelegate.*
-import androidx.test.core.app.ApplicationProvider
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+import androidx.appcompat.app.AppCompatDelegate.getDefaultNightMode
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.matcher.ViewMatchers.withText
-import org.assertj.core.api.Assertions.assertThat
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.ligi.survivalmanual.model.State
@@ -25,8 +26,8 @@ class ThePreferenceActivity {
 
         onView(withText(R.string.system)).perform(click())
 
-        assertThat(getDefaultNightMode()).isEqualTo(MODE_NIGHT_FOLLOW_SYSTEM)
-        assertThat(State.getNightMode()).isEqualTo(MODE_NIGHT_FOLLOW_SYSTEM)
+        assertEquals(MODE_NIGHT_FOLLOW_SYSTEM, getDefaultNightMode())
+        assertEquals(MODE_NIGHT_FOLLOW_SYSTEM, State.getNightMode())
         activityTestRule.screenShot("daynight_auto")
     }
 
@@ -37,8 +38,8 @@ class ThePreferenceActivity {
 
         onView(withText(R.string.day)).perform(click())
 
-        assertThat(getDefaultNightMode()).isEqualTo(MODE_NIGHT_NO)
-        assertThat(State.getNightMode()).isEqualTo(MODE_NIGHT_NO)
+        assertEquals(MODE_NIGHT_NO, getDefaultNightMode())
+        assertEquals(MODE_NIGHT_NO, State.getNightMode())
         activityTestRule.screenShot("daynight_day")
     }
 
@@ -49,8 +50,8 @@ class ThePreferenceActivity {
 
         onView(withText(R.string.night)).perform(click())
 
-        assertThat(getDefaultNightMode()).isEqualTo(MODE_NIGHT_YES)
-        assertThat(State.getNightMode()).isEqualTo(MODE_NIGHT_YES)
+        assertEquals(MODE_NIGHT_YES, getDefaultNightMode())
+        assertEquals(MODE_NIGHT_YES, State.getNightMode())
         activityTestRule.screenShot("daynight_night")
     }
 
@@ -62,6 +63,6 @@ class ThePreferenceActivity {
 
         onView(withText(R.string.allow_search)).perform(click())
 
-        assertThat(oldState).isEqualTo(!State.allowSearch())
+        assertEquals(!State.allowSearch(), oldState)
     }
 }
