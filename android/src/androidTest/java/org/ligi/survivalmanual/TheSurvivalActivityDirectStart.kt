@@ -5,7 +5,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.contrib.DrawerActions
 import androidx.test.espresso.contrib.NavigationViewActions.navigateTo
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import org.assertj.core.api.Assertions.assertThat
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.ligi.survivalmanual.model.navigationEntryMap
@@ -33,7 +33,7 @@ class TheSurvivalActivityDirectStart {
             SystemClock.sleep(500)
             val activity = activityTestRule.activity
             val subtitle = activity.supportActionBar!!.subtitle
-            assertThat(subtitle).isEqualTo(activity.getString(titleResByURLMap[it.entry.url]!!))
+            assertEquals(activity.getString(titleResByURLMap[it.entry.url]!!), subtitle)
 
             activityTestRule.screenShot("topic_" + subtitle!!.toString().replace(" ", "_").replace("/", "_"))
         }

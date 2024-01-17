@@ -1,8 +1,6 @@
 package org.ligi.survivalmanual
 
 import androidx.test.platform.app.InstrumentationRegistry
-import junit.framework.Assert.fail
-import org.assertj.core.api.Assertions.assertThat
 import org.intellij.markdown.IElementType
 import org.intellij.markdown.MarkdownElementTypes
 import org.intellij.markdown.ast.ASTNode
@@ -10,6 +8,8 @@ import org.intellij.markdown.ast.getTextInNode
 import org.intellij.markdown.ast.visitors.RecursiveVisitor
 import org.intellij.markdown.flavours.commonmark.CommonMarkFlavourDescriptor
 import org.intellij.markdown.parser.MarkdownParser
+import org.junit.Assert.assertNull
+import org.junit.Assert.fail
 import org.junit.Test
 import org.ligi.survivalmanual.model.SurvivalContent
 import org.ligi.survivalmanual.model.navigationEntryMap
@@ -68,7 +68,7 @@ class TheSurvivalContent {
     @Test
     fun weGetNullForUnknownURL() {
         val tested = survivalContent.getMarkdown("YOLO")
-        assertThat(tested).isNull()
+        assertNull(tested)
     }
 
 }

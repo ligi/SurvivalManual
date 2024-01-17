@@ -2,7 +2,7 @@ package org.ligi.survivalmanual
 
 import android.content.Intent
 import android.net.Uri
-import org.assertj.core.api.Assertions.assertThat
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.ligi.survivalmanual.model.State
@@ -63,7 +63,7 @@ class TheSurvivalActivityLaunchAfterSetup {
 
     private fun verifyCorrectSubtitle(s: String) {
         val subtitle = activityTestRule.activity.supportActionBar!!.subtitle
-        assertThat(subtitle).isEqualTo(activityTestRule.activity.getString(titleResByURLMap[s]!!))
+        assertEquals(activityTestRule.activity.getString(titleResByURLMap[s]!!), subtitle)
     }
 
 }
