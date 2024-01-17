@@ -6,7 +6,6 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.matcher.ViewMatchers.withText
-import com.linkedin.android.testbutler.TestButler
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Rule
 import org.junit.Test
@@ -17,12 +16,10 @@ import org.ligi.trulesk.TruleskActivityRule
 class ThePreferenceActivity {
 
     @get:Rule
-    val activityTestRule = TruleskActivityRule(PreferenceActivity::class.java) {
-        TestButler.grantPermission(ApplicationProvider.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION)
-    }
+    val activityTestRule = TruleskActivityRule(PreferenceActivity::class.java)
 
     @Test
-    fun thatDayNightAutoIsSelectable() {
+    fun thatDayFollowSystemIsSelectable() {
 
         onView(withText(R.string.preference_daynight_title)).perform(click())
 
