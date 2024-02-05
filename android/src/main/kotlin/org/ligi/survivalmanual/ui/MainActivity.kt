@@ -9,6 +9,7 @@ import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebResourceRequest
@@ -41,12 +42,15 @@ import org.ligi.survivalmanual.functions.convertMarkdownToHtml
 import org.ligi.survivalmanual.functions.isImage
 import org.ligi.survivalmanual.functions.splitText
 import org.ligi.survivalmanual.model.*
-import timber.log.Timber
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.properties.Delegates.observable
 
 class MainActivity : BaseActivity() {
+
+    companion object {
+        private val TAG = MainActivity::javaClass.name;
+    }
 
     private val drawerToggle by lazy {
         ActionBarDrawerToggle(this, mainBinding.mainDrawerLayout, string.drawer_open, string.drawer_close)
@@ -303,7 +307,7 @@ class MainActivity : BaseActivity() {
     private fun processURL(url: String): Boolean {
 
         mainBinding.mainAppbar.setExpanded(true)
-        Timber.i("processing url $url")
+        Log.i(TAG, "processing url $url")
 
         VisitedURLStore.add(url)
         val titleResByURL = getTitleResByURL(url) ?: return false
