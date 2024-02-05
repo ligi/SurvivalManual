@@ -2,9 +2,9 @@ package org.ligi.survivalmanual.functions
 
 import android.content.Context
 import android.graphics.drawable.BitmapDrawable
+import android.util.Log
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
 import org.ligi.survivalmanual.R
-import timber.log.Timber
 import java.io.FileNotFoundException
 
 fun linkImagesInMarkDown(markdown: String): String {
@@ -23,6 +23,6 @@ fun getSurvivalDrawable(ctx: Context, source: String) = if (source.endsWith(".vd
 } else try {
     BitmapDrawable.createFromStream(ctx.assets.open("md/$source"), source) as BitmapDrawable
 } catch (e: FileNotFoundException) {
-    Timber.e("Could not find md/$source")
+    Log.e("ImageLogic", "Could not find md/$source")
     null
 }
