@@ -1,7 +1,6 @@
 package org.ligi.survivalmanual.ui
 
 import android.annotation.TargetApi
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -85,16 +84,13 @@ class MainActivity : BaseActivity() {
 
     val onURLClick: (String) -> Unit = {
         if (it.startsWith("http")) {
-            startActivityFromURL(Uri.parse(it))
-        } else if (!processProductLinks(it, this)) {
-
-            if (isImage(it)) {
-                startActivity(Intent(this, ImageViewActivity::class.java).apply {
-                    putExtra("URL", it)
-                })
-            } else {
-                processURL(it)
-            }
+            openInBrowser(Uri.parse(it))
+        } else if (isImage(it)) {
+            startActivity(Intent(this, ImageViewActivity::class.java).apply {
+                putExtra("URL", it)
+            })
+        } else {
+            processURL(it)
         }
     }
 
@@ -338,8 +334,5 @@ class MainActivity : BaseActivity() {
     }
 }
 
-fun Context.startActivityFromURL(uri: Uri) = try {
-    startActivity(Intent(Intent.ACTION_VIEW, uri))
-} catch (e: ActivityNotFoundException) {
-    Toast.makeText(this, "No Browser found", Toast.LENGTH_LONG).show()
-}
+fun Context.openInBrowser(uri: Uri) =
+    startActivity(Intent.createChooser(Intent(Intent.ACTION_VIEW, uri), "Open in browser"))
