@@ -14,7 +14,5 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         classpath 'com.android.tools.build:gradle:8.2.2'
-
-        classpath 'com.github.bjoernq:unmockplugin:0.7.9'
     }
 }
