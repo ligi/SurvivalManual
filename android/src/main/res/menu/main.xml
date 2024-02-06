@@ -13,17 +13,4 @@
         android:icon="@drawable/ic_settings"
         android:title="@string/settings"
         app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/menu_share"
-        android:icon="@drawable/ic_share"
-        android:title="@string/share"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/menu_rate"
-        android:icon="@drawable/ic_star"
-        android:title="@string/rate"
-        app:showAsAction="ifRoom"
-        app:tint="?attr/colorControlNormal" />
 </menu>
