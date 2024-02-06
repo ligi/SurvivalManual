@@ -3,6 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'de.mobilej.unmock'
 
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    google()
+}
+
 android {
     compileSdk 34
 
@@ -35,23 +41,6 @@ android {
             applicationIdSuffix ".debug"
             versionNameSuffix "-debug"
         }
-    }
-
-    packagingOptions {
-        // needed for assertJ
-        exclude 'asm-license.txt'
-        exclude 'LICENSE'
-        exclude 'NOTICE'
-
-        // hack for instrumentation testing :-(
-        exclude 'LICENSE.txt'
-
-        exclude 'META-INF/*'
-    }
-
-    lintOptions {
-        warning 'InvalidPackage'
-        warning 'MissingTranslation'
     }
 
     sourceSets {
