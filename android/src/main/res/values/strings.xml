@@ -74,7 +74,6 @@
     <string name="preference_daynight_summary">Should I use day or night theme?</string>
 
     <string name="allow_edit">Allow Editing (Experimental)</string>
-    <string name="allow_search">Search (Beta)</string>
     <string name="preference_fontsize_summary">How big should the letters be?</string>
     <string name="preference_fontsize_title">Text size</string>
     <string name="power">Power</string>

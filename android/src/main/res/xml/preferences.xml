@@ -27,13 +27,6 @@
         android:title="Mark visited chapters"
         app:iconSpaceReserved="false" />
 
-    <SwitchPreferenceCompat
-        android:defaultValue="false"
-        android:key="@string/preference_key_search"
-        android:summary="Find what you need"
-        android:title="@string/allow_search"
-        app:iconSpaceReserved="false" />
-
     <!--SwitchPreferenceCompat
         android:defaultValue="false"
         android:key="@string/preference_key_select_text"

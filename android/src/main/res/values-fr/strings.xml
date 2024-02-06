@@ -52,7 +52,6 @@
     <string name="preference_daynight_summary">Dois-je être sombre ou clair ?</string>
 
     <string name="allow_edit">Autoriser l\'édition (Expérimental)</string>
-    <string name="allow_search">Rechercher (Bêta)</string>
     <string name="preference_fontsize_summary">De quelle taille devraient être les caractères ?</string>
     <string name="preference_fontsize_title">Taille de police</string>
 
