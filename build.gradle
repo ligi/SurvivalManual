@@ -7,7 +7,6 @@ buildscript {
 
     repositories {
         mavenCentral()
-        maven { url "https://jitpack.io" }
         gradlePluginPortal()
         google()
     }
@@ -18,8 +17,6 @@ buildscript {
         classpath 'com.android.tools.build:gradle:8.2.2'
 
         classpath 'com.github.bjoernq:unmockplugin:0.7.9'
-
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.51.0'
     }
 }
 
@@ -30,9 +27,3 @@ allprojects {
         google()
     }
 }
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
-
-apply from: 'https://raw.githubusercontent.com/ligi/gradle-common/master/versions_plugin_stable_only.gradle'
