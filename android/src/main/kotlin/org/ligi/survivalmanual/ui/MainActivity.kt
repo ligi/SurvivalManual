@@ -23,13 +23,9 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat.getColor
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import org.ligi.snackengage.SnackEngage
-import org.ligi.snackengage.snacks.DefaultRateSnack
-import org.ligi.snackengage.snacks.RateSnack
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.R.*
 import org.ligi.survivalmanual.R.id.*
@@ -129,11 +125,6 @@ class MainActivity : BaseActivity() {
 
         mainBinding.mainContentRecycler.addOnScrollListener(RememberPositionOnScroll())
 
-        val rateSnack = DefaultRateSnack().apply {
-            setActionColor(getColor(baseContext, color.colorAccentLight))
-        }
-        SnackEngage.from(mainBinding.mainFab).withSnack(rateSnack).build().engageWhenAppropriate()
-
         mainBinding.mainContentRecycler.post {
             val data = intent.data?.path
             if (data == null || !processURL(data.replace("/", ""))) {
@@ -219,16 +210,6 @@ class MainActivity : BaseActivity() {
 
     private val optionsMap = mapOf(
             menu_settings to { startActivity(Intent(this, PreferenceActivity::class.java)) },
-            menu_share to {
-                val intent = Intent(Intent.ACTION_SEND)
-                intent.putExtra(Intent.EXTRA_TEXT, RateSnack().getUri(this).toString())
-                intent.type = "text/plain"
-                startActivity(Intent.createChooser(intent, null))
-            },
-
-            menu_rate to {
-                startActivityFromURL(RateSnack().getUri(this))
-            },
 
             menu_print to {
                 AlertDialog.Builder(this)

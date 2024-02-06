@@ -37,24 +37,6 @@ android {
         }
     }
 
-    flavorDimensions "store"
-    productFlavors {
-        forFDroid {
-            dimension "store"
-            buildConfigField 'String', 'STORE', '"fdroid"'
-        }
-
-        forAmazon {
-            dimension "store"
-            buildConfigField 'String', 'STORE', '"amazon"'
-        }
-
-        forPlay {
-            dimension "store"
-            buildConfigField 'String', 'STORE', '"play"'
-        }
-    }
-
     packagingOptions {
         // needed for assertJ
         exclude 'asm-license.txt'
@@ -103,11 +85,6 @@ dependencies {
 
     implementation 'org.jetbrains:markdown:0.6.1'
     implementation 'com.github.MikeOrtiz:TouchImageView:3.6'
-
-    forPlayImplementation "com.github.ligi.snackengage:snackengage-playrate:$snackengage_version"
-    forFDroidImplementation "com.github.ligi.snackengage:snackengage-playrate:$snackengage_version"
-    forAmazonImplementation "com.github.ligi.snackengage:snackengage-amazonrate:$snackengage_version"
-
 
 // Testing
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
