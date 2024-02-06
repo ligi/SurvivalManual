@@ -54,15 +54,4 @@ class ThePreferenceActivity {
         assertEquals(MODE_NIGHT_YES, getDefaultNightMode())
         assertEquals(MODE_NIGHT_YES, State.getNightMode())
     }
-
-
-    @Test
-    fun thatWeCanSwitchSearch() {
-
-        val oldState = State.allowSearch()
-
-        onView(withText(R.string.allow_search)).perform(click())
-
-        assertEquals(!State.allowSearch(), oldState)
-    }
 }

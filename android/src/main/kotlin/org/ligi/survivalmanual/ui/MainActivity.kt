@@ -158,12 +158,6 @@ class MainActivity : BaseActivity() {
 
     }
 
-    override fun onPrepareOptionsMenu(menu: Menu) = super.onPrepareOptionsMenu(menu.apply {
-        findItem(action_search)?.let {
-            it.isVisible = State.allowSearch()
-        }
-    })
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         if (Build.VERSION.SDK_INT >= 19) {

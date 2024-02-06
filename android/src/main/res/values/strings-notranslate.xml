@@ -3,7 +3,6 @@
     <string name="preference_key_nightmode" translatable="false">NIGHTMODE</string>
     <string name="preference_key_edittoggle" translatable="false">EDITTOGGLE</string>
     <string name="preference_key_fontsize" translatable="false">FONTSIZETOGGLE</string>
-    <string name="preference_key_search" translatable="false">SEARCHTOGGLE</string>
     <string name="preference_key_select_text" translatable="false">SELECTTEXTTOGGLE</string>
     <string name="preference_mark_visited" translatable="false">MARKVISITED</string>
 </resources>

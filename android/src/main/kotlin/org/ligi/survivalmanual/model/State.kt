@@ -3,7 +3,11 @@ package org.ligi.survivalmanual.model
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import com.chibatching.kotpref.KotprefModel
-import org.ligi.survivalmanual.R.string.*
+import org.ligi.survivalmanual.R.string.preference_key_edittoggle
+import org.ligi.survivalmanual.R.string.preference_key_fontsize
+import org.ligi.survivalmanual.R.string.preference_key_nightmode
+import org.ligi.survivalmanual.R.string.preference_key_select_text
+import org.ligi.survivalmanual.R.string.preference_mark_visited
 
 private const val DEFAULT_FONT_SIZE_STRING = "2"
 
@@ -20,7 +24,6 @@ object State : KotprefModel() {
 
     fun markVisited() = sharedPreferences.getBoolean(preference_mark_visited.string(), false)
     fun allowEdit() = sharedPreferences.getBoolean(preference_key_edittoggle.string(), false)
-    fun allowSearch() = sharedPreferences.getBoolean(preference_key_search.string(), false)
     fun allowSelect() = sharedPreferences.getBoolean(preference_key_select_text.string(), false)
     fun getFontSize() = 8f + 4f * Integer.parseInt(getFontSizeString())
 
