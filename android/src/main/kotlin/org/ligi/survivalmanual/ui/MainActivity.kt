@@ -3,7 +3,6 @@ package org.ligi.survivalmanual.ui
 import android.annotation.TargetApi
 import android.content.ActivityNotFoundException
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.Configuration
 import android.net.Uri
@@ -38,7 +37,6 @@ import org.ligi.survivalmanual.adapter.EditingRecyclerAdapter
 import org.ligi.survivalmanual.adapter.MarkdownRecyclerAdapter
 import org.ligi.survivalmanual.adapter.SearchResultRecyclerAdapter
 import org.ligi.survivalmanual.databinding.ActivityMainBinding
-import org.ligi.survivalmanual.databinding.BookmarkBinding
 import org.ligi.survivalmanual.functions.CaseInsensitiveSearch
 import org.ligi.survivalmanual.functions.convertMarkdownToHtml
 import org.ligi.survivalmanual.functions.isImage
@@ -260,20 +258,6 @@ class MainActivity : BaseActivity() {
 
                         }
                         .setNegativeButton(android.R.string.cancel, null)
-                        .show()
-
-
-            },
-            menu_bookmark to {
-                val bookmarkBinding: BookmarkBinding = BookmarkBinding.inflate(layoutInflater)
-                bookmarkBinding.bookmarkTopicText.text = currentTopicName
-                AlertDialog.Builder(this)
-                        .setView(bookmarkBinding.root)
-                        .setTitle(string.add_bookmark)
-                        .setPositiveButton(string.bookmark) { _: DialogInterface, _: Int ->
-                            Bookmarks.persist(Bookmark(currentUrl, bookmarkBinding.bookmarkCommentEdit.text.toString(), ""))
-                        }
-                        .setNegativeButton(string.cancel) { _: DialogInterface, _: Int -> }
                         .show()
             }
     )

@@ -15,13 +15,6 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/menu_bookmark"
-        android:icon="@drawable/ic_bookmark"
-        android:title="@string/bookmark"
-        android:visible="false"
-        app:showAsAction="ifRoom" />
-
-    <item
         android:id="@+id/menu_share"
         android:icon="@drawable/ic_share"
         android:title="@string/share"
