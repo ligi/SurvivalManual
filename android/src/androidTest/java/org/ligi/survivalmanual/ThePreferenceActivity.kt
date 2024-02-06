@@ -7,17 +7,20 @@ import androidx.appcompat.app.AppCompatDelegate.getDefaultNightMode
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.ext.junit.rules.ActivityScenarioRule
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.ligi.survivalmanual.model.State
 import org.ligi.survivalmanual.ui.PreferenceActivity
-import org.ligi.trulesk.TruleskActivityRule
 
+@RunWith(AndroidJUnit4::class)
 class ThePreferenceActivity {
 
     @get:Rule
-    val activityTestRule = TruleskActivityRule(PreferenceActivity::class.java)
+    val activityTestRule = ActivityScenarioRule(PreferenceActivity::class.java)
 
     @Test
     fun thatDayFollowSystemIsSelectable() {
@@ -28,7 +31,6 @@ class ThePreferenceActivity {
 
         assertEquals(MODE_NIGHT_FOLLOW_SYSTEM, getDefaultNightMode())
         assertEquals(MODE_NIGHT_FOLLOW_SYSTEM, State.getNightMode())
-        activityTestRule.screenShot("daynight_auto")
     }
 
     @Test
@@ -40,7 +42,6 @@ class ThePreferenceActivity {
 
         assertEquals(MODE_NIGHT_NO, getDefaultNightMode())
         assertEquals(MODE_NIGHT_NO, State.getNightMode())
-        activityTestRule.screenShot("daynight_day")
     }
 
     @Test
@@ -52,7 +53,6 @@ class ThePreferenceActivity {
 
         assertEquals(MODE_NIGHT_YES, getDefaultNightMode())
         assertEquals(MODE_NIGHT_YES, State.getNightMode())
-        activityTestRule.screenShot("daynight_night")
     }
 
 
