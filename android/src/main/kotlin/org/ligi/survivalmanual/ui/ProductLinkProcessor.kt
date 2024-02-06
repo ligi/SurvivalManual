@@ -3,9 +3,8 @@ package org.ligi.survivalmanual.ui
 import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AlertDialog
-import org.ligi.kaxt.inflate
-import org.ligi.kaxt.startActivityFromURL
 import org.ligi.survivalmanual.R
 
 val PRODUCT_MAP = mapOf(
@@ -23,19 +22,19 @@ val PRODUCT_MAP = mapOf(
 fun processProductLinks(it: String, activity: Activity): Boolean {
 
     if (PRODUCT_MAP.containsKey(it)) {
-        val url = "https://www.amazon.com/gp/product/" + PRODUCT_MAP[it]
-        val view = activity.inflate(R.layout.alert_product_link)
+        val uri = Uri.parse("https://www.amazon.com/gp/product/" + PRODUCT_MAP[it])
+        val view = activity.layoutInflater.inflate(R.layout.alert_product_link, null)
 
         AlertDialog.Builder(activity)
                 .setTitle(R.string.amazon_link_title)
                 .setView(view)
                 .setNegativeButton(R.string.cancel, null)
                 .setPositiveButton(R.string.to_amazon) { _: DialogInterface, _: Int ->
-                    activity.startActivityFromURL(url)
+                    activity.startActivity(Intent(Intent.ACTION_VIEW, uri))
                 }
                 .setNeutralButton(R.string.send_link) { _: DialogInterface, _: Int ->
                     val sendIntent = Intent(Intent.ACTION_SEND).apply {
-                        putExtra(Intent.EXTRA_TEXT, url)
+                        putExtra(Intent.EXTRA_TEXT, uri.toString())
                         type = "text/plain"
                     }
                     activity.startActivity(Intent.createChooser(sendIntent, "Send link to"))

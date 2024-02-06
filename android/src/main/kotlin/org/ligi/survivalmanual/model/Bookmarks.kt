@@ -1,8 +1,8 @@
 package org.ligi.survivalmanual.model
 
 import com.chibatching.kotpref.KotprefModel
-import org.ligi.kaxt.decodeURL
-import org.ligi.kaxt.encodeURL
+import java.net.URLDecoder
+import java.net.URLEncoder
 
 object Bookmarks : KotprefModel() {
 
@@ -13,14 +13,14 @@ object Bookmarks : KotprefModel() {
     fun persist(bookmark: Bookmark) {
         bookmarks.add(bookmark)
 
-        serialized = bookmarks.joinToString("\n") { it.url.encodeURL() + ";" + it.description.encodeURL() + ";" + it.excerpt.encodeURL() }
+        serialized = bookmarks.joinToString("\n") { URLEncoder.encode(it.url, "utf-8") + ";" + URLEncoder.encode(it.description, "utf-8") + ";" + URLEncoder.encode(it.excerpt, "utf-8" )}
     }
 
     fun getAll() = bookmarks.toList()
 
     private fun readBookmarks(): MutableList<Bookmark> = serialized.lines()
             .map { it.split(";") }
-            .map { Bookmark(it[0].decodeURL(), it[1].decodeURL(), it[2].decodeURL()) }
+            .map { Bookmark(URLDecoder.decode(it[0], "utf-8"), URLDecoder.decode(it[1], "utf-8"), URLDecoder.decode(it[2], "utf-8")) }
             .toMutableList()
 
 }

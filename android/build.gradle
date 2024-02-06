@@ -103,7 +103,6 @@ dependencies {
 
     implementation 'org.jetbrains:markdown:0.6.1'
     implementation 'com.github.MikeOrtiz:TouchImageView:3.6'
-    implementation 'com.github.ligi:KAXT:1.0'
 
     forPlayImplementation "com.github.ligi.snackengage:snackengage-playrate:$snackengage_version"
     forFDroidImplementation "com.github.ligi.snackengage:snackengage-playrate:$snackengage_version"
