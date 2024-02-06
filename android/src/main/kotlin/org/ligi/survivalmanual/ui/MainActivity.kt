@@ -1,10 +1,12 @@
 package org.ligi.survivalmanual.ui
 
 import android.annotation.TargetApi
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.Configuration
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
@@ -13,6 +15,8 @@ import android.print.PrintManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -24,7 +28,6 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import org.ligi.kaxt.*
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
 import org.ligi.snackengage.snacks.RateSnack
@@ -88,7 +91,7 @@ class MainActivity : BaseActivity() {
 
     val onURLClick: (String) -> Unit = {
         if (it.startsWith("http")) {
-            startActivityFromURL(it)
+            startActivityFromURL(Uri.parse(it))
         } else if (!processProductLinks(it, this)) {
 
             if (isImage(it)) {
@@ -182,7 +185,9 @@ class MainActivity : BaseActivity() {
                     } else {
                         mainBinding.mainContentRecycler.adapter = SearchResultRecyclerAdapter(searchTerm, survivalContent) {
                             processURL(it)
-                            closeKeyboard()
+                            currentFocus?.let {
+                                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(it.windowToken, 0)
+                            }
                         }.apply { showToastWhenListIsEmpty() }
 
                     }
@@ -221,7 +226,7 @@ class MainActivity : BaseActivity() {
     }
 
     private val optionsMap = mapOf(
-            menu_settings to { startActivityFromClass(PreferenceActivity::class.java) },
+            menu_settings to { startActivity(Intent(this, PreferenceActivity::class.java)) },
             menu_share to {
                 val intent = Intent(Intent.ACTION_SEND)
                 intent.putExtra(Intent.EXTRA_TEXT, RateSnack().getUri(this).toString())
@@ -267,10 +272,9 @@ class MainActivity : BaseActivity() {
             },
             menu_bookmark to {
                 val bookmarkBinding: BookmarkBinding = BookmarkBinding.inflate(layoutInflater)
-                val view = inflate(R.layout.bookmark)
                 bookmarkBinding.bookmarkTopicText.text = currentTopicName
                 AlertDialog.Builder(this)
-                        .setView(view)
+                        .setView(bookmarkBinding.root)
                         .setTitle(string.add_bookmark)
                         .setPositiveButton(string.bookmark) { _: DialogInterface, _: Int ->
                             Bookmarks.persist(Bookmark(currentUrl, bookmarkBinding.bookmarkCommentEdit.text.toString(), ""))
@@ -349,7 +353,7 @@ class MainActivity : BaseActivity() {
     override fun onResume() {
         super.onResume()
         mainBinding.mainNavigationView.refresh()
-        mainBinding.mainFab.setVisibility(State.allowEdit())
+        mainBinding.mainFab.visibility = if (State.allowEdit()) View.VISIBLE else View.INVISIBLE
         if (lastFontSize != State.getFontSize()) {
             mainBinding.mainContentRecycler.adapter?.notifyDataSetChanged()
             lastFontSize = State.getFontSize()
@@ -374,4 +378,10 @@ class MainActivity : BaseActivity() {
             webView.createPrintDocumentAdapter()
         }
     }
+}
+
+fun Context.startActivityFromURL(uri: Uri) = try {
+    startActivity(Intent(Intent.ACTION_VIEW, uri))
+} catch (e: ActivityNotFoundException) {
+    Toast.makeText(this, "No Browser found", Toast.LENGTH_LONG).show()
 }
