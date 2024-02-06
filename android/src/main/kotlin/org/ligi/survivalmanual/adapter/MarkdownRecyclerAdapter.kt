@@ -13,8 +13,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.RecyclerView
-import org.ligi.compat.HtmlCompat
 import org.ligi.survivalmanual.R
 import org.ligi.survivalmanual.functions.convertMarkdownToHtml
 import org.ligi.survivalmanual.functions.getSurvivalDrawable
@@ -87,7 +87,7 @@ class MarkdownRecyclerAdapter(val list: List<String>,
             }
         }
 
-        val sequence = HtmlCompat.fromHtml(html, CustomImageGetter(), ListTagHandler())
+        val sequence = HtmlCompat.fromHtml(html, HtmlCompat.FROM_HTML_MODE_LEGACY, CustomImageGetter(), ListTagHandler())
         val spannable = SpannableStringBuilder(sequence)
         val urls = spannable.getSpans(0, sequence.length, URLSpan::class.java)
 

@@ -8,6 +8,7 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.print.PrintAttributes
+import android.print.PrintDocumentAdapter
 import android.print.PrintManager
 import android.util.Log
 import android.view.Menu
@@ -23,8 +24,6 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
-import org.ligi.compat.WebViewCompat
 import org.ligi.kaxt.*
 import org.ligi.snackengage.SnackEngage
 import org.ligi.snackengage.snacks.DefaultRateSnack
@@ -293,7 +292,8 @@ class MainActivity : BaseActivity() {
     private fun createWebPrintJob(webView: WebView) {
         val printManager = getSystemService(Context.PRINT_SERVICE) as PrintManager
         val jobName = getString(string.app_name) + " Document"
-        val printAdapter = WebViewCompat.createPrintDocumentAdapter(webView, jobName)
+
+        val printAdapter = createPrintDocumentAdapter(webView, jobName)
         try {
             printManager.print(jobName, printAdapter, PrintAttributes.Builder().build())
         } catch (iae: IllegalArgumentException) {
@@ -366,4 +366,12 @@ class MainActivity : BaseActivity() {
         invalidateOptionsMenu()
     }
 
+    @TargetApi(19)
+    fun createPrintDocumentAdapter(webView: WebView, documentName: String): PrintDocumentAdapter {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            webView.createPrintDocumentAdapter(documentName)
+        } else {
+            webView.createPrintDocumentAdapter()
+        }
+    }
 }
