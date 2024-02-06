@@ -1,5 +1,6 @@
 package org.ligi.survivalmanual
 
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.intellij.markdown.IElementType
 import org.intellij.markdown.MarkdownElementTypes
@@ -11,11 +12,13 @@ import org.intellij.markdown.parser.MarkdownParser
 import org.junit.Assert.assertNull
 import org.junit.Assert.fail
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.ligi.survivalmanual.model.SurvivalContent
 import org.ligi.survivalmanual.model.navigationEntryMap
 import org.ligi.survivalmanual.model.titleResByURLMap
 import org.ligi.survivalmanual.ui.PRODUCT_MAP
 
+@RunWith(AndroidJUnit4::class)
 class TheSurvivalContent {
 
     val survivalContent = SurvivalContent(InstrumentationRegistry.getInstrumentation().targetContext.assets)
