@@ -291,7 +291,6 @@ class MainActivity : BaseActivity() {
         mainBinding.mainAppbar.setExpanded(true)
         Log.i(TAG, "processing url $url")
 
-        VisitedURLStore.add(url)
         val titleResByURL = getTitleResByURL(url) ?: return false
 
         currentUrl = url

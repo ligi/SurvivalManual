@@ -7,7 +7,6 @@ import org.ligi.survivalmanual.R.string.preference_key_edittoggle
 import org.ligi.survivalmanual.R.string.preference_key_fontsize
 import org.ligi.survivalmanual.R.string.preference_key_nightmode
 import org.ligi.survivalmanual.R.string.preference_key_select_text
-import org.ligi.survivalmanual.R.string.preference_mark_visited
 
 private const val DEFAULT_FONT_SIZE_STRING = "2"
 
@@ -22,7 +21,6 @@ object State : KotprefModel() {
 
     private val sharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(context) }
 
-    fun markVisited() = sharedPreferences.getBoolean(preference_mark_visited.string(), false)
     fun allowEdit() = sharedPreferences.getBoolean(preference_key_edittoggle.string(), false)
     fun allowSelect() = sharedPreferences.getBoolean(preference_key_select_text.string(), false)
     fun getFontSize() = 8f + 4f * Integer.parseInt(getFontSizeString())
