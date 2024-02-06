@@ -18,11 +18,3 @@ buildscript {
         classpath 'com.github.bjoernq:unmockplugin:0.7.9'
     }
 }
-
-allprojects {
-    repositories {
-        mavenCentral()
-        maven { url "https://jitpack.io" }
-        google()
-    }
-}
