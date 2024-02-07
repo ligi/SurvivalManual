@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "org.ligi.survivalmanual"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 34
         versionCode 428
         versionName "4.2.8"
