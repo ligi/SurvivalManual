@@ -5,13 +5,13 @@ import androidx.annotation.StringRes
 import org.ligi.survivalmanual.R
 
 
-open class NavigationEntry(val url: String,
+data class NavigationEntry(val url: String,
                            @StringRes val titleRes: Int,
                            @DrawableRes val iconRes: Int? = null,
                            val isAppendix: Boolean = false,
                            val isListed: Boolean = true)
 
-class NavigationEntryWithId(val id: Int,
+data class NavigationEntryWithId(val id: Int,
                             val entry: NavigationEntry)
 
 val navigationEntryMap = arrayOf(
