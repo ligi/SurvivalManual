@@ -59,7 +59,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
 // Android support
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.fragment:fragment-ktx:1.8.3'
     implementation 'androidx.preference:preference-ktx:1.2.1'
