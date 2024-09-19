@@ -9,9 +9,6 @@ jobs:
   test:
     timeout-minutes: 45
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        api-level: [34]
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -35,10 +32,10 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           arch: x86_64
-          api-level: ${{ matrix.api-level }}
+          api-level: 34
           script: ./gradlew connectedCheck
         env:
-          API_LEVEL: ${{ matrix.api-level }}
+          API_LEVEL: 34
 
       - name: Archive
         if: always()
