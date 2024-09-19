@@ -22,7 +22,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "SurvivalManual-$versionName"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+	testInstrumentationRunner "org.ligi.survivalmanual.runner.TestButlerJunitRunner"
     }
 
     buildFeatures {
@@ -77,4 +77,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.6.1'
     androidTestImplementation "androidx.test:core:1.5.0"
     androidTestImplementation "androidx.test:rules:1.5.0"
+    androidTestImplementation 'com.linkedin.testbutler:test-butler-library:2.2.1'
+    androidTestUtil 'com.linkedin.testbutler:test-butler-app:2.2.1'
 }
