@@ -69,7 +69,7 @@ dependencies {
     implementation "com.chibatching.kotpref:kotpref:$kotpref_version"
     implementation "com.chibatching.kotpref:initializer:$kotpref_version"
 
-    implementation 'org.jetbrains:markdown:0.6.1'
+    implementation 'org.jetbrains:markdown:0.7.3'
     implementation 'com.github.MikeOrtiz:TouchImageView:3.6'
 
 // Testing
