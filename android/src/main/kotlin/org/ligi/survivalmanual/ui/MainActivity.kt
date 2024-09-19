@@ -57,7 +57,7 @@ class MainActivity : BaseActivity() {
 
     private lateinit var currentUrl: String
     private lateinit var currentTopicName: String
-    private var textInput: MutableList<String> = mutableListOf()
+    private lateinit var textInput: MutableList<String>
 
     private var lastFontSize = State.getFontSize()
     private var lastNightMode = State.nightModeString()

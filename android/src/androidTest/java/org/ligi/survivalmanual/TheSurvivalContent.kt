@@ -47,8 +47,19 @@ class TheSurvivalContent {
                     .filterNot { link -> survivalContent.getMarkdown(link) != null && titleResByURLMap.containsKey(link) }
                     .toSet()
 
-            assertEquals(setOf("SolarUSBCharger", "CampStoveUSB", "HandCrankUSB", "CarUSBCharger"), unresolvedLinks)
-            // TOOD Should be empty, but references to products are still in the data.
+            val expectedUnresolvedLinksMap = mapOf(
+                    0 to setOf("SolarUSBCharger", "LifeStraw", "OHTMultiTool", "Audible"),
+                    2 to setOf("SolarUSBCharger", "CampStoveUSB", "HandCrankUSB", "CarUSBCharger"),
+                    4 to setOf("LifeStraw"),
+                    5 to setOf("PandaDubLionsDen"),
+                    6 to setOf("LifeStraw"),
+                    8 to setOf("LifeStraw"),
+                    28 to setOf("OHTMultiTool", "TreadMultiTool")
+            )
+
+            assertEquals(expectedUnresolvedLinksMap[navEntryWithId.id] ?: emptySet<String>(), unresolvedLinks)
+
+            // TODO Should be empty, but references to products are still in the data.
         }
     }
 

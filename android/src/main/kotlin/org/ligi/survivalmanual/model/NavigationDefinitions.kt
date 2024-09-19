@@ -27,7 +27,7 @@ val navigationEntryMap = arrayOf(
         NavigationEntry("Fire", R.string.fire, R.drawable.ic_whatshot),
         NavigationEntry("Food", R.string.food, R.drawable.ic_local_dining),
         NavigationEntry("Plants", R.string.plants, R.drawable.ic_local_florist),
-        NavigationEntry("10", R.string.poisonous_plants, R.drawable.ic_face_dead),
+        NavigationEntry("Poisonous-Plants", R.string.poisonous_plants, R.drawable.ic_face_dead),
         NavigationEntry("Animals", R.string.animals, R.drawable.ic_pets),
         NavigationEntry("Tools", R.string.tools, R.drawable.ic_gavel),
         NavigationEntry("Desert", R.string.desert, R.drawable.ic_wb_sunny),
