@@ -1,9 +1,7 @@
 #https://github.com/marketplace/actions/android-emulator-runner
 name: Test
 on:
-  push:
   pull_request:
-  workflow_dispatch:
 
 jobs:
   test:
