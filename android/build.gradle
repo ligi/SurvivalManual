@@ -16,8 +16,8 @@ android {
         applicationId "org.ligi.survivalmanual"
         minSdkVersion 21
         targetSdkVersion 34
-        versionCode 428
-        versionName "4.2.8"
+        versionCode 500
+        versionName "5.0.0"
 
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "SurvivalManual-$versionName"
