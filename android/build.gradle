@@ -73,6 +73,8 @@ dependencies {
     implementation 'com.github.MikeOrtiz:TouchImageView:3.6'
 
 // Testing
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.6.1'
     androidTestImplementation "androidx.test:core:1.6.1"

@@ -9,9 +9,22 @@ private const val EXCERPT_SIZE = 100
 
 @VisibleForTesting
 fun getExcerpt(text: String, term: String): String {
-    val index = text.indexOf(term)
-    val rough = text.substring(max(index - EXCERPT_SIZE, 0)..(index + EXCERPT_SIZE).coerceAtMost(text.lastIndex))
-    return rough.substring(rough.indexOf(" ")..rough.lastIndexOf(" "))
+    val index = text.indexOf(term, ignoreCase = true)
+    if (index == -1) {
+        return text.take(EXCERPT_SIZE * 2).trim()
+    }
+
+    val startBound = max(index - EXCERPT_SIZE, 0)
+    val endBound = (index + term.length + EXCERPT_SIZE).coerceAtMost(text.length)
+
+    val excerptStart = text.lastIndexOf(' ', startBound).takeIf { it >= 0 }?.plus(1) ?: startBound
+    val excerptEnd = text.indexOf(' ', endBound).takeIf { it >= 0 } ?: endBound
+
+    if (excerptEnd > excerptStart) {
+        return text.substring(excerptStart, excerptEnd).trim()
+    }
+
+    return text.substring(startBound, endBound).trim()
 }
 
 interface Search {
