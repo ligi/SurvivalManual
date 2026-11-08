@@ -1,83 +1,83 @@
 <resources>
     <string name="app_name">Survival Manual</string>
-    <string name="drawer_open">open</string>
-    <string name="drawer_close">close</string>
-    <string name="introduction">Introduction</string>
-    <string name="print">Print</string>
-    <string name="print_all">Print (All)</string>
-    <string name="psychology">Psychology</string>
-    <string name="planning">Planning</string>
-    <string name="basic_medicine">Basic Medicine</string>
-    <string name="shelter">Shelter</string>
-    <string name="water">Water</string>
-    <string name="fire">Fire</string>
-    <string name="food">Food</string>
-    <string name="plants">Plants</string>
-    <string name="poisonous_plants">Poisonous Plants</string>
-    <string name="animals">Animals</string>
-    <string name="tools">Tools</string>
-    <string name="desert">Desert</string>
-    <string name="tropical">Tropical</string>
-    <string name="cold">Cold</string>
-    <string name="sea">Sea</string>
-    <string name="water_crossing">Water Crossing</string>
-    <string name="directionfinding">Find Direction</string>
-    <string name="signaling">Signaling</string>
-    <string name="camouflage">Camouflage</string>
-    <string name="people">People</string>
-    <string name="man_made_hazards">Man-Made Hazards</string>
-    <string name="self_defense">Self defense</string>
-    <string name="credits">Credits</string>
-    <string name="evasion_plan">Evasion Plan</string>
-    <string name="clouds">Clouds</string>
-    <string name="faq">FAQ</string>
-    <string name="ropes_and_knots">Ropes and Knots</string>
-    <string name="fish_and_mollusks">Fish and Mollusks</string>
-    <string name="insects_and_arachnids">Insects and Arachnids</string>
-    <string name="snakes_and_lizards">Snakes and Lizards</string>
-    <string name="edible_medicinal_plants">Edible/Medicinal Plants</string>
-    <string name="apps">Apps</string>
-    <string name="multitool">Multitool</string>
-    <string name="kits">Kits</string>
-    <string name="appendix">Appendix</string>
-    <string name="help_title">Help</string>
-    <string name="hostile_areas">Hostile Areas</string>
+    <string name="drawer_open">відчинити</string>
+    <string name="drawer_close">зачинити</string>
+    <string name="introduction">Вступ</string>
+    <string name="print">Друк</string>
+    <string name="print_all">Друк (Усе)</string>
+    <string name="psychology">Психологія</string>
+    <string name="planning">Планування</string>
+    <string name="basic_medicine">Базова медицина</string>
+    <string name="shelter">Укриття</string>
+    <string name="water">Вода</string>
+    <string name="fire">Вогонь</string>
+    <string name="food">Їжа</string>
+    <string name="plants">Рослини</string>
+    <string name="poisonous_plants">Отруйні рослини</string>
+    <string name="animals">Тварини</string>
+    <string name="tools">Інструменти</string>
+    <string name="desert">Пустеля</string>
+    <string name="tropical">Тропіки</string>
+    <string name="cold">Холод</string>
+    <string name="sea">Море</string>
+    <string name="water_crossing">Переправлення через воду</string>
+    <string name="directionfinding">Визначення напрямку</string>
+    <string name="signaling">Сигналізація</string>
+    <string name="camouflage">Камуфляж</string>
+    <string name="people">Люди</string>
+    <string name="man_made_hazards">Техногенні небезпеки</string>
+    <string name="self_defense">Самооборона</string>
+    <string name="credits">Подяки</string>
+    <string name="evasion_plan">План ухилення</string>
+    <string name="clouds">Хмари</string>
+    <string name="faq">ЧаПи</string>
+    <string name="ropes_and_knots">Мотузки та вузли</string>
+    <string name="fish_and_mollusks">Риби та молюски</string>
+    <string name="insects_and_arachnids">Комахи та павукоподібні</string>
+    <string name="snakes_and_lizards">Змії та ящірки</string>
+    <string name="edible_medicinal_plants">Їстівні/лікарські рослини</string>
+    <string name="apps">Додатки</string>
+    <string name="multitool">Мультитул</string>
+    <string name="kits">Набори</string>
+    <string name="appendix">Додаток</string>
+    <string name="help_title">Допомога</string>
+    <string name="hostile_areas">Ворожі території</string>
     <string name="help_text">
         <![CDATA[
-        This is the offline usable survival field manual v$VERSION based on FM 3-05.70 (FM 21-76). This app is libre software - you can find the sourcecode on
-        <a href="https://github.com/ligi/SurvivalManual">GitHub</a>. Pull-Requests are welcome!<br/>
-        If you have improvements regarding the content or want to help translate you can use <a href="https://github.com/ligi/SurvivalManual/wiki">this wiki.</a><br/>
-        If you want the latest features and like to live on the bleeding edge, <a href="https://play.google.com/apps/testing/org.ligi.survivalmanual">join the beta testers.</a>
+        Це придатний для офлайн-використання польовий посібник з виживання версії v$VERSION, заснований на FM 3-05.70 (FM 21-76). Цей додаток є вільним програмним забезпеченням — ви можете знайти вихідний код на
+        <a href="https://github.com/ligi/SurvivalManual">GitHub</a>. Pull-реквести вітаються!<br/>
+        Якщо у вас є покращення щодо вмісту або ви хочете допомогти з перекладом, ви можете скористатися <a href="https://github.com/ligi/SurvivalManual/wiki">цією вікі.</a><br/>
+        Якщо ви хочете отримувати нові функції одразу і жити на вістрі прогресу, <a href="https://play.google.com/apps/testing/org.ligi.survivalmanual">приєднуйтеся до бета-тестувальників.</a>
         <br/>
-        This app uses the android-support-libraries,
+        Цей додаток використовує android-support-libraries,
         <a href="http://kotlinlang.org">Kotlin</a>,
         <a href="https://github.com/MichaelRocks/bimap/">BiMap</a>,
         <a href="https://github.com/chibatching/Kotpref">KotPref</a>,
         <a href="https://github.com/rjeschke/txtmark">TxtMark</a>
-        and <a href="https://github.com/ligi/SnackEngage">SnackEngage</a>
+        та <a href="https://github.com/ligi/SnackEngage">SnackEngage</a>
         ]]>
     </string>
-    <string name="system">System</string>
-    <string name="night">Night</string>
-    <string name="dark_night">Dark Night</string>
-    <string name="day">Day</string>
+    <string name="system">Система</string>
+    <string name="night">Ніч</string>
+    <string name="dark_night">Темна ніч</string>
+    <string name="day">День</string>
 
-    <string name="tiny">Tiny</string>
-    <string name="small">Small</string>
-    <string name="medium">Medium</string>
-    <string name="large">Large</string>
-    <string name="huge">Huge</string>
+    <string name="tiny">Крихітний</string>
+    <string name="small">Малий</string>
+    <string name="medium">Середній</string>
+    <string name="large">Великий</string>
+    <string name="huge">Величезний</string>
 
-    <string name="preference_daynight_title">Day/Night theme</string>
-    <string name="preference_daynight_summary">Should I use day or night theme?</string>
+    <string name="preference_daynight_title">Тема день/ніч</string>
+    <string name="preference_daynight_summary">Яку тему використовувати — денну чи нічну?</string>
 
-    <string name="allow_edit">Allow Editing (Experimental)</string>
-    <string name="preference_fontsize_summary">How big should the letters be?</string>
-    <string name="preference_fontsize_title">Text size</string>
-    <string name="power">Power</string>
-    <string name="translator_notes">Translator Notes</string>
+    <string name="allow_edit">Дозволити редагування (експериментально)</string>
+    <string name="preference_fontsize_summary">Якого розміру мають бути літери?</string>
+    <string name="preference_fontsize_title">Розмір тексту</string>
+    <string name="power">Живлення</string>
+    <string name="translator_notes">Примітки перекладача</string>
 
-    <string name="search">Search</string>
-    <string name="settings">Settings</string>
+    <string name="search">Пошук</string>
+    <string name="settings">Налаштування</string>
 
 </resources>
